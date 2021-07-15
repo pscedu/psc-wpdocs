@@ -1,5 +1,7 @@
 # Deploying software on Bridges-2 using Singularity containers
 
+[![Stephen Deems](https://user-images.githubusercontent.com/3306741/125829141-8fa8ebf5-264f-40c1-9845-c7e35d7aecc9.jpg)
+
 ## Summary
 This document describes best practices when deploying software on Bridges-2 using Singularity containers. This document mainly applies to Biomedical apps.
 
@@ -36,7 +38,7 @@ If done properly, the end user will not be aware the tool was deployed in a Sing
 singularity pull https://depot.galaxyproject.org/singularity/blast%3A2.9.0--pl526he19e7b1_7
 ```
 
-* If an image does not exist, then create a Singularity definition file for the app and add to the repo in the corresponding folder. For example, for `BLAST 2.11.0` the definition file is 
+* If an image does not exist, then create a Singularity definition file for the app and add to the repo in the corresponding folder. For example, for `BLAST 2.11.0` the definition file is
 
 ```
 Bootstrap: docker
@@ -58,7 +60,7 @@ From: debian:bullseye
 :warning: Notice a COPYRIGHT string has been added to the definition file
 :::
 
-* Create a modulefile named `modulefile.lua`and add to the repo in the corresponding folder. For example, for `BLAST 2.11.0` the modulefile is 
+* Create a modulefile named `modulefile.lua`and add to the repo in the corresponding folder. For example, for `BLAST 2.11.0` the modulefile is
 
 ```
 --
@@ -286,7 +288,7 @@ Add a file named `LICENSE` to the top level of the repository. This file should 
 ```
 Copyright © 2021, Pittsburgh Supercomputing Center. All Rights Reserved.
 
-Permission to use, copy, and modify this software and its documentation without 
+Permission to use, copy, and modify this software and its documentation without
 fee for personal use or non-commercial use within your organization is hereby
 granted, provided that the above copyright notice is preserved in all copies and
 that the copyright and this permission notice appear in supporting documentation.
@@ -354,7 +356,7 @@ Once you have created all the files necessary for deployment copy over the files
 /opt/packages/BLAST
 ```
 
-if not, then create it. 
+if not, then create it.
 
 ```
 ➜  pwd
@@ -401,7 +403,7 @@ datatool                  querydata_unit_test
 The modulefile will live in `/opt/modulefiles`. However, it is not our responsibility to add the modulefiles since these need to be reviewed first by another team member.
 
 * Add to the `modulefile.lua` file to `http://gitlab.psc.edu/bridges2_modulefiles`
-* Then create a merge request for review. 
+* Then create a merge request for review.
 * If approved, then the reviewer will copy over the modulefile to the appropriate location.
 
 ### What next?
@@ -434,7 +436,7 @@ To unload the module type
 # Advanced Topics
 ## Spack + Singularity
 ### Creating a container from an existing environment
-If you know how to use Spack and you have created your own environments then you can follow these instructions to create a Dockerfile to create a Docker image. This image can then be used to create a Singularity image. 
+If you know how to use Spack and you have created your own environments then you can follow these instructions to create a Dockerfile to create a Docker image. This image can then be used to create a Singularity image.
 
 This process is not recommended for Bridges 2 since we do not have access to Docker on any compute node.
 
@@ -448,7 +450,7 @@ However, you could convert your environment.yaml to a Dockerfile and then constr
 * Use small images for deploying packages with little or no dependencies. I particularly prefer [Alpine](https://www.alpinelinux.org/) for this purpose.
 * If you wish to create a container from an existing Spack environment, then click [here](https://spack.readthedocs.io/en/latest/containers.html).
 * If you wisht to create a container using Spack commands, then I’d recommend you start from scratch. Feel free to use this [template](https://gist.github.com/icaoberg/65118b1b27146a809e8165b55141a4f8).
-* When deploying software in your home/projects directory Singularity >> Spack. Spack is easy to use but depending on the package you want to install there might be some dependencies that live outside of the scope of Spack. 
+* When deploying software in your home/projects directory Singularity >> Spack. Spack is easy to use but depending on the package you want to install there might be some dependencies that live outside of the scope of Spack.
 * It is okay to install multiple packages into a single container. For example I built a LaTeX container with LaTeX editors, Ghostscript and more.
 * Make sure other users have access to these files, that is, set the right permissions. If you don’t, a reviewer will contact you about it so it is an easy fix.
 * SyLabs.io is the easiest way to build containers remotely without hassling the systems team.
