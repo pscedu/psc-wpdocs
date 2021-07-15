@@ -1,14 +1,15 @@
-# Deploying software on Bridges 2 (B2) using Singularity containers
+# Deploying software on Bridges-2 using Singularity containers
 
 ## Summary
-This document describes best practices when deploying software on Bridges2 using Singularity containers. This document mainly applies to Biomedical apps.
+This document describes best practices when deploying software on Bridges-2 using Singularity containers. This document mainly applies to Biomedical apps.
 
 ## Pre-requisites
-- [ ] Account on GitHub
+You must:
+- [ ] Have an account on GitHub
 - [ ] Be part of the [PSC Organization](https://github.com/pscedu) on GitHub
-- [ ] Account on B2
+- [ ] Have an account on B2
 - [ ] Be a member of the `pscstaff` group
-- [ ] Elevated access to run Singularity if you want to build containers on B2. If not, then have an account on SyLabs.io to build containers remotely.
+- [ ] Have elevated access to run Singularity if you want to build containers on B2. If not, then have an account on SyLabs.io to build containers remotely.
 
 ## In a nutshell
 End users will be loading applications into their workspace as they would any other tool. In the background, the modulefile will be calling scripts that in turn will be calling the containers.
