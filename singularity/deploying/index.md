@@ -440,7 +440,7 @@ This process is not recommended for Bridges 2 since we do not have access to Doc
 However, you could convert your environment.yaml to a Dockerfile and then construct it locally.
 
 ## Best Practices
-![Programming](https://media1.giphy.com/media/1C8bHHJturSx2/200w.webp?cid=ecf05e47wh6ph7qdvdukq9kjonbxyexvs0539i3ntu26leko&rid=200w.webp&ct=g)
+
 * Avoid reinventing the wheel. Search public registries first.
 * Do not reinvent the wheel again. You can modify existing images, no need to start from scratch.
 * Avoid bloating images. In general avoid using Ubuntu as a starter image, however when testing and developing might be the best option (if not the only).
