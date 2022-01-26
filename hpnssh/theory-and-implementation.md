@@ -6,7 +6,7 @@ SCP and the underlying SSH protocol is network performance limited by statically
 
 ## Problem {#problem}
 
-High Bandwidth and High Latency links are becoming more prevalent in corporate and academic institutions. Applications that use windowing thus need to ensure that the window size is at least equal to the Bandwidth Delay Product, or BDP, are to obtain maximum utilization of the link. The BDP is the product of the narrowest portion of the network path and the round trip delay time and represents the total data carrying capactity of the path. For TCP it is already possible to tune the tcp window size manually or use an autotuning mechanism, such as the Web100 linux kernel patch to ensure maximum throughput with TCP. However, when applications above the TCP layer implement windowing, the limitation on throughput then becomes the less of either TCP or the application. In OpenSSH the limitation appears in the static window sizes that appear in channels.h as defined values.
+High Bandwidth and High Latency links are becoming more prevalent in corporate and academic institutions. Applications that use windowing thus need to ensure that the window size is at least equal to the Bandwidth Delay Product, or BDP, are to obtain maximum utilization of the link. The BDP is the product of the narrowest portion of the network path and the round trip delay time and represents the total data carrying capacity of the path. For TCP it is already possible to tune the tcp window size manually or use an autotuning mechanism, such as the Web100 linux kernel patch to ensure maximum throughput with TCP. However, when applications above the TCP layer implement windowing, the limitation on throughput then becomes the less of either TCP or the application. In OpenSSH the limitation appears in the static window sizes that appear in channels.h as defined values.
 
 ## Solution {#solution}
 
@@ -16,7 +16,7 @@ There were only two changes needed to adjust the SSH window based on the TCP win
 
 ## Tests {#tests}
 
-The following hosts were used in the performance tests. kirana was running a 2.6 linux kernel with the Web100 patch. tg-login was runing a 2.6 kernel without autotuning, but a tcp window size of 10,000,000 bytes. The link BDP of a 1Gbps with a 0.04 second delay is 40,000,000 bits or 5,000,000 bytes. The 300MB file was copied from /dev/shm on one machine to /dev/null on the other.
+The following hosts were used in the performance tests. kirana was running a 2.6 linux kernel with the Web100 patch. tg-login was running a 2.6 kernel without autotuning, but a tcp window size of 10,000,000 bytes. The link BDP of a 1Gbps with a 0.04 second delay is 40,000,000 bits or 5,000,000 bytes. The 300MB file was copied from /dev/shm on one machine to /dev/null on the other.
 
 ### Hosts:
 
@@ -280,4 +280,8 @@ The tests showed that throughput was increased dramatically, and the limitation 
 
 ## Security implications {#security}
 
-There are no implications that we know of with the following caveat: The use of the none cipher in the experimental hpn+none patch is experimental and you must use it at your own risk. Its use via the -z switch in scp will transfer your bulk data in the clear even though your authentication is encrypted. This should, natually, be seen as riskier than transfering data via an encryption cipher. Also, while we did our best to make sure that you can only use the none cipher to transfer bulk data via scp it may be possible to run an interactive session with the none cipher (see the note of 15 January 2005). We're investigating this but we think this situation to be unlikely. If you have issues with this, use the approved non-experimental hpn patch.
+There are no implications that we know of with the following caveats: The use of the None cipher will transfer bulk data in the clean and you must use it at your own risk. The authentication process, however, is fully encrypted. This should, naturally, be seen as riskier than transferring data with full encryption. None encryption is only available in non-interactive sessions. This means scp, batch sftp, and pipes. 
+
+Likewise, disabling the use of the Message Authentication Cipher (MAC) has security implications. Specifically, that the data is no longer protected against Man In the Middle (MITM) attacks. As with the None cipher this mode should not be used with sensitive data. The user will need to determine how to properly balance risk versus performance. Disabling the MAC is only available when used with the None ciphers. 
+
+Both the client and server must support the None cipher and disabling the MAC for these options to work.

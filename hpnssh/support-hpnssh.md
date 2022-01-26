@@ -14,4 +14,4 @@ It's important to track the adoption of HPN-SSH by the community to gather sugge
 
 ## Join the mailing list
 
-Stay on top of developments in HPN-SSH by [joining the mailing list](mailto:hpn-ssh@psc.edu), a group for both developers and users to discuss HPN-SSH. This includes development goals, suggestions, user support, bugs, and more as they relate the HPN-SSH in particular.
+Stay on top of developments in HPN-SSH by [joining the hpnssh-community mailing list](https://lists.psc.edu/mailman/listinfo/hpnssh-community), a group for both developers and users to discuss HPN-SSH. This includes development goals, suggestions, user support, bugs, and more as they relate the HPN-SSH in particular.
