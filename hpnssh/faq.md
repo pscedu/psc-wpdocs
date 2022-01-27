@@ -1,4 +1,5 @@
-***Q: What is HPN-SSH?.***
+***Q: What is HPN-SSH?***
+
 A: HPN-SSH is a patch set designed to remove a networking bottleneck in the base OpenSSH code. Removing this bottleneck can improve performance drastically.
 
 ***Q: What is this bottleneck?***
