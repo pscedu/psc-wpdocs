@@ -55,8 +55,7 @@ be disabled.
 <dt>NoneCipherSwitch=[yes|no]</dt>
 <dd>Default is no. If the NoneEnabled option is set to yes then the connection will disabled encryption after authentication. If NoneMacEnabled and NoneEnabled is set to yes then both the cipher and MAC will be disabled after authentication. 
 <dt>Example usage</dt>
-<dd>
->scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~
+<dd> >scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~
 
 Will, after authentication disable encryption while transferring `hugefile` from the local host to the remote host. The remote host must have `NoneEnabled=yes` set the in the sshd\_config file.
 >scp -oNoneEnabled=yes -oNoneMacEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~
