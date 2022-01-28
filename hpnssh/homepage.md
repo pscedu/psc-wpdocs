@@ -30,7 +30,7 @@ This is available as of HPN15v5 for OpenSSH 8.8.
 
 **Packaging and Distribution:** HPN-SSH was, for a very long time, only available as a series of patches. Later it became a GitHub repo. This turned out to be a non-optimal method of distributing HPN-SSH to the public. With this in mind we will be working to provide precompiled packages for a variety of operating systems and Linux distributions and the creation of canonical package repositories (such as PPAs). We will also be reaching out to distribution maintainers to make HPN-SSH an option for all of their users.
 
-Our first online repo is now available for Ubuntu (focal and hirsute). Add it with
+Our first online repo is now available for Ubuntu (focal and impish). Add it with
 
 >`sudo add-apt-repository ppa:rapier1/hpnssh`
 
