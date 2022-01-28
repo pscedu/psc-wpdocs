@@ -1,6 +1,6 @@
 ## In this page 
-- [Abstract/Introduction](#problem)
-- [Patches](#patches)
+- [Abstract/Introduction](https://www.psc.edu/hpn-ssh-home/introduction#problem)
+- [Patches](https://www.psc.edu/hpn-ssh-home/introduction#patches)
 
 <h3 id="problem">Abstract</h3>
 
