@@ -132,6 +132,7 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </tbody>
 </table>
 &nbsp;
+
 <h2 id="scp">Unmodified SCP Performance</h2>
 <table class="table-striped">
 <tbody>
