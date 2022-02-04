@@ -1,7 +1,3 @@
-## In this page 
-- [Abstract/Introduction](#abstract)
-- [Patches](#patches)
-
 ### Abstract
 
 SCP and the underlying SSH2 protocol implementation in OpenSSH is network performance limited by statically defined internal flow control buffers. These buffers often end up acting as a bottleneck for network throughput of SCP, especially on long and high bandwidth network links. Modifying the ssh code to allow the buffers to be defined at run time eliminates this bottleneck. We have created a patch that will remove the bottlenecks in OpenSSH and is fully interoperable with other servers and clients. In addition HPN clients will be able to download faster from non HPN servers, and HPN servers will be able to receive uploads faster from non HPN clients. However, the host receiving the data must have a properly tuned TCP/IP stack. Please refer to [this tuning page](https://fasterdata.es.net/host-tuning/) for more information.
