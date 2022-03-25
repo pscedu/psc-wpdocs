@@ -57,26 +57,21 @@ used, or by running the module while specifying the full path to reach that envi
 
 **Note:** The environment must be activated before running ipykernel.
 
-** Julian, the following 2 commands are identical. Should one be for running ipykernel from the environment and one for specifying the full path to the environment?**
-
-```
-python3 -m ipykernel install --user --name ENVIRONMENT_NAME --display-name "PYTHON ENV NAME"
-```
-
-**Example:**
-
-```
-python3 -m ipykernel install --user --name ENVIRONMENT_NAME --display-name "PYTHON ENV NAME"
-```
-
-After running this command, a file will be created  which specifies the location of the Python environment. That
-file will be created under one of the following locations:
-
-**Julian - how will the user know which location to find the file in?  Or does it not matter?**
+After running this command, a file is created  which specifies the location of the Python environment. That file will be created under one of the following locations. 
 
 ```
 $HOME/.local/share/jupyter/kernels/ENVIRONMENT_NAME
 $HOME/.ipython/kernels/ENVIRONMENT_NAME
+```
+The output of the command shows the location of this file.
+
+```
+(base) [user@r001 custom-kernel]$ conda activate NEW_ENV
+(NEW_ENV) [user@r001 custom-kernel]$
+
+(NEW_ENV) [user@r001 custom-kernel]$ python3 -m ipykernel install --user --name NEW_ENV --display-name "PYTHON-ENV-NAME"
+Installed kernelspec NEW_ENV in /jet/home/user/.local/share/jupyter/kernels/new_env
+(NEW_ENV) [user@r001 custom-kernel]$
 ```
 
 **Note:** The “ipykernel” can be removed from the environment after the custom kernel is created.
@@ -84,6 +79,7 @@ $HOME/.ipython/kernels/ENVIRONMENT_NAME
 ## Start the custom Jupyter Notebook kernel.
 
 Now you are ready to start your custom Jupyter notebook kernel from an interactive session in OnDemand.
+```
 
 ### Log in to OnDemand
 In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC credentials.
@@ -100,9 +96,10 @@ Click the blue Launch button. You may have to wait for resources to be allocated
 
 At this point, you can start a new notebook or open an existing one.
 
-*** Start a new notebook ***
+#### Start a new notebook
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
+
 ![alt_text](images/image2.png "OnDemand at Bridges-2. Jupyter Notebook is running, and a new Notebook is being started while selecting the custom Python environment just created.")
 
 Your new Notebook will open.
@@ -111,7 +108,8 @@ Your new Notebook will open.
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
 
 
-*** Use an existing Notebook ***
+#### Use an existing Notebook
+
 If you already have a notebook, find it in the file list and click on it to open it.
 
 Change the Python environment to use by navigating to **Kernel > Change kernel**.  Choose the new Python environment to use.
