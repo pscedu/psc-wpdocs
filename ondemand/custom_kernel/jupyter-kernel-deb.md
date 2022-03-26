@@ -79,7 +79,6 @@ Installed kernelspec NEW_ENV in /jet/home/user/.local/share/jupyter/kernels/new_
 ## Start the custom Jupyter Notebook kernel.
 
 Now you are ready to start your custom Jupyter notebook kernel from an interactive session in OnDemand.
-```
 
 ### Log in to OnDemand
 In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC credentials.
