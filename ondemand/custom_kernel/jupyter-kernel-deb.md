@@ -103,7 +103,7 @@ Under the **New** dropdown in the upper right, choose the name of the new enviro
 
 Your new Notebook will open.
 
-**Note:** For installing new packages, you will have to do it from the terminal in teh interactive session and NOT from the Jupyter notebook itself
+**Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
 
 
@@ -121,8 +121,7 @@ as it will try to use the base different Conda binaries and not the ones you set
 ### Additional content: using Python from Singularity containers
 
 Similar to the process described
-on  [https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container](https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container)
-, a Python installation inside a Singularity container can be used from Jupyter Notebook as well, although the process
+on  [https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container](https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container), a Python installation inside a Singularity container can be used from Jupyter Notebook as well, although the process
 is somewhat manual for now.
 
 Create a new directory under `$HOME/.local/share/jupyter/kernels/` and add a kernel.json file 
