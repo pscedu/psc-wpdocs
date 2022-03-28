@@ -32,20 +32,30 @@ conda activate # source /opt/packages/anaconda3/etc/profile.d/conda.sh
 Create a new environment and install the “ipykernel” package along with any other packages you might need.
 You could also install “ipykernel” to any existing Conda environment you have.
 
-To create a new environment which includes ipykernel:
+#### To create a new environment which includes ipykernel
+Use a command like
 
 ```
 conda create --name ENVIRONMENT_NAME ipykernel
 conda activate ENVIRONMENT_NAME
 ```
 
-To add ipykernel to an existing environment:
+#### To add ipykernel to an existing environment
 
+Use a command like one below, depending on your specific case:
+
+If you are using Conda:
 ```
 conda install ipykernel
-# or
+```
+
+If you are NOT using Conda, but in a Python environment in which you have write permission
+```
 python3 -m pip install ipykernel
-# or
+```
+
+To use the default Bridges-2 Python installation or modules
+```
 python3 -m pip install ipykernel --user
 ```
 
