@@ -27,7 +27,7 @@ module load anaconda3
 conda activate # source /opt/packages/anaconda3/etc/profile.d/conda.sh
 ```
 
-### Create a new environment
+### Add ipykernel to an environment
 
 Create a new environment and install the “ipykernel” package along with any other packages you might need.
 You could also install “ipykernel” to any existing Conda environment you have.
