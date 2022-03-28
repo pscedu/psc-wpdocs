@@ -29,8 +29,7 @@ conda activate # source /opt/packages/anaconda3/etc/profile.d/conda.sh
 
 ### Add ipykernel to an environment
 
-Create a new environment and install the “ipykernel” package along with any other packages you might need.
-You could also install “ipykernel” to any existing Conda environment you have.
+Create a new environment and install the “ipykernel” package along with any other packages you might need, or install “ipykernel” to any existing Conda environment you have.
 
 #### To create a new environment which includes ipykernel
 Use a command like
