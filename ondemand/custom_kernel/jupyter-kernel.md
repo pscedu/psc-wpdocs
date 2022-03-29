@@ -135,7 +135,7 @@ Change the Python environment to use by navigating to **Kernel > Change kernel**
 
 
 ![Alt text on dev](https://user-images.githubusercontent.com/3306741/160672432-a8477326-faf0-4351-9ba4-1ddbc10bcd78.png "Alt text on master")
-
+![dog](https://user-images.githubusercontent.com/30911386/160707401-504f957a-f7ef-464b-a147-148a12889b4d.jpeg)
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
