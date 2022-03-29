@@ -96,13 +96,13 @@ Installed kernelspec NEW_ENV in /jet/home/user/.local/share/jupyter/kernels/new_
 Now you are ready to start your custom Jupyter notebook kernel from an interactive session in OnDemand.
 
 <h5>Log in to OnDemand</h5>
-In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC credentials.
+In a browser window, go to ondemand.bridges2.psc.edu and log in with your PSC credentials.
 
 <h5>Request an interactive session for your Notebook.</h5>
 
-Navigate to  **Interactive Apps > Jupyter Notebook**.
+Navigate to **Interactive Apps** > Jupyter Notebook
 
-![alt_text](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image1.png "OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item.")
+![OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item](https://github.com/pscedu/psc-wpdocs/raw/master/ondemand/custom_kernel/images/image1.png)
 
 A new screen will open which allows you to specify the paramters for your interactive session (number of hours, nodes, partition, etc.) Set the parameters for your session as needed.
 
@@ -115,7 +115,7 @@ At this point, you can start a new notebook or open an existing one.
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
 
-![alt_text](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image2.png "OnDemand at Bridges-2. Jupyter Notebook is running, and a new Notebook is being started while selecting the custom Python environment just created.")
+![OnDemand at Bridges-2. Jupyter Notebook is running, and a new Notebook is being started while selecting the custom Python environment just created](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image2.png)
 
 Your new Notebook will open.
 
@@ -131,7 +131,11 @@ If you already have a notebook, find it in the file list and click on it to open
 
 Change the Python environment to use by navigating to **Kernel > Change kernel**.  Choose the new Python environment to use.
 
-![Alt text on dev](https://user-images.githubusercontent.com/3306741/160672432-a8477326-faf0-4351-9ba4-1ddbc10bcd78.png "Alt text on dev")
+
+
+
+![Alt text on dev](https://user-images.githubusercontent.com/3306741/160672432-a8477326-faf0-4351-9ba4-1ddbc10bcd78.png "Alt text on master")
+
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
