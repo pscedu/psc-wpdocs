@@ -102,7 +102,7 @@ In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC cre
 
 Navigate to  **Interactive Apps > Jupyter Notebook**.
 
-![alt_text](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image1.png "OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item.")
+![alt_text](https://github.com/pscedu/psc-wpdocs/raw/master/ondemand/custom_kernel/images/image1.png "OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item.")
 
 A new screen will open which allows you to specify the paramters for your interactive session (number of hours, nodes, partition, etc.) Set the parameters for your session as needed.
 
