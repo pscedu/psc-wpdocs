@@ -163,3 +163,5 @@ vim $HOME/.local/share/jupyter/kernels/tensorflow_latest/kernel.json
 ```
 
 Then start Jupyter Notebook and select the newly created kernel. The libraries inside the container should be there.
+
+
