@@ -100,7 +100,7 @@ In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC cre
 
 <h5>Request an interactive session for your Notebook.</h5>
 
-Navigate to  **Interactive Apps > Jupyter Notebook**
+Navigate to **Interactive Apps** > Jupyter Notebook
 
 ![OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item](https://github.com/pscedu/psc-wpdocs/raw/master/ondemand/custom_kernel/images/image1.png)
 
