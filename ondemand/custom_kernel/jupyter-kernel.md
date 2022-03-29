@@ -19,7 +19,9 @@ be used with OnDemand.
 The “ipykernel” package must be available in this environment to generate the custom kernel. The
 “ipykernel” package can be removed after that.
 
+
 ##### Load and activate the Anaconda3 module
+
 In [an interactive session on Bridges-2](https://www.psc.edu/resources/bridges-2/user-guide-2/#interactive-sessions), load and activate anaconda3. 
 
 ```
@@ -27,11 +29,15 @@ module load anaconda3
 conda activate # source /opt/packages/anaconda3/etc/profile.d/conda.sh
 ```
 
-##### Add ipykernel to an environment
+
+#### Add ipykernel to an environment
 
 Create a new environment and install the “ipykernel” package along with any other packages you might need, or install “ipykernel” to any existing Conda environment you have.
 
+##### To create a new environment which includes ipykernel
+
 ###### To create a new environment which includes ipykernel
+
 Use a command like
 
 ```
@@ -39,7 +45,9 @@ conda create --name ENVIRONMENT_NAME ipykernel
 conda activate ENVIRONMENT_NAME
 ```
 
-###### To add ipykernel to an existing environment
+
+##### To add ipykernel to an existing environment
+
 
 Use a command like one below, depending on your specific case:
 
@@ -104,7 +112,8 @@ Click the blue Launch button. You may have to wait for resources to be allocated
 
 At this point, you can start a new notebook or open an existing one.
 
-###### Start a new notebook
+##### Start a new notebook
+
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
 
@@ -116,7 +125,9 @@ Your new Notebook will open.
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
 
 
-###### Use an existing Notebook
+
+##### Use an existing Notebook
+
 
 If you already have a notebook, find it in the file list and click on it to open it.
 
@@ -127,7 +138,9 @@ Change the Python environment to use by navigating to **Kernel > Change kernel**
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
 
-##### Additional content: using Python from Singularity containers
+
+#### Additional content: using Python from Singularity containers
+
 
 Similar to the process described
 on  [https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container](https://stackoverflow.com/questions/63702536/jupyter-starting-a-kernel-in-a-docker-container), a Python installation inside a Singularity container can be used from Jupyter Notebook as well, although the process
@@ -163,3 +176,5 @@ vim $HOME/.local/share/jupyter/kernels/tensorflow_latest/kernel.json
 ```
 
 Then start Jupyter Notebook and select the newly created kernel. The libraries inside the container should be there.
+
+
