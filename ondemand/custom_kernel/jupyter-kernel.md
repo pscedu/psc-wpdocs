@@ -100,7 +100,7 @@ In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC cre
 
 <h5>Request an interactive session for your Notebook.</h5>
 
-Navigate to  **Interactive Apps > Jupyter Notebook**.
+Navigate to  **Interactive Apps > Jupyter Notebook**
 
 ![OnDemand at Bridges-2. Interactive Apps tab, Jupyter Notebook item](https://github.com/pscedu/psc-wpdocs/raw/master/ondemand/custom_kernel/images/image1.png)
 
@@ -115,7 +115,7 @@ At this point, you can start a new notebook or open an existing one.
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
 
-![alt_text](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image2.png "OnDemand at Bridges-2. Jupyter Notebook is running, and a new Notebook is being started while selecting the custom Python environment just created.")
+![OnDemand at Bridges-2. Jupyter Notebook is running, and a new Notebook is being started while selecting the custom Python environment just created](https://github.com/pscedu/psc-wpdocs/blob/master/ondemand/custom_kernel/images/image2.png)
 
 Your new Notebook will open.
 
