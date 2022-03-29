@@ -1,4 +1,4 @@
-### Custom Conda Environments with OnDemand on Bridges-2
+<h3>Custom Conda Environments with OnDemand on Bridges-2</h3>
 
 You can  use the Python “ipykernel” package to create a definition file for  Jupyter Notebook which
 uses a custom Python installation rather than the default one. After creating that file and launching Jupyter Notebooks via
@@ -10,7 +10,7 @@ The steps to do this are:
 2. Create the custom Jupyter Notebook kernel.
 3. Start the custom Jupyter Notebook kernel.
 
-#### Install “ipykernel”
+<h4>Install “ipykernel”</h4>
 
 This process can be performed with a custom Conda environment, with the Python installation in the Bridges-2 nodes, or
 with any other Python installation available; the important thing is to run it from the Python environment that will 
@@ -20,7 +20,7 @@ The “ipykernel” package must be available in this environment to generate th
 “ipykernel” package can be removed after that.
 
 
-##### Load and activate the Anaconda3 module
+<h5>Load and activate the Anaconda3 module</h5>
 
 In [an interactive session on Bridges-2](https://www.psc.edu/resources/bridges-2/user-guide-2/#interactive-sessions), load and activate anaconda3. 
 
@@ -30,13 +30,11 @@ conda activate # source /opt/packages/anaconda3/etc/profile.d/conda.sh
 ```
 
 
-#### Add ipykernel to an environment
+<h4>Add ipykernel to an environment</h4>
 
 Create a new environment and install the “ipykernel” package along with any other packages you might need, or install “ipykernel” to any existing Conda environment you have.
 
-##### To create a new environment which includes ipykernel
-
-###### To create a new environment which includes ipykernel
+<h5>To create a new environment which includes ipykernel</h5>
 
 Use a command like
 
@@ -46,7 +44,7 @@ conda activate ENVIRONMENT_NAME
 ```
 
 
-##### To add ipykernel to an existing environment
+<h5>To add ipykernel to an existing environment</h5>
 
 
 Use a command like one below, depending on your specific case:
@@ -66,7 +64,7 @@ To use the default Bridges-2 Python installation or modules
 python3 -m pip install ipykernel --user
 ```
 
-#### Create the custom Jupyter Notebook kernel
+<h4>Create the custom Jupyter Notebook kernel</h4>
 
 Run “ipykernel” to create the custom Jupyter Notebook kernel, so that the Python installation is mapped using
 a definition file. This can be done by either running the “ipykernel” module from the environment that is going to be
@@ -93,14 +91,14 @@ Installed kernelspec NEW_ENV in /jet/home/user/.local/share/jupyter/kernels/new_
 
 **Note:** The “ipykernel” can be removed from the environment after the custom kernel is created.
 
-#### Start the custom Jupyter Notebook kernel.
+<h4>Start the custom Jupyter Notebook kernel</h4>
 
 Now you are ready to start your custom Jupyter notebook kernel from an interactive session in OnDemand.
 
-##### Log in to OnDemand
+<h5>Log in to OnDemand</h5>
 In a browser window, go to ondemand.bridges2.psc.edu and log in with our PSC credentials.
 
-##### Request an interactive session for your Notebook.
+<h5>Request an interactive session for your Notebook.</h5>
 
 Navigate to  **Interactive Apps > Jupyter Notebook**.
 
@@ -112,7 +110,7 @@ Click the blue Launch button. You may have to wait for resources to be allocated
 
 At this point, you can start a new notebook or open an existing one.
 
-##### Start a new notebook
+<h5>Start a new notebook</h5>
 
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
@@ -126,7 +124,7 @@ as it will try to use the base different Conda binaries and not the ones you set
 
 
 
-##### Use an existing Notebook
+<h5>Use an existing Notebook</h5>
 
 
 If you already have a notebook, find it in the file list and click on it to open it.
@@ -139,7 +137,7 @@ Change the Python environment to use by navigating to **Kernel > Change kernel**
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
 
 
-#### Additional content: using Python from Singularity containers
+<h4>Additional content: using Python from Singularity containers</h4>
 
 
 Similar to the process described
