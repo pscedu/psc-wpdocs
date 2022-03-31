@@ -134,7 +134,12 @@ Change the Python environment to use by navigating to **Kernel > Change kernel**
 
 
 
+
+
+
+
 ![Alt text](https://www.psc.edu/wp-content/uploads/2022/03/change-kernel.jpg)
+
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
 as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
