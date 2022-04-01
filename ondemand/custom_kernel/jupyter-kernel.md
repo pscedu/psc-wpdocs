@@ -134,13 +134,7 @@ If you already have a notebook, find it in the file list and click on it to open
 Change the Python environment to use by navigating to **Kernel > Change kernel**.  Choose the new Python environment to use.
 
 
-
-
-
-
-
-
-![Alt text](https://www.psc.edu/wp-content/uploads/2022/03/change-kernel.jpg)
+![change-kernel](https://user-images.githubusercontent.com/30911386/161283360-69c822bf-f438-46e4-b58b-411df42ce794.jpeg)
 
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
