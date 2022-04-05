@@ -5,10 +5,11 @@ uses a custom Python installation rather than the default one. After creating th
 OnDemand, you can use your custom environment.
 
 The steps to do this are:
-
-1. Install “ipykernel”.
-2. Create the custom Jupyter Notebook kernel.
-3. Start the custom Jupyter Notebook kernel.
+<ol>
+    <li>Install “ipykernel”</li>
+    <li>Create the custom Jupyter Notebook kernel</li>
+    <li>Start the custom Jupyter Notebook kernel</li>
+</ol>
 
 <h4>Install “ipykernel”</h4>
 
