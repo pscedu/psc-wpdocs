@@ -20,4 +20,4 @@ integrity along the way.
 
 She has a passion for great documentation and writing how-to
 guides. Sometimes she publishes things on
-[Medium](https://medium.com/@lizpantalone)
+[Medium](https://medium.com/@lizpantalone).
