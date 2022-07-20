@@ -13,4 +13,4 @@ Cyberinfrastructure Integration group for two years.
 
 She holds a BA in chemistry, and two master's degrees: in chemistry
 and in information science. Outside of work, she likes to garden, read and
-is reaquainting herself with sewing machine, and
+is reaquainting herself with sewing machine, and learning to quilt.
