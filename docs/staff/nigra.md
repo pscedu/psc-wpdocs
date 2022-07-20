@@ -2,7 +2,7 @@ Deb has over 30 years of experience in HPC consulting. She contributes
 to maintaining and creating content for the PSC website, particularly
 the user documentation, and for PSC-related projects like the [Three
 Rivers Optical Exchange (3ROX)](https://3rox.org). She also helps to
-maintain and provide content for the NIH's [Human Biomolecular Atlas Progam (3ROX)](https://3rox.org)  website.
+maintain and provide content for the NIH's [Human Biomolecular Atlas Progam (HuBMAP)](https://3rox.org)  website.
 
 She worked as a project manager in the NSF's Extreme Science and
 Engineering Discovery Environment (XSEDE), administering project
