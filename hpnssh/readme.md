@@ -2,6 +2,20 @@
 
 These options can be used on the command line in the typical '-o Option ' format or embedded in the ssh\_config or sshd\_config files.
 
+## LibreSSL Support:
+Changes in LibreSSL version 3.5 and 3.6 prevent the use of the threaded AES CTR cipher. 
+In those cases HPNSSH will fallback to the serial versionof the AES CTR cipher. A warning
+is printed to stderr. 
+
+##Automatic Port Fallback
+Starting with version 17v3 the hpnssh client now uses TCP port 2222 to connect automatically as this is the default hpnsshd port. However, we understand that many users will be end up connecting standard SSH servers on port 22. To make the easier for users the client will fall back to port 22 in the event that there is no hpnssh server running on port 2222. The behaviour can be modifed as follows:
+<dl>
+<dt>-oFallback=[yes|no] </dt> 
+<dd>Enable or disable port fallback. Default is yes.</dd>
+<dt>-oFallbackPort=[N] </dt>
+<dd>N is the port number that should be used for fall back. Default is 22.</dd>
+
+</dl>
 ## Metrics options
 
 This features allows the client to request tcp networking information from the
