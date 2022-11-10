@@ -39,12 +39,9 @@ MetricsPath=[/filepath/filename]
 : This is the path to the files where the remote and local data will be stored. Default: `./ssh\_stack\_metrics.[local|remote]`.
     Any other option chosen by the user will have a .local or .remote suffix appended to it.
 
-<dl>
-<dt>Example usage</dt>
-<dd>
-> `ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results`
-</dd>
-</dl>
+Example usage
+: `ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results`
+
 
 ## SCP resume options
 
@@ -74,15 +71,16 @@ be disabled.
 <dd>Default is no. Set to "yes" to disable the message authentication cipher after authentication. This must be set to "yes" on both the client and server.</dd>
 <dt>NoneCipherSwitch=[yes|no]</dt>
 <dd>Default is no. If the NoneEnabled option is set to yes then the connection will disable encryption after authentication. If NoneMacEnabled and NoneEnabled is set to yes then both the cipher and MAC will be disabled after authentication. 
-<dt>Example usage</dt>
-<dd> > `scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
+    </dd>
+</dl>
+Example usage</dt>
+: > `scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
 
 will, after authentication disable encryption while transferring `hugefile` from the local host to the remote host. The remote host must have `NoneEnabled=yes` set the in the sshd\_config file.
->scp -oNoneEnabled=yes -oNoneMacEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~
+> `scp -oNoneEnabled=yes -oNoneMacEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
 
 Will, after authentication disable both encryption *and* the MAC while transferring `hugefile` from the local host to the remote host. All 3 options must be set to yes on the client to disabled the MAC. The remote host must have both `NoneEnabled=yes` and `NoneMacEnabled=yes` set the in the sshd\_config file. 
-</dd>
-</dl>
+
 
 ## HPN specific options
  
