@@ -42,7 +42,7 @@ MetricsPath=[/filepath/filename]
 <dl>
 <dt>Example usage</dt>
 <dd>
-> ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results
+> `ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results`
 </dd>
 </dl>
 
@@ -50,16 +50,16 @@ MetricsPath=[/filepath/filename]
 
 This feature allows SCP to resume failed transfers. In the event of a failed transfer
 issues the same scp command with the '-Z' option. For example - if you issued:
->`scp myhugefile me@host:~`
+> `scp myhugefile me@host:~`
 
 and it dies halfway through the transfer issuing
->`scp -Z myhugefile me@host:~`
+> `scp -Z myhugefile me@host:~`
 will resume the transfer at the point where it left off.
 
 SCP however, will use the first scp in the user's path. This might not support the resume
 function and the attempt will fail. In those cases the user can explicitly define the path to the resume enabled scp with the '-z' option. This would be the path on the *remote* host. For example:
 
->`scp -Z -z /opt/hpnssh/usr/bin/scp myhugefile me@host:~`
+> `scp -Z -z /opt/hpnssh/usr/bin/scp myhugefile me@host:~`
 
 ## None cipher options
 To use the NONE option you must have the NoneEnabled switch set on the server and
