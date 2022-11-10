@@ -88,7 +88,7 @@ Will, after authentication disable both encryption *and* the MAC while transferr
  
 <dl>
 <dt>TcpRcvBuf=[int]KB client </dt> 
-<dd>Set the TCP socket receive buffer to *int* Kilobytes. It can be set up to the maximum socket size allowed by the system. This is useful in situations where the TCP receive window is set low but the maximum buffer size is set higher (as is typical). This works on a per TCP connection basis. You can also use this to artificially limit the transfer rate of the connection. In these cases the throughput will be no more than n/RTT. The minimum buffer size is 1KB . Default is the current system wide TCP receive buffer size.
+<dd>Set the TCP socket receive buffer to <em>int</em> Kilobytes. It can be set up to the maximum socket size allowed by the system. This is useful in situations where the TCP receive window is set low but the maximum buffer size is set higher (as is typical). This works on a per TCP connection basis. You can also use this to artificially limit the transfer rate of the connection. In these cases the throughput will be no more than n/RTT. The minimum buffer size is 1KB . Default is the current system wide TCP receive buffer size.
 </dd>
 
 <dt>TcpRcvBufPoll=[yes/no] client/server </dt> 
