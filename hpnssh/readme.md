@@ -34,12 +34,14 @@ but may provide insight into what is happening during the connection.
 <dt>MetricsInterval=[N]</dt>
 <dd> N is the polling period in seconds. Default: 5 seconds.</dd>
 
-    <dt>MetricsPath=[/filepath/filename]</dt>
+<dt>MetricsPath=[/filepath/filename]</dt>
 <dd>This is the path to the files where the remote and local data will be stored. Default: `./ssh\_stack\_metrics.[local|remote]`.
     Any other option chosen by the user will have a .local or .remote suffix appended to it.
   </dd>
     </dl>
-<b>Example usage:</b>  `ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results`
+<b>Example usage:</b>
+
+> `ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results`
   
 
 ## SCP resume options
@@ -76,9 +78,10 @@ be disabled.
 > `scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
 
 will, after authentication disable encryption while transferring `hugefile` from the local host to the remote host. The remote host must have `NoneEnabled=yes` set the in the sshd\_config file.
+
 > `scp -oNoneEnabled=yes -oNoneMacEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
 
-Will, after authentication disable both encryption *and* the MAC while transferring `hugefile` from the local host to the remote host. All 3 options must be set to yes on the client to disabled the MAC. The remote host must have both `NoneEnabled=yes` and `NoneMacEnabled=yes` set the in the sshd\_config file. 
+will, after authentication disable both encryption *and* the MAC while transferring `hugefile` from the local host to the remote host. All 3 options must be set to yes on the client to disabled the MAC. The remote host must have both `NoneEnabled=yes` and `NoneMacEnabled=yes` set the in the sshd\_config file. 
 
 
 ## HPN specific options
