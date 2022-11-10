@@ -5,13 +5,13 @@ but does have some nuances. This document will go through the process step by
 step to help you get the most from your installation. If you find any errors 
 please contact us at hpnssh@psc.edu.
 
-### Step 1: Get the source code.
+### Step 1: Get the source code
 
 The official repository for HPN-SSH is found at 
 https://github.com/rapier1/openssh-portable. Get a copy with<br /> `git clone https://github.com/rapier1/openssh-portable`. 
 
 
-### Step 2: Install dependencies. 
+### Step 2: Install dependencies
 
 * What you need to install is dependent on your distribution but will include:
 * OpenSSL development package
@@ -26,7 +26,7 @@ https://github.com/rapier1/openssh-portable. Get a copy with<br /> `git clone ht
 * Autoconf
 * Automake
 
-### Step 3: Install optional dependencies. 
+### Step 3: Install optional dependencies
 
 This optional libraries will extend the functionality of HPN-SSH to allow the use of PAM 
 authentication, Kerberos, graphical password tools, etc. 
