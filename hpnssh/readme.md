@@ -75,6 +75,7 @@ be disabled.
     </dd>
 </dl>
 <b>Example usage:</b>
+
 > `scp -oNoneEnabled=yes -oNoneCipherSwitch=yes hugefile me@remote:~`
 
 will, after authentication disable encryption while transferring `hugefile` from the local host to the remote host. The remote host must have `NoneEnabled=yes` set the in the sshd\_config file.
