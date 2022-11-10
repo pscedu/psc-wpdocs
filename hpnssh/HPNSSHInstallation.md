@@ -1,4 +1,4 @@
-##HPN-SSH Installation
+## HPN-SSH Installation
 
 The process of installing HPN-SSH from source is a relatively painless process
 but does have some nuances. This document will go through the process step by 
@@ -8,7 +8,7 @@ please contact us at hpnssh@psc.edu.
 ### Step 1: Get the source code.
 
 The official repository for HPN-SSH is found at 
-https://github.com/rapier1/openssh-portable. Get a copy with `git clone https://github.com/rapier1/openssh-portable`. 
+https://github.com/rapier1/openssh-portable. Get a copy with<br /> `git clone https://github.com/rapier1/openssh-portable`. 
 
 
 ### Step 2: Install dependencies. 
@@ -37,7 +37,7 @@ authentication, Kerberos, graphical password tools, etc.
 
 ### Step 4: Build the configure file
 
-> `generate ./configure with “autoreconf -f -i”`
+> `generate ./configure with “autoreconf -f -i"`
 
 
 ### Step 5: Configuration
@@ -49,7 +49,7 @@ either no additional configuration options or modifying the prefix will suffice.
 
 ### Step 6: Make
 
-Make the application with `make -j[num cores]`. So if you have an 8 core system 
+Make the application with `make -j[<em>num cores</em>]`. So if you have an 8 core system 
 you’d use `make -j8`
 
 ### Step 7: Installation
@@ -66,9 +66,9 @@ make sure the clients point at the correct port.
 
 This user is part of the privilege separation routines used in the 
 pre-authentication sandbox. I suggest using the following command: 
-
+<span style="whitespace:nowrap">
 `sudo useradd --system --shell /usr/sbin/nologin --comment="Privilege separated HPNSSH User" --home=/run/hpnsshd hpnsshd`
-
+</span>
 Alternatively, you can use `vipw` to add the user manually. 
 
 ### Step 9: Finishing up.
