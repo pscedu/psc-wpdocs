@@ -62,20 +62,20 @@ NoneCipher and NoneMac options. For more information use `man hpnsshd_config` an
 fallback to 22 if it’s not found there. So if you do change the default port, you’ll need to 
 make sure the clients point at the correct port. 
 
-### Step 8: Set up the hpnsshd user. 
+### Step 8: Set up the hpnsshd user
 
 This user is part of the privilege separation routines used in the 
-pre-authentication sandbox. I suggest using the following command: 
+pre-authentication sandbox. I suggest using the following command: <br />
 <span style="whitespace:nowrap">
 `sudo useradd --system --shell /usr/sbin/nologin --comment="Privilege separated HPNSSH User" --home=/run/hpnsshd hpnsshd`
-</span>
+</span><br />
 Alternatively, you can use `vipw` to add the user manually. 
 
-### Step 9: Finishing up.
+### Step 9: Finishing up
 
 At this point you can start hpnsshd manually by running `sudo /usr/sbin/hpnsshd` or whatever the full path to the hpnsshd binary might be. However, this won’t restart automatically on reboot. To do this you’ll need to install an appropriate systemd configuration file. If that seems like a good idea to you then following steps may be of help. Otherwise, you are done. Enjoy!
 
-### Step 10: Installing a systemd startup file. 
+### Step 10: Installing a systemd startup file
 
 The correct systemd startup file depends on the distribution you are using. For system 
 using systemd (you start a service with systemctl) create a file at `/lib/systemd/system/hpnssh.service`  with the following contents. NB: you may need to update the paths to match your installation: 
@@ -297,7 +297,7 @@ esac
 exit 0
 ```
 
-### Step 10: Working with SELinux. 
+### Step 10: Working with SELinux
 
 If you are using SELinux you’ll need to run a few more commands in order to grant hpnssh the necessary exceptions to open sockets, files, read keys, and so forth. Run the following commands to allow this. Note: I’m not sure every single one of these is needed so if someone knows better please let me know. Again, double check the paths of the files being updated. 
 
