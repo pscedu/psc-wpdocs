@@ -127,8 +127,8 @@ the multithreaded MT-AES-CTR cipher. Set to no by default.
 </dd>
 </dl>
 
-###Credits: 
+### Credits: 
 This patch was conceived, designed, and led by Chris Rapier (rapier@psc.edu) The majority of the actual coding for versions up to HPN12v1 was performed by Michael Stevens (mstevens@andrew.cmu.edu). The MT-AES-CTR cipher was implemented by Ben Bennet (ben@psc.edu) and improved by Mike Tasota (tasota@gmail.com) an NSF REU grant recipient for 2013. Mitchell Dorrell (mwd@psc.edu) has provided invaluable assistance on improving the performance of ChaCha20 and Poly1305 along with other critical work. Allan Jude provided the code for the NoneMac and buffer normalization. This work was financed, in part, by Cisco System, Inc., the National Library of Medicine, and the National Science Foundation.
 
-###Sponsors: 
+### Sponsors: 
 Thanks to Niklas Hambuchen for being the first sponsor of HPN-SSH via github's sponsor program! Join our sponsors at <a href="https://github.com/sponsors/rapier1">our github</a>, view our <a href="https://www.psc.edu/hpn-ssh-home/support/">funding page</a>, or contact at hpnssh@psc.edu. 
