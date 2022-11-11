@@ -14,7 +14,7 @@ Modifying the static size to be a larger value would only serve to waste space i
 
 There were only two changes needed to adjust the SSH window based on the TCP window. One was to enable the buffer code to allocate larger sizes. This was done using a variable that replaced the constant that was the maximum size allowed by the buffer code, and a function to modify the variable’s default value to something larger. The second change was to get the TCP window size from getsockopt and adjust the window size to match, but only if the new size was larger than the old one. The returned value from getsockopt is also doubled because OpenSSH only sends a WINDOW_ADJUST message when the window is half full in order to save on the number of WINDOW_ADJUST messages sent with a cost of doubling the buffer size.
 
-## Tests {tests}
+<h2 id="tests">Tests</h2>
 
 The following hosts were used in the performance tests. kirana was running a 2.6 linux kernel with the Web100 patch. tg-login was running a 2.6 kernel without autotuning, but a tcp window size of 10,000,000 bytes. The link BDP of a 1Gbps with a 0.04 second delay is 40,000,000 bits or 5,000,000 bytes. The 300MB file was copied from /dev/shm on one machine to /dev/null on the other.
 
@@ -132,6 +132,7 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </tbody>
 </table>
 &nbsp;
+
 <h2 id="scp">Unmodified SCP Performance</h2>
 <table class="table-striped">
 <tbody>
@@ -179,52 +180,6 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </table>
  
 
-## Unmodified SCP Performance
-<table class="table-striped">
-<tbody>
-<tr>
-<td>3des-cbc</td>
-<td>1.3MB/s</td>
-</tr>
-<tr>
-<td>arcfour</td>
-<td>1.9MB/s</td>
-</tr>
-<tr>
-<td>aes192-cbc</td>
-<td>1.8MB/s</td>
-</tr>
-<tr>
-<td>aes256-cbc</td>
-<td>1.8MB/s</td>
-</tr>
-<tr>
-<td>aes128-ctr</td>
-<td>1.9MB/s</td>
-</tr>
-<tr>
-<td>aes192-ctr</td>
-<td>1.8MB/s</td>
-</tr>
-<tr>
-<td>aes256-ctr</td>
-<td>1.8MB/s</td>
-</tr>
-<tr>
-<td>blowfish-cbc</td>
-<td>1.9MB/s</td>
-</tr>
-<tr>
-<td>cast128-cbc</td>
-<td>1.7MB/s</td>
-</tr>
-<tr>
-<td>rijndael-cbc@lysator.liu.se</td>
-<td>1.8MB/s</td>
-</tr>
-</tbody>
-</table>
- 
 
 ## Modified SCP Performance
 <img class=" size-full wp-image-261" src="/wp-content/uploads/2012/05/scp-mod.png" style="width: 100%;" alt="Graph of Modified SCP" width="640" height="480" />

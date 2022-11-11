@@ -1,24 +1,23 @@
-##HPN-SSH Installation
+## HPN-SSH Installation
 
 The process of installing HPN-SSH from source is a relatively painless process
 but does have some nuances. This document will go through the process step by 
 step to help you get the most from your installation. If you find any errors 
 please contact us at hpnssh@psc.edu.
 
-### Step 1: Get the source code.
+### Step 1: Get the source code
 
 The official repository for HPN-SSH is found at 
-https://github.com/rapier1/openssh-portable. Get a copy with  
-"git clone https://github.com/rapier1/openssh-portable”. 
+https://github.com/rapier1/openssh-portable. Get a copy with<br /> `git clone https://github.com/rapier1/openssh-portable`. 
 
 
-### Step 2: Install dependencies. 
+### Step 2: Install dependencies
 
 * What you need to install is dependent on your distribution but will include:
 * OpenSSL development package
 	* Debian: libssl-dev
     * Fedora: openssl-devel
-	* Alternatively you can use LIbreSSL
+	* Alternatively you can use LibreSSL
 		* However, in this case we suggest compiling and installing libressl manually as there are few maintained linux packages for LibreSSL. 
 		* Also, LibreSSL v3.5 and v3.6 do not support the threaded AES-CTR cipher. If that’s important to you then you should use OpenSSL. 
 * Z compression library
@@ -27,7 +26,7 @@ https://github.com/rapier1/openssh-portable. Get a copy with
 * Autoconf
 * Automake
 
-### Step 3: Install optional dependencies. 
+### Step 3: Install optional dependencies
 
 This optional libraries will extend the functionality of HPN-SSH to allow the use of PAM 
 authentication, Kerberos, graphical password tools, etc. 
@@ -38,7 +37,7 @@ authentication, Kerberos, graphical password tools, etc.
 
 ### Step 4: Build the configure file
 
-> `generate ./configure with “autoreconf -f -i”`
+> `generate ./configure with “autoreconf -f -i"`
 
 
 ### Step 5: Configuration
@@ -50,36 +49,36 @@ either no additional configuration options or modifying the prefix will suffice.
 
 ### Step 6: Make
 
-Make the application with `make -j[num cores]`. So if you have an 8 core system 
+Make the application with `make -j[<em>num cores</em>]`. So if you have an 8 core system 
 you’d use `make -j8`
 
-###Step 7: Installation
+### Step 7: Installation
 
 After HPN-SSH successfully builds, install it with `sudo make install`. This will install the binaries, configuration files, and generate the unique host keys used. At this point you can make changes to the ssh client and server default configuration. These files are 
 found, generally, in /etc/hpnssh/ssh_config and sshd_config respectively. You may want to 
 change the default port from 2222 to some other value. You may also want to enable the 
 NoneCipher and NoneMac options. For more information use `man hpnsshd_config` and 
 `man hpnssh_config`. Note: The hpnssh client expects the server to be on port 2222 but will 
-fallback to 22 if it’s not found there. So if you do change the default port you’ll need to 
+fallback to 22 if it’s not found there. So if you do change the default port, you’ll need to 
 make sure the clients point at the correct port. 
 
-###Step 8: Set up the hpnsshd user. 
+### Step 8: Set up the hpnsshd user
 
 This user is part of the privilege separation routines used in the 
-pre-authentication sandbox. I suggest using the following command: 
-
+pre-authentication sandbox. I suggest using the following command: <br />
+<span style="whitespace:nowrap">
 `sudo useradd --system --shell /usr/sbin/nologin --comment="Privilege separated HPNSSH User" --home=/run/hpnsshd hpnsshd`
-
+</span><br />
 Alternatively, you can use `vipw` to add the user manually. 
 
-###Step 9: Finishing up.
+### Step 9: Finishing up
 
 At this point you can start hpnsshd manually by running `sudo /usr/sbin/hpnsshd` or whatever the full path to the hpnsshd binary might be. However, this won’t restart automatically on reboot. To do this you’ll need to install an appropriate systemd configuration file. If that seems like a good idea to you then following steps may be of help. Otherwise, you are done. Enjoy!
 
-###Step 10: Installing a systemd startup file. 
+### Step 10: Installing a systemd startup file
 
 The correct systemd startup file depends on the distribution you are using. For system 
-using systemd (you start a service with systemctl) create a file at `/lib/systemd/system/hpnssh.service`  with the following contents NB: you may need to update the paths to match your installation: 
+using systemd (you start a service with systemctl) create a file at `/lib/systemd/system/hpnssh.service`  with the following contents. NB: you may need to update the paths to match your installation: 
 
 ```
 [Unit]
@@ -298,9 +297,9 @@ esac
 exit 0
 ```
 
-###Step 10: Working with SELinux. 
+### Step 10: Working with SELinux
 
-If you are using SELinux you’ll need to run a few more commands in order to grant hpnssh the necessary exceptions to open sockets, files, read keys, and so forth. Run the following commands to allow this. Note, I’m not sure every single one of these is needed so if someone knows better please let me know. Again, double check the paths of the files being updated. 
+If you are using SELinux you’ll need to run a few more commands in order to grant hpnssh the necessary exceptions to open sockets, files, read keys, and so forth. Run the following commands to allow this. Note: I’m not sure every single one of these is needed so if someone knows better please let me know. Again, double check the paths of the files being updated. 
 
 ```
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_dsa_key  
