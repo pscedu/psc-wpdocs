@@ -28,11 +28,16 @@ This is available as of HPN15v5 for OpenSSH 8.8.
 
 **Pipelining HMAC generation:** The Hash-based Message Authentication Code (HMAC) is a one way cryptographic hash used by ssh to ensure that a datagram has not been modified en-route between the hosts. This ensures that the data has not been subjected to a man in the middle attack. In OpenSSH this is a step in a very linear process. No other work can be conducted (such as encrypting other data) while the HMAC is being computed. In many cases this can act a bottleneck on throughput. HPN-SSH is proposing to pipeline this process in order to mitigate this bottleneck as much as possible.
 
+Update: The primary method of computing the MAC now happens after encryption which prevents pipelining for working effectively. However, we've been able to significantly improve the performance of the UMAC used for the AES counter cipher. In our tests this resulted in a 20% performance improvement. However, this requires HPN-SSH being bult against OpenSSL 3.0. We've also improved the performance of the Poly1305 cipher used by the default cipher of Chacha20 by using assembly, as oppessed to C, to generate the MAC. While the assembler isn't supported on every platform it will fall back to using the C code if it isn't. 
+
 **Packaging and Distribution:** HPN-SSH was, for a very long time, only available as a series of patches. Later it became a GitHub repo. This turned out to be a non-optimal method of distributing HPN-SSH to the public. With this in mind we will be working to provide precompiled packages for a variety of operating systems and Linux distributions and the creation of canonical package repositories (such as PPAs). We will also be reaching out to distribution maintainers to make HPN-SSH an option for all of their users.
 
-Our first online repo is now available for Ubuntu (focal and impish). Add it with
+Our first online repo is now available for Ubuntu (focal and jammy). Add it with
 
 >`sudo add-apt-repository ppa:rapier1/hpnssh`
+
+Fedora RPMs can be added with 
+>`sudo dnf copr enable rapier1/hpnssh`
 
 ## What can I do to help? 
 
@@ -44,4 +49,4 @@ Stay up-to-date on progress and improvements to HPN-SSH by [joining this list, i
 
 If you care about HPN-SSH there is no better way to show your support than making a donation to the Pittsburgh Supercomputing Center. I do not personally receive any money from these donations but your support ends up supporting our work. Any amount is worth while - even a dollar will show PSC and CMU your support for our work. Seriously, show your support in order to both keep HPN-SSH current and fund new improvements.
 
-To support HPN-SSH, go to the PSC giving page at [https://www.psc.edu/giving/](https://www.psc.edu/giving/) and click the "Give online" button.  In the next window, choose "Add a designation" and note that it is to support HPN-SSH. Thank you!
+To support HPN-SSH, go to the PSC giving page at [https://www.psc.edu/giving/](https://www.psc.edu/giving/) and click the "Give online" button. In the next window, choose "Add a designation" and note that it is to support HPN-SSH. Thank you!
