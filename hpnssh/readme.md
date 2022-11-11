@@ -2,10 +2,10 @@
 
 These options can be used on the command line in the typical '-o Option ' format or embedded in the ssh\_config or sshd\_config files.
 
-## LibreSSL Support:
+## LibreSSL Support
 Changes in LibreSSL version 3.5 and 3.6 prevent the use of the threaded AES CTR cipher. 
 In those cases HPNSSH will fallback to the serial versionof the AES CTR cipher. A warning
-is printed to stderr. 
+is printed to stderr. This shoudl be resolved in LibreSSL 3.7.
 
 ##Automatic Port Fallback
 Starting with version 17v3 the hpnssh client now uses TCP port 2222 to connect automatically as this is the default hpnsshd port. However, we understand that many users will be end up connecting standard SSH servers on port 22. To make the easier for users the client will fall back to port 22 in the event that there is no hpnssh server running on port 2222. The behaviour can be modifed as follows:
@@ -14,8 +14,15 @@ Starting with version 17v3 the hpnssh client now uses TCP port 2222 to connect a
 <dd>Enable or disable port fallback. Default is yes.</dd>
 <dt>-oFallbackPort=[N] </dt>
 <dd>N is the port number that should be used for fall back. Default is 22.</dd>
+<dt> Example Usage:</dt>
+<dd>Stop hpnssh from using sshd on port 22 if hpnsshd isn't found on port 2222
+>`hpnssh -oFallback=no`
 
+Have hpnssh fall back to port 2022 if hpnsshd isn't on port 2222
+>`hpnssh -oFallbackPort=2022`
+</dd>
 </dl>
+
 ## Metrics options
 
 This features allows the client to request tcp networking information from the
@@ -34,7 +41,7 @@ but may provide insight into what is happening during the connection.
 <dd> N is the polling period in seconds. Default: 5 seconds.</dd>
 
 <dt>MetricsPath=[/filepath/filename]</dt>
-<dd>This is the path to the files where the remote and local data will be stored. Default: `./ssh\_stack\_metrics.[local|remote]`.
+<dd>This is the path to the files where the remote and local data will be stored. Default: `./ssh_stack_metrics.[local|remote]`.
     Any other option chosen by the user will have a .local or .remote suffix appended to it.</dd>
 <dt>Example usage</dt>
 >ssh -oMetrics=yes -oMetricsInterval=1 -oMetricsPath=/tmp/scp-test-results
@@ -104,4 +111,17 @@ Will, after authentication disable both encryption *and* the MAC while transferr
 <dt>HPNBufferSize=[int]KB client/server </dt> 
 <dd>This is the default buffer size the HPN functionality uses when interacting with nonHPN SSH installations. Conceptually this is similar to the TcpRcvBuf option as applied to the internal SSH flow control. This value can range from 1KB to 14MB (1-14336). Use of oversized or undersized buffers can cause performance problems depending on the length of the network path. The default size of this buffer is 2MB.
 </dd>
+
+<dt>DisableMTAES=[yes/no] client/server</dt>
+<dd>Switch the encryption cipher being used from the multithreaded MT-AES-CTR cipher
+back to the stock single-threaded AES-CTR cipher. Useful on modern processors with
+AES-NI instructions which make the stock single-threaded AES-CTR cipher faster than
+the multithreaded MT-AES-CTR cipher. Set to no by default.
+</dd>
 </dl>
+
+###Credits: 
+This patch was conceived, designed, and led by Chris Rapier (rapier@psc.edu) The majority of the actual coding for versions up to HPN12v1 was performed by Michael Stevens (mstevens@andrew.cmu.edu). The MT-AES-CTR cipher was implemented by Ben Bennet (ben@psc.edu) and improved by Mike Tasota (tasota@gmail.com) an NSF REU grant recipient for 2013. Mitchell Dorrell (mwd@psc.edu) has provided invaluable assistance on improving the performance of ChaCha20 and Poly1305 along with other critical work. Allan Jude provided the code for the NoneMac and buffer normalization. This work was financed, in part, by Cisco System, Inc., the National Library of Medicine, and the National Science Foundation.
+
+###Sponsors: 
+Thanks to Niklas Hambuchen for being the first sponsor of HPN-SSH via github's sponsor program! Join our sponsors at <a href="https://github.com/sponsors/rapier1">our github</a>, view our <a href="https://www.psc.edu/hpn-ssh-home/support/">funding page</a>, or contact at hpnssh@psc.edu. 
