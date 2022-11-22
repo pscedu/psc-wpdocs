@@ -1,9 +1,10 @@
 As PSC’s Scientific Director, Phil directs PSC’s research and research
-support teams, including [Biomedical Applications[(https://www.psc.edu/biomedical-applications/), [AI & Big Data](https://www.cmu.edu/psc/aibd/), and
-User Support for Scientific Applications. In his work, Phil is focused
-on architecting, building, and supporting cutting-edge research
-resources that provide the means to overcome difficult scientific
-problems.
+support teams, including [Biomedical
+Applications](https://www.psc.edu/biomedical-applications/), [AI & Big
+Data](https://www.cmu.edu/psc/aibd/), and User Support for Scientific
+Applications. In his work, Phil is focused on architecting, building,
+and supporting cutting-edge research resources that provide the means
+to overcome difficult scientific problems.
  
 Current projects include building and supporting the [flexible hybrid
 cloud microservices
