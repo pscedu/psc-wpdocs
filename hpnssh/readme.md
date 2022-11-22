@@ -16,6 +16,7 @@ Starting with version 17v3 the hpnssh client now uses TCP port 2222 to connect a
 <dd>N is the port number that should be used for fall back. Default is 22.</dd>
 <dt> Example Usage:</dt>
 <dd>Stop hpnssh from using sshd on port 22 if hpnsshd isn't found on port 2222
+
 >`hpnssh -oFallback=no`
 
 Have hpnssh fall back to port 2022 if hpnsshd isn't on port 2222
