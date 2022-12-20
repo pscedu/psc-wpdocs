@@ -1,4 +1,4 @@
-Derek Simmel joined PSC as Grid Computing Specialist in 2001. Now, as Senior Information Security Officer, Derek focuses on information and systems security for sponsored projects and national and international research and education (R&E) collaborations at PSC. Derek serves as Co-PI for CONECT (NSF OAC #2138307), the NSF ACCESS cyberifrastructure Operations track, and co-leads cybersecurity management for ACCESS.
+Derek Simmel joined PSC as Grid Computing Specialist in 2001. Now, as Senior Information Security Officer, Derek focuses on information and systems security for sponsored projects and national and international research and education (R&E) collaborations at PSC. Derek serves as Co-PI for CONECT (NSF OAC #2138307), the NSF ACCESS cyberinfrastructure Operations track, and co-leads cybersecurity management for ACCESS.
 
 Derek also works on cybersecurity, HPC systems architecture, and data transfer services within PSC, for NSF-funded projects including PSC's Bridges-2 HPC system, the NIH-funded Brain Image Library (BIL), HubMAP project, and Anton2 system, as well as PSC-hosted HPC systems for university research.
 
