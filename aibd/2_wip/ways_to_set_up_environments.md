@@ -125,7 +125,7 @@ pip freeze | grep tensorflow
 	tensorflow-estimator==2.2.0
 ```
 
-**NOTE:** make sure that the target directory for the Anaconda environments is pointing to the `"$SCRATCH"` folder.
+**NOTE:** make sure that the target directory for the Anaconda environments is pointing to the `"$PROJECT"` folder.
 
 More information can be found
 here: [https://www.psc.edu/resources/software/anaconda/](https://www.psc.edu/resources/software/anaconda/)
@@ -182,7 +182,7 @@ cd $LOCAL
 singularity pull --disable-cache docker://USERNAME/CONTAINER
 
 # Finally, since the $LOCAL storage is fast but ephemeral, copy the container back to your file space.
-cp CONTAINER.sif $SCRATCH/ # Or $HOME
+cp CONTAINER.sif $PROJECT/ # Or $HOME
 
 ```
 
