@@ -131,9 +131,9 @@ them with a way to access and infect even more HPC environments.
 Backups should be created as soon as a new functional environment is successfully created, so they can be easily
 recreated in case accidental modifications are performed, access to the actual env directory is lost, or the environment
 has to be deployed on a different host; and the steps for creating them involve generating a detailed list of installed
-packages so it can be used for creating new environments using those values as inputs.
+package, so it can be used for creating new environments using those values as inputs.
 
-<span style="text-decoration:underline;">Warning</span>: restoring backups of environments depends on the origin and
+__Warning__: restoring backups of environments depends on the origin and
 target Operative Systems being (roughly) the same. The environments will likely malfunction if they are not the same.
 Examples for incompatibilities:
 
@@ -179,23 +179,23 @@ conda install conda-pack -c conda-forge
 
 # Pack the environment by specifying the location it's stored.
 conda pack -p /PATH/TO/ORIGINAL_ENV_DIR/
-conda pack -p /home/USER/.conda/envs/pytorch_18.11-py3
+conda pack -p /home/USER/.conda/envs/pytorch_22.12-py3
 
 Collecting packages...
-Packing environment to 'pytorch_18.11-py3.tar.gz'
+Packing environment to 'pytorch_22.12-py3.tar.gz'
 [########################################] | 100% Completed |  11min 52.2s
 
 # Create a new target directory for unpacking the environment.
 # mkdir /PATH/TO/NEW_ENV_DIR/
-mkdir $PROJECT/.conda_mlperf/pytorch_18.11-py3
+mkdir $PROJECT/.conda_mlperf/pytorch_22.12-py3
 
 # Unpack the environment into that target directory.
 # tar -xzf ENV_NAME.tar.gz -C /PATH/TO/NEW_ENV_DIR/
-tar -xzf pytorch_18.11-py3.tar.gz -C /home/USER/pytorch_18.11-py3
+tar -xzf pytorch_22.12-py3.tar.gz -C /home/USER/pytorch_22.12-py3
 
 # Activate the environment
 # conda activate /PATH/TO/NEW_ENV_DIR/
-conda activate $PROJECT/.conda_mlperf/pytorch_18.11-py3
+conda activate $PROJECT/.conda_mlperf/pytorch_22.12-py3
 
 # Unpack the environment by cleaning-up the prefixes.
 conda-unpack
@@ -274,8 +274,8 @@ conda env create -f conda/keras-retinanet4_conda_env_export.yaml --prefix $PROJE
 
 Please do:
 
-* Use a compute node for the install process, so you can make use of the bandwidth and the I/O available there, but try
-  to get the node for more than an hour so the progress is not lost if there are a lot of packages to install.
+* Use a compute node for the installation process, so you can make use of the bandwidth and the I/O available there, but 
+* try to get the node for more than an hour so the progress is not lost if there are a lot of packages to install.
 * When installing packages, try to specify the different packages at once, so Conda doesn't have to run the full
   set of compatibility validations every time.
 * Make sure that the destination folder for the packages is set to use the $PROJECT disk space, as the home
@@ -287,7 +287,7 @@ Please do:
 * Export the list of installed packages as soon as you confirm that an environment is working as expected. Set a
   mnemonic file name for that list, and save it in a secure place, in case you need to install the environment from
   PROJECT again.
-* If you think an environment is not going to be used anymore but you are not completely sure, consider renaming the
+* If you think an environment is not going to be used anymore, but you are not completely sure, consider renaming the
   Conda directory to something else, and then compress/tar the contents, in case you need them again at some point.
 
 Please don't:

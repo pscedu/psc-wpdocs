@@ -47,8 +47,6 @@ export PATH=”${PATH}:${HOME}/.local/bin”
 # Install TensorFlow
 python3 -m "pip" install tensorflow-gpu --user
 	Collecting tensorflow-gpu [...]
-	You are using pip version 8.1.2, however version 20.2.3 is available.
-    You should consider upgrading via the 'pip install --upgrade pip' command.
 	Successfully installed [...]
 
 # Double-check if TensorFlow was indeed installed.
@@ -170,10 +168,7 @@ For building a container from the ground up, in case it’s not present on Bridg
 ```shell
 
 # Start a job for building the container faster.
-interact --egress
-
-# Load the Singularity module.
-module load singularity
+interact
 
 # Change to the high-speed flash storage folder.
 cd $LOCAL
@@ -190,12 +185,18 @@ cp CONTAINER.sif $PROJECT/ # Or $HOME
 The example above pulled a container from Docker, but there are other valid container origin points to pull containers
 from:
 
-* library://            `Singularity Container Library (https://cloud.sylabs.io/library)`
-* shub://                `Singularity Hub (https://singularity-hub.org/)`
-* docker://            `Docker Hub (https://hub.docker.com)`
-* Local container        `Container already on Docker infrastructure`
-* Recipe files            `Blueprint with container to use and customizations`
-* Local archive        `Tar file with container files`
+- [Singularity Container Library](https://cloud.sylabs.io/library)
+  * library://
+- [Singularity Hub](https://singularity-hub.org/)
+  * shub://
+- [Docker Hub](https://hub.docker.com)
+  * docker://
+- Container already on Docker infrastructure
+  * Local container
+- Blueprint with container to use and customizations
+  * Recipe files
+- Tar file with container files
+  * Local archive
 
 More information can be found
 here: [https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
