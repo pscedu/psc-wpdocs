@@ -1,4 +1,7 @@
-# Introduction
+[//]: # (Status: Draft)
+# Conda Best Practices
+
+## Introduction
 
 Conda is a Python package distribution that allows setting up development environments and handling dependencies for a
 curated set of packages that are widely used for Data Science and Machine Learning tasks. It is similar to using pip and
