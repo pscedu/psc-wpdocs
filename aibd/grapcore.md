@@ -5,7 +5,6 @@
 - 2x AMD EPYC Milan 7543 - 32-Core, 64-Threads, 2.80GHz Base, 256MB Cache - 225w
 - 16x 32GB (512GB total) DDR4 3200MHz ECC REG Memory Module
 - 1x 240GB 2.5in SATA SSD (OS)
-[//]: # (1.6TB 2.5in NVMe SSD U.2 3DWPD 1)
 - 2x 3.84TB U.2 2.5in NVMe PCIe 3.0 SSD
 - 2x AMD 100-506116 Instinct MI100 Graphic Card - 32 GB HBM2 - PCIe 4 
 - 1x NVIDIA ConnectX-6 VPI adapter card HDR IB (200Gb/s) and 200GbE single-port QSFP56 PCIe4.0 x16 tall bracket ROHS R6
@@ -28,7 +27,7 @@
 * `$HOME` (25GB quota) and $PROJECT (project quota) should be accessible.
 
 ## Graphcore hardware configuration
-Regular POD size configurations are on the lines of 16, 54, or 245. Our system is a subset of a base PDO-16 
+Regular POD size configurations are on the lines of 16, 54, or 256. Our system is a subset of a base POD-16 
 configuration as a POD-4, and thus most of the examples and models have to be adapted for running on this 
 smaller-than-usual hardware configuration.
 
@@ -79,7 +78,7 @@ Then, it's necessary to bind a specific Graphcore folder (`--bind /etc/ipuof.con
 how to communicate with the IPU:
 
 
-#### MNIST Job on Python environment Example
+#### MNIST Job Using Container Example
 
 Example output for an MNIST running on a Singularity container. Following the code from [Graphcore SDK 2.6 example](https://github.com/graphcore/tutorials/tree/sdk-release-2.6/tutorials/tensorflow2/keras): 
 
@@ -140,9 +139,9 @@ time singularity exec --bind /etc/ipuof.conf.d /opt/graphcore/containers/tensorf
     user	6m57.052s
     sys	0m49.462s
 ```
-## Run jobs using Python environments
+## Configuring Python environments
 
-### PyTorch example
+### PyTorch
 
 Create a directory for storing your Pythong virtual environments
 ```shell
@@ -183,7 +182,7 @@ python3 -c "import poptorch; print(poptorch.__version__)"
     2.6.0-5cd2f910b9
 ```
 
-### TensorFlow example
+### TensorFlow
 
 Create a directory for storing your Pythong virtual environments
 ```shell
