@@ -125,7 +125,8 @@ When creating a new environment with Conda, there are two main ways to do it:
       - tzdata=2022g=h04d1e81_0
       - wheel=0.37.1=pyhd3eb1b0_0
       - xz=5.2.10=h5eee18b_1
-      - zlib=1.2.13=h5eee18b_0 
+      - zlib=1.2.13=h5eee18b_0
+    prefix: $HOME/.conda/envs/pandas_test 
     ```
     ```shell
     conda env create -f PACKAGES_LIST.yaml --prefix /PATH/TO/NEW_CONDA_ENV
