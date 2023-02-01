@@ -1,4 +1,5 @@
 [//]: # (Status: Draft)
+
 # Conda Best Practices
 
 ## Introduction
@@ -145,9 +146,10 @@ Examples for incompatibilities:
 There are two main ways in which a backup can be created:
 
 A. Export the environment: export the list of packages and then create a new environment when needed using that list as
-   the input.
+the input.
 
 ### Steps for backing-up the env
+
 Activate the env to generate the list of packages for, then export the list of packages to plain text files.
 
 ```shell
@@ -159,7 +161,8 @@ conda list > conda_list.txt
 ```
 
 ### Steps for creating (or restoring) the env
-You can now create environments using the Yaml file with the list of packages from the original env. 
+
+You can now create environments using the Yaml file with the list of packages from the original env.
 
 ```shell
 conda env create -f conda_env_export.yaml --prefix /PATH/TO/NEW_CONDA_ENV
@@ -168,7 +171,8 @@ conda env create -f conda_env_export.yaml --prefix /PATH/TO/NEW_CONDA_ENV
 conda create --clone ORIGIN_CONDA_ENV --prefix=/PATH/TO/NEW_CONDA_ENV
 ```
 
-**Note:** These steps might not work as expected when using a shared target folder (prefix). The env could be created using the regular location first for testing purposes and generating the spec file.
+**Note:** These steps might not work as expected when using a shared target folder (prefix). The env could be created
+using the regular location first for testing purposes and generating the spec file.
 
 B. Pack the environment: pack the whole environment into a compressed tar file, then decompress the file and unpack it
 when needed.
@@ -204,7 +208,8 @@ conda-unpack
 ## Use different directories when needed
 
 Similar to when the .conda symlink from HOME to PROJECT was created in the “Before you start” section (and the
-“[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)” of the Bridges User Guide), it is possible to
+“[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)” of the Bridges User Guide), it is
+possible to
 have multiple directories for the different conda environments, and use that to have a way to archive the different
 environment configurations across time.
 
@@ -216,6 +221,7 @@ should be kept unchanged over time; and names should be restored to their origin
 renamed.
 
 Example: Switch from one conda directory to a new one.
+
 ```shell
 
 # Unlinking the current directory.
@@ -230,6 +236,7 @@ mkdir $PROJECT/.conda
 # Create the symlink again. This step could be ignored if the first one is ignored as well.
 ln -s $PROJECT/.conda ~/.conda  
 ```
+
 ## Create environments on shared locations
 
 Another approach for using different directories is to specify a prefixes to denote where in the filesystem a Conda
@@ -248,6 +255,7 @@ conda create --prefix /ocean/group/conda_envs/GROUP_ENV jupyterlab=0.35 matplotl
 ```
 
 Create an environment in a shared location so it's available and writable to the team members.
+
 ```shell
 
 # Identify the group to map the environment to.
@@ -274,8 +282,8 @@ conda env create -f conda/keras-retinanet4_conda_env_export.yaml --prefix $PROJE
 
 Please do:
 
-* Use a compute node for the installation process, so you can make use of the bandwidth and the I/O available there, but 
-* try to get the node for more than an hour so the progress is not lost if there are a lot of packages to install.
+* Use a compute node for the installation process, so you can make use of the bandwidth and the I/O available there, but
+  try to get the node for more than an hour so the progress is not lost if there are a lot of packages to install.
 * When installing packages, try to specify the different packages at once, so Conda doesn't have to run the full
   set of compatibility validations every time.
 * Make sure that the destination folder for the packages is set to use the $PROJECT disk space, as the home
