@@ -33,36 +33,43 @@ manager version.
 
 ```shell
 
-python -m “pip3” install PACKAGE1 --user
+python3 -m pip install PACKAGE1 --user
 pip3 install PACKAGE2==VERSION --user
 ```
 
 Example, install TensorFlow 2:
-
 ```shell
 # Add the local Python-binaries path to your PATH environment variable.
 # This line could also be added to your local ~/.bashrc file.
 export PATH=”${PATH}:${HOME}/.local/bin”
 
 # Install TensorFlow
-python3 -m "pip" install tensorflow-gpu --user
-	Collecting tensorflow-gpu [...]
+python3 -m pip install tensorflow --user
+    Collecting tensorflow
+      Downloading tensorflow-2.[...]
+      
+      [...]
+      
 	Successfully installed [...]
 
 # Double-check if TensorFlow was indeed installed.
-python3 -m "pip" freeze | grep tensorflow
-    tensorflow==2.3.0
-    tensorflow-estimator==2.3.0
-	tensorflow-gpu==2.3.0
+python3 -m pip freeze | grep tensorflow
+    tensorflow==2.6.2
+    tensorflow-estimator==2.6.0
 
 # Upgrade pip for getting rid of the package-manager-related warnings.
-python3 -m "pip" install --upgrade pip --user
+python3 -m pip install --upgrade pip --user
 ```
 
-**Note:** The installed packages should have been stored under the following
-directory:  `~/.local/lib/python3.6/site-packages/`
+__Note:__ The installed packages should have been stored under the following
+directory: `$HOME/.local/lib/python3.6/site-packages/`
 
 Additionally, installing tools such as `"virtualenv"` for managing different environments is also supported.
+
+__Note:__ Having locally installed libraries, and then running Python from inside a Singularity/AppTainer container, 
+might create problems for your containerized jobs as the Python installation inside the container might try using your
+`$HOME/.local/lib/` packages and thus create instability due to incompatible configurations (container + local packages 
+mix).
 
 ## Using Bridges-2 environment modules
 
@@ -72,19 +79,15 @@ module to use, load it, and then activate it.
 Example, use existing TensorFlow 2 Bridges module:
 
 ```shell
-module avail tensorflow
-        tensorflow/1.15_py3_gpu
-        tensorflow/2.1_py3_gpu
+module avail AI
+    AI/anaconda3-tf1.2020.11
+    AI/anaconda3-tf2.2020.11
 
-module load tensorflow/2.1_py3_gpu
-conda activate
-conda activate /opt/packages/TensorFlow/gnu/tf2.1.0_py3_conda
+module load AI/anaconda3-tf2.2020.11
 
 pip freeze | grep tensorflow
-    tensorflow==2.1.0
-    tensorflow-datasets==1.2.0
-    tensorflow-estimator==2.1.0
-    tensorflow-metadata==0.14.0
+    tensorflow==2.0.0
+    tensorflow-estimator==2.0.0
 ```
 
 ## Using the Conda module
@@ -114,14 +117,12 @@ conda create -n ENV_NAME python=3.VERSION.MINORVERSION PACKAGE1 PACKAGE2
 module load anaconda3
 conda activate
 
-conda create -n my_tf2_env tensorflow-gpu>=2
+conda create -n my_tf2_env tensorflow>=2
 conda activate my_tf2_env
 
 pip freeze | grep tensorflow
-	tensorflow==2.2.0
-	tensorflow-base==2.2.0
-	tensorflow-gpu==2.2.0
-	tensorflow-estimator==2.2.0
+    tensorflow==2.6.2
+    tensorflow-estimator==2.6.0
 ```
 
 **NOTE:** make sure that the target directory for the Anaconda environments is pointing to the `"$PROJECT"` folder.
@@ -137,17 +138,16 @@ Docker containers to be pulled (and transformed into Singularity ones) from the 
 For using singularity containers, first load the module, and then either use a container already present in Bridges-2 or
 create (convert) your own:
 
+__Optional__: download the container from Docker and convert it to Singularity format.
+i.e. `singularity pull --disable-cache docker://alpine:latest` ([DockerHub](https://hub.docker.com/)),
+or `singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` ([NGC](https://catalog.ngc.nvidia.com/]))
+.
 ```shell
-
-module load singularity
-
-# Optional: download the container from Docker and convert it to Singularity format.
-
 singularity exec --nv /path/to/CONTAINER.sif
+```
 
-Example 1, Use a container already on Bridges:
-
-
+Example 1, Use a container already on Bridges-2:
+```shell
 # The path to the container is long. Let’s use a variable for readability.
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
 
@@ -160,13 +160,11 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-metadata==1.12.0
     tensorflow-nv-norms @ file:/// [...]
     tensorflow-probability==0.11.1
-
 ```
 
 For building a container from the ground up, in case it’s not present on Bridges-2 already, run the following commands.
 
 ```shell
-
 # Start a job for building the container faster.
 interact
 
