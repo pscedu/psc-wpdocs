@@ -34,7 +34,7 @@ smaller-than-usual hardware configuration.
 # Ways to run Graphcore jobs
 Jobs can be executed directly from containers created by Graphcore, but then they also provide wheel files (.whl)
 for installing on Python environments. It's up to you as researcher to choose what way is the one that fits best your 
-development environment and is algo performant.
+development environment and is also performant.
 
 Independently of the path you take, it is first necessary for you to make sure the necessary environment
 variables for running jobs on the Graphcore equipment are set in your environment. More details in the next section.
@@ -80,11 +80,11 @@ how to communicate with the IPU:
 
 #### MNIST Job Using Container Example
 
-Example output for an MNIST running on a Singularity container. Following the code from [Graphcore SDK 2.6 example](https://github.com/graphcore/tutorials/tree/sdk-release-2.6/tutorials/tensorflow2/keras): 
+Example output for an MNIST running on a Singularity container. Following the code from the [Graphcore SDK 2.6 TensorFlow 2 Keras example](https://github.com/graphcore/tutorials/blob/sdk-release-2.6/tutorials/tensorflow2/keras/completed_demos/completed_demo_ipu.py): 
 
 __Note:__ Please make sure the output says "running on IPU". For example: "Keras MNIST example, running on IPU".
 ```shell
-time singularity exec --bind /etc/ipuof.conf.d /opt/graphcore/containers/tensorflow_22.10_3.0.0.sif python3 mnist.py
+time singularity exec --bind /etc/ipuof.conf.d /opt/graphcore/containers/tensorflow_22.10_3.0.0.sif python3 completed_demo_ipu.py
     2023-02-01 16:08:38.500699: I tensorflow/compiler/plugin/poplar/driver/poplar_platform.cc:43] Poplar version: 3.0.0 (fa83d31c56) Poplar package: 1e179b3b85
     Keras MNIST example, running on IPU
     Model: "model"
@@ -143,7 +143,7 @@ time singularity exec --bind /etc/ipuof.conf.d /opt/graphcore/containers/tensorf
 
 ### PyTorch
 
-Create a directory for storing your Pythong virtual environments
+Create a directory for storing your Python virtual environments
 ```shell
 ENVIRONMENTS_PATH=$HOME/development
 mkdir ${ENVIRONMENTS_PATH}
@@ -184,7 +184,7 @@ python3 -c "import poptorch; print(poptorch.__version__)"
 
 ### TensorFlow
 
-Create a directory for storing your Pythong virtual environments
+Create a directory for storing your Python virtual environments
 ```shell
 ENVIRONMENTS_PATH=$HOME/development
 mkdir ${ENVIRONMENTS_PATH}
@@ -208,7 +208,7 @@ python3 -m pip install -U pip
 python3 -m pip install "protobuf>=3.9.2,<3.20" --force-reinstall
 ```
 
-Then install the custom Graphcore PyTorch package via wheel file they provide (poptorch)
+Then install the custom Graphcore TensorFlow package via wheel file they provide
 
 If using TensorFlow 2:
 ```shell
@@ -228,7 +228,7 @@ Finally, add additional libraries as needed.
 python3 -m pip install numpy
 ```
 
-Additionally, check the PyTorch installation worked by importing the library:
+Additionally, check the TensorFlow installation worked by importing the library:
 ```shell
 python3 -c "from tensorflow.python import ipu"
     2022-09-15 11:39:02.054462: I tensorflow/compiler/plugin/poplar/driver/poplar_platform.cc:43]
@@ -240,7 +240,7 @@ python3 -c "import keras"
 ```
 
 #### MNIST Job on Python environment Example
-Example output for an MNIST running on a Python virtual environment. Following the code from [Graphcore SDK 2.6 example](https://github.com/graphcore/tutorials/tree/sdk-release-2.6/tutorials/tensorflow2/keras):
+Example output for an MNIST running on a Python virtual environment. Following the code from [Graphcore SDK 2.6 TensorFlow 2 Keras example](https://github.com/graphcore/tutorials/blob/sdk-release-2.6/tutorials/tensorflow2/keras/completed_demos/completed_demo_ipu.py):
 
 __Note:__ Please make sure the output says "running on IPU". For example: "Keras MNIST example, running on IPU".
 ```shell
@@ -248,8 +248,8 @@ ENVIRONMENTS_PATH=$HOME/development
 ENVIRONMENT_NAME=tensorflow
 source ${ENVIRONMENTS_PATH}/${ENVIRONMENT_NAME}/bin/activate
 
-time python3 mnist_1_tpu.py (https://github.com/graphcore/tutorials/blob/sdk-release-2.6/tutorials/tensorflow2/keras/completed_demos/completed_demo_ipu.py)
-    Running mnist_1_tpu.py…
+time python3 completed_demo_ipu.py
+    Running completed_demo_ipu.py…
     
     2022-09-20 14:18:15.297403: I tensorflow/compiler/plugin/poplar/driver/poplar_platform.cc:43] Poplar version: 2.6.0 (e0ab3b4f12) Poplar package: a313c81b39
     Keras MNIST example, running on IPU
