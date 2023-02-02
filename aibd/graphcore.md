@@ -39,6 +39,21 @@ development environment and is also performant.
 Independently of the path you take, it is first necessary for you to make sure the necessary environment
 variables for running jobs on the Graphcore equipment are set in your environment. More details in the next section.
 
+# Connecting to the system
+You can connect to this system by running the following command from either the Neocortex or Bridges-2 cluster:
+
+`ssh c001`
+
+or
+
+`ssh c001.pvt.bridges2.psc.edu`
+
+__Note:__ The same password is used across PSC resources. If your password is working for Neocortex or Bridges-2, it
+should also work for connecting to this server. If you need to reset your password, please visit
+the [PSC APR page](https://apr.psc.edu/).
+However, if your password works for the clusters but not for this server, please let us know by
+emailing [neocortex@psc.edu](mailto:neocortex@psc.edu).
+
 # Set up the base environment variables for running Graphcore jobs
 The following environment variables should be in your session, and the scripts sourced, for getting to run jobs on the
 Graphcore hardware:
