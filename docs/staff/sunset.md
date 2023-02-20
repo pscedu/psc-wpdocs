@@ -2,4 +2,8 @@ David joined the Pittsburgh Supercomputing Center in 2022 after working as Senio
 
 ### 2022
 * Created a slurm authentication API that allows the integration of different platforms into the PSC slurm cluster.
-* Migrated HuBMAP's software structure to the latest version.
+* Migrated HuBMAPs software structure to the latest version.
+* Keeping HuBMAPs production pipelines environment up and running.
+
+### 2023
+* Design cloud infrastructure layout for SenNets processing pipelines.
