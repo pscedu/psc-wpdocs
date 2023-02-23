@@ -1,0 +1,3 @@
+Matt Yoder is a systems software engineer at PSC, where he develops allocations and accounting tools. He also builds interactive maps and other visualizations to share the amazing research done on Bridges-2 and other PSC systems. He loves working in Python and JavaScript, and he's slowly warming to Ruby.
+
+Matt holds a bachelor's degree in communication from Goshen College and a master's degree in urban planning from the University of Illinois Urbana-Champaign. Prior to joining PSC in 2021, he led a small team that built civic technology for urban planning and transportation. When he's not writing code, he enjoys exploring the city on bike, printing cards on an antique letterpress, singing choral music, and taking on ill-advised home improvement projects.
