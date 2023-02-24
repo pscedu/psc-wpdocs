@@ -45,7 +45,7 @@ singularity exec --nv /ocean/containers/ngc/rapidsai/latest.sif python3
 ## Examples
 
 This is a step-by-step guide of how to run [the quick-start
-examples from the](https://colab.research.google.com/drive/1rY7Ln6rEE1pOlfSHCYOVaqt8OvDO35J0#forceEdit=true&offline=true&sandboxMode=true)
+examples](https://colab.research.google.com/drive/1rY7Ln6rEE1pOlfSHCYOVaqt8OvDO35J0#forceEdit=true&offline=true&sandboxMode=true).
 
 ### Descriptive statistics example
 
