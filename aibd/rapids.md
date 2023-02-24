@@ -1,46 +1,65 @@
-[//]: # (Status: Draft)
+# RAPIDS
 
-# Introduction
+RAPIDS is a data science framework which bundles a collection of
+libraries for executing end-to-end data science pipelines completely
+on top of GPUs. It uses optimized NVIDIA CUDA® primitives and
+high-bandwidth GPU memory to accelerate data preparation and machine
+learning tasks. For example, it can be used for ETL and preprocessing
+of deep learning workflows.
 
-The goal of this document is to provide a short and simple way to let users go through steps required to load the RAPIDS
-module on Bridges and start using it.
+This content is based on the [RAPIDS website
+documentation](https://rapids.ai/start.html).
 
-### What is RAPIDS:
+The RAPIDS implementation on Bridges-2 uses the NVIDIA RAPIDS
+suite. Please see
+[https://developer.nvidia.com/rapids](https://developer.nvidia.com/rapids)
+for more information.
 
-RAPIDS is a data science framework that bundles a collection of libraries for executing end-to-end data science
-pipelines completely on top of GPUs, and it uses optimized NVIDIA CUDA® primitives and high-bandwidth GPU memory to
-accelerate data preparation and machine learning tasks. For example, it can be used
-for [ETL and preprocessing of deep learning workflows](https://towardsdatascience.com/tagged/rapids-ai)
-.
+## How to use RAPIDS on Bridges-2
 
-This content is based on the [original documentation](https://rapids.ai/start.html), and it is a step-by-step guide of
-how to  run [their quick-start examples](https://colab.research.google.com/drive/1rY7Ln6rEE1pOlfSHCYOVaqt8OvDO35J0#forceEdit=true&offline=true&sandboxMode=true)
-.
+### Request a node
 
-### How to use RAPIDS on Bridges-2
+Start an [interactive
+session](https://www.psc.edu/resources/bridges-2/user-guide-2-2#interactive-sessions)
+on Bridges-2 with the [interact
+command](https://www.psc.edu/resources/bridges-2/user-guide-2-2#interact). You
+can use a regular or a [GPU
+node](https://www.psc.edu/resources/bridges-2/user-guide-2-2/#gpu-partitions),
+as needed for your code.
 
-#### Request a node 
-
-Request a regular node or [GPU node](https://www.psc.edu/resources/bridges-2/user-guide-2-2/#gpu-partitions), as needed
-for your code, then execute Python using the latest RAPIDS Singularity/Apptainer container.
-
-For example:
 ```shell
 interact --gpu # Start a session in a node with a GPU.
+````
+
+### Start Python in a RAPIDS Singularity/Apptainer container
+
+Once your interactive session has begun, execute Python using the
+latest RAPIDS Singularity/Apptainer container. You can see all of the
+containers that PSC has created on Bridges-2 in the directory
+<code>/ocean/containers/ngc/</code>. The file <code>latest.sif</code>
+is a link to the most recently updated container.
+
+Use a command like:
+```shell
 singularity exec --nv /ocean/containers/ngc/rapidsai/latest.sif python3
 ```
 
+## Examples
+
+This is a step-by-step guide of how to run [the quick-start
+examples](https://colab.research.google.com/drive/1rY7Ln6rEE1pOlfSHCYOVaqt8OvDO35J0#forceEdit=true&offline=true&sandboxMode=true).
+
 ### Descriptive statistics example
 
-Here’s a code snippet where we read in a CSV file and output some descriptive statistics:
+This code snippet  reads in a CSV file and outputs some descriptive statistics.
 
-First, download a sample dataset:
+First, download the sample dataset:
 ```shell
 wget https://people.sc.fsu.edu/~jburkardt/data/csv/hw_25000.csv
 # hw_25000.csv, height and weight for 25000 individuals Each record includes 3 values: index, height (inches), weight (pounds). There is also an initial header line.
 ``` 
 
-Then, create paste the following code:
+Create a file named statistics.py with the following content:
 ```python
 # statistics.py
 
@@ -51,7 +70,7 @@ for column in gdf.columns:
     print(gdf[column].mean())
 ```
 
-And run it via the RAPIDS container:
+Run it via the RAPIDS container:
 ```shell
 singularity exec --nv /ocean/containers/ngc/rapidsai/latest.sif python3 statistics.py
 ```
@@ -67,12 +86,14 @@ python statistics.py
 
 ### cuDF statistics example
 
-The original can be found here: https://github.com/rapidsai/cudf
+The original can be found here: [https://github.com/rapidsai/cudf](https://github.com/rapidsai/cudf).
 
-Load a public dataset, from a CSV file on GitHub, into a GPU memory-resident DataFrame and perform a basic calculation.
+This example loads a public dataset, from a CSV file on GitHub, into a
+GPU memory-resident DataFrame and performs a basic calculation.
 
-All of the CSV parsing and operations for calculating the tip percentage and average is done on the GPU.
+All of the CSV parsing and the operations for calculating the tip percentage and average are done on the GPU.
 
+Create a file name cuDF.py with the folowing content:
 ```python
 # cuDF.py
 
@@ -91,8 +112,12 @@ tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
 print(tips_df.groupby('size').tip_percentage.mean())
 ```
 
-Running the code should return the following output:
+Run it via the RAPIDS container
+```shell
+singularity exec --nv /ocean/containers/ngc/rapidsai/latest.sif python3 cuDF.py
+````
 
+It should return the following output:
 ```shell
 python cuDF.py
     size
@@ -107,10 +132,11 @@ python cuDF.py
 
 ### cuML example
 
-The original can be found here: https://github.com/rapidsai/cuml
+The original can be found here: [https://github.com/rapidsai/cuml](https://github.com/rapidsai/cuml). 
 
-Load a small sample data frame and compute DBSCAN clusters:
+This example loads a small sample data frame and computes DBSCAN clusters.
 
+Create a file named cuML.py with the following content:
 ```python
 # cuML.py
 
@@ -130,7 +156,12 @@ dbscan_float.fit(df_float)
 print(dbscan_float.labels_)
 ```
 
-Running the code should return the following output:
+Run it via the RAPIDS container
+```shell
+singularity exec --nv /ocean/containers/ngc/rapidsai/latest.sif python3 cuML.py
+````
+
+It should return the following output:
 
 ```shell
 python cuML.py
