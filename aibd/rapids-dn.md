@@ -18,7 +18,7 @@ documentation](https://rapids.ai/start.html).
 ### Request a node
 
 Start an [interactive
-session](https://www.psc.edu/resources/bridges-2/user-guide-2-2#interactive-sessions
+session](https://www.psc.edu/resources/bridges-2/user-guide-2-2#interactive-sessions)
 on Bridges-2 with the [interact
 command](https://www.psc.edu/resources/bridges-2/user-guide-2-2#interact). You
 can use a regular or a [GPU
