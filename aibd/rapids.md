@@ -93,7 +93,7 @@ GPU memory-resident DataFrame and performs a basic calculation.
 
 All of the CSV parsing and the operations for calculating the tip percentage and average are done on the GPU.
 
-Create a file name cuDF.py with the folowing content:
+Create a file named cuDF.py with the folowing content:
 ```python
 # cuDF.py
 
