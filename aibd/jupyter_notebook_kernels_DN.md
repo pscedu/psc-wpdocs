@@ -77,7 +77,7 @@ To create a new Notebook, click **New** and select the Python environment to use
 
 If you already have a notebook, change the Python environment to use by: **Kernel > Change kernel >** <i>new-environment-name</i>.
 
-![Switch to a new kernel image](images/new-kernel.md)
+![Switch to a new kernel image](images/new-kernel.jpg)
 
 __Note:__ For installing new packages, you will have to do it from the
 terminal and NOT from the Jupyter notebook itself as it will try to
