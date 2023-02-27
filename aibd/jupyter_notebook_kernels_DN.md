@@ -68,9 +68,12 @@ See the instructions in the Bridges-2 User Guide section <a href="https://www.ps
 Now you are ready to start the newly created kernel. The libraries inside
 the container should be there.
 
+
 To create a new Notebook, click **New** and select the Python environment to use from the dropdown. 
 
 ![Launch Jupyter Notebook Kernel](images/start_custom_jupyter_notebook_kernel.png)
+
+
 
 If you already have a notebook, change the Python environment to use by: **Kernel > Change kernel >** <i>new-environment-name</i>.
 
