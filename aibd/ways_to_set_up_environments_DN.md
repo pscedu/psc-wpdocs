@@ -8,8 +8,8 @@ The ways available for starting a Python project include:
 
 * [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules-predefined)
 * [Using a Conda module environment](#using-a-conda-module-environment)
-* Using Singularity containers
-* Using the default Python 3 installation
+* Using a Singularity container
+* Using the default Python installation
 
 We recommend  using the Bridges-2 modules if
 there is already one available for a specific package; else try using
