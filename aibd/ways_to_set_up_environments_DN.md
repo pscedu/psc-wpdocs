@@ -197,9 +197,7 @@ pip freeze | grep tensorflow
 Using a Conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
 environment by specifying a name for your new environment and the
-packages to include. Optionally, you can choose the versions of your
-packages, although the versions can be left unspecified for Conda to
-find the best option.
+packages to include. 
 
 Please note that in this scenario, there is going to be a base
 Anaconda environment with multiple packages already installed (base),
@@ -215,23 +213,27 @@ installed one at a time, the package-compatibility process will have
 to run once per package and the overall installation will take a lot
 longer.
 
-The syntax of the command to create an environment and install packages is:
+You can install as many packages as you like with one
+command. Optionally, you can choose the versions of your
+packages, although leaving versions unspecified allows Conda to
+find the best option.
+
+Examples  of the syntax of the command to create an environment and install
+packages are given here. Refer to the [Conda documentation](https://docs.conda.io/projects/conda/en/latest/commands/create.html) for full details.
 
 <pre class="sample">
-conda create -n <i>ENV_NAME PACKAGE1 PACKAGE2</i>
 conda create -n <i>ENV_NAME PACKAGE1 PACKAGE2=VERSION</i>
-conda create -n <i>ENV_NAME</i> python=3.<i>VERSION PACKAGE1 PACKAGE2</i>
-conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE1 PACKAGE2</i>
+conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE2 PACKAGE3</i>
 </pre>
 
 <table>
 <thead>
 <tr>
-<th>When to use Bridges-2 modules</th><th>Advantages</th><th>Disadvantages</th>
+<th>When to use a Conda module</th><th>Advantages</th><th>Disadvantages</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr style="vertical-align:top;">
 <td style="vertical-align:top;">
 When the available Bridges-2 modules do not have a library that is also required for a project or the versions are slightly different as to what is needed (i.e. TensorFlow 2.1 instead of 2.2)
 </td>
@@ -267,6 +269,7 @@ conda activate
 conda create -n my_tf2_env tensorflow>=2
 conda activate my_tf2_env
 
+# Check which version of tensorflow you have
 pip freeze | grep tensorflow
     tensorflow==2.6.2
     tensorflow-estimator==2.6.0
@@ -335,97 +338,34 @@ might create problems for your containerized jobs as the Python installation ins
 mix).
 
 
-## Comparision table
 <table>
 <thead>
   <tr>
    <th>
    </th>
-   <th><strong>Bridges-2 environment modules</strong>
+   <th>When to use Python</th>
    </th>
-   <th><strong>Anaconda module</strong>
+   <th>Advantages
    </th>
-   <th><strong>Singularity container</strong>
-   </th>
-      <th>Default Python
+   <th>Disadvantages
    </th>
   </tr>
   </thead>
   <tbody>
   <tr>
-   <td><strong>When to use</strong>
-   </td>
-
-   <td>
+      <td>
 <ul>
-
+<li>When only the libraries bundled with the default Python are required</li>
+<li>When the user is used to using virtualenvs and pip instead of Anaconda environments</li>
 </ul>
    </td>
-   <td>
-<ul>
-
-<li>
-</li>
-</ul>
-   </td>
-   <td>
-
+<td>
+Immediately available for simple tests.
    </td>
       <td>
 <ul>
-
-<li>When only the libraries bundled with the default Python are required.
-
-<li>When the user is used to using virtualenvs and pip instead of Anaconda environments.
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Advantages</strong>
-   </td>
-
-   <td>
-<ul>
-
-</li>
-</ul>
-   </td>
-   <td>
-
-   </td>
-   <td>
-
-      <td>
-<ul>
-
-<li>Immediately available for simple tests.
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Disadvantages</strong>
-   </td>
-
-   <td>
-<ul>
-
-
-</ul>
-   </td>
-   <td>
-
-   </td>
-   <td>
-
-      <td>
-<ul>
-
-<li>The packages available are not optimized by default for performance purposes.
-
-<li>Pip will run with default options when installing packages and will not try to optimize the performance of  Data Science or Machine Learning packages.
-</li>
+<li>The packages available are not optimized by default for performance purposes</li>
+<li>Pip will run with default options when installing packages and will not try to optimize the performance of  Data Science or Machine Learning packages</li>
 </ul>
    </td>
   </tr>
