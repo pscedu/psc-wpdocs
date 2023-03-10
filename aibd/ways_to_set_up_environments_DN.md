@@ -35,7 +35,7 @@ it, and then activate it.
 To see a list of the available environments, type
 <pre class="sample">module spider AI</pre>
 
-To see what is included in a given environment before you load it, you can use the `module show *module_name*` command.
+To see what is included in a given environment before you load it, you can use the <code>module show <i>module_name</i></code> command.
 
 ### Example: use existing TensorFlow 2 module
 
