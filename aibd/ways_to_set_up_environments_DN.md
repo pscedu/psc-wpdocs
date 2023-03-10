@@ -15,7 +15,7 @@ We recommend  using the Bridges-2 modules if
 there is already one available for a specific package; else try using
 a Singularity container or creating a custom Anaconda environment. 
 
-See this table for a comparison of the advantages and disadvantages of each approach.
+[See this table](#comparision-table) for a comparison of the advantages and disadvantages of each approach.
 
 ## Using predefined Bridges-2 environment modules 
 
@@ -242,6 +242,7 @@ __Note:__ Having locally installed libraries, and then running Python from insid
 might create problems for your containerized jobs as the Python installation inside the container might try using your
 `$HOME/.local/lib/` packages and thus create instability due to incompatible configurations (container + local packages 
 mix).
+
 
 ## Comparision table
 <table>
