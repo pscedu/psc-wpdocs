@@ -243,8 +243,7 @@ might create problems for your containerized jobs as the Python installation ins
 `$HOME/.local/lib/` packages and thus create instability due to incompatible configurations (container + local packages 
 mix).
 
-## Comparision of ways to create a development environment
-
+## Comparision table
 <table>
 <thead>
   <tr>
