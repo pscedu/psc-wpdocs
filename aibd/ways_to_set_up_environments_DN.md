@@ -42,36 +42,26 @@ a container from Docker and convert it to Singularity format.
 <tr>
 <td style="vertical-align:top;">
 <ul>
-
-<li>When a pre-configured Docker container already exists.
-
-<li>When superuser privileges are needed or setting up the environment, like installing an OS library.
+<li>When a pre-configured Docker container already exists
+<li>When superuser privileges are needed or setting up the environment, like installing an OS library
 </li>
 </ul>
 </td>
 <td style="vertical-align:top;">
 <ul>
-
-<li>Offers flexibility for installing more libraries and software.
-
-<li>Allows reproducible results since the container can be reused across hosts.
-
-<li>Can be easily placed and used from I/O optimized storage.
+<li>Offers flexibility for installing more libraries and software
+<li>Allows reproducible results since the container can be reused across hosts
+<li>Can be easily placed and used from I/O optimized storage
 </li>
 </ul>
    </td>
    <td style="vertical-align:top;">
 <ul>
-
-<li>The singularity module has to be loaded every time.
-
-<li>Adds another layer of complexity when developing and troubleshooting code.
-
-<li>Uses at least a couple of gigabytes of disk space.
-
-<li>Singularity and Docker are not 100% compatible but only Singularity is available on Bridges-2.
-
-<li>Extra steps are required for modifying containers.
+<li>The singularity module must be loaded every time.</li>
+<li>Adds another layer of complexity when developing and troubleshooting code
+<li>Uses at least a couple of gigabytes of disk space
+<li>Singularity and Docker are not 100% compatible but only Singularity is available on Bridges-2
+<li>Extra steps are required for modifying containers
 </li>
 </ul>
    </td>
@@ -173,22 +163,14 @@ To see what is included in a given environment before you load it, you can use t
 <tbody>
 <tr>
 <td style="vertical-align:top;">
-<ul>
-<li>When requiring to use libraries that are popular for Data Science or Machine Learning, as those are most likely available on Bridges-2 as a module. 
-</li>
-</ul>
+When using libraries that are popular for Data Science or Machine Learning, as those are most likely available on Bridges-2 as a module. 
 </td>
 <td style="vertical-align:top;">
-<ul>
-<li>The Bridges-2 modules available are installed and tested by PSC Staff, are supported by them, and are configured in a way in which the most performance should be available from Bridges-2 by default (CPU-level instructions like MKL, GPUs as targets).
-</li>
-</ul>
+The Bridges-2 modules available are installed and tested by PSC Staff, are supported by them, and are configured in a way in which the most performance should be available from Bridges-2 by default (CPU-level instructions like MKL, GPUs as targets).
    </td>
    <td style="vertical-align:top;">
-<ul>
-<li>The modules cannot be modified unless a local copy for the user is created.
-</li>
-</ul>
+The modules cannot be modified unless a local copy for the user is created.
+
    </td>
    </tr>
    </tbody>
@@ -241,6 +223,40 @@ conda create -n <i>ENV_NAME PACKAGE1 PACKAGE2=VERSION</i>
 conda create -n <i>ENV_NAME</i> python=3.<i>VERSION PACKAGE1 PACKAGE2</i>
 conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE1 PACKAGE2</i>
 </pre>
+
+<table>
+<thead>
+<tr>
+<th>When to use Bridges-2 modules</th><th>Advantages</th><th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;">
+When the available Bridges-2 modules do not have a library that is also required for a project or the versions are slightly different as to what is needed (i.e. TensorFlow 2.1 instead of 2.2)
+</td>
+<td style="vertical-align:top;">
+<ul><li>Self-contained environments can be created</li>
+<li>Specific Python versions can be used for each installation</li>
+<li>Offers performance-optimized packages compatible with each other</li>
+<li>Packages can also be installed via pip if needed</li>
+<li>Anaconda will provide a list of curated packages that are optimized for performance (CPU-level instructions like MKL, GPUs as targets)</li>
+<li>Environment reusability is robust with Anaconda, as environments can be cloned to other locations or created based on recipes that detail the specific versions used
+</li>
+</ul>
+   </td>
+   <td style="vertical-align:top;">
+<ul><li>The Anaconda module has to be loaded and activated every time</li>
+<li>The default destination folder for the environments uses the $HOME folder quota</li>
+<li>It's impacted by Input/Output bottlenecks since it uses a lot of small files</li>
+</li>
+</ul>
+
+   </td>
+   </tr>
+   </tbody>
+   </table>
+
 
 ### Example: install TensorFlow 2
 
@@ -348,7 +364,7 @@ mix).
    <td>
 <ul>
 
-<li>When the available Bridges-2 modules do not have a library that is also required for a project or the versions are slightly different as to what is needed (i.e. TensorFlow 2.1 instead of 2.2)
+<li>
 </li>
 </ul>
    </td>
@@ -376,21 +392,7 @@ mix).
 </ul>
    </td>
    <td>
-<ul>
 
-<li>Self-contained environments can be created.
-
-<li>Specific Python versions can be used for each installation.
-
-<li>Offers performance-optimized packages compatible with each other.
-
-<li>Packages can also be installed via pip if needed.
-
-<li>Anaconda will provide a list of curated packages that are optimized for performance (CPU-level instructions like MKL, GPUs as targets).
-
-<li>Environment reusability is robust with Anaconda, as environments can be cloned to other locations or created based on recipes that detail the specific versions used.
-</li>
-</ul>
    </td>
    <td>
 
@@ -413,15 +415,7 @@ mix).
 </ul>
    </td>
    <td>
-<ul>
 
-<li>The Anaconda module has to be loaded and activated every time.
-
-<li>The default destination folder for the environments uses the $HOME folder quota.
-
-<li>It's impacted by Input/Output bottlenecks since it uses a lot of small files.
-</li>
-</ul>
    </td>
    <td>
 
