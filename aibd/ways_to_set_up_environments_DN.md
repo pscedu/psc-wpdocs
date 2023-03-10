@@ -6,8 +6,8 @@
 There are multiple ways to set up  development environments on Bridges-2. 
 The ways available for starting a Python project include:
 
-* [Using predefined Bridges-2 environment modules](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/ways_to_set_up_environments_DN.md#using-predefined-bridges-2-environment-modules-predefined)
-* Using a Conda module environment
+* [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules-predefined)
+* [Using a Conda module environment](#using-a-conda-module-environment)
 * Using Singularity containers
 * Using the default Python 3 installation
 
