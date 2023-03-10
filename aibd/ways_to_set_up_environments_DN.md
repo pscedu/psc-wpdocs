@@ -6,7 +6,7 @@
 There are multiple ways to set up  development environments on Bridges-2. 
 The ways available for starting a Python project include:
 
-* [Using predefined Bridges-2 environment modules](#predefined)
+* [Using predefined Bridges-2 environment modules](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/ways_to_set_up_environments_DN.md#using-predefined-bridges-2-environment-modules-predefined)
 * Using Conda module environments 
 * Using Singularity containers
 * Using the default Python 3 installation
@@ -15,7 +15,7 @@ We recommend  using the Bridges-2 modules if
 there is already one available for a specific package; else try using
 a Singularity container or creating a custom Anaconda environment.
 
-## Using predefined Bridges-2 environment modules {#predefined}
+## Using predefined Bridges-2 environment modules 
 
 PSC has built some environments which provide a rich, unified,
 Anaconda-based environment for AI, Machine Learning, and Big Data
