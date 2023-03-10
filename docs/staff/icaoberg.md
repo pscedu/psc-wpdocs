@@ -10,7 +10,3 @@ old tech, breaking and fixing workflows, playing with new tech,
 cooking, and playing good music in Spanish on [WRCT
 88.3FM](http://www.wrct.org). He has been featured in CMU publications for his radio show and for his involvement in relief efforts following Hurricane Mar&iacute;a, including [Mr. Cao-Berg's Neighborhood](https://www.cmu.edu/mcs/news-events/2021/1013_barrio-latino-radio.html) and [Cao-Berg Helped Bring Aid to Puerto Rico](https://www.cmu.edu/piper/news/archives/2018/february/ivan-cao-berg.html).
 
-* [CMU Staffer Hosts Radio Show Connecting Pittsburgh's Hispanic Community](https://www.cmu.edu/piper/news/archives/2021/october/october-14-briefs.html)
-
-
-
