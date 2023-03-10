@@ -116,7 +116,7 @@ either use a container already present in Bridges-2 or create
 (convert) your own.
 
 You cannot use Docker containers on Bridges-2, but you can download
-the container from Docker and convert it to Singularity format.
+a container from Docker and convert it to Singularity format.
 
 To pull a container from [DockerHub](https://hub.docker.com/):
 ```shell
