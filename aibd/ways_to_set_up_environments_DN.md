@@ -6,16 +6,141 @@
 There are multiple ways to set up  development environments on Bridges-2. 
 The ways available for starting a Python project include:
 
+* [Using a Singularity container](#using-a-singularity-container)
 * [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules-predefined)
 * [Using a Conda module environment](#using-a-conda-module-environment)
-* [Using a Singularity container](#using-a-singularity-container)
 * [Using the default Python installation](#using-the-default-python)
 
-We recommend  using the Bridges-2 modules if
-there is already one available for a specific package; else try using
-a Singularity container or creating a custom Anaconda environment. 
+We recommend using a Singularity container, especially one from the
+the NVIDIA NGC catalog if there is one that fits your needs, as those are
+optimized for NVIDIA GPUs. Otherwise, try using the predefined
+Bridges-2 modules or creating a custom Anaconda environment.
 
 [See this table](#comparision-table) for a comparison of the advantages and disadvantages of each approach.
+
+## Using a Singularity container
+
+Bridges-2 supports running Singularity containers, allowing
+encapsulated environments to be built from scratch, or Docker
+containers to be pulled (and transformed into Singularity ones) from
+the Docker registry.
+
+You can either use a container already present in Bridges-2 or create
+(convert) your own.
+
+You cannot use Docker containers on Bridges-2, but you can download
+a container from Docker and convert it to Singularity format.
+
+### 
+<table>
+<thead>
+<tr>
+<th>When to use Singularity containers</th><th>Advantages</th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<ul>
+
+<li>When a pre-configured Docker container already exists.
+
+<li>When superuser privileges are needed or setting up the environment, like installing an OS library.
+</li>
+</ul>
+</td>
+<td>
+<ul>
+
+<li>Offers flexibility for installing more libraries and software.
+
+<li>Allows reproducible results since the container can be reused across hosts.
+
+<li>Can be easily placed and used from I/O optimized storage.
+</li>
+</ul>
+   </td>
+   <td>
+<ul>
+
+<li>The singularity module has to be loaded every time.
+
+<li>Adds another layer of complexity when developing and troubleshooting code.
+
+<li>Uses at least a couple of gigabytes of disk space.
+
+<li>Singularity and Docker are not 100% compatible but only Singularity is available on Bridges-2.
+
+<li>Extra steps are required for modifying containers.
+</li>
+</ul>
+   </td>
+   </tr>
+   </tbody>
+   </table>
+   
+To pull a container from [DockerHub](https://hub.docker.com/):
+```shell
+singularity pull --disable-cache docker://alpine:latest
+```
+To pull a container from the [NVIDIA NGC library](https://catalog.ngc.nvidia.com/):
+```shell
+singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` 
+```
+
+Convert the container to Singularity:
+```shell
+singularity exec --nv /path/to/CONTAINER.sif
+```
+
+### Example 1: Use a container already on Bridges-2
+```shell
+# The path to the container is long. Let’s use a variable for readability.
+CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
+
+# Pull the container. Specify no cache dir to be used so only the local disk is used.
+singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow    
+    tensorflow @ file:/// [...] 2.10.1 [...]
+    tensorflow-addons==0.11.2
+    tensorflow-datasets==3.2.1
+    tensorflow-estimator==2.10.0
+    tensorflow-metadata==1.12.0
+    tensorflow-nv-norms @ file:/// [...]
+    tensorflow-probability==0.11.1
+```
+
+### Example 2: Create a container on Bridges-2
+When the container you need is not present on Bridges-2 already, you can pull one from a given URI. Run the following commands to pull a container to Bridges-2. This example pulls a container from Docker Hub.
+
+```shell
+# Start a job for building the container faster.
+interact
+
+# Change to the high-speed flash storage folder.
+cd $LOCAL
+
+# Pull the external container by specifying the origin right before the tag.
+# i.e. for pulling Docker containers, use “docker://”
+singularity pull --disable-cache docker://USERNAME/CONTAINER
+
+# Finally, since the $LOCAL storage is fast but ephemeral, copy the container back to your file space.
+cp CONTAINER.sif $PROJECT/ # Or $HOME
+
+```
+
+The example above pulled a container from Docker, but there are other
+valid container origin points to pull containers from:
+
+- The [Singularity Container Library](https://cloud.sylabs.io/library)
+  * Use "library://" as the origin string in the <code>singularity pull</code> command
+-  [Singularity Hub](https://singularity-hub.org/)
+  * Use "shub://" as the origin string in the <code>singularity pull</code> command
+-  [Docker Hub](https://hub.docker.com)
+  * Use "docker://" as the origin string in the <code>singularity pull</code> command
+
+
+More information can be found
+here: [https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
 
 ## Using predefined Bridges-2 environment modules 
 
@@ -105,88 +230,6 @@ pip freeze | grep tensorflow
 
 More information can be found
 [in the PSC Anaconda documentation at https://www.psc.edu/resources/software/anaconda/](https://www.psc.edu/resources/software/anaconda/).
-
-## Using a Singularity container
-
-Bridges-2 supports running Singularity containers, allowing
-encapsulated environments to be built from scratch, or Docker
-containers to be pulled (and transformed into Singularity ones) from
-the Docker registry.
-
-To use singularity containers, **first load the module, (which?)** and then
-either use a container already present in Bridges-2 or create
-(convert) your own.
-
-You cannot use Docker containers on Bridges-2, but you can download
-a container from Docker and convert it to Singularity format.
-
-To pull a container from [DockerHub](https://hub.docker.com/):
-```shell
-singularity pull --disable-cache docker://alpine:latest
-```
-To pull a container from the [NVIDIA NGC library](https://catalog.ngc.nvidia.com/):
-```shell
-singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` 
-```
-
-Convert the container to Singularity:
-```shell
-singularity exec --nv /path/to/CONTAINER.sif
-```
-
-### Example 1: Use a container already on Bridges-2
-```shell
-# The path to the container is long. Let’s use a variable for readability.
-CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
-
-# Pull the container. Specify no cache dir to be used so only the local disk is used.
-singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow    
-    tensorflow @ file:/// [...] 2.10.1 [...]
-    tensorflow-addons==0.11.2
-    tensorflow-datasets==3.2.1
-    tensorflow-estimator==2.10.0
-    tensorflow-metadata==1.12.0
-    tensorflow-nv-norms @ file:/// [...]
-    tensorflow-probability==0.11.1
-```
-
-### Example 2: Create a container on Bridges-2
-To build a container, when it’s not present on Bridges-2 already, run the following commands.
-
-```shell
-# Start a job for building the container faster.
-interact
-
-# Change to the high-speed flash storage folder.
-cd $LOCAL
-
-# Pull the external container by specifying the origin right before the tag.
-# i.e. for pulling Docker containers, use “docker://”
-singularity pull --disable-cache docker://USERNAME/CONTAINER
-
-# Finally, since the $LOCAL storage is fast but ephemeral, copy the container back to your file space.
-cp CONTAINER.sif $PROJECT/ # Or $HOME
-
-```
-
-The example above pulled a container from Docker, but there are other
-valid container origin points to pull containers from:
-
-- [Singularity Container Library](https://cloud.sylabs.io/library)
-  * library://
-- [Singularity Hub](https://singularity-hub.org/)
-  * shub://
-- [Docker Hub](https://hub.docker.com)
-  * docker://
-- Container already on Docker infrastructure
-  * Local container
-- Blueprint with container to use and customizations
-  * Recipe files
-- Tar file with container files
-  * Local archive
-
-More information can be found
-here: [https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
 
 ## Using the default Python
 
@@ -280,13 +323,7 @@ mix).
 </ul>
    </td>
    <td>
-<ul>
 
-<li>When a pre-configured Docker container already exists.
-
-<li>When superuser privileges are needed or setting up the environment, like installing an OS library.
-</li>
-</ul>
    </td>
       <td>
 <ul>
@@ -327,16 +364,7 @@ mix).
 </ul>
    </td>
    <td>
-<ul>
 
-<li>Offers flexibility for installing more libraries and software.
-
-<li>Allows reproducible results since the container can be reused across hosts.
-
-<li>Can be easily placed and used from I/O optimized storage.
-</li>
-</ul>
-   </td>
       <td>
 <ul>
 
@@ -368,20 +396,7 @@ mix).
 </ul>
    </td>
    <td>
-<ul>
 
-<li>The singularity module has to be loaded every time.
-
-<li>Adds another layer of complexity when developing and troubleshooting code.
-
-<li>Uses at least a couple of gigabytes of disk space.
-
-<li>Singularity and Docker are not 100% compatible but only Singularity is available on Bridges-2.
-
-<li>Extra steps are required for modifying containers.
-</li>
-</ul>
-   </td>
       <td>
 <ul>
 
