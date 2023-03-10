@@ -9,11 +9,13 @@ The ways available for starting a Python project include:
 * [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules-predefined)
 * [Using a Conda module environment](#using-a-conda-module-environment)
 * [Using a Singularity container](#using-a-singularity-container)
-* [Using the default Python installation]()
+* [Using the default Python installation](#using-the-default-python)
 
 We recommend  using the Bridges-2 modules if
 there is already one available for a specific package; else try using
-a Singularity container or creating a custom Anaconda environment.
+a Singularity container or creating a custom Anaconda environment. 
+
+See this table for a comparison of the advantages and disadvantages of each approach.
 
 ## Using predefined Bridges-2 environment modules 
 
