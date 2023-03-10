@@ -16,8 +16,6 @@ the NVIDIA NGC catalog if there is one that fits your needs, as those are
 optimized for NVIDIA GPUs. Otherwise, try using the predefined
 Bridges-2 modules or creating a custom Anaconda environment.
 
-[See this table](#comparision-table) for a comparison of the advantages and disadvantages of each approach.
-
 ## Using a Singularity container
 
 Bridges-2 supports running Singularity containers, allowing
@@ -90,6 +88,7 @@ singularity exec --nv /path/to/CONTAINER.sif
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
 
 # Pull the container. Specify no cache dir to be used so only the local disk is used.
+# Then use pip freeze to confirm what is installed
 singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow    
     tensorflow @ file:/// [...] 2.10.1 [...]
     tensorflow-addons==0.11.2
@@ -124,9 +123,9 @@ valid container origin points to pull containers from:
 
 - The [Singularity Container Library](https://cloud.sylabs.io/library)
   * Use "library://" as the origin string in the <code>singularity pull</code> command
--  [Singularity Hub](https://singularity-hub.org/)
+- [Singularity Hub](https://singularity-hub.org/)
   * Use "shub://" as the origin string in the <code>singularity pull</code> command
--  [Docker Hub](https://hub.docker.com)
+- [Docker Hub](https://hub.docker.com)
   * Use "docker://" as the origin string in the <code>singularity pull</code> command
 
 
@@ -170,7 +169,6 @@ The Bridges-2 modules available are installed and tested by PSC Staff, are suppo
    </td>
    <td style="vertical-align:top;">
 The modules cannot be modified unless a local copy for the user is created.
-
    </td>
    </tr>
    </tbody>
@@ -191,6 +189,7 @@ pip freeze | grep tensorflow
     tensorflow==2.0.0
     tensorflow-estimator==2.0.0
 ```
+
 
 ## Using a Conda module environment
 
@@ -222,7 +221,7 @@ Examples  of the syntax of the command to create an environment and install
 packages are given here. Refer to the [Conda documentation](https://docs.conda.io/projects/conda/en/latest/commands/create.html) for full details.
 
 <pre class="sample">
-conda create -n <i>ENV_NAME PACKAGE1 PACKAGE2=VERSION</i>
+conda create -n <i>ENV_NAME PACKAGE1</i>
 conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE2 PACKAGE3</i>
 </pre>
 
@@ -341,8 +340,6 @@ mix).
 <table>
 <thead>
   <tr>
-   <th>
-   </th>
    <th>When to use Python</th>
    </th>
    <th>Advantages
