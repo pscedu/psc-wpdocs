@@ -95,7 +95,7 @@ conda activate my_tf2_env
 pip freeze | grep tensorflow
     tensorflow==2.6.2
     tensorflow-estimator==2.6.0
-```
+````
 
 **NOTE:** make sure that the target directory for the Anaconda
   environments is pointing to the `"$PROJECT"` folder. Your $PROJECT
