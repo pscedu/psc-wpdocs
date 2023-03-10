@@ -35,12 +35,12 @@ a container from Docker and convert it to Singularity format.
 <table>
 <thead>
 <tr>
-<th>When to use Singularity containers</th><th>Advantages</th>Disadvantages</th>
+<th>When to use Singularity containers</th><th>Advantages</th><th>Disadvantages</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>
+<td style="vertical-align:top;">
 <ul>
 
 <li>When a pre-configured Docker container already exists.
@@ -49,7 +49,7 @@ a container from Docker and convert it to Singularity format.
 </li>
 </ul>
 </td>
-<td>
+<td style="vertical-align:top;">
 <ul>
 
 <li>Offers flexibility for installing more libraries and software.
@@ -60,7 +60,7 @@ a container from Docker and convert it to Singularity format.
 </li>
 </ul>
    </td>
-   <td>
+   <td style="vertical-align:top;">
 <ul>
 
 <li>The singularity module has to be loaded every time.
@@ -78,7 +78,8 @@ a container from Docker and convert it to Singularity format.
    </tr>
    </tbody>
    </table>
-   
+
+
 To pull a container from [DockerHub](https://hub.docker.com/):
 ```shell
 singularity pull --disable-cache docker://alpine:latest
@@ -139,8 +140,8 @@ valid container origin points to pull containers from:
   * Use "docker://" as the origin string in the <code>singularity pull</code> command
 
 
-More information can be found
-here: [https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
+[More information on using Singularity at PSC can be found
+here: https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
 
 ## Using predefined Bridges-2 environment modules 
 
@@ -154,15 +155,45 @@ to use one of the GPU partitions. See the [Bridges-2 User
 Guide](https://www.psc.edu/resources/bridges-2/user-guide#partitions)
 for information on Bridges-2 partitions and how to choose one to use.
 
-
 To use an already existing environment from
-Bridges-2, identify the environment module to use, load
-it, and then activate it.
+Bridges-2, identify the environment module to use and load
+it.
 
 To see a list of the available environments, type
 <pre class="sample">module spider AI</pre>
 
 To see what is included in a given environment before you load it, you can use the <code>module show <i>module_name</i></code> command.
+
+<table>
+<thead>
+<tr>
+<th>When to use Bridges-2 modules</th><th>Advantages</th><th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;">
+<ul>
+<li>When requiring to use libraries that are popular for Data Science or Machine Learning, as those are most likely available on Bridges-2 as a module. 
+</li>
+</ul>
+</td>
+<td style="vertical-align:top;">
+<ul>
+<li>The Bridges-2 modules available are installed and tested by PSC Staff, are supported by them, and are configured in a way in which the most performance should be available from Bridges-2 by default (CPU-level instructions like MKL, GPUs as targets).
+</li>
+</ul>
+   </td>
+   <td style="vertical-align:top;">
+<ul>
+<li>The modules cannot be modified unless a local copy for the user is created.
+</li>
+</ul>
+   </td>
+   </tr>
+   </tbody>
+   </table>
+
 
 ### Example: use existing TensorFlow 2 module
 
@@ -173,6 +204,7 @@ module avail AI
 
 module load AI/anaconda3-tf2.2020.11
 
+# Check what version of tensorflow you have
 pip freeze | grep tensorflow
     tensorflow==2.0.0
     tensorflow-estimator==2.0.0
@@ -311,8 +343,6 @@ mix).
    <td>
 <ul>
 
-<li>When requiring to use libraries that are popular for Data Science or Machine Learning, as those are most likely available on Bridges-2 as a module. 
-</li>
 </ul>
    </td>
    <td>
@@ -342,7 +372,6 @@ mix).
    <td>
 <ul>
 
-<li>The Bridges-2 modules available are installed and tested by PSC Staff, are technically-supported by them, and are configured in a way in which the most performance should be available from Bridges-2 by default (CPU-level instructions like MKL, GPUs as targets).
 </li>
 </ul>
    </td>
@@ -380,8 +409,7 @@ mix).
    <td>
 <ul>
 
-<li>The modules cannot be modified unless a local copy for the user is created.
-</li>
+
 </ul>
    </td>
    <td>
