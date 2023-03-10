@@ -132,7 +132,7 @@ Convert the container to Singularity:
 singularity exec --nv /path/to/CONTAINER.sif
 ```
 
-Example 1: Use a container already on Bridges-2
+### Example 1: Use a container already on Bridges-2
 ```shell
 # The path to the container is long. Let’s use a variable for readability.
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
@@ -148,7 +148,8 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-To building a container from the ground up, when it’s not present on Bridges-2 already, run the following commands.
+### Example 2: Create a container on Bridges-2
+To build a container, when it’s not present on Bridges-2 already, run the following commands.
 
 ```shell
 # Start a job for building the container faster.
