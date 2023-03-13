@@ -311,7 +311,7 @@ by default when logging into the nodes. These distributions that
 are available by default can be customized by installing packages,
 although the base Python version cannot be changed.
 
-**Note** PSC cannot offer support for user-customized python environments.
+**Note:** PSC **does not** offer support for user-customized python environments.
 
 This way of customizing the default Python environment allows you to install packages using the `"--user"` flag, making it
 possible to extend the base package list and install
