@@ -4,29 +4,27 @@
 ## Introduction
 
 There are multiple ways to set up  development environments on Bridges-2. 
-The ways available for starting a Python project include:
+They include:
 
-1. [Using Singularity containers](#1-using-singularity-containers)
-2. [Using predefined Bridges-2 environment modules](#2-using-predefined-bridges-2-environment-modules)
-3. [Using a Conda module environment](#3-using-a-conda-module-environment)
-4. [Using the default Python installation](#4-using-the-default-python)
+* [Using Singularity containers](using-singularity-containers)
+* [Using predefined Bridges-2 environment modules](using-predefined-bridges-2-environment-modules)
+*[Using a Conda module environment](using-a-conda-module-environment)
+* [Using the default Python installation](using-the-default-python)
 
 We recommend using [Singularity](https://sylabs.io/singularity/) containers, especially the ones from the
 the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that fits your needs, as those are
-curated by NVIDIA optimized for their GPUs. Otherwise, try using the predefined
+curated by NVIDIA and optimized for their GPUs. Otherwise, try using the predefined
 Bridges-2 modules, or creating a custom Anaconda environment.
 
-## 1. Using Singularity containers
+## Using Singularity containers
 
 Bridges-2 supports running Singularity containers, allowing
-encapsulated environments to be built from scratch, or Docker
-containers to be pulled (and transformed into Singularity ones) from
-the Docker registry (among other sources).
+encapsulated environments to be built from scratch. You cannot use
+Docker containers on Bridges-2, but you can download a container from
+Docker and convert it to Singularity format. There are examples
+showing how to convert containers below.
 
-You can either use a container already present in Bridges-2 (under `/ocean/containers/ngc`) or create (convert) your own.
-
-**Note:** You cannot use Docker containers on Bridges-2, but you can download
-a container from Docker and convert it to Singularity format. There are examples showing how to convert containers below.
+You can either use a container already present in Bridges-2 (under `/ocean/containers/ngc`) or create your own.
 
 ### 
 <table>
@@ -66,26 +64,50 @@ a container from Docker and convert it to Singularity format. There are examples
    </tbody>
    </table>
 
+### Pulling and converting Docker containers to Singularity
+
+You can pull a Docker container into Bridges-2 and convert it to
+Singularity format with the <code>Singularity pull</code> command. 
 
 To pull a container from [DockerHub](https://hub.docker.com/) and convert it to Singularity:
 ```shell
-interact  # Start an interactive session in a Regular Memory node.
+interact  # Start an interactive session on a Regular Memory node.
 singularity pull --disable-cache docker://alpine:latest  # Pull the latest "alpine" container from DockerHub.
-# You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 ```
+You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
+
 
 To pull a container from the [NVIDIA NGC library](https://catalog.ngc.nvidia.com/) and convert it to Singularity:
 ```shell
-interact  # Start an interactive session in a Regular Memory node.
+interact  # Start an interactive session on a Regular Memory node.
 singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` # Pull the 22.12 PyTorch container from NGC.
-# You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 ```
+You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 
-Then you can use the container as needed:
+These examples pulled a container from Docker, but there are other
+valid container origin points to pull containers from:
+
+- The [Singularity Container Library](https://cloud.sylabs.io/library)
+  * Use "library://" as the origin string in the <code>singularity pull</code> command
+- [Singularity Hub](https://singularity-hub.org/)
+  * Use "shub://" as the origin string in the <code>singularity pull</code> command
+- [Docker Hub](https://hub.docker.com)
+  * Use "docker://" as the origin string in the <code>singularity pull</code> command
+
+### Using a Singularity container
+
+Once you have a Singularity container, start an interactive session on
+Bridges-2 and start your container. See the section on [interactive
+sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions)
+ for details on the interact command.
+
 ```shell
-interact  # Start an interactive session in a Regular Memory node, or use `interact --gpu` to use a GPU.
+interact  # Start an interactive session. 
 singularity shell --nv /path/to/CONTAINER.sif
 ```
+
+[More information on using Singularity at PSC can be found
+here: https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
 
 ### Example 1: Use a container already on Bridges-2
 ```shell
@@ -105,7 +127,11 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
 ```
 
 ### Example 2: Create a container on Bridges-2
-When the container you need is not present on Bridges-2 already, you can pull one from a given URI. Run the following commands to pull a container to Bridges-2. This example pulls a container from Docker Hub.
+
+When the container you need is not present on Bridges-2 already, you
+can pull one from a given URI. Run the following commands to pull a
+container to Bridges-2. This example pulls a container from Docker
+Hub.
 
 ```shell
 # Start a job for building the container faster.
@@ -123,21 +149,8 @@ cp CONTAINER.sif $PROJECT/ # Or $HOME
 
 ```
 
-The example above pulled a container from Docker, but there are other
-valid container origin points to pull containers from:
 
-- The [Singularity Container Library](https://cloud.sylabs.io/library)
-  * Use "library://" as the origin string in the <code>singularity pull</code> command
-- [Singularity Hub](https://singularity-hub.org/)
-  * Use "shub://" as the origin string in the <code>singularity pull</code> command
-- [Docker Hub](https://hub.docker.com)
-  * Use "docker://" as the origin string in the <code>singularity pull</code> command
-
-
-[More information on using Singularity at PSC can be found
-here: https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
-
-## 2. Using predefined Bridges-2 environment modules 
+## Using predefined Bridges-2 environment modules 
 
 PSC has built some environments which provide a rich, unified,
 Anaconda-based environment for AI, Machine Learning, and Big Data
@@ -170,8 +183,13 @@ To see what is included in a given environment before you load it, you can use t
 When using libraries that are popular for Data Science or Machine Learning, as those are most likely available on Bridges-2 as a module. 
 </td>
 <td style="vertical-align:top;">
-The Bridges-2 modules available are installed and tested by PSC Staff, are supported by them, and are configured in a way in which the most performance should be available from Bridges-2 by default (CPU-level instructions like MKL, GPUs as targets).
-   </td>
+
+The Bridges-2 modules available are installed, tested, and supported by PSC
+staff, and are configured in a way to get the best performance
+on Bridges-2 **(for example,CPU-level instructions
+like MKL, GPUs as targets).  I don't understand this**
+
+</td>
    <td style="vertical-align:top;">
 The modules cannot be modified unless a local copy for the user is created.
    </td>
@@ -197,7 +215,7 @@ pip freeze | grep tensorflow
 ```
 
 
-## 3. Using a Conda module environment
+## Using a Conda module environment
 
 Using a Conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
@@ -287,7 +305,7 @@ pip freeze | grep tensorflow
 More information can be found
 [in the PSC Anaconda documentation at https://www.psc.edu/resources/software/anaconda/](https://www.psc.edu/resources/software/anaconda/).
 
-## 4. Using the default Python
+## Using the default Python
 
 Both `"python, pip"` and `"python3, pip3"` are available on Bridges-2
 by default when logging into the nodes. These distributions that
