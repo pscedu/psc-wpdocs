@@ -6,28 +6,27 @@
 There are multiple ways to set up  development environments on Bridges-2. 
 The ways available for starting a Python project include:
 
-* [Using a Singularity container](#using-a-singularity-container)
-* [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules-predefined)
-* [Using a Conda module environment](#using-a-conda-module-environment)
-* [Using the default Python installation](#using-the-default-python)
+1. [Using Singularity containers](#1-using-singularity-containers)
+2. [Using predefined Bridges-2 environment modules](#2-using-predefined-bridges-2-environment-modules)
+3. [Using a Conda module environment](#3-using-a-conda-module-environment)
+4. [Using the default Python installation](#4-using-the-default-python)
 
-We recommend using a Singularity container, especially one from the
-the NVIDIA NGC catalog if there is one that fits your needs, as those are
-optimized for NVIDIA GPUs. Otherwise, try using the predefined
-Bridges-2 modules or creating a custom Anaconda environment.
+We recommend using [Singularity](https://sylabs.io/singularity/) containers, especially the ones from the
+the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that fits your needs, as those are
+curated by NVIDIA optimized for their GPUs. Otherwise, try using the predefined
+Bridges-2 modules, or creating a custom Anaconda environment.
 
-## Using a Singularity container
+## 1. Using Singularity containers
 
 Bridges-2 supports running Singularity containers, allowing
 encapsulated environments to be built from scratch, or Docker
 containers to be pulled (and transformed into Singularity ones) from
-the Docker registry.
+the Docker registry (among other sources).
 
-You can either use a container already present in Bridges-2 or create
-(convert) your own.
+You can either use a container already present in Bridges-2 (under `/ocean/containers/ngc`) or create (convert) your own.
 
-You cannot use Docker containers on Bridges-2, but you can download
-a container from Docker and convert it to Singularity format.
+**Note:** You cannot use Docker containers on Bridges-2, but you can download
+a container from Docker and convert it to Singularity format. There are examples showing how to convert containers below.
 
 ### 
 <table>
@@ -68,18 +67,24 @@ a container from Docker and convert it to Singularity format.
    </table>
 
 
-To pull a container from [DockerHub](https://hub.docker.com/):
+To pull a container from [DockerHub](https://hub.docker.com/) and convert it to Singularity:
 ```shell
-singularity pull --disable-cache docker://alpine:latest
-```
-To pull a container from the [NVIDIA NGC library](https://catalog.ngc.nvidia.com/):
-```shell
-singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` 
+interact  # Start an interactive session in a Regular Memory node.
+singularity pull --disable-cache docker://alpine:latest  # Pull the latest "alpine" container from DockerHub.
+# You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 ```
 
-Convert the container to Singularity:
+To pull a container from the [NVIDIA NGC library](https://catalog.ngc.nvidia.com/) and convert it to Singularity:
 ```shell
-singularity exec --nv /path/to/CONTAINER.sif
+interact  # Start an interactive session in a Regular Memory node.
+singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` # Pull the 22.12 PyTorch container from NGC.
+# You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
+```
+
+Then you can use the container as needed:
+```shell
+interact  # Start an interactive session in a Regular Memory node, or use `interact --gpu` to use a GPU.
+singularity shell --nv /path/to/CONTAINER.sif
 ```
 
 ### Example 1: Use a container already on Bridges-2
@@ -132,7 +137,7 @@ valid container origin points to pull containers from:
 [More information on using Singularity at PSC can be found
 here: https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
 
-## Using predefined Bridges-2 environment modules 
+## 2. Using predefined Bridges-2 environment modules 
 
 PSC has built some environments which provide a rich, unified,
 Anaconda-based environment for AI, Machine Learning, and Big Data
@@ -179,8 +184,9 @@ The modules cannot be modified unless a local copy for the user is created.
 
 ```shell
 module avail AI
-    AI/anaconda3-tf1.2020.11
     AI/anaconda3-tf2.2020.11
+    AI/pytorch_22.07-1.12-py3
+    AI/tensorflow_22.07-2.8-py3
 
 module load AI/anaconda3-tf2.2020.11
 
@@ -191,7 +197,7 @@ pip freeze | grep tensorflow
 ```
 
 
-## Using a Conda module environment
+## 3. Using a Conda module environment
 
 Using a Conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
@@ -281,7 +287,7 @@ pip freeze | grep tensorflow
 More information can be found
 [in the PSC Anaconda documentation at https://www.psc.edu/resources/software/anaconda/](https://www.psc.edu/resources/software/anaconda/).
 
-## Using the default Python
+## 4. Using the default Python
 
 Both `"python, pip"` and `"python3, pip3"` are available on Bridges-2
 by default when logging into the nodes. These distributions that
@@ -326,12 +332,12 @@ python3 -m pip freeze | grep tensorflow
 python3 -m pip install --upgrade pip --user
 ```
 
-__Note:__ The installed packages should have been stored under the following
+**Note:** The installed packages should have been stored under the following
 directory: `$HOME/.local/lib/python3.6/site-packages/`
 
 Additionally, installing tools such as `"virtualenv"` for managing different environments is also supported.
 
-__Note:__ Having locally installed libraries, and then running Python from inside a Singularity/AppTainer container, 
+**Note:** Having locally installed libraries, and then running Python from inside a Singularity/AppTainer container, 
 might create problems for your containerized jobs as the Python installation inside the container might try using your
 `$HOME/.local/lib/` packages and thus create instability due to incompatible configurations (container + local packages 
 mix).
