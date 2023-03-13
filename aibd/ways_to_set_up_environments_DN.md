@@ -1,15 +1,14 @@
 [//]: # (Status: Draft)
 # Options available for setting up development environments on Bridges-2
 
-## Introduction
 
 There are multiple ways to set up  development environments on Bridges-2. 
 They include:
 
 * [Using Singularity containers](using-singularity-containers)
 * [Using predefined Bridges-2 environment modules](using-predefined-bridges-2-environment-modules)
-*[Using a Conda module environment](using-a-conda-module-environment)
-* [Using the default Python installation](using-the-default-python)
+* [Using a Conda module environment](using-a-conda-module-environment)
+* [Using the default Python installation](using-the-default-python). This method is not supported and not recommended unless you are familiar with virtualenvs and pip.
 
 We recommend using [Singularity](https://sylabs.io/singularity/) containers, especially the ones from the
 the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that fits your needs, as those are
@@ -107,7 +106,7 @@ singularity shell --nv /path/to/CONTAINER.sif
 ```
 
 [More information on using Singularity at PSC can be found
-here: https://www.psc.edu/resources/software/singularity/](https://www.psc.edu/resources/software/singularity/)
+in the PSC Singularity documentation.](https://www.psc.edu/resources/software/singularity/)
 
 ### Example 1: Use a container already on Bridges-2
 ```shell
@@ -198,7 +197,7 @@ The modules cannot be modified unless a local copy for the user is created.
    </table>
 
 
-### Example: use existing TensorFlow 2 module
+### Example: Use existing TensorFlow 2 module
 
 ```shell
 module avail AI
@@ -283,7 +282,7 @@ When the available Bridges-2 modules do not have a library that is also required
    </table>
 
 
-### Example: install TensorFlow 2
+### Example: Install TensorFlow 2
 
 ````shell
 module load anaconda3
@@ -312,6 +311,8 @@ by default when logging into the nodes. These distributions that
 are available by default can be customized by installing packages,
 although the base Python version cannot be changed.
 
+**Note** PSC cannot offer support for user-customized python environments.
+
 This way of customizing the default Python environment allows you to install packages using the `"--user"` flag, making it
 possible to extend the base package list and install
 libraries. Additionally, pip can be used both as the default binary or
@@ -326,7 +327,7 @@ python3 -m pip install PACKAGE1 --user
 pip3 install PACKAGE2==VERSION --user
 ```
 
-### Example: install TensorFlow 2
+### Example: Install TensorFlow 2
 ```shell
 # Add the local Python-binaries path to your PATH environment variable.
 # This line could also be added to your local ~/.bashrc file.
