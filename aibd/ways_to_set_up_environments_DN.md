@@ -19,11 +19,11 @@ Bridges-2 modules, or creating a custom Anaconda environment.
 
 Bridges-2 supports running Singularity containers, allowing
 encapsulated environments to be built from scratch. You cannot use
-Docker containers on Bridges-2, but you can download a container from
-Docker and convert it to Singularity format. There are examples
-showing how to convert containers below.
+Docker containers on Bridges-2, but you can download a Docker container
+and convert it to Singularity format. Examples are given below
+showing how to convert containers.
 
-You can either use a container already present in Bridges-2 (under `/ocean/containers/ngc`) or create your own.
+There are many containers for AI/BD applications already installed on Bridges-2 in directory `/ocean/containers/ngc`. These are alrady in Singularity format and ready to use. You can use one of these containers or create your own.
 
 ### 
 <table>
@@ -108,7 +108,7 @@ singularity shell --nv /path/to/CONTAINER.sif
 [More information on using Singularity at PSC can be found
 in the PSC Singularity documentation.](https://www.psc.edu/resources/software/singularity/)
 
-### Example 1: Use a container already on Bridges-2
+#### Example 1: Use a container already on Bridges-2
 ```shell
 # The path to the container is long. Let’s use a variable for readability.
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
@@ -125,7 +125,7 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-### Example 2: Create a container on Bridges-2
+#### Example 2: Create a container on Bridges-2
 
 When the container you need is not present on Bridges-2 already, you
 can pull one from a given URI. Run the following commands to pull a
