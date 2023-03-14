@@ -101,14 +101,14 @@ sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/us
  for details on the interact command.
 
 ```shell
-interact  # Start an interactive session. 
+interact   # Start an interactive session. 
 singularity shell --nv /path/to/CONTAINER.sif
 ```
 
 [More information on using Singularity at PSC can be found
 in the PSC Singularity documentation.](https://www.psc.edu/resources/software/singularity/)
 
-#### Example 1: Use a container already on Bridges-2
+#### Example: Use a container already on Bridges-2
 ```shell
 interact  # Start an interactive session.
 # The path to the container is long. Let’s use a variable for readability.
@@ -126,11 +126,15 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-#### Example 2: Create a container on Bridges-2
+#### Example: Create a container on Bridges-2
 
 When the container you need is not present on Bridges-2 already, you
-can pull one from a given URI. Run the following commands to pull a
-container to Bridges-2. This example pulls a container from Docker
+can pull one from a given URI. Run the following commands in an interactive session to pull a
+container to Bridges-2. See the section on [interactive
+sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions)
+ for details on the interact command.
+
+This example pulls a container from Docker
 Hub.
 
 ```shell
@@ -202,6 +206,7 @@ The modules cannot be modified unless a local copy for the user is created.
 
 ```shell
 interact   # Start an interactive session
+
 module avail AI
     AI/anaconda3-tf2.2020.11
     AI/pytorch_22.07-1.12-py3
