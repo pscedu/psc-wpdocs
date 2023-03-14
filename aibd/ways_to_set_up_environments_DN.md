@@ -126,7 +126,7 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-#### Example: Create a container on Bridges-2
+#### Example: Pull a container into Bridges-2
 
 When the container you need is not present on Bridges-2 already, you
 can pull one from a given URI. Run the following commands in an interactive session to pull a
@@ -135,7 +135,7 @@ sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/us
  for details on the interact command.
 
 This example pulls a container from Docker
-Hub.
+Hub and then saves it to $PROJECT for later use.
 
 ```shell
 # Start a job for building the container faster.
@@ -190,8 +190,7 @@ When using libraries that are popular for Data Science or Machine Learning, as t
 
 The Bridges-2 modules available are installed, tested, and supported by PSC
 staff, and are configured in a way to get the best performance
-on Bridges-2 **(for example,CPU-level instructions
-like MKL, GPUs as targets).  I don't understand this**
+on Bridges-2.
 
 </td>
    <td style="vertical-align:top;">
@@ -228,9 +227,9 @@ scratch. First load an Anaconda module and then create a new
 environment by specifying a name for your new environment and the
 packages to include. 
 
-Please note that in this scenario, there is going to be a base
-Anaconda environment with multiple packages already installed (base),
-but that env cannot be extended unless it’s first closed, that is why
+Please note that there is a default
+Anaconda environment with multiple packages already installed on Bridges-2 (base),
+but that default environment cannot be extended. That is why
 a new environment is being created from scratch.
 
 We recommend that you install all of the packages at the same time,
@@ -271,7 +270,7 @@ When the available Bridges-2 modules do not have a library that is also required
 <li>Specific Python versions can be used for each installation</li>
 <li>Offers performance-optimized packages compatible with each other</li>
 <li>Packages can also be installed via pip if needed</li>
-<li>Anaconda will provide a list of curated packages that are optimized for performance (CPU-level instructions like MKL, GPUs as targets)</li>
+<li>Anaconda will provide a list of curated packages that are optimized for performance.</li>
 <li>Environment reusability is robust with Anaconda, as environments can be cloned to other locations or created based on recipes that detail the specific versions used
 </li>
 </ul>
