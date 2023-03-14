@@ -83,15 +83,13 @@ singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` # Pu
 ```
 You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 
-These examples pulled a container from Docker, but there are other
+These examples pulled a container from DockerHub, using "docker://" as the origin string in the <code>singularity pull</code command, but there are other
 valid container origin points to pull containers from:
 
 - The [Singularity Container Library](https://cloud.sylabs.io/library)
   * Use "library://" as the origin string in the <code>singularity pull</code> command
 - [Singularity Hub](https://singularity-hub.org/)
   * Use "shub://" as the origin string in the <code>singularity pull</code> command
-- [Docker Hub](https://hub.docker.com)
-  * Use "docker://" as the origin string in the <code>singularity pull</code> command
 
 ### Using a Singularity container
 
