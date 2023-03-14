@@ -68,6 +68,8 @@ There are many containers for AI/BD applications already installed on Bridges-2 
 You can pull a Docker container into Bridges-2 and convert it to
 Singularity format with the <code>Singularity pull</code> command. 
 
+**Note** This should be done in an interactive session on Bridges-2.  See the [Interactive sessions section in the Bruidges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions) for more information.
+
 To pull a container from [DockerHub](https://hub.docker.com/) and convert it to Singularity:
 ```shell
 interact  # Start an interactive session on a Regular Memory node.
@@ -108,6 +110,7 @@ in the PSC Singularity documentation.](https://www.psc.edu/resources/software/si
 
 #### Example 1: Use a container already on Bridges-2
 ```shell
+interact  # Start an interactive session.
 # The path to the container is long. Let’s use a variable for readability.
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
 
@@ -198,6 +201,7 @@ The modules cannot be modified unless a local copy for the user is created.
 ### Example: Use existing TensorFlow 2 module
 
 ```shell
+interact   # Start an interactive session
 module avail AI
     AI/anaconda3-tf2.2020.11
     AI/pytorch_22.07-1.12-py3
@@ -283,6 +287,8 @@ When the available Bridges-2 modules do not have a library that is also required
 ### Example: Install TensorFlow 2
 
 ````shell
+interact # Start an interactive session
+
 module load anaconda3
 conda activate
 
@@ -320,6 +326,7 @@ the original default pip is not used anymore after updating the
 package manager version.
 
 ```shell
+interact   # Start an interactive session
 
 python3 -m pip install PACKAGE1 --user
 pip3 install PACKAGE2==VERSION --user
@@ -327,6 +334,8 @@ pip3 install PACKAGE2==VERSION --user
 
 ### Example: Install TensorFlow 2
 ```shell
+interact   # Start an interactive session
+
 # Add the local Python-binaries path to your PATH environment variable.
 # This line could also be added to your local ~/.bashrc file.
 export PATH=”${PATH}:${HOME}/.local/bin”
