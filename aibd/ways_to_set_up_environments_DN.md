@@ -23,7 +23,7 @@ Docker containers on Bridges-2, but you can download a Docker container
 and convert it to Singularity format. Examples are given below
 showing how to convert containers.
 
-There are many containers for AI/BD applications already installed on Bridges-2 in directory `/ocean/containers/ngc`. These are alrady in Singularity format and ready to use. You can use one of these containers or create your own.
+There are many containers for AI/BD applications already installed on Bridges-2 in directory `/ocean/containers/ngc`. These are already in Singularity format and ready to use. You can use one of these containers or you can create a container of your own.
 
 ### 
 <table>
