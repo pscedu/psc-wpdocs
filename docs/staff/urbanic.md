@@ -13,7 +13,7 @@ Science, Machine Learning and Parallel Programming of many sorts.
 
 John also instructs in many other programs. Currently this includes
 the International HPC Summer School, The Pennsylvania Governor's
-School for the Sciences, the DASIE Summer program and the ADAPT
+School for the Sciences, the DASIE Summer program, the ADAPT
 program for PA Community Colleges and PASSHE Schools, and others that
 he regrets omitting when this page was last updated.
 
