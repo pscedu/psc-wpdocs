@@ -19,4 +19,4 @@ he regrets omitting when this page was last updated.
 
 John is also a Parallel Computing Scientist at the PSC, where he
 continues to provide technical support and develop codes for HPC
-platforms. You shouldn't teach what you don't do!
+platforms. You shouldn't teach what you don't do! 
