@@ -5,10 +5,10 @@
 There are multiple ways to set up  development environments on Bridges-2. 
 They include:
 
-* [Using Singularity containers](using-singularity-containers)
-* [Using predefined Bridges-2 environment modules](using-predefined-bridges-2-environment-modules)
-* [Using a Conda module environment](using-a-conda-module-environment)
-* [Using the default Python installation](using-the-default-python). This method is not supported and not recommended unless you are familiar with virtualenvs and pip.
+* [Using Singularity containers](#using-singularity-containers)
+* [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules)
+* [Using a Conda module environment](#using-a-conda-module-environment)
+* [Using the default Python installation](#using-the-default-python). This method is not supported and not recommended unless you are familiar with virtualenvs and pip.
 
 We recommend using [Singularity](https://sylabs.io/singularity/) containers, especially the ones from the
 the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that fits your needs, as those are
@@ -19,11 +19,11 @@ Bridges-2 modules, or creating a custom Anaconda environment.
 
 Bridges-2 supports running Singularity containers, allowing
 encapsulated environments to be built from scratch. You cannot use
-Docker containers on Bridges-2, but you can download a container from
-Docker and convert it to Singularity format. There are examples
-showing how to convert containers below.
+Docker containers on Bridges-2, but you can download a Docker container
+and convert it to Singularity format. Examples are given below
+showing how to convert containers.
 
-You can either use a container already present in Bridges-2 (under `/ocean/containers/ngc`) or create your own.
+There are many containers for AI/BD applications already installed on Bridges-2 in directory `/ocean/containers/ngc`. These are already in Singularity format and ready to use. You can use one of these containers or you can create a container of your own.
 
 ### 
 <table>
@@ -68,6 +68,8 @@ You can either use a container already present in Bridges-2 (under `/ocean/conta
 You can pull a Docker container into Bridges-2 and convert it to
 Singularity format with the <code>Singularity pull</code> command. 
 
+**Note** This should be done in an interactive session on Bridges-2.  See the [Interactive sessions section in the Bruidges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions) for more information.
+
 To pull a container from [DockerHub](https://hub.docker.com/) and convert it to Singularity:
 ```shell
 interact  # Start an interactive session on a Regular Memory node.
@@ -83,15 +85,13 @@ singularity pull --disable-cache docker://nvcr.io/nvidia/pytorch:22.12-py3` # Pu
 ```
 You should now have a ".sif" file. That's the container converted into Singularity Image Format (SIF).
 
-These examples pulled a container from Docker, but there are other
+These examples pulled a container from DockerHub, using "docker://" as the origin string in the <code>singularity pull</code> command, but there are other
 valid container origin points to pull containers from:
 
 - The [Singularity Container Library](https://cloud.sylabs.io/library)
   * Use "library://" as the origin string in the <code>singularity pull</code> command
 - [Singularity Hub](https://singularity-hub.org/)
   * Use "shub://" as the origin string in the <code>singularity pull</code> command
-- [Docker Hub](https://hub.docker.com)
-  * Use "docker://" as the origin string in the <code>singularity pull</code> command
 
 ### Using a Singularity container
 
@@ -101,15 +101,16 @@ sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/us
  for details on the interact command.
 
 ```shell
-interact  # Start an interactive session. 
+interact   # Start an interactive session. 
 singularity shell --nv /path/to/CONTAINER.sif
 ```
 
 [More information on using Singularity at PSC can be found
 in the PSC Singularity documentation.](https://www.psc.edu/resources/software/singularity/)
 
-### Example 1: Use a container already on Bridges-2
+#### Example: Use a container already on Bridges-2
 ```shell
+interact  # Start an interactive session.
 # The path to the container is long. Let’s use a variable for readability.
 CONTAINER=/ocean/containers/ngc/tensorflow/tensorflow_latest.sif
 
@@ -125,12 +126,16 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-### Example 2: Create a container on Bridges-2
+#### Example: Pull a container into Bridges-2
 
 When the container you need is not present on Bridges-2 already, you
-can pull one from a given URI. Run the following commands to pull a
-container to Bridges-2. This example pulls a container from Docker
-Hub.
+can pull one from a given URI. Run the following commands in an interactive session to pull a
+container to Bridges-2. See the section on [interactive
+sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions)
+ for details on the interact command.
+
+This example pulls a container from Docker
+Hub and then saves it to $PROJECT for later use.
 
 ```shell
 # Start a job for building the container faster.
@@ -185,8 +190,7 @@ When using libraries that are popular for Data Science or Machine Learning, as t
 
 The Bridges-2 modules available are installed, tested, and supported by PSC
 staff, and are configured in a way to get the best performance
-on Bridges-2 **(for example,CPU-level instructions
-like MKL, GPUs as targets).  I don't understand this**
+on Bridges-2.
 
 </td>
    <td style="vertical-align:top;">
@@ -200,6 +204,8 @@ The modules cannot be modified unless a local copy for the user is created.
 ### Example: Use existing TensorFlow 2 module
 
 ```shell
+interact   # Start an interactive session
+
 module avail AI
     AI/anaconda3-tf2.2020.11
     AI/pytorch_22.07-1.12-py3
@@ -221,9 +227,9 @@ scratch. First load an Anaconda module and then create a new
 environment by specifying a name for your new environment and the
 packages to include. 
 
-Please note that in this scenario, there is going to be a base
-Anaconda environment with multiple packages already installed (base),
-but that env cannot be extended unless it’s first closed, that is why
+Please note that there is a default
+Anaconda environment with multiple packages already installed on Bridges-2 (base),
+but that default environment cannot be extended. That is why
 a new environment is being created from scratch.
 
 We recommend that you install all of the packages at the same time,
@@ -264,7 +270,7 @@ When the available Bridges-2 modules do not have a library that is also required
 <li>Specific Python versions can be used for each installation</li>
 <li>Offers performance-optimized packages compatible with each other</li>
 <li>Packages can also be installed via pip if needed</li>
-<li>Anaconda will provide a list of curated packages that are optimized for performance (CPU-level instructions like MKL, GPUs as targets)</li>
+<li>Anaconda will provide a list of curated packages that are optimized for performance.</li>
 <li>Environment reusability is robust with Anaconda, as environments can be cloned to other locations or created based on recipes that detail the specific versions used
 </li>
 </ul>
@@ -285,6 +291,8 @@ When the available Bridges-2 modules do not have a library that is also required
 ### Example: Install TensorFlow 2
 
 ````shell
+interact # Start an interactive session
+
 module load anaconda3
 conda activate
 
@@ -311,7 +319,7 @@ by default when logging into the nodes. These distributions that
 are available by default can be customized by installing packages,
 although the base Python version cannot be changed.
 
-**Note** PSC cannot offer support for user-customized python environments.
+**Note:** PSC **does not** offer support for user-customized python environments.
 
 This way of customizing the default Python environment allows you to install packages using the `"--user"` flag, making it
 possible to extend the base package list and install
@@ -322,6 +330,7 @@ the original default pip is not used anymore after updating the
 package manager version.
 
 ```shell
+interact   # Start an interactive session
 
 python3 -m pip install PACKAGE1 --user
 pip3 install PACKAGE2==VERSION --user
@@ -329,6 +338,8 @@ pip3 install PACKAGE2==VERSION --user
 
 ### Example: Install TensorFlow 2
 ```shell
+interact   # Start an interactive session
+
 # Add the local Python-binaries path to your PATH environment variable.
 # This line could also be added to your local ~/.bashrc file.
 export PATH=”${PATH}:${HOME}/.local/bin”
