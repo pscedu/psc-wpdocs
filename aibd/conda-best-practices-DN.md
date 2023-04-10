@@ -27,10 +27,13 @@ packages.
 
 ## Use $PROJECT space for your conda folder
 
-Before using Conda on Bridges, please have in mind that each of the different Conda environments will be created using
-an individual environment folder; and even if there is a cache folder for downloaded packages, it will still have to
-download any dependencies that are missing. That will use a lot of disk space and will get your HOME folder quota to
-100% utilization pretty easily. For that not to happen, set the files on the Ocean disk using of the following options:
+Be aware that each different Conda environmens will be created using
+an individual environment folder. Even if there is a cache folder for downloaded packages, it will still have to
+download any dependencies that are missing. That uses a lot of disk space and fill your $HOME quota pretty easily. 
+
+We recommend that you store those files in your $PROJECT space instead.
+
+To do this, create a symlink to your $PROJECT space. If you already have a conda folder in $HOME, you must move it first.
 
 ```shell
 # If you already have a conda folder, move it to PROJECT.
