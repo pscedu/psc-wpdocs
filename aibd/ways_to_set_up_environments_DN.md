@@ -1,5 +1,5 @@
 [//]: # (Status: Draft)
-# Options available for setting up development environments on Bridges-2
+## Setting up a development environment
 
 
 There are multiple ways to set up  development environments on Bridges-2. 
@@ -15,7 +15,7 @@ the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that f
 curated by NVIDIA and optimized for their GPUs. Otherwise, try using the predefined
 Bridges-2 modules, or creating a custom Anaconda environment.
 
-## Using Singularity containers
+### Using Singularity containers
 
 Bridges-2 supports running Singularity containers, allowing
 encapsulated environments to be built from scratch. You cannot use
@@ -63,7 +63,7 @@ There are many containers for AI/BD applications already installed on Bridges-2 
    </tbody>
    </table>
 
-### Pulling and converting Docker containers to Singularity
+#### Pulling and converting Docker containers to Singularity
 
 You can pull a Docker container into Bridges-2 and convert it to
 Singularity format with the <code>Singularity pull</code> command. 
@@ -93,7 +93,7 @@ valid container origin points to pull containers from:
 - [Singularity Hub](https://singularity-hub.org/)
   * Use "shub://" as the origin string in the <code>singularity pull</code> command
 
-### Using a Singularity container
+#### Using a Singularity container
 
 Once you have a Singularity container, start an interactive session on
 Bridges-2 and start your container. See the section on [interactive
@@ -108,7 +108,7 @@ singularity shell --nv /path/to/CONTAINER.sif
 [More information on using Singularity at PSC can be found
 in the PSC Singularity documentation.](https://www.psc.edu/resources/software/singularity/)
 
-#### Example: Use a container already on Bridges-2
+##### Example: Use a container already on Bridges-2
 ```shell
 interact  # Start an interactive session.
 # The path to the container is long. Let’s use a variable for readability.
@@ -126,7 +126,7 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
     tensorflow-probability==0.11.1
 ```
 
-#### Example: Pull a container into Bridges-2
+##### Example: Pull a container into Bridges-2
 
 When the container you need is not present on Bridges-2 already, you
 can pull one from a given URI. Run the following commands in an interactive session to pull a
@@ -154,7 +154,7 @@ cp CONTAINER.sif $PROJECT/ # Or $HOME
 ```
 
 
-## Using predefined Bridges-2 environment modules 
+### Using predefined Bridges-2 environment modules 
 
 PSC has built some environments which provide a rich, unified,
 Anaconda-based environment for AI, Machine Learning, and Big Data
@@ -201,7 +201,7 @@ The modules cannot be modified unless a local copy for the user is created.
    </table>
 
 
-### Example: Use existing TensorFlow 2 module
+#### Example: Use existing TensorFlow 2 module
 
 ```shell
 interact   # Start an interactive session
@@ -220,7 +220,7 @@ pip freeze | grep tensorflow
 ```
 
 
-## Using a Conda module environment
+### Using a Conda module environment
 
 Using a Conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
@@ -288,7 +288,7 @@ When the available Bridges-2 modules do not have a library that is also required
    </table>
 
 
-### Example: Install TensorFlow 2
+#### Example: Install TensorFlow 2
 
 ````shell
 interact # Start an interactive session
@@ -312,7 +312,7 @@ pip freeze | grep tensorflow
 More information can be found
 [in the PSC Anaconda documentation at https://www.psc.edu/resources/software/anaconda/](https://www.psc.edu/resources/software/anaconda/).
 
-## Using the default Python
+### Using the default Python
 
 Both `"python, pip"` and `"python3, pip3"` are available on Bridges-2
 by default when logging into the nodes. These distributions that
@@ -336,7 +336,7 @@ python3 -m pip install PACKAGE1 --user
 pip3 install PACKAGE2==VERSION --user
 ```
 
-### Example: Install TensorFlow 2
+#### Example: Install TensorFlow 2
 ```shell
 interact   # Start an interactive session
 
