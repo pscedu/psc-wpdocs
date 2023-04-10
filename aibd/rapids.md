@@ -51,12 +51,11 @@ examples](https://colab.research.google.com/drive/1rY7Ln6rEE1pOlfSHCYOVaqt8OvDO3
 
 ### Descriptive statistics example
 
-This code snippet  reads in a CSV file and outputs some descriptive statistics.
+This code snippet  reads in a CSV file and outputs some descriptive statistics. The file hw_25000.csv contains height and weight data for 25000 individuals Each record includes 3 values: index, height (inches), weight (pounds). There is also an initial header line.
 
 First, download the sample dataset:
 ```shell
 wget https://people.sc.fsu.edu/~jburkardt/data/csv/hw_25000.csv
-# hw_25000.csv, height and weight for 25000 individuals Each record includes 3 values: index, height (inches), weight (pounds). There is also an initial header line.
 ``` 
 
 Create a file named statistics.py with the following content:
