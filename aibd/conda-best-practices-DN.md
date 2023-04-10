@@ -178,14 +178,14 @@ them with a way to access and infect even more HPC environments.
 
 ## Create a backup of your environment
 
-Backups should be created as soon as a new functional environment is successfully created, so they can be easily
-recreated in case accidental modifications are performed, access to the actual env directory is lost, or the environment
-has to be deployed on a different host. The steps for creating backups involve generating a detailed list of installed
-packages that can be used for creating new environments using those values as inputs.
+Backups should be created as soon as a new functional environment is successfully created. Backups allow your new environment to be easily
+recreated if accidental modifications are performed, access to the actual env directory is lost, or the environment
+has to be deployed on a different host. Creating backups involves generating a detailed list of installed
+packages that can be used to recreate an environment using those values as inputs.
 
 __Warning__: restoring backups of environments depends on the origin and
 target Operating Systems being (roughly) the same. The environments will likely malfunction if they are not the same.
-Examples of where there can be incompatibilities:
+Examples of incompatibilities:
 
 * CPU architectures differ (x86_64 vs ppc64)
 * Operating Systems differ (CenOS 6 vs CentOS 7, CentOS/RHEL vs Ubuntu/Debian)
@@ -193,13 +193,17 @@ Examples of where there can be incompatibilities:
 * Package distribution channels not being available (private Conda channels)
 
 There are two main ways in which a backup can be created:
+ * Export the environment
+ * Pack the environment
+ 
 
-A. Export the environment: export the list of packages and then create a new environment when needed using that list as
+### Export the environment
+Export the list of packages and then create a new environment when needed using that list as
 the input.
 
-### Steps for backing-up the env
+### Steps for backing up the env
 
-Activate the env to generate the list of packages for, then export the list of packages to plain text files.
+Activate the env to generate a list of the packages in it, then export the list of packages to a plain text file.
 
 ```shell
 # This will create the Yaml file to use for creating the new environment. Refer to the examplel Yaml file under 
@@ -269,7 +273,8 @@ conda create --clone ORIGIN_CONDA_ENV --prefix=/PATH/TO/NEW_CONDA_ENV
 **Note:** These steps might not work as expected when using a shared target folder (prefix). The env could be created
 using the regular location first for testing purposes and generating the spec file.
 
-B. Pack the environment: pack the whole environment into a compressed tar file, then decompress the file and unpack it
+### Pack the environment
+Pack the whole environment into a compressed tar file, then decompress the file and unpack it
 when needed.
 
 ```shell
@@ -308,18 +313,20 @@ possible to
 have multiple directories for the different conda environments, and use that to have a way to archive the different
 environment configurations across time.
 
-For example, if a project was started and other existing environments are not going to be used for a while, a new conda
-project could be created as a way to make sure those other environments will be safe from any modifications.
+For example, if existing environments are not going to be used for a while, a new conda
+project could be created as a way to make sure those existing environments will be safe from any modifications.
 
-Please have in mind that the path names in the environments should not be changed, thus the name used the first time
-should be kept unchanged over time; and names should be restored to their original when the directories have been
+Please have in mind that the path names in the environments should not be changed. Thus the name used the first time
+should be kept unchanged over time, and names should be restored to their original when the directories have been
 renamed.
 
-Example: Switch from one conda directory to a new one.
+#### Create a new conda directory
+
+Example: Switch from an existing conda directory to a new one.
 
 ```shell
 
-# Unlinking the current directory.
+# Unlink the current directory
 unlink ~/.conda
 
 # Rename the old directory. This is the one that should be returned to the original directory name if needed.
@@ -328,14 +335,14 @@ mv $PROJECT/.conda $PROJECT/conda_OLD_PROJECT_NAME_ARCHIVE
 # Create a new directory for conda under PROJECT.
 mkdir $PROJECT/.conda
 
-# Create the symlink again. This step could be ignored if the first one is ignored as well.
+# Create the symlink again. *****  ???   This step could be ignored if the first one is ignored as well.  ********
 ln -s $PROJECT/.conda ~/.conda  
 ```
 
 ## Create environments on shared locations
 
-Another approach for using different directories is to specify a prefixes to denote where in the filesystem a Conda
-environment should be set
+Another approach for using different directories is to specify a prefix to denote where in the filesystem a Conda
+environment should be set.
 
 ```shell
 
@@ -378,11 +385,11 @@ conda env create -f conda/keras-retinanet4_conda_env_export.yaml --prefix $PROJE
 Please do:
 
 * Use a compute node for the installation process, so you can make use of the bandwidth and the I/O available there, but
-  try to get the node for more than an hour so the progress is not lost if there are a lot of packages to install.
-* When installing packages, try to specify the different packages at once, so Conda doesn't have to run the full
-  set of compatibility validations every time.
+  be sure to request more than an hour for your session, so the progress is not lost if there are a lot of packages to install.
+* When installing packages, try to specify all packages at once, so Conda doesn't have to run the full
+  set of compatibility validations multiple times.
 * Make sure that the destination folder for the packages is set to use the $PROJECT disk space, as the home
-  folder ($HOME) quota is low and the envs + cache are big.
+  folder ($HOME) quota is low and the envs and the cache are big.
 * Try to always use Conda to install packages and not pip. Only use pip when Conda is not an option for installing those
   required packages.
 * Try to only use the default Conda channel of the most popular and reputable ones. Install packages using pip if
@@ -395,7 +402,7 @@ Please do:
 
 Please don't:
 
-* Don't use additional Conda channels unless you know they are trustworthy.
-* Don't install packages unless you are going to use them.
-* Don't create multiple copies of the same environment, or at least tar the dir so there are less files using the file
+* Use additional Conda channels unless you know they are trustworthy.
+* Install packages unless you are going to use them.
+* Create multiple copies of the same environment, or at least tar the dir so there are less files using the file
   system.
