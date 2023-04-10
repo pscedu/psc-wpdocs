@@ -29,11 +29,11 @@ packages.
 
 Be aware that each different Conda environmens will be created using
 an individual environment folder. Even if there is a cache folder for downloaded packages, it will still have to
-download any dependencies that are missing. That uses a lot of disk space and fill your $HOME quota pretty easily. 
+download any dependencies that are missing. That uses a lot of disk space and will fill your $HOME quota quickly. 
 
 We recommend that you store those files in your $PROJECT space instead.
 
-To do this, create a symlink to your $PROJECT space. If you already have a conda folder in $HOME, you must move it first.
+To do this, create a symlink to your $PROJECT space. If you already have a conda folder in $HOME, you must move it to $PROJECT first.
 
 ```shell
 # If you already have a conda folder, move it to PROJECT.
@@ -162,9 +162,9 @@ conda install torch=1.0
 
 ## Using channels
 
-It's possible that a package is not available in the regular Conda channel (default). For those cases, it's possible to
-still install the package by specifying the name of the channel that has it available; however, please make sure that
-it's actually required to do it that way, since it's also possible to install packages using pip directly, even it that
+A package may not be available in the default Conda channel. In that case, it's possible to
+still install the package by specifying the name of the channel that has it available. However, please make sure that
+it's actually required to do it that way, since it's also possible to install packages using pip directly, even if that
 means compiling the specific packages.
 
 ```shell
@@ -173,24 +173,24 @@ conda create -n pytorch -c pytorch
 ```
 
 Finally, make sure that the channel you are trying to use is an entity you can trust, since ill-intended individuals
-could set modified packages available in an attempt to get researchers to install those Troyan-horse packages, providing
+could make modified packages available in an attempt to get researchers to install those Trojan-horse packages, providing
 them with a way to access and infect even more HPC environments.
 
 ## Create a backup of your environment
 
 Backups should be created as soon as a new functional environment is successfully created, so they can be easily
 recreated in case accidental modifications are performed, access to the actual env directory is lost, or the environment
-has to be deployed on a different host; and the steps for creating them involve generating a detailed list of installed
-package, so it can be used for creating new environments using those values as inputs.
+has to be deployed on a different host. The steps for creating backups involve generating a detailed list of installed
+packages that can be used for creating new environments using those values as inputs.
 
 __Warning__: restoring backups of environments depends on the origin and
-target Operative Systems being (roughly) the same. The environments will likely malfunction if they are not the same.
-Examples for incompatibilities:
+target Operating Systems being (roughly) the same. The environments will likely malfunction if they are not the same.
+Examples of where there can be incompatibilities:
 
-* CPU architectures differ (x86_64 vs ppc64).
-* Operating Systems differ (CenOS 6 vs CentOS 7, CentOS/RHEL vs Ubuntu/Debian).
-* Compilers or system libraries not available on the target system (gcc 4.x vs gcc 5.x, 6.x).
-* Package distribution channels not being available (private Conda channels).
+* CPU architectures differ (x86_64 vs ppc64)
+* Operating Systems differ (CenOS 6 vs CentOS 7, CentOS/RHEL vs Ubuntu/Debian)
+* Compilers or system libraries not available on the target system (gcc 4.x vs gcc 5.x, 6.x)
+* Package distribution channels not being available (private Conda channels)
 
 There are two main ways in which a backup can be created:
 
