@@ -4,28 +4,28 @@
 
 ## Introduction
 
-Conda is a Python package distribution that allows setting up development environments and handling dependencies for a
+Conda is a Python package distribution that allows you to set up development environments and handle dependencies for a
 curated set of packages that are widely used for Data Science and Machine Learning tasks. It is similar to using pip and
-virtual environments, but it differs from those by providing a way to select performance-optimized packages (optimized
-for CPU or GPU processing elements) to be installed based on the requirements of the task that has to be performed.
+virtual environments, but differs by providing a way to select performance-optimized packages (optimized
+for CPU or GPU processing elements) to be installed based on the requirements of your task.
 
-Additionally, using Conda (be it the full distribution "anaconda" or just the bare system "mini-conda"), still allows
-users to keep using pip or virtualenv if needed.
+Additionally, using Conda (be it the full distribution "anaconda" or just the bare system "mini-conda"), allows
+you to keep using pip or virtualenv if needed.
 
-Some other advantages of using Conda include:
+Other advantages of using Conda include:
 
-* Access to performance optimized packages (MKL).
-* Precompiled versions of packages, such as TensorFlow and PyTorch.
-* Package compatibility lists, so installed packages are compatible with each other.
-* Self-contained environments that can be maintained and used individually.
+* Access to performance optimized packages (MKL)
+* Precompiled versions of packages, such as TensorFlow and PyTorch
+* Package compatibility lists, so installed packages are compatible with each other
+* Self-contained environments that can be maintained and used individually
 
-  More information can be found on their [website](https://www.anaconda.com/products/individual).
+  More information can be found on [the Anaconda website](https://www.anaconda.com/products/individual).
 
 The [main difference between Conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) is that Conda
-installs (any) software binaries (no compilation required) while Pip compiles sources or wheels for (only) Python
-packages;
+installs (any) software binary (no compilation required) while Pip compiles sources or wheels for (only) Python
+packages.
 
-## Before you start
+## Use $PROJECT space for your conda folder
 
 Before using Conda on Bridges, please have in mind that each of the different Conda environments will be created using
 an individual environment folder; and even if there is a cache folder for downloaded packages, it will still have to
