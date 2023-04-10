@@ -10,7 +10,7 @@ virtual environments, but differs by providing a way to select performance-optim
 for CPU or GPU processing elements) to be installed based on the requirements of your task.
 
 Additionally, using Conda (be it the full distribution "anaconda" or just the bare system "mini-conda"), allows
-you to keep using pip or virtualenv if needed.
+you to use pip or virtualenv if needed.
 
 Other advantages of using Conda include:
 
@@ -45,9 +45,12 @@ ln -s $PROJECT/.conda ~/.conda
 
 ## Load and activate the Conda modules
 
-Next, load the Conda module by loading either the Community or the Enterprise version commands. After that, activate the
-base conda environment for any of them if you want to use the base packages included with Anaconda; or create a new
-environment yourself:
+Load the Conda module by loading either the Community or the Enterprise version commands. After that, activate the
+base conda environment if you want to use the base packages included with Anaconda, or create a new
+environment yourself.
+
+The specific instructions for activating each module can be found when running the command "`module help MODULENAME`".
+
 
 ```shell
 # Python 3
@@ -55,16 +58,14 @@ module load anaconda3
 conda activate
 ```
 
-Note: The `"anaconda3"` module makes use of Python 3. If the project to set up uses Python 2, then `"anaconda2"` should
-be loaded, but it would be better to convert the project to Python 3 instead. The specific instructions for activating
-each module can be found when running the command "`module help MODULENAME`".
+Note: The `"anaconda3"` module makes use of Python 3. To use Python 2, load `"anaconda2"` instead. However, we recommend that you convert the project to Python 3 instead. 
 
 ## Create new environment
 
-When creating a new environment with Conda, there are two main ways to do it:
+There are two ways to create a new environment:
 
-1. To use the regular "conda create" command, which can create a blank environment if no packages are specified, or it
-   could start by installing a list of packages (and it's dependencies) passed as an argument.
+1. Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
+   can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
     # This will create an empty environment, but it's not recommended as is because the command is not specific.
@@ -80,10 +81,9 @@ When creating a new environment with Conda, there are two main ways to do it:
     conda create -n YOUR_ENV_NAME python=3.8 tensorflow=2 scipy
     ```    
 
-2. To use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
-   complete list of packages generated from a different Conda environment. In this case, the file extension seems to be
-   important as well, and it should be "yaml", since using a ".txt" extension triggered errors even if the content was
-   still in yaml format.
+2. Use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
+   complete list of packages generated from a different Conda environment. The file extension is important and it should be "yaml". 
+   Using a ".txt" extension triggers errors even if the content was in yaml format.
 
     Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
     ```yaml
@@ -139,8 +139,8 @@ When creating a new environment with Conda, there are two main ways to do it:
     source activate $PROJECT/conda_envs/project_1
     ```
 
-__Note:__ Specifying a package version on Conda is not the same as when using pip. The syntax is similar but different. 
-For  example, two equal signs are used with pip for specifying the version to use; but with Conda, one equal sign is
+__Note:__ The syntax for specifying a package version on Conda is different than the syntax for pip. 
+For  example, two equal signs are used with pip for specifying the version to use, but with Conda, one equal sign is
 required.
 
 For example:
@@ -149,6 +149,7 @@ pip install PACKAGE_NAME==VERSION_NUMBER
 # Or
 conda install PACKAGE_NAME=VERSION_NUMBER
 
+---------- can these additional examples be removed?  -----------------
 # Correct usage, as pip uses two equal symbols.
 pip install torch==1.0
 
