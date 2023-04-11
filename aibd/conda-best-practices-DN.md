@@ -25,8 +25,8 @@ The [main difference between Conda and pip](https://www.anaconda.com/blog/unders
 installs (any) software binary (no compilation required) while Pip compiles sources or wheels for (only) Python
 packages.
 
-THis document explains these best practices for using Conda:
-* Use $PROJECT space for your conda folder
+This document explains these best practices for using Conda:
+* [Use $PROJECT space for your conda folder](#use-$project-space-for-your-conda-folder)
 * How to load and activate Conda
 * How to create a new environment
 * Using channels
