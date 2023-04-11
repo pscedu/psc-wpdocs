@@ -26,13 +26,13 @@ installs (any) software binary (no compilation required) while Pip compiles sour
 packages.
 
 This document explains these best practices for using Conda:
-* [Use $PROJECT space for your conda folder](#use-$project-space-for-your-conda-folder)
+* [Use $PROJECT space for your conda folder](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-$project-space-for-your-conda-folder)
 * How to load and activate Conda
 * How to create a new environment
 * Using channels
 * Create backups of your environments
 * Use different directories as needed
-* General dos and don'ts
+* [General dos and don'ts](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#dos-and-donts)
 
 ## Use $PROJECT space for your conda folder
 
