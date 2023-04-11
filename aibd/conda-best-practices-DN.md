@@ -26,12 +26,12 @@ installs (any) software binary (no compilation required) while Pip compiles sour
 packages.
 
 This document explains these best practices for using Conda:
-* [Use $PROJECT space for your conda folder](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-$project-space-for-your-conda-folder)
-* How to load and activate Conda
-* How to create a new environment
-* Using channels
-* Create backups of your environments
-* Use different directories as needed
+* [Use $PROJECT space for your conda folder](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-project-space-for-your-conda-folder)
+* [How to load and activate Conda](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#load-and-activate-the-conda-modules)
+* [How to create a new environment](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-new-environment)
+* [Using channels](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#using-channels)
+* [Create backups of your environments](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-a-backup-of-your-environment)
+* [Use different directories when needed](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-different-directories-when-needed)
 * [General dos and don'ts](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#dos-and-donts)
 
 ## Use $PROJECT space for your conda folder
