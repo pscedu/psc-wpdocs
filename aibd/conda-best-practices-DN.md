@@ -25,6 +25,15 @@ The [main difference between Conda and pip](https://www.anaconda.com/blog/unders
 installs (any) software binary (no compilation required) while Pip compiles sources or wheels for (only) Python
 packages.
 
+THis document explains these best practices for using Conda:
+* Use $PROJECT space for your conda folder
+* How to load and activate Conda
+* How to create a new environment
+* Using channels
+* Create backups of your environments
+* Use different directories as needed
+* General dos and don'ts
+
 ## Use $PROJECT space for your conda folder
 
 Be aware that each different Conda environment will be created using
@@ -201,7 +210,7 @@ There are two main ways in which a backup can be created:
 Export the list of packages and then create a new environment when needed using that list as
 the input.
 
-### Steps for backing up the env
+#### Steps for backing up the env
 
 Activate the env to generate a list of the packages in it, then export the list of packages to a plain text file.
 
@@ -259,7 +268,7 @@ xz                        5.2.10               h5eee18b_1
 zlib                      1.2.13               h5eee18b_0
 ```
 
-### Steps for creating (or restoring) the env
+#### Steps for creating (or restoring) the env
 
 You can now create environments using the Yaml file with the list of packages from the original env.
 
@@ -282,7 +291,7 @@ when needed.
 conda install conda-pack -c conda-forge
 
 # Pack the environment by specifying the location it's stored.
-conda pack -p /PATH/TO/ORIGINAL_ENV_DIR/
+# conda pack -p /PATH/TO/ORIGINAL_ENV_DIR/
 conda pack -p /home/USER/.conda/envs/pytorch_22.12-py3
 
 Collecting packages...
@@ -320,7 +329,7 @@ Please have in mind that the path names in the environments should not be change
 should be kept unchanged over time, and names should be restored to their original when the directories have been
 renamed.
 
-#### Create a new conda directory
+### Create a new conda directory
 
 Example: Switch from an existing conda directory to a new one.
 
@@ -339,7 +348,7 @@ mkdir $PROJECT/.conda
 ln -s $PROJECT/.conda ~/.conda  
 ```
 
-## Create environments on shared locations
+### Create environments on shared locations
 
 Another approach for using different directories is to specify a prefix to denote where in the filesystem a Conda
 environment should be set.
