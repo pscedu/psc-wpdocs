@@ -15,6 +15,7 @@ the [NVIDIA NGC catalog](https://catalog.ngc.nvidia.com/) if there is one that f
 curated by NVIDIA and optimized for their GPUs. Otherwise, try using the predefined
 Bridges-2 modules, or creating a custom Anaconda environment.
 
+<div id="using-singularity-containers">&nbsp;</div>
 ### Using Singularity containers
 
 Bridges-2 supports running Singularity containers, allowing
