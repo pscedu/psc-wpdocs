@@ -1,8 +1,4 @@
-[//]: # (Status: Draft)
-## Setting up a development environment
-
-
-There are multiple ways to set up  development environments on Bridges-2. 
+There are multiple ways to set up custom development environments on Bridges-2. 
 They include:
 
 * [Using Singularity containers](#using-singularity-containers)
