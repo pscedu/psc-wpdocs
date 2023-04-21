@@ -1,4 +1,4 @@
-<h3 name="custom-env">Custom Conda Environments with OnDemand</h3>
+<h3 name="custom-env">Custom conda environments with OnDemand</h3>
 
 You can  use the Python “ipykernel” package to create a definition file for  Jupyter Notebook which
 uses a custom Python installation rather than the default one. After creating that file and launching Jupyter Notebooks via
@@ -111,7 +111,7 @@ Click the blue Launch button. You may have to wait for resources to be allocated
 
 At this point, you can start a new notebook or open an existing one.
 
-<h5>Start a new notebook</h5>
+<h5>Start a new Notebook</h5>
 
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
