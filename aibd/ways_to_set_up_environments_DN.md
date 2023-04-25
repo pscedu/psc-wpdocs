@@ -1,8 +1,4 @@
-[//]: # (Status: Draft)
-## Setting up a development environment
-
-
-There are multiple ways to set up  development environments on Bridges-2. 
+There are multiple ways to set up custom development environments on Bridges-2. 
 They include:
 
 * [Using Singularity containers](#using-singularity-containers)
@@ -261,7 +257,7 @@ conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE2 PACKAG
 </tr>
 </thead>
 <tbody>
-<tr style="vertical-align:top;">
+<tr>
 <td style="vertical-align:top;">
 When the available Bridges-2 modules do not have a library that is also required for a project or the versions are slightly different as to what is needed (i.e. TensorFlow 2.1 instead of 2.2)
 </td>
