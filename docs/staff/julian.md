@@ -25,4 +25,5 @@ in Systems and Computer Engineering from University of the Andes
 ***Publications***
 See [Julian's Google Scholar page](https://scholar.google.com/citations?user=F9CRNeYAAAAJ) for a list of his publications.
 
-***Interests:** Virtualization, Web Development, Entrepreneurship, User Experience Optimization.
+***Interests:***
+Virtualization, Web Development, Entrepreneurship, User Experience Optimization.
