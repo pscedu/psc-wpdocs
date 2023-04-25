@@ -19,11 +19,10 @@ HPC](https://sirius.utp.edu.co/) Research Group, and worked as a
 Software Developer for top-performing companies in Latin America and
 the Caribbean region ([VeriTran](https://www.veritran.com/),
 [BeMovil](https://www.bemovil.net/)) after earning his Master's degree
-in Systems and Computer Engineering from University of the Andes
-(University of the Andes) in 2012.
+in Systems and Computer Engineering from University of the Andes in 2012.
 
-***Publications***
+### Publications ###
 See [Julian's Google Scholar page](https://scholar.google.com/citations?user=F9CRNeYAAAAJ) for a list of his publications.
 
-***Interests:***
+### Interests ###
 Virtualization, Web Development, Entrepreneurship, User Experience Optimization.
