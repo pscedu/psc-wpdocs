@@ -157,16 +157,6 @@ For example:
 pip install PACKAGE_NAME==VERSION_NUMBER
 # Or
 conda install PACKAGE_NAME=VERSION_NUMBER
-
----------- can these additional examples be removed?  -----------------
-# Correct usage, as pip uses two equal symbols.
-pip install torch==1.0
-
-# Incorrect, as conda uses only one equal symbol.
-conda install torch==1.0
-
-# Correct, as conda uses only one equal symbol.
-conda install torch=1.0
 ```
 
 ## Using channels
