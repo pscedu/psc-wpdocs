@@ -1,6 +1,3 @@
-
-### Using a Conda module environment
-
 Using a Conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
 environment by specifying a name for your new environment and the
