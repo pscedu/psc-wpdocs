@@ -157,16 +157,6 @@ For example:
 pip install PACKAGE_NAME==VERSION_NUMBER
 # Or
 conda install PACKAGE_NAME=VERSION_NUMBER
-
----------- can these additional examples be removed?  -----------------
-# Correct usage, as pip uses two equal symbols.
-pip install torch==1.0
-
-# Incorrect, as conda uses only one equal symbol.
-conda install torch==1.0
-
-# Correct, as conda uses only one equal symbol.
-conda install torch=1.0
 ```
 
 ## Using channels
@@ -335,17 +325,12 @@ Example: Switch from an existing conda directory to a new one.
 
 ```shell
 
-# Unlink the current directory
-unlink ~/.conda
-
 # Rename the old directory. This is the one that should be returned to the original directory name if needed.
 mv $PROJECT/.conda $PROJECT/conda_OLD_PROJECT_NAME_ARCHIVE  
 
 # Create a new directory for conda under PROJECT.
 mkdir $PROJECT/.conda
 
-# Create the symlink again. *****  ???   This step could be ignored if the first one is ignored as well.  ********
-ln -s $PROJECT/.conda ~/.conda  
 ```
 
 ### Create environments on shared locations
