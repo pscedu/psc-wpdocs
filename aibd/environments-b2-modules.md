@@ -1,6 +1,3 @@
-
-### Using predefined Bridges-2 environment modules 
-
 PSC has built some environments which provide a rich, unified,
 Anaconda-based environment for AI, Machine Learning, and Big Data
 applications. Each environment includes several popular AI/ML/BD
