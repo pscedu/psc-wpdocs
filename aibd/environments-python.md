@@ -1,6 +1,3 @@
-
-### Using the default Python
-
 Both `"python, pip"` and `"python3, pip3"` are available on Bridges-2
 by default when logging into the nodes. These distributions that
 are available by default can be customized by installing packages,
