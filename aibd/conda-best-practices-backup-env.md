@@ -1,4 +1,3 @@
-## Create a backup of your environment
 
 Backups should be created as soon as a new functional environment is successfully created. Backups allow your new environment to be easily
 recreated if accidental modifications are performed, access to the actual env directory is lost, or the environment
