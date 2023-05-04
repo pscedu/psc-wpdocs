@@ -73,7 +73,7 @@ Note: The `"anaconda3"` module makes use of Python 3. To use Python 2, load `"an
 
 There are two ways to create a new environment:
 
-1. Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
+1.Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
    can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
