@@ -1,5 +1,3 @@
-[//]: # (Status: Draft)
-
 # Conda Best Practices
 
 ## Introduction
@@ -72,8 +70,8 @@ Note: The `"anaconda3"` module makes use of Python 3. To use Python 2, load `"an
 ## Create new environment
 
 There are two ways to create a new environment:
-<ol>
-<li>Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
+
+1. Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
    can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
@@ -89,8 +87,8 @@ There are two ways to create a new environment:
     # Example: install the latest TensorFlow 2 that is compatible with Python 3.8
     conda create -n YOUR_ENV_NAME python=3.8 tensorflow=2 scipy
     ```    
-   </li>
-<li>Use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
+   
+2. Use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
    complete list of packages generated from a different Conda environment. The file extension is important and it should be "yaml". 
    Using a ".txt" extension triggers errors even if the content was in yaml format.
 
@@ -158,8 +156,7 @@ pip install PACKAGE_NAME==VERSION_NUMBER
 # Or
 conda install PACKAGE_NAME=VERSION_NUMBER
 ```
-   </li>
-   </ol>
+ 
    
 ## Using channels
 
