@@ -1,4 +1,3 @@
-## Using channels
 
 A package may not be available in the default Conda channel. In that case, it's possible to
 still install the package by specifying the name of the channel that has it available. However, please make sure that
