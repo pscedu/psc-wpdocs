@@ -26,13 +26,13 @@ installs (any) software binary (no compilation required) while Pip compiles sour
 packages.
 
 This document explains these best practices for using Conda:
-* [Use $PROJECT space for your conda folder](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-project-space-for-your-conda-folder)
-* [Load and activate the Conda modules](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#load-and-activate-the-conda-modules)
-* [Create a new environment](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-new-environment)
-* [Using channels](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#using-channels)
-* [Create a backup of your environment](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-a-backup-of-your-environment)
-* [Use different directories when needed](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-different-directories-when-needed)
-* [General dos and don'ts](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#dos-and-donts)
+* [Use $PROJECT space for your conda folder](#use-project-space-for-your-conda-folder)
+* [Load and activate the Conda modules](#load-and-activate-the-conda-modules)
+* [Create a new environment](#create-new-environment)
+* [Using channels](#using-channels)
+* [Create a backup of your environment](#create-a-backup-of-your-environment)
+* [Use different directories when needed](#use-different-directories-when-needed)
+* [General dos and don'ts](#dos-and-donts)
 
 ## Use $PROJECT space for your conda folder
 
