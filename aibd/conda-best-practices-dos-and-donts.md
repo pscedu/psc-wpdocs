@@ -1,4 +1,3 @@
-## Dos and Don'ts
 
 Please do:
 
