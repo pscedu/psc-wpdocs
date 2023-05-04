@@ -1,4 +1,3 @@
-## Load and activate the Conda modules
 
 Load the Conda module by loading either the Community or the Enterprise version commands. After that, activate the
 base conda environment if you want to use the base packages included with Anaconda, or create a new
