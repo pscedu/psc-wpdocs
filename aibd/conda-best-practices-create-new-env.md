@@ -1,4 +1,4 @@
-## Create new environment
+
 
 There are two ways to create a new environment: use the `conda create` command or the `conda env create` command.
 
