@@ -1,4 +1,3 @@
-## Use different directories when needed
 
 Similar to when the .conda symlink from HOME to PROJECT was created in the "Before you start" section (and the
 "[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)" of the Bridges User Guide), it is
