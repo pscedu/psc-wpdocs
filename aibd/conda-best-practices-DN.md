@@ -26,13 +26,13 @@ installs (any) software binary (no compilation required) while Pip compiles sour
 packages.
 
 This document explains these best practices for using Conda:
-* [Use $PROJECT space for your conda folder](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-project-space-for-your-conda-folder)
-* [Load and activate the Conda modules](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#load-and-activate-the-conda-modules)
-* [Create a new environment](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-new-environment)
-* [Using channels](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#using-channels)
-* [Create a backup of your environment](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#create-a-backup-of-your-environment)
-* [Use different directories when needed](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#use-different-directories-when-needed)
-* [General dos and don'ts](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/conda-best-practices-DN.md#dos-and-donts)
+* [Use $PROJECT space for your conda folder](#use-project-space-for-your-conda-folder)
+* [Load and activate the Conda modules](#load-and-activate-the-conda-modules)
+* [Create a new environment](#create-new-environment)
+* [Using channels](#using-channels)
+* [Create a backup of your environment](#create-a-backup-of-your-environment)
+* [Use different directories when needed](#use-different-directories-when-needed)
+* [General dos and don'ts](#dos-and-donts)
 
 ## Use $PROJECT space for your conda folder
 
@@ -72,8 +72,8 @@ Note: The `"anaconda3"` module makes use of Python 3. To use Python 2, load `"an
 ## Create new environment
 
 There are two ways to create a new environment:
-
-1. Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
+<ol>
+<li>Use the "conda create" command. You will create a blank environment if no packages are specified, or you 
    can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
@@ -89,8 +89,8 @@ There are two ways to create a new environment:
     # Example: install the latest TensorFlow 2 that is compatible with Python 3.8
     conda create -n YOUR_ENV_NAME python=3.8 tensorflow=2 scipy
     ```    
-
-2. Use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
+   </li>
+<li>Use the "conda env create" command, which uses a structured yaml file for installing an environment based on the
    complete list of packages generated from a different Conda environment. The file extension is important and it should be "yaml". 
    Using a ".txt" extension triggers errors even if the content was in yaml format.
 
@@ -158,7 +158,9 @@ pip install PACKAGE_NAME==VERSION_NUMBER
 # Or
 conda install PACKAGE_NAME=VERSION_NUMBER
 ```
-
+   </li>
+   </ol>
+   
 ## Using channels
 
 A package may not be available in the default Conda channel. In that case, it's possible to
