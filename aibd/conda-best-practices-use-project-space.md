@@ -1,5 +1,3 @@
-## Use $PROJECT space for your conda folder
-
 Be aware that each different Conda environment will be created using
 an individual environment folder. Even if there is a cache folder for downloaded packages, Conda will still have to
 download any dependencies that are missing. That uses a lot of disk space and will fill your $HOME quota quickly. 
