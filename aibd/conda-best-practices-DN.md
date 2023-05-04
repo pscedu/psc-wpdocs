@@ -160,6 +160,7 @@ conda install PACKAGE_NAME=VERSION_NUMBER
 ```
    </li>
    </ol>
+   
 ## Using channels
 
 A package may not be available in the default Conda channel. In that case, it's possible to
