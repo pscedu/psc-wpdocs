@@ -1,13 +1,11 @@
 
-Similar to when the .conda symlink from $HOME to $PROJECT was created in the "[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)" section of the PSC Anaconda documentation, it is
-possible to
-have multiple directories for the different conda environments, and use that to have a way to archive the different
-environment configurations across time.
+It is possible to have multiple directories for the different conda environments, and to use that to archive different
+environment configurations across time. This is similar to creating the .conda symlink from $HOME to $PROJECT as outlined in the "[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)" section of the PSC Anaconda documentation, 
 
 For example, if existing environments are not going to be used for a while, a new conda
 project could be created as a way to make sure those existing environments will be safe from any modifications.
 
-Please have in mind that the path names in the environments should not be changed. Thus the name used the first time
+Remember that the path names in the environments should not be changed. Thus the name used the first time
 should be kept unchanged over time, and names should be restored to their original when the directories have been
 renamed.
 
