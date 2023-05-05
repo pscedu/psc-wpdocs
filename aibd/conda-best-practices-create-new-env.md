@@ -81,8 +81,8 @@ Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
     source activate $PROJECT/conda_envs/project_1
 ```
 
-__Note:__ The syntax for specifying a package version on Conda is different than the syntax for pip. 
-For  example, two equal signs are used with pip for specifying the version to use, but with Conda, one equal sign is
+__Note:__ The syntax for specifying a package version on conda is different than the syntax for pip. 
+For  example, two equal signs are used with pip for specifying the version to use, but with conda, one equal sign is
 required.
 
 For example:

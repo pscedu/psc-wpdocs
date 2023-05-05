@@ -19,7 +19,7 @@ longer.
 
 You can install as many packages as you like with one
 command. Optionally, you can choose the versions of your
-packages, although leaving versions unspecified allows Conda to
+packages, although leaving versions unspecified allows conda to
 find the best option.
 
 Examples  of the syntax of the command to create an environment and install
@@ -33,7 +33,7 @@ conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE2 PACKAG
 <table>
 <thead>
 <tr>
-<th>When to use a Conda module</th><th>Advantages</th><th>Disadvantages</th>
+<th>When to use a conda module</th><th>Advantages</th><th>Disadvantages</th>
 </tr>
 </thead>
 <tbody>

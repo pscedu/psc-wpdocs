@@ -3,7 +3,7 @@ They include:
 
 * [Using Singularity containers](#using-singularity-containers)
 * [Using predefined Bridges-2 environment modules](#using-predefined-bridges-2-environment-modules)
-* [Using a Conda module environment](#using-a-conda-module-environment)
+* [Using a conda module environment](#using-a-conda-module-environment)
 * [Using the default Python installation](#using-the-default-python). This method is not supported and not recommended unless you are familiar with virtualenvs and pip.
 
 We recommend using [Singularity](https://sylabs.io/singularity/) containers, especially the ones from the
