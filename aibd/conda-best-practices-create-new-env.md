@@ -7,8 +7,8 @@ You will create a blank environment if no packages are specified, or you
    can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
-    # consider renaming the conda directory to something else     
-  # This will create an empty environment, but it's not recommended as is because the command is not specific.
+    # Consider renaming the conda directory to something else     
+    # This will create an empty environment, but it's not recommended as is because the command is not specific.
     conda create -n YOUR_ENV_NAME python
     
     # The packages to install should be specified when creating the environment.
