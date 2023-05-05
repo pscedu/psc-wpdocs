@@ -28,7 +28,7 @@ mkdir $PROJECT/.conda
 
 ### Create environments on shared locations
 
-Another approach for using different directories is to specify a prefix to denote where in the filesystem a Conda
+Another approach for using different directories is to specify a prefix to denote where in the filesystem a conda
 environment should be set.
 
 ```shell
