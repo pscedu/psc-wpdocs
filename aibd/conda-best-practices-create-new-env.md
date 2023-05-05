@@ -72,8 +72,8 @@ Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
       - xz=5.2.10=h5eee18b_1
       - zlib=1.2.13=h5eee18b_0
     prefix: $HOME/.conda/envs/pandas_test 
-    ```
-    ```shell
+```
+```shell
     conda env create -f PACKAGES_LIST.yaml --prefix /PATH/TO/NEW_CONDA_ENV
     
     # Example:
