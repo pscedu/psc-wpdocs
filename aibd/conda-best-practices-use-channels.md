@@ -1,5 +1,5 @@
 
-A package may not be available in the default Conda channel. In that case, it's possible to
+A package may not be available in the default conda channel. In that case, it's possible to
 still install the package by specifying the name of the channel that has it available. However, please make sure that
 it's actually required to do it that way, since it's also possible to install packages using pip directly, even if that
 means compiling the specific packages.

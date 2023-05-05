@@ -3,10 +3,10 @@ curated set of packages that are widely used for Data Science and Machine Learni
 virtual environments, but differs by providing a way to select performance-optimized packages (optimized
 for CPU or GPU processing elements) to be installed based on the requirements of your task.
 
-Additionally, using Conda (be it the full distribution "anaconda" or just the bare system "mini-conda"), allows
+Additionally, using conda (be it the full distribution "anaconda" or just the bare system "mini-conda"), allows
 you to use pip or virtualenv if needed.
 
-Other advantages of using Conda include:
+Other advantages of using conda include:
 
 * Access to performance optimized packages (MKL)
 * Precompiled versions of packages, such as TensorFlow and PyTorch
@@ -15,13 +15,13 @@ Other advantages of using Conda include:
 
 More information can be found on [the Anaconda website](https://www.anaconda.com/products/individual).
 
-The [main difference between Conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) is that Conda
+The [main difference between conda and pip](https://www.anaconda.com/blog/understanding-conda-and-pip) is that conda
 installs (any) software binary (no compilation required) while Pip compiles sources or wheels for (only) Python
 packages.
 
-This document explains these best practices for using Conda:
+This document explains these best practices for using conda:
 * [Use $PROJECT space for your conda folder](#use-project-space-for-your-conda-folder)
-* [Load and activate the Conda modules](#load-and-activate-the-conda-modules)
+* [Load and activate the conda modules](#load-and-activate-the-conda-modules)
 * [Create a new environment](#create-new-environment)
 * [Using channels](#using-channels)
 * [Create a backup of your environment](#create-a-backup-of-your-environment)
