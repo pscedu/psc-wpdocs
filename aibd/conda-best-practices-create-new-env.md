@@ -23,12 +23,12 @@ You will create a blank environment if no packages are specified, or you
    
 ### Use the "conda env create" command
 The `conda env create` command uses a structured yaml file for installing an environment based on the
-   complete list of packages generated from a different conda environment. The file extension is important and it should be "yaml". 
-   Using a ".txt" extension triggers errors even if the content was in yaml format.
+complete list of packages generated from a different conda environment. The file extension is important and it should be "yaml". 
+Using a ".txt" extension triggers errors even if the content was in yaml format.
 
-    Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
+Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
     
-    ```yaml
+```yaml
     name: pandas_test
     channels:
       - defaults
@@ -79,7 +79,7 @@ The `conda env create` command uses a structured yaml file for installing an env
     # Example:
     conda env create -f packages_list.yaml --prefix $PROJECT/conda_envs/project_1
     source activate $PROJECT/conda_envs/project_1
-    ```
+```
 
 __Note:__ The syntax for specifying a package version on Conda is different than the syntax for pip. 
 For  example, two equal signs are used with pip for specifying the version to use, but with Conda, one equal sign is
