@@ -1,6 +1,5 @@
 
-Similar to when the .conda symlink from HOME to PROJECT was created in the "Before you start" section (and the
-"[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)" of the Bridges User Guide), it is
+Similar to when the .conda symlink from $HOME to $PROJECT was created in the "[Storing your Anaconda environments](http://www.psc.edu/resources/software/anaconda)" section of the PSC Anaconda documentation, it is
 possible to
 have multiple directories for the different conda environments, and use that to have a way to archive the different
 environment configurations across time.
