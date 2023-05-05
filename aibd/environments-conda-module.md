@@ -1,15 +1,15 @@
-Using a Conda environment allows you to set up an environment from
+Using a conda environment allows you to set up an environment from
 scratch. First load an Anaconda module and then create a new
 environment by specifying a name for your new environment and the
 packages to include. 
 
 Please note that there is a default
 Anaconda environment with multiple packages already installed on Bridges-2 (base),
-but that default environment cannot be extended. That is why
-a new environment is being created from scratch.
+but that default environment cannot be extended. That is why you may want to create
+a new environment from scratch.
 
 We recommend that you install all of the packages at the same time,
-since Conda tries to make the packages compatible as much as possible
+since conda tries to make the packages compatible as much as possible
 every time a new one is installed. That is, if all of the packages
 required are installed at the same time, only one
 package-compatibility process is run; but if the packages are
@@ -23,7 +23,7 @@ packages, although leaving versions unspecified allows Conda to
 find the best option.
 
 Examples  of the syntax of the command to create an environment and install
-packages are given here. Refer to the [Conda documentation](https://docs.conda.io/projects/conda/en/latest/commands/create.html) for full details.
+packages are given here. Refer to the [conda documentation](https://docs.conda.io/projects/conda/en/latest/commands/create.html) for full details.
 
 <pre class="sample">
 conda create -n <i>ENV_NAME PACKAGE1</i>
@@ -37,7 +37,7 @@ conda create -n <i>ENV_NAME</i> python=3.<i>VERSION.MINORVERSION PACKAGE2 PACKAG
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr style="vertical-align:top;">
 <td style="vertical-align:top;">
 When the available Bridges-2 modules do not have a library that is also required for a project or the versions are slightly different as to what is needed (i.e. TensorFlow 2.1 instead of 2.2)
 </td>
