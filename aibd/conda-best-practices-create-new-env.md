@@ -7,7 +7,8 @@ You will create a blank environment if no packages are specified, or you
    can install a list of packages (and their dependencies) by passing those as an argument.
 
     ```shell
-    # This will create an empty environment, but it's not recommended as is because the command is not specific.
+    # consider renaming the conda directory to something else     
+  # This will create an empty environment, but it's not recommended as is because the command is not specific.
     conda create -n YOUR_ENV_NAME python
     
     # The packages to install should be specified when creating the environment.
@@ -22,10 +23,11 @@ You will create a blank environment if no packages are specified, or you
    
 ### Use the "conda env create" command
 The `conda env create` command uses a structured yaml file for installing an environment based on the
-   complete list of packages generated from a different Conda environment. The file extension is important and it should be "yaml". 
+   complete list of packages generated from a different conda environment. The file extension is important and it should be "yaml". 
    Using a ".txt" extension triggers errors even if the content was in yaml format.
 
     Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
+    
     ```yaml
     name: pandas_test
     channels:
