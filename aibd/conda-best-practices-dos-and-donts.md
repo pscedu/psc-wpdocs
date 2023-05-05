@@ -20,5 +20,5 @@ Please don't:
 
 * Use additional Conda channels unless you know they are trustworthy.
 * Install packages unless you are going to use them.
-* Create multiple copies of the same environment, or at least tar the dir so there are less files using the file
+* Create multiple copies of the same environment, or at least tar the directory so there are less files using the file
   system.
