@@ -11,7 +11,7 @@ Examples of incompatibilities:
 * CPU architectures differ (x86_64 vs ppc64)
 * Operating Systems differ (CenOS 6 vs CentOS 7, CentOS/RHEL vs Ubuntu/Debian)
 * Compilers or system libraries not available on the target system (gcc 4.x vs gcc 5.x, 6.x)
-* Package distribution channels not being available (private Conda channels)
+* Package distribution channels not being available (private conda channels)
 
 There are two main ways in which a backup can be created:
  * Export the environment
