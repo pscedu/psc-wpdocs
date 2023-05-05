@@ -6,7 +6,8 @@ There are two ways to create a new environment: use the `conda create` command o
 You will create a blank environment if no packages are specified, or you 
    can install a list of packages (and their dependencies) by passing those as an argument.
 
-    ```shell
+```shell
+    # Consider renaming the conda directory to something else     
     # This will create an empty environment, but it's not recommended as is because the command is not specific.
     conda create -n YOUR_ENV_NAME python
     
@@ -18,15 +19,16 @@ You will create a blank environment if no packages are specified, or you
     
     # Example: install the latest TensorFlow 2 that is compatible with Python 3.8
     conda create -n YOUR_ENV_NAME python=3.8 tensorflow=2 scipy
-    ```    
+```    
    
 ### Use the "conda env create" command
 The `conda env create` command uses a structured yaml file for installing an environment based on the
-   complete list of packages generated from a different Conda environment. The file extension is important and it should be "yaml". 
-   Using a ".txt" extension triggers errors even if the content was in yaml format.
+complete list of packages generated from a different conda environment. The file extension is important and it should be "yaml". 
+Using a ".txt" extension triggers errors even if the content was in yaml format.
 
-    Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
-    ```yaml
+Example `PACKAGES_LIST.yaml` file for a regular `pandas` installation:
+    
+```yaml
     name: pandas_test
     channels:
       - defaults
@@ -70,14 +72,14 @@ The `conda env create` command uses a structured yaml file for installing an env
       - xz=5.2.10=h5eee18b_1
       - zlib=1.2.13=h5eee18b_0
     prefix: $HOME/.conda/envs/pandas_test 
-    ```
-    ```shell
+```
+```shell
     conda env create -f PACKAGES_LIST.yaml --prefix /PATH/TO/NEW_CONDA_ENV
     
     # Example:
     conda env create -f packages_list.yaml --prefix $PROJECT/conda_envs/project_1
     source activate $PROJECT/conda_envs/project_1
-    ```
+```
 
 __Note:__ The syntax for specifying a package version on Conda is different than the syntax for pip. 
 For  example, two equal signs are used with pip for specifying the version to use, but with Conda, one equal sign is
