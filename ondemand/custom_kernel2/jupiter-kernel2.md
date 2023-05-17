@@ -162,6 +162,7 @@ vim $HOME/.local/share/jupyter/kernels/tensorflow_latest/kernel.json
     "argv": [
         "/usr/bin/singularity",
         "exec",
+        "--nv",
         "--bind",
         "/ocean,{connection_file}:/connection-spec",
         "/ocean/containers/ngc/tensorflow/tensorflow_latest.sif",
