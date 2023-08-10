@@ -1,0 +1,6 @@
+Modelzoo¶
+The Cerebras team has prepared a modelzoo that has some models for you to get started. The repository is under continuous development. You can find the detailed instructions there for using the code.
+The models available are listed in the Modelzoo "Models in this repository" section.
+If you have any issues running any piece of code on the repository, please create a Github issue with appropriate steps to reproduce the bug along with the software stack you are using and logs generated.
+The location of the Modelzoo Github repository: https://github.com/Cerebras/modelzoo
+
