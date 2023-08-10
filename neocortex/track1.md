@@ -12,76 +12,88 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 <tr>
   <td>BERT</td>
   <td>     
-[TensorFlow code] (https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)
-    
-[PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)</td>
+
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)<br />
+[PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)
+</td>
   <td>-</td>
 </tr>
 <tr>
 <td>BERT (fine-tuning) Classifier</td>
-<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/classifier)
+<td>
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/classifier)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/classifier)</td>
 <td>-</td>  
 </tr>
 
 <tr>
   <td>BERT (fine-tuning) Named Entity Recognition</td><td>
-[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/token_classifier)
-  
+    
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/token_classifier)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/token_classifier)</td>
 <td>-</td>
 </tr>
 
 <tr>
   <td>BERT (fine-tuning) Summarization</td>
-<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/extractive_summarization)
+<td> 
   
-[PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/extractive_summarization)</td>
+  [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/extractive_summarization)<br />
+  [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/extractive_summarization)</td>
 <td>-</td>
 </tr>
 
 <tr>
 <td>BERT (fine-tuning) Question Answering</td>
-<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/qa)
+<td> 
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/qa)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/qa)</td>
 <td>-</td>
 </tr>
 
 <tr>
   <td>GPT-2</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gpt2)
+<td>
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gpt2)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/gpt2)</td>
 
-<td>&nbsp;
+<td>
+  
   [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gpt2)</td>
 </tr>
 
 <tr> 
   <td>GPT-3</td>
 <td>-</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gpt3)</td>
+<td>
+  
+  [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gpt3)</td>
 </tr>
 
 <tr> 
   <td>GPT-J</td>
 <td>-</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gptj)</td>
+<td>
+  
+  [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/gptj)</td>
 </tr>
 
 <tr>
 <td>Linformer</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/linformer)</td>
+<td>
+  
+  [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/linformer)</td>
 <td>-</td>
 </tr>
 
 <tr>
 <td>RoBERTa</td>
 <td>
-  [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)</td>
 <td>-</td>
 </tr>
@@ -89,30 +101,34 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 <tr>
 <td>T5</td>
 <td>
-[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/t5)
-  
+
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/t5)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/t5)</td>
 <td>-</td>
 </tr>
 
 <tr><td>Transformer</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/transformer)
+<td>
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/transformer)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/transformer)</td>
 <td>-</td>
 </tr>
 
 <tr>
   <td>MNIST (fully connected)</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/fc_mnist/tf)
+<td>
   
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/fc_mnist/tf)<br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/fc_mnist/pytorch)</td>
 <td>-</td>
 </tr>
 
 <tr>
   <td>2D UNet (experimental)</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/unet/tf)</td>
+<td>
+  
+[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/unet/tf)</td>
 <td>-</td>
 </tbody>
 </table>
