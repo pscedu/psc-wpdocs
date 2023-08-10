@@ -1,19 +1,0 @@
-System Specifications¶
-Neocortex features two Cerebras CS-2 systems and an HPE Superdome Flex HPC server robustly provisioned to drive the CS-2 systems simultaneously at maximum speed and support the complementary requirements of AI and HPDA workflows. Neocortex is federated with Bridges-2 to yield great benefits including:
-* Access to the Bridges-2 filesystem for management of persistent data
-* General-purpose computing for complementary data wrangling and preprocessing
-* High-bandwidth connectivity to other XSEDE sites, campus, labs, and clouds
-* The configuration of each specialized system is described below:
-* Each CS-2 features a Cerebras WSE2 (Wafer Scale Engine2), the largest chip ever built.
-AI ProcessorCerebras Wafer Scale Engine 2 (WSE2)
-* 850,000 Sparse Linear Algebra Compute (SLAC) Cores
-* 2.6 trillion transistors
-* 46,225 mm2 40 GB SRAM on-chip memory
-* 20 PB/s memory bandwidth
-* 220 Pb/s interconnect bandwidthSystem I/O1.2 Tb/s (12 × 100 GbE ports)* HPE Superdome Flex
-Processors32 x Intel Xeon Platinum 8280L, 28 cores, 56 threads each, 2.70-4.0 GHz, 38.5 MB cache (more info).Memory24 TiB RAM, aggregate memory bandwidth of 4.5 TB/sLocal Disk32 x 6.4 TB NVMe SSDs
-* 204.6 TB aggregate
-* 150 GB/s read bandwidthNetwork to CS-2 systems24 x 100 GbE interfaces
-* 1.2 Tb/s (150 GB/s) to each Cerebras CS-2 system
-* 2.4 Tb/s aggregateInterconnect to Bridges-216 Mellanox HDR-100 InfiniBand adapters
-* 1.6 Tb/s aggregateOSRed Hat Enterprise Linux
