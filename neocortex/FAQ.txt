@@ -1,0 +1,37 @@
+FAQ (general)¶
+Q 1. Is it possible to use Keras functions inside the TF estimator?
+A 1. Yes, we support the TensorFlow Keras Layers API in our model function.
+Q 2. What is the resource limitation for Neocortex? I can see that under this project, I only have 5TB storage and 1000 large regular mem CPU hours.
+A 2. Please refer to the Allocations section for more information.
+Q 3. I see ogbg_molchembl. How do we get the other ogb datasets to the machine? Should we store them in our allocations or will you put the entire ogb collection in that location?
+A 3. On the Ocean shared-filesystem, the path of some modelzoo datasets is /ocean/neocortex/cerebras/data/.
+On the SDF, these datasets are available under $LOCAL at $LOCAL/cerebras/data/
+Q 4. Are RSA keys supported?
+A 4. RSA keys are supported. You can go through an extra process using a form on the PSC website. Please visit this URL for more information: https://www.psc.edu/types-of-ssh-authentication/
+Q 5. Is newgrp to be run on the login node or the interact node? or either?
+A 5. If you have multiple projects on the PSC systems, you need to use the newgrp command to switch between them and set to the Neocortex project. You will not be able to get an interact session until you are on the right project. Therefore, you should run it on the login node, but you can also run it on the interact node if you specified the group allocation account id (--account) to use.
+Q 6. Do we have an option to run using a batch job?
+A 6. Yes, you can also run a batch job. Please review the section “Running jobs” for more details.
+Q 7. What does it mean when interact command hangs?
+A 7. This could mean that the queue is busy and not ready for any more jobs at that time. Another possibility is that you are not in the right project allocation. If you have multiple projects on the PCS systems, please use newgrp to switch to the appropiate Neocortex project. Please contact us if you come across any specific error or it hangs for a long time.
+Q 8. Which queue to submit for the batch job?
+A 8. Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the Allocations section for more details.
+Q 9. Do you expect us to compile our model?
+A 9. You are expected to compile and run your model.
+Q 10. Is it mandatory to use Keras API for defining the Network Architecture? Can we use Keras model APIs? Or it should be only Keras layers?
+A 10. Currently, we support Tensorflow Keras Layers API in our model function.
+Q 11. How to verify correctness before access to neocortex?
+A 11. compile() will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your model is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
+Q 12. Does CS1 support profiling with TensorBoard?
+A 12. Yes, you can save summaries via Tensorboard. Please check the ‘Cerebras-ML-User-Guide’ for detailed steps.
+Q 13. Is 3D convolution supported (for 3D U-Net)?
+A 13. Not as of now. We will update once they are ready to run.
+Q 14. Are the limitations on SRAM allocation to compute nodes? For example, if we use only 5.8% of the nodes (WSE2), can we still use all 18 GB of SRAM for a larger mini-batch?
+A 14. No, the CS-2 can only run one job at a time. Parallel runs are not supported as of now.
+Q 15. Can we create parallel implementations to increase core usage? E.g., If we use 5.8% of nodes (WSE2), can we create 20 copies of our network for a 20x speedup?
+A 15. Parallel runs are not supported as of now.
+Q 16. Along the same lines what about tanh activation, in place of ReLU?
+A 16. Tanh activation function is supported.
+Q 17. Is there a list of supported operations?
+A 17. Yes, please refer to the “Developing for the CS-2 section” in this document.
+
