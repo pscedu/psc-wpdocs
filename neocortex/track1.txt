@@ -1,15 +1,0 @@
-Track 1 (ML): Cerebras modelzoo ML models¶
-Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo ML models software. Valid for Spring 2023 CFP applicants.
-Good Match Criteria: You would be a good match for this track if your research already uses, or could potentially use, any of the following models:
-ModelLayer Pipeline modeWeight Streaming modeBERTTensorFlow code
-PyTorch code-BERT (fine-tuning) ClassifierTensorFlow code
-PyTorch code-BERT (fine-tuning) Named Entity RecognitionTensorFlow code
-PyTorch code-BERT (fine-tuning) SummarizationTensorFlow code
-PyTorch code-BERT (fine-tuning) Question AnsweringTensorFlow code
-PyTorch code-GPT-2TensorFlow code
-PyTorch codeTensorFlow codeGPT-3-TensorFlow codeGPT-J-TensorFlow codeLinformerTensorFlow code-RoBERTaTensorFlow code
-PyTorch code-T5TensorFlow code
-PyTorch code-TransformerTensorFlow code
-PyTorch code-MNIST (fully connected)TensorFlow code
-PyTorch code-2D UNet (experimental)TensorFlow code-Based on the Cerebras modelzoo R1.6.0 GitHub page.
-
