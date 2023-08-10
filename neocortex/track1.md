@@ -12,6 +12,7 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 <tr>
   <td>BERT</td>
   <td> 
+    
     [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)
     
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)</td>
