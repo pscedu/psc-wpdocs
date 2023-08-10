@@ -11,14 +11,14 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 <tbody>
 <tr>
   <td>BERT</td>
-  <td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)
+  <td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)
     
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)</td>
   <td>-</td>
 </tr>
 <tr>
 <td>BERT (fine-tuning) Classifier</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/classifier)
+<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/classifier)
   
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/classifier)</td>
 <td>-</td>  
@@ -26,7 +26,7 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 
 <tr>
   <td>BERT (fine-tuning) Named Entity Recognition</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/token_classifier)
+<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/token_classifier)
   
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/token_classifier)</td>
 <td>-</td>
@@ -34,7 +34,7 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 
 <tr>
   <td>BERT (fine-tuning) Summarization</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/extractive_summarization)
+<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/extractive_summarization)
   
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/extractive_summarization)</td>
 <td>-</td>
@@ -42,7 +42,7 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 
 <tr>
 <td>BERT (fine-tuning) Question Answering</td>
-<td>[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/qa)
+<td> [TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert/fine_tuning/qa)
   
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert/fine_tuning/qa)</td>
 <td>-</td>
