@@ -1,4 +1,4 @@
-## Track 1 (ML): Cerebras modelzoo ML models##
+## Track 1 (ML): Cerebras modelzoo ML models ##
 Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo ML models software. Valid for Spring 2023 CFP applicants.
 
 **Good Match Criteria:** You would be a good match for this track if your research already uses, or could potentially use, any of the following models:
