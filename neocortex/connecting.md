@@ -1,15 +1,23 @@
-Connecting to the System
-Connecting to Neocortex (preferred)¶
-* How to access Neocortex?
-* Neocortex users have been granted Neocortex resources for their projects. Please refer to the Allocations section for more information.
-* The usage will be tracked using their respective grants.
-* ssh PSC_USERNAME@neocortex.psc.edu
-* You will get to compile code, validate code, and run training jobs on the CS machines from this resource.
-Connecting to Bridges-2¶
-* How to access Bridges-2?
-* Neocortex users have been granted access to different resources in Bridges-2 to run their jobs. Please refer to the Allocations section for more information.
-* Connect using your PSC credentials, SSHing into Bridges-2 using the following command, where PSC_U?SERNAME? is your PSC username.
-* ssh PSC_USERNAME@bridges2.psc.edu
-* If you need to reset your password, please visit the PSC Password Change Utility webpage.
-* You will get to compile code, and validate code from this resource; however, you will not get to run training jobs on the CS machines from Bridges-2, only from Neocortex.
+## Connecting to the System
+### Connecting to Neocortex (preferred)
+
+Neocortex users have been granted Neocortex resources for their projects. Please refer to the Allocations section for more information.
+The usage will be tracked using your respective grants.
+
+To connect, use the following command, where *psc_username* is your PSC username.
+
+<pre> ssh <i>psc_username</i>@neocortex.psc.edu</pre>
+
+You can compile code, validate code, and run training jobs on the CS machines from this resource.
+
+### Connecting to Bridges-2
+
+Neocortex users are granted access to different resources in Bridges-2 to run their jobs. Please refer to the Allocations section for more information.
+
+Connect using your PSC credentials. SSH to Bridges-2 using the following command, where *psc_username* is your PSC username.
+<pre> ssh <i>psc_username</i>@bridges2.psc.edu</pre>
+
+If you need to reset your password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
+
+You acan compile code and validate code from this resource; however, you can not run training jobs on the CS machines from Bridges-2, only from Neocortex.
 
