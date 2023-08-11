@@ -2,6 +2,8 @@
 
 As described in the Cerebras documentation [How Cerebras Works](https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html), the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
 
+![flowchart showing steps to run on a CS system](how_cerebras_works_workflow.jpg)
+
 The steps to port your code are laid out in the the [Workflow for TensorFlow on CS](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/cs-tf-workflow.html) documentation. This documentation also goes over the process needed for performing such code migration. This is a good starting point for understanding the process. 
 1. Port to Cerebras
 2. Prepare input
@@ -10,63 +12,82 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 
 **Note**
 
-An estimation of the required effort to get the code ready is one to four weeks for a single person performing all of the edits.
+ * An estimation of the required effort to get the code ready is one to four weeks for a single person performing all of the edits.
 
-For track one users: For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
+ * **For track one users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
 
 ### TensorFlow
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
-1. Modify model_fn() in model.py to build the layers of your model function, return a tf.estimator.EstimatorSpec object
-2. Modify input_fn() in data.py, return a tf.data.Dataset object
-3. Implement custom helper logic in utils.py, as needed
-4. Set dataset path and model parameters in configs/params.yaml
-5. Run run.py to validate and compile your code
+1. Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object
+2. Modify `input_fn()` in `data.py`, return a `tf.data.Dataset` object
+3. Implement custom helper logic in `utils.py`, as needed
+4. Set dataset path and model parameters in `configs/params.yaml`
+5. Run `run.py` to validate and compile your code
+   
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
+
+![code migration workflow](code_migration_workflow.svg)
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from left to right and from top to bottom.
 
-Structure of the code¶
+<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments passed when running code" width=75%; />
+
+#### Structure of the code
 Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding
 * model.py: It contains the model function definition. For information about the layers supported, please visit the Cerebras Documentation.
 * data.py: where the input data pipeline is called. Additional data processor modules may be defined elsewhere (e.g., in the input folder) for data pipeline implementation.
 * utils.py: it contains the helper scripts.
 * configs/params.yaml: YAML file containing the model configuration and the training hyperparameter settings.
 * run.py: it contains the training/compilation/evaluation script.
+
 Info
+
 Suggested order of files to use: model.py -> data.py -> utils.py -> configs/params.yaml -> run.py
-model.py¶
+
+**model.py**
+
 The model function that defines your neural network model. Contains the model function definition and model implementation.
 It supports the usage of the Tensorflow Keras Layers API, but the Tensorflow Metrics API is not supported.
 These files get things ready for the Estimator API. The code is divided between what is run in the host (I/O functions, support server, SDF), and what will run in the wafer.
+
 Note
+
 Please have in mind your code will not call "train" nor "fit" as the Estimator does that (takes care of that responsibility).
 For information about the layers supported, please visit the Cerebras Documentation.
 def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:
 This method should have the logic to build the layers of the model function.
+
 Input:
 * These input arguments (features, labels) are taken automatically from the values returned from the input_fn method, the run configuration set by run.py (mode) and the configs/params.yaml file.
 * features: This is the first item returned from the input_fn. It should be a single tf.Tensor or dict.
 * labels: This is the second item returned from the input_fn. It should be a single tf.Tensor or dict. If mode is tf.estimator.ModeKeys.PREDICT, labels=None will be passed.
 * mode: it specifies if this is running in training, evaluation, or prediction mode.
 * params: additional configuration as a dict of hyperparameters loaded from the configs/params.yaml file to configure Estimators for tuning
+
 Output:
 * tf.estimator.EstimatorSpec: it fully defines the model to be run by an estimator.
+
 The EstimatorSpec takes:
 * mode: passed automatically from the parent model_fn function.
 * loss: model loss
 * train_op: optimizer
 * host_call (dict):
 * { "accuracy": tf.compat.v1.metrics.accuracy() }
-data.py¶
+
+**data.py**
+
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
 The input function builds the input pipeline and yields the batched data in the form of (features, labels) pairs, where:
 * features can be a tensor or dictionary of tensors, and
 * labels can be a tensor, a dictionary of tensors, or None.
-def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset:
+
+`def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset:`
+
 This method should have the input function and run any preprocessing that might be needed before returning a TF dataset object.
+
 Inputs
 * params (dict):
-{
+```{
     train_input: dict = {
         data_dir: str,
         num_parallel_calls: int = 0,
@@ -74,12 +95,18 @@ Inputs
         shuffle: bool
     }
 }
+```
+
 * mode (str): One of the tf.estimator.ModeKeys.* string. The available options are: TRAIN, EVAL, TRAIN_AND_EVAL, and INFERENCE
 Output
 * tf.data.Dataset: "features" and "labels" will be inside this Dataset object as the handles to the batched data that the model will use.
-utils.py¶
+
+**utils.py**
+
 It contains the helper scripts, including get_params which parses the params dictionary from the YAML file. You can also include the user-defined helper functions here or elsewhere.
-configs/¶
+
+**configs/**
+
 Directory of YAML files containing model configurations and training hyperparameters (params.yaml).
 If you would like to utilize the models in the examples directly but just change a few settings such as the number of layers, dimension, and hyperparameters, the easiest way is to change parameter values in a YAML config file. The parameter values will be read when the program starts and passed to the code function as a dictionary.
 A few examples of contents in the params.yaml file:
@@ -96,10 +123,12 @@ A few examples of contents in the params.yaml file:
 * keep_checkpoint_max: 2
 * model_dir: 'model_dir'
 For more details regarding the parameter files and arguments that can be specified, please refer to the Pytorch Create Params YAML file Cerebras Documentation page.
-run.py¶
+
+**run.py**
 It contains the training script, performs train and eval. This file contains the general framework to build the estimator and most of the time it should not be modified.
 For more information please visit the Porting TensorFlow to Cerebras Cerebras documentation page.
-PyTorch¶
+
+###PyTorch
 This is an overview of the steps needed for porting an existing PyTorch codebase to run on Neocortex:
 1. Modify the data loaders for training (get_train_dataloader) and evaluation (get_eval_dataloader) in data.py, return a torch.utils.data.DataLoader object
 2. Modify model.py to define the model using a PyTorchBaseModel class.
