@@ -30,63 +30,69 @@ The following diagram shows the suggested order in which the modifications shoul
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from left to right and from top to bottom.
 
-<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments passed when running code" width=75%; />
+<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments when running code" style="width:60%;" />
 
 #### Structure of the code
-Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding
-* model.py: It contains the model function definition. For information about the layers supported, please visit the Cerebras Documentation.
-* data.py: where the input data pipeline is called. Additional data processor modules may be defined elsewhere (e.g., in the input folder) for data pipeline implementation.
-* utils.py: it contains the helper scripts.
-* configs/params.yaml: YAML file containing the model configuration and the training hyperparameter settings.
-* run.py: it contains the training/compilation/evaluation script.
+Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
+* `model.py`: contains the model function definition. For information about the layers supported, please visit the Cerebras Documentation.
+* `data.py`: calls the input data pipeline. Additional data processor modules may be defined elsewhere (e.g., in the input folder) for data pipeline implementation.
+* `utils.py`: contains the helper scripts.
+* `configs/params.yaml`: YAML file containing the model configuration and the training hyperparameter settings.
+* `run.py`: contains the training/compilation/evaluation script.
 
-Info
+**Info**
 
-Suggested order of files to use: model.py -> data.py -> utils.py -> configs/params.yaml -> run.py
+ - Suggested order of files to use: `model.py -> data.py -> utils.py -> configs/params.yaml -> run.py`
 
-**model.py**
+##### model.py
 
-The model function that defines your neural network model. Contains the model function definition and model implementation.
+The model function that defines your neural network model. Contains the model function definition and model implementation. 
+
 It supports the usage of the Tensorflow Keras Layers API, but the Tensorflow Metrics API is not supported.
+
 These files get things ready for the Estimator API. The code is divided between what is run in the host (I/O functions, support server, SDF), and what will run in the wafer.
 
-Note
+**Note**
 
-Please have in mind your code will not call "train" nor "fit" as the Estimator does that (takes care of that responsibility).
-For information about the layers supported, please visit the Cerebras Documentation.
-def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:
+Please have in mind that your code will not call "train" or "fit" as the Estimator does that (takes care of that responsibility).
+
+For information about the layers supported, please visit the [Cerebras Documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).
+
+`def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:`
+
 This method should have the logic to build the layers of the model function.
 
-Input:
-* These input arguments (features, labels) are taken automatically from the values returned from the input_fn method, the run configuration set by run.py (mode) and the configs/params.yaml file.
-* features: This is the first item returned from the input_fn. It should be a single tf.Tensor or dict.
-* labels: This is the second item returned from the input_fn. It should be a single tf.Tensor or dict. If mode is tf.estimator.ModeKeys.PREDICT, labels=None will be passed.
-* mode: it specifies if this is running in training, evaluation, or prediction mode.
-* params: additional configuration as a dict of hyperparameters loaded from the configs/params.yaml file to configure Estimators for tuning
+**Input:**
 
-Output:
-* tf.estimator.EstimatorSpec: it fully defines the model to be run by an estimator.
+These input arguments (features, labels) are taken automatically from the values returned from the `input_fn` method, the run configuration set by `run.py` (mode) and the `configs/params.yaml` file.
+* `features`: This is the first item returned from the `input_fn`. It should be a single `tf.Tensor` or `dict`.
+* `labels`: This is the second item returned from the `input_fn`. It should be a single `tf.Tensor` or `dict`. If mode is `tf.estimator.ModeKeys.PREDICT`, `labels=None` will be passed.
+* `mode`: it specifies if this is running in training, evaluation, or prediction mode.
+*`params`: additional configuration as a `dict` of hyperparameters loaded from the `configs/params.yaml` file to configure Estimators for tuning
+
+**Output:**
+* `tf.estimator.EstimatorSpec`: it fully defines the model to be run by an estimator.
 
 The EstimatorSpec takes:
-* mode: passed automatically from the parent model_fn function.
-* loss: model loss
-* train_op: optimizer
-* host_call (dict):
-* { "accuracy": tf.compat.v1.metrics.accuracy() }
-
-**data.py**
+* `mode`: passed automatically from the parent model_fn function.
+* `loss`: model loss
+* `train_op`: optimizer
+* `host_call (dict)`:
+``` { "accuracy": tf.compat.v1.metrics.accuracy() } ```
+ 
+##### data.py
 
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
 The input function builds the input pipeline and yields the batched data in the form of (features, labels) pairs, where:
-* features can be a tensor or dictionary of tensors, and
-* labels can be a tensor, a dictionary of tensors, or None.
+* `features` can be a tensor or dictionary of tensors, and
+* `labels` can be a tensor, a dictionary of tensors, or None.
 
-`def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset:`
+``` def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset: ```
 
 This method should have the input function and run any preprocessing that might be needed before returning a TF dataset object.
 
-Inputs
-* params (dict):
+**Input**
+* params (`dict`):
 ```{
     train_input: dict = {
         data_dir: str,
@@ -97,59 +103,70 @@ Inputs
 }
 ```
 
-* mode (str): One of the tf.estimator.ModeKeys.* string. The available options are: TRAIN, EVAL, TRAIN_AND_EVAL, and INFERENCE
-Output
-* tf.data.Dataset: "features" and "labels" will be inside this Dataset object as the handles to the batched data that the model will use.
+* `mode` (str): One of the `tf.estimator.ModeKeys.*` strings. The available options are: TRAIN, EVAL, TRAIN_AND_EVAL, and INFERENCE
+**Output**
+* tf.data.Dataset`: "features" and "labels" will be inside this Dataset object as the handles to the batched data that the model will use.
 
-**utils.py**
+##### utils.py
 
 It contains the helper scripts, including get_params which parses the params dictionary from the YAML file. You can also include the user-defined helper functions here or elsewhere.
 
 **configs/**
 
 Directory of YAML files containing model configurations and training hyperparameters (params.yaml).
+
 If you would like to utilize the models in the examples directly but just change a few settings such as the number of layers, dimension, and hyperparameters, the easiest way is to change parameter values in a YAML config file. The parameter values will be read when the program starts and passed to the code function as a dictionary.
-A few examples of contents in the params.yaml file:
+
+A few examples of content in the params.yaml file:
 * train_input:
-* data_dir: './tfds' # Place to store data
-* batch_size: 256
+   * `data_dir`: `'./tfds'` # Place to store data
+   * `batch_size`: `256`
 * model:
-* activation_fn: 'relu' # Other options: relu, tanh, elu, selu, linear (identity)
+   * `activation_fn`: `'relu'` # Other options: relu, tanh, elu, selu, linear (identity)
 * optimizer:
-* learning_rate: 0.001
+   * `learning_rate`: `0.001`
 * runconfig:
-* max_steps: 100000
-* save_checkpoints_steps: 10000
-* keep_checkpoint_max: 2
-* model_dir: 'model_dir'
-For more details regarding the parameter files and arguments that can be specified, please refer to the Pytorch Create Params YAML file Cerebras Documentation page.
+   * `max_steps`: `100000`
+   * `save_checkpoints_steps`: `10000`
+   * `keep_checkpoint_max`: `2`
+   * `model_dir`: `'model_dir'`
+For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras Documentation page.
 
-**run.py**
+##### run.py
 It contains the training script, performs train and eval. This file contains the general framework to build the estimator and most of the time it should not be modified.
-For more information please visit the Porting TensorFlow to Cerebras Cerebras documentation page.
+For more information please visit the [Porting TensorFlow to Cerebras](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/porting-tf-to-cs/index.html) Cerebras documentation page.
 
-###PyTorch
+### PyTorch
 This is an overview of the steps needed for porting an existing PyTorch codebase to run on Neocortex:
-1. Modify the data loaders for training (get_train_dataloader) and evaluation (get_eval_dataloader) in data.py, return a torch.utils.data.DataLoader object
-2. Modify model.py to define the model using a PyTorchBaseModel class.
-3. Modify configs/params.yaml to set the dataset path and model definition parameters.
-4. Modify run.py to validate and compile your code.
+1. Modify the data loaders for training (`get_train_dataloader`) and evaluation (`get_eval_dataloader`) in `data.py`, return a `torch.utils.data.DataLoader` object
+2. Modify `model.py` to define the model using a `PyTorchBaseModel` class.
+3. Modify `configs/params.yaml` to set the dataset path and model definition parameters.
+4. Modify `run.py` to validate and compile your code.
+   
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
+![Suggested order for modifications to port PyTorch code](neocortex_code_migration_pytorch_suggested_order.svg)
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from top to bottom.
 
-Structure of the code¶
-Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding
-* model.py: It contains the model function definition.
-* data.py: where the input data dataloaders are defined.
-* utils.py: it contains the helper scripts.
-* configs/params.yaml: YAML file containing the model configuration and the training hyperparameter settings.
-* run.py: it contains the training/compilation/evaluation script.
-Info
-Suggested order of files to use: model.py -> data.py -> utils.py -> configs/params.yaml -> run.py
-model.py¶
+![diagram showing flow of information and arguments when running PyTorch code](neocortex_code_migration_pytorch.svg)
+
+#### Structure of the code
+Examples can be found in the [cerebras_reference_implementation repository](https://github.com/Cerebras/cerebras_reference_implementations), which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
+* `model.py`: contains the model function definition.
+* `data.py`: where the input data dataloaders are defined.
+* `utils.py`: contains the helper scripts.
+* `configs/params.yaml`: YAML file containing the model configuration and the training hyperparameter settings.
+* `run.py`: contains the training/compilation/evaluation script.
+
+**Info**
+
+Suggested order of files to use: `model.py -> data.py -> utils.py -> configs/params.yaml -> run.py`
+
+##### model.py
 The model definition for the model. Contains the model definition and model implementation.
-The goal is to define a torch.nn.Module class and use it as input for a PyTorchBaseModel class, that will later be used as input for the run()`` method inrun.py` (more details down below in this same document).
+
+The goal is to define a `torch.nn.Module` class and use it as input for a `PyTorchBaseModel` class, that will later be used as input for the `run()`` method inrun.py` ` (more details down below in this same document).
+```
 class Model(torch.nn.Module):
     def __init__(self, params):
         ...
@@ -170,8 +187,12 @@ class BaseModel(PyTorchBaseModel):
         outputs = self.model(inputs)
         loss = self.loss_fn(outputs, targets)
         return loss
-data.py¶
+```
+
+##### data.py
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
+
+```
 def get_train_dataloader(params):
     ...
     loader = torch.utils.data.DataLoader(...)
@@ -181,42 +202,56 @@ def get_eval_dataloader(params):
     ...
     loader = torch.utils.data.DataLoader(...)
     return loader
+```
 These methods should have the input function and run any preprocessing that might be needed before returning a dataloader object.
-Inputs
+
+**Inputs**
 * params: (dict)
-* {
-*     train_input: dict = {
-*         data_dir: str,
-*         num_examples: int,
-*         train_batch_size: int, eval_batch_size: int, batch_size: int,
-*         shuffle: bool
-*     }
-*     eval_input: dict = {
-*         …
-*     }
-* }
-Output
-* torch.utils.data.DataLoader: This object takes a torch.utils.data.TensorDataset object with the images and labels to use, as well as the batch_size, shuffle, and any other arguments defined in the params file.
-utils.py¶
+
+  ```
+  {
+      train_input: dict = {
+          data_dir: str,
+          num_examples: int,
+          train_batch_size: int, eval_batch_size: int, batch_size: int,
+          shuffle: bool
+      }
+      eval_input: dict = {
+          …
+      }
+  }
+  ```
+  
+**Output**
+
+* `torch.utils.data.DataLoader`: This object takes a torch.utils.data.TensorDataset object with the images and labels to use, as well as the batch_size, shuffle, and any other arguments defined in the params file.
+
+##### utils.py
 It contains the helper scripts, including get_params which parses the params dictionary from the YAML file. You can also include the user-defined helper functions here or elsewhere.
-configs/¶
+
+**configs/**
+
 Directory of YAML files containing model configurations and training hyperparameters (params.yaml).
+
 If you would like to utilize the models in the examples directly but just change a few settings such as the number of layers, dimension, and hyperparameters, the easiest way is to change parameter values in a YAML config file. The parameter values will be read when the program starts and passed to the code function as a dictionary.
+
 The main information to be defined in the config files is:
 1. The optimizer defines learning rates and optimizer details. (required)
 2. The model section defines architecture hyperparameters. (optional)
+   
 A few examples of contents in the params.yaml:
 * train_input:
-* data_dir: './tfds' # Place to store data
-* batch_size: 256
+   * `data_dir:` './tfds' # Place to store data
+   * `batch_size`: 256
 * model:
-* mixed_precision: bool
-* input_size: int
+   * `mixed_precision`: bool
+   * `input_size`: int
 * optimizer:
-* learning_rate: 0.001
+   * `learning_rate`: 0.001
 * runconfig:
-* max_steps: 100000
-* checkpoints_steps: 2000
+   * `max_steps`: 100000
+   * `checkpoints_steps`: 2000
+     
 run.py¶
 It contains the training script, performs train and eval. This file contains the general framework to build the estimator and most of the time it should not be modified.
 An example invocation looks like this:
