@@ -30,7 +30,7 @@ The following diagram shows the suggested order in which the modifications shoul
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from left to right and from top to bottom.
 
-<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments when running code" style="width:60%;" />
+<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments when running code" width=60% />
 
 #### Structure of the code
 Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
@@ -119,17 +119,17 @@ If you would like to utilize the models in the examples directly but just change
 
 A few examples of content in the params.yaml file:
 * train_input:
-   * `data_dir`: `'./tfds'` # Place to store data
-   * `batch_size`: `256`
+   * `data_dir`: './tfds' # Place to store data
+   * `batch_size`: 256
 * model:
-   * `activation_fn`: `'relu'` # Other options: relu, tanh, elu, selu, linear (identity)
+   * `activation_fn`: 'relu' # Other options: relu, tanh, elu, selu, linear (identity)
 * optimizer:
-   * `learning_rate`: `0.001`
+   * `learning_rate`: 0.001
 * runconfig:
-   * `max_steps`: `100000`
-   * `save_checkpoints_steps`: `10000`
-   * `keep_checkpoint_max`: `2`
-   * `model_dir`: `'model_dir'`
+   * `max_steps`: 100000
+   * `save_checkpoints_steps`: 10000
+   * `keep_checkpoint_max`: 2
+   * `model_dir`: 'model_dir'
 For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras Documentation page.
 
 ##### run.py
@@ -148,7 +148,7 @@ The following diagram shows the suggested order in which the modifications shoul
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from top to bottom.
 
-![diagram showing flow of information and arguments when running PyTorch code](neocortex_code_migration_pytorch.svg)
+<img alt="diagram showing flow of information and arguments when running PyTorch code" src="neocortex_code_migration_pytorch.svg" width=60% />
 
 #### Structure of the code
 Examples can be found in the [cerebras_reference_implementation repository](https://github.com/Cerebras/cerebras_reference_implementations), which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
@@ -252,17 +252,20 @@ A few examples of contents in the params.yaml:
    * `max_steps`: 100000
    * `checkpoints_steps`: 2000
      
-run.py¶
+##### run.py
 It contains the training script, performs train and eval. This file contains the general framework to build the estimator and most of the time it should not be modified.
 An example invocation looks like this:
+```
 run(model_fn=MNISTModel,
     train_data_fn=get_train_dataloader,
     eval_data_fn=get_eval_dataloader,
     default_params_fn=set_defaults)
+```
 Input:
-* model_fn: Required. A callable that takes in a dictionary of parameters. Returns a PyTorchBaseModel.
-* train_data_fn: Required during training run.
-* eval_data_fn: Required during evaluation run.
-* default_params_fn: Optional. A callable that takes in a dictionary of parameters. Sets default parameters.
-For more information please visit the Porting PyTorch Model to CS Cerebras documentation page.
+* `model_fn`: Required. A callable that takes in a dictionary of parameters. Returns a `PyTorchBaseModel`.
+* `train_data_fn`: Required during training run.
+* `eval_data_fn`: Required during evaluation run.
+* `default_params_fn`: Optional. A callable that takes in a dictionary of parameters. Sets default parameters.
+
+For more information please visit the [Porting PyTorch Model to CS](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html) Cerebras documentation page.
 
