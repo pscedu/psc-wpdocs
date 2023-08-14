@@ -104,5 +104,5 @@ You can find the grant id by running the `projects` command. Please refer to 
 
 **sftp**
 
-sftp file transfer is also supported. For more details, please visit the [Transerring files section of the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#transferring-files).
+sftp file transfer is also supported. For more details, please visit https://www.psc.edu/resources/bridges-2/user-guide/#transferring-files.
 
