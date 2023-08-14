@@ -3,7 +3,7 @@ Neocortex features two Cerebras CS-2 systems and an HPE Superdome Flex HPC serve
 
 * Access to the Bridges-2 filesystem for management of persistent data
 * General-purpose computing for complementary data wrangling and preprocessing
-* **??High-bandwidth connectivity to other XSEDE sites, campus, labs, and clouds??**
+* **High-bandwidth connectivity to other sites, campus, labs, and clouds ??**
 
 The configuration of each specialized system is described below.
 ### CS-2
