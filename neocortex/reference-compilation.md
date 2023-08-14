@@ -1,5 +1,5 @@
-Reference Compilation example¶
-Neocortex¶
+Reference Compilation exampleÂ¶
+NeocortexÂ¶
 Connect to the login node.
 ssh juran@neocortex.psc.edu
 juran@neocortex.psc.edu's password: ****************
@@ -20,13 +20,13 @@ Take a look at the project grants available. There seem to be 2 different grants
 
     Project: CIS210015P                             # << This one
       Title: P99-Neocortex Research Project         # << This one
-Let's take a look at the output of the groups command, since the groups are usually all lowercase but the projects output isn't.
+Let's take a look at the output of the groups command, since the groups are usually all lowercase but theÂ projectsÂ output isn't.
 [juran@neocortex-login023 ~]$ groups
 
     cis210012p cis210015p
 "cis210012p" is showing as the first in that line (leftmost). That means that it's the primary group. What we want is to have the P## group to be the primary for all of the following commands, so let's run the "newgrp" command specifying it so that happens.
 [juran@neocortex-login023 ~]$ newgrp cis210015p
-Now, by running the groups command one more time we see that the "cis210015p" group is showing as primary, just like we need.
+Now, by running theÂ groupsÂ command one more time we see that the "cis210015p" group is showing as primary, just like we need.
 [juran@neocortex-login023 ~]$ groups
     cis210015p cis210012p
 Since we have the correct group showing as primary, we can now proceed to start a job for copying files and running the actual compilation steps. This will start the SLURM job using the correct Project Allocation id (--account=GROUPID).
@@ -34,7 +34,7 @@ We should start by setting some variables for copying the data.
 [juran@neocortex-login023 ~]$ export CEREBRAS_DIR=/ocean/neocortex/cerebras/
 [juran@neocortex-login023 ~]$ echo $PROJECT
     /ocean/projects/cis210015p/juran
-In this case, we are copying the files by using rsync, since this command will update the target directory with any changes/updates from the origin path. That will not be the case with cp, as that command will complain if the target directory already exists. Also, if there are no new files under the $CEREBRAS_DIR/modelzoo, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
+In this case, we are copying the files by using rsync, since this command will update the target directory with any changes/updates from the origin path. That will not be the case withÂ cp, as that command will complain if the target directory already exists. Also, if there are no new files under theÂ $CEREBRAS_DIR/modelzoo, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
 [juran@sdf-1 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
     sending incremental file list
     modelzoo/
@@ -50,7 +50,7 @@ This command will start a shell using the latest Cerebras container
 [juran@neocortex-login023 tf]$ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT /local1/cerebras/cbcore_latest.sif
 
 Singularity>
-Inside that shell, you will get to run the different validation and compilation commands. For example, for running a validate_only process:
+Inside that shell, you will get to run the different validation and compilation commands. For example, for running aÂ validate_onlyÂ process:
 Singularity> python run.py --mode train --validate_only --model_dir validate
 
     INFO:tensorflow:TF_CONFIG environment variable: {}
@@ -70,7 +70,7 @@ Singularity> python run.py --mode train --validate_only --model_dir validate
     =============== Cerebras Compilation Completed ===============
 
 Singularity>
-In the same way, a compile_only process looks like this:
+In the same way, aÂ compile_onlyÂ process looks like this:
 Singularity> python run.py --mode train --compile_only --model_dir compile
 
     INFO:tensorflow:TF_CONFIG environment variable: {}
@@ -100,7 +100,7 @@ Singularity> python run.py --mode train --compile_only --params custom_configs/p
     =============== Cerebras Compilation Completed ===============
 
 Singularity>
-The contents of the custom_configs and custom_output_dir have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
+The contents of theÂ custom_configsÂ andÂ custom_output_dirÂ have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
 Singularity> ls -lash | grep custom
     4.0K drwxr-sr-x 2 juran cis210015p 4.0K Feb 17 17:07 custom_configs
     4.0K drwxr-sr-x 3 juran cis210015p 4.0K Feb 17 17:07 custom_output_dir
@@ -258,7 +258,7 @@ Finally, if you want to perform these steps in batch mode instead of interactive
     INFO:tensorflow:global step 200000: loss = 0.0 (469.0 steps/sec)
     INFO:tensorflow:Loss for final step: 0.0.
 As it can be seen on the output above, the previous training was resumed since the initial checkpoint finished at step 100000 and we ran the batch job specifying the same model output directory (--model_dir training_example).
-Bridges-2¶
+Bridges-2Â¶
 Connect to the login node.
 ssh juran@bridges2.psc.edu
 juran@bridges2.psc.edu's password: ****************
@@ -283,7 +283,7 @@ Project: cis210015p PI: Paola Buitrago
 
 [juran@bridges2-login012 ~]$
 Note
-Please have in mind that your Neocortex allocation/account has access to more than one partition. RM for Regular Memory and EM for Extreme Memory. The default one to use should be the RM one, since there are more SU available there, and you should only switch to the EM one if needed after testing everything on RM so your SU don't run out prematurely. Additionally, the EM partition (those nodes) do not allow you to run commands interactively via the "interact" command, thus you will be required to either submit on batch mode, or to run the srun command shown below.
+Please have in mind that yourÂ NeocortexÂ allocation/account has access to more than one partition. RM for Regular Memory and EM for Extreme Memory. The default one to use should be the RM one, since there are more SU available there, and you should only switch to the EM one if needed after testing everything on RM so your SU don't run out prematurely. Additionally, the EM partition (those nodes) do not allow you to run commands interactively via the "interact" command, thus you will be required to either submit on batch mode, or to run theÂ srunÂ command shown below.
 Take a look at the project grants available. There seem to be 2 different grants available. One for a different research project, and then the one for Neocortex. Since the latter is the one that has the SU, we should specify it for the different commands.
 [juran@bridges2-login012 ~]$ projects | grep "Project\|Title"
     Project: CIS210012P
@@ -291,12 +291,12 @@ Take a look at the project grants available. There seem to be 2 different grants
 
     Project: CIS210015P                             # << This one
       Title: P99-Neocortex Research Project         # << This one
-Let's take a look at the output of the groups command, since the groups are usually all lowercase but the projects output isn't.
+Let's take a look at the output of the groups command, since the groups are usually all lowercase but theÂ projectsÂ output isn't.
 [juran@bridges2-login012 ~]$ groups
     cis210012p hum180001p ast190019p cis200012p cis210015p
 "cis210012p" is showing as the first in that line (leftmost). That means that it's the primary group. What we want is to have the P## group to be the primary for all of the following commands, so let's run the "newgrp" command specifying it so that happens.
 [juran@bridges2-login012 ~]$ newgrp cis210015p
-Now, by running the groups command one more time we see that the "cis210015p" group is showing as primary, just like we need.
+Now, by running theÂ groupsÂ command one more time we see that the "cis210015p" group is showing as primary, just like we need.
 [juran@bridges2-login012 ~]$ groups
     cis210015p hum180001p ast190019p cis200012p cis210012p
 Since we have the correct group showing as primary, we can now proceed to start a job for copying files and running the actual compilation steps. This will start the SLURM job using the correct Project Allocation id (--account=GROUPID).
@@ -323,7 +323,7 @@ As seen from the previous output, the prompt changed from saying that we were in
 [juran@r051 ~]$ CEREBRAS_DIR=/ocean/neocortex/cerebras/
 [juran@r051 ~]$ echo $PROJECT
     /ocean/projects/cis210015p/juran
-In this case, we are copying the files by using rsync, since this command will update the target directory with any changes/updates from the origin path. That will not be the case with cp, as that command will complain if the target directory already exists. Also, if there are no new files under the $CEREBRAS_DIR/modelzoo, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
+In this case, we are copying the files by using rsync, since this command will update the target directory with any changes/updates from the origin path. That will not be the case withÂ cp, as that command will complain if the target directory already exists. Also, if there are no new files under theÂ $CEREBRAS_DIR/modelzoo, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
 [juran@r051 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
     sending incremental file list
     modelzoo/
@@ -333,7 +333,7 @@ In this case, we are copying the files by using rsync, since this command will u
 
 [juran@r051 ~]$ ls $PROJECT/
     modelzoo
-Since the information is already in place, we should exit that simple interactive mode and start the actual compilation with more resources. We can exit that interactive mode by typing exit or pressing Ctrl+D.
+Since the information is already in place, we should exit that simple interactive mode and start the actual compilation with more resources. We can exit that interactive mode by typingÂ exitÂ or pressingÂ Ctrl+D.
 [juran@r051 ~]$ exit
     exit
     salloc: Relinquishing job allocation 319526
@@ -347,7 +347,7 @@ This command will start a shell using the latest Cerebras container. Please have
     srun: job 319618 has been allocated resources
 
 Singularity>
-Inside that shell, you will get to run the different validation and compilation commands. For example, for running a validate_only process:
+Inside that shell, you will get to run the different validation and compilation commands. For example, for running aÂ validate_onlyÂ process:
 Singularity> python run.py --mode train --validate_only --model_dir validate
 
     INFO:tensorflow:TF_CONFIG environment variable: {}
@@ -367,7 +367,7 @@ Singularity> python run.py --mode train --validate_only --model_dir validate
     =============== Cerebras Compilation Completed ===============
 
 Singularity>
-In the same way, a compile_only process looks like this:
+In the same way, aÂ compile_onlyÂ process looks like this:
 Singularity> python run.py --mode train --compile_only --model_dir compile
 
     INFO:tensorflow:TF_CONFIG environment variable: {}
@@ -406,7 +406,7 @@ Singularity> python run.py --mode train --compile_only --params custom_configs/p
     =============== Cerebras Compilation Completed ===============
 
 Singularity>
-The contents of the custom_configs and custom_output_dir have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
+The contents of theÂ custom_configsÂ andÂ custom_output_dirÂ have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
 Singularity> ls -lash | grep custom
     4.0K drwxr-sr-x  2 juran cis210015p 4.0K Mar  1 17:57 custom_configs
     4.0K drwxr-sr-x  3 juran cis210015p 4.0K Mar  1 17:58 custom_output_dir
@@ -420,8 +420,8 @@ Singularity> ls -lsh custom*
     total 16K
      12K drwxr-sr-x 4 juran cis210015p 12K Mar  1 17:58 cs_518e82fcc3928d8e9da4ffc039506e6f0019b41b46bc53085af34c080de4054e
     4.0K -rw-r--r-- 1 juran cis210015p 534 Mar  1 17:58 params.txt
-Now, regarding training the model (since it's compiling without issues), this training cannot be donen using Bridges-2. You will have to connect to Neocortex and follow the steps shown for training in the "Reference Compilation Example: Using Neocortex" section.
-Finally, if you want to perform these steps in batch mode instead of interactively via srun, you can ran all of them from a single sbatch file. This will allow us to use the Extreme Memory nodes in the EM partition. Like this:
+Now, regarding training the model (since it's compiling without issues), this training cannot be donen using Bridges-2. You will have to connect toÂ NeocortexÂ and follow the steps shown for training in the "Reference Compilation Example: Using Neocortex" section.
+Finally, if you want to perform these steps in batch mode instead of interactively viaÂ srun, you can ran all of them from a single sbatch file. This will allow us to use the Extreme Memory nodes in the EM partition. Like this:
  git clone git@github.com:Cerebras/modelzoo.git
 [juran@neocortex-login023 tf]$ vim mnist.sbatch
     #!/usr/bin/bash
@@ -446,5 +446,5 @@ Finally, if you want to perform these steps in batch mode instead of interactive
     srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --validate_only --model_dir validate
     srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --compile_only --model_dir compile
 Note
-If you run into problems when running jobs on Bridges-2, please remember to also take a look at the Bridges-2 User Guide User Guide.
+If you run into problems when running jobs on Bridges-2, please remember to also take a look at theÂ Bridges-2 User GuideÂ User Guide.
 
