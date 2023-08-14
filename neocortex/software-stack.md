@@ -1,4 +1,4 @@
-Software Stack¶
+Software StackÂ¶
 This section describes how to load/create the packages required for specific computing environments for performing your runs. Researchers are expected to work with a particular singularity container for their code runs.
 * What are these Singularity containers?
 These are stand-alone packages holding the software needed to create a very specific computing environment.
@@ -8,11 +8,11 @@ We recommend using the latest version of the main Cerebras container to advance 
 /ocean/neocortex/cerebras/cbcore_latest.sif
 * inside the Neocortex SDFs:
 /local[1-4]/cerebras/cbcore_latest.sif
-Please note that this is a symlink and not the actual container file. If you want to check the file path or container version, you can use the ll command.
+Please note that this is a symlink and not the actual container file. If you want to check the file path or container version, you can use theÂ llÂ command.
 * What software is compatible?
 * The TensorFlow version certified as compatible with the modelzoo is TensorFlow version 2.2.
 * The PyTorch version certified as compatible with the modelzoo is version 1.11.
-HPC Workflows - Cerebras SDK¶
+HPC Workflows - Cerebras SDKÂ¶
 The required variables should be already present in the system if you started a Slurm job. If not, you can set them like this:
 SDK_INSTALL_LOCATION=/ocean/neocortex/cerebras
 SDK_INSTALL_PATH=$SDK_INSTALL_LOCATION/sdk
@@ -22,12 +22,12 @@ eval $PATH_CMD
 And if you want to persist the SDK configuration across sessions. Run the following command to update the PATH variable in your .bashrc file:
 echo $PATH_CMD >> ~/.bashrc
 Now, for starting the process, you can take a look at the contents under the $SDK_INSTALL_PATH folder:
-csl_examples/code-samples: contains multiple simple examples (20). For example:
+csl_examples/code-samples:Â contains multiple simple examples (20). For example:
 cd ${SDK_INSTALL_PATH}/csl_examples/code-samples/01-tasks-and-colors
-Compile¶
-For the CS-2s, the flags should be set to --arch=wse2 and --fabric-dims=757,996 like the following:
+CompileÂ¶
+For the CS-2s, the flags should be set toÂ --arch=wse2Â andÂ --fabric-dims=757,996Â like the following:
 cslc --arch=wse2 ./code.csl --fabric-dims=757,996 --fabric-offsets=1,1 --colors=x_in:1,b_in:2,y_out:3,Ax_out:4,sentinel:43 -o out
-Run¶
-For passing the CS-2 IP addresses, please use the variable CS_IP_ADDR, along with --fabdims 757,996 like the following:
+RunÂ¶
+For passing the CS-2 IP addresses, please use the variableÂ CS_IP_ADDR, along withÂ --fabdims 757,996Â like the following:
 cs_python run.py --name out --cmaddr ${CS_IP_ADDR}:9000 --fabdims 757,996
 
