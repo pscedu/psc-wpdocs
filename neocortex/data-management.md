@@ -6,8 +6,6 @@ Your $HOME directory is <code>/jet/home/<i>username</i></code>, where *username*
 
 **Note:** The $HOME and $PROJECTS spaces are persistent, but the /local{1,2,3,4} spaces (/local1/, /local2/, /local3/, /local4/) are more ephemeral.
 
-**Warning:** This storage space is subject to the [Bridges-2 storage inode quota](https://www.psc.edu/resources/bridges-2/user-guide/#inode-quota).
-
 **Danger:** 
 Please have in mind that maxing out your $HOME quota (storing 25GB+ under $HOME) will lock you out of the system, and you might not be able to login anymore.
 
