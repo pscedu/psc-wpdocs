@@ -1,6 +1,6 @@
 ## Code Migration to the Cerebras Architecture
 In this section:
-* [Tensorflow](https://github.com/pscedu/psc-wpdocs/edit/dev/neocortex/code-migration.md#tensorflow)
+* [Tensorflow](#tensorflow)
    * Structure of the code
       * model.py
       * data.py
