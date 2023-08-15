@@ -1,4 +1,13 @@
 ## Code Migration to the Cerebras Architecture
+In this section:
+* [Tensorflow](https://github.com/pscedu/psc-wpdocs/edit/dev/neocortex/code-migration.md#tensorflow)
+   * Structure of the code
+      * model.py
+      * data.py
+      * utils.py
+      * configs/
+      * run.py
+     
 
 As described in the Cerebras documentation [How Cerebras Works](https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html), the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
 
@@ -16,7 +25,7 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 
  * **For track one users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
 
-### TensorFlow
+### TensorFlow {#tensorflow}
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
 1. Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object
 2. Modify `input_fn()` in `data.py`, return a `tf.data.Dataset` object
