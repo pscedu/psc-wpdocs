@@ -25,7 +25,7 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 
  * **For track one users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
 
-<h3 id="#tensorflow">TensorFlow</h3>
+<h3 id="tensorflow">TensorFlow</h3>
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
 <ol>
 <li>Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object</li>
