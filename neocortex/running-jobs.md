@@ -114,14 +114,14 @@ In order to view performance results, you can refer to the `performance.json` 
 ```
 {
      "total_time": 261.82,
-*     "samples_per_sec": 146665.4,
-*     "est_samples_per_sec": 1831896.55,
-*     "total_samples": 38400000,
-*     "fabric_cores": 266207,
-*     "fabric_utilization": 0.011419684681469684,
-*     "delta_t": 464,
-*     "Frequency": 850000000.0
-* }
+     "samples_per_sec": 146665.4,
+     "est_samples_per_sec": 1831896.55,
+     "total_samples": 38400000,
+     "fabric_cores": 266207,
+     "fabric_utilization": 0.011419684681469684,
+     "delta_t": 464,
+     "Frequency": 850000000.0
+ }
 ```
 
 where you are expected to replace the following elements in the left column with those in the right one:
@@ -202,31 +202,38 @@ For more information, please refer to the [Batch jobs section of the Bridges-2 U
 
 ### Bridges-2
 To compile your code using the Bridges-2 system, you have been assigned to a Neocortex allocation (Refer to Allocations section).
-How to run an interactive session on Bridges2?¶
-* Use the following sample command to start an interactive session on a Bridges-2 node for 8 GPUs for 30 minutes:
+
+#### How to run an interactive session on Bridges2
+Use the following sample command to start an interactive session on a Bridges-2 node for 8 GPUs for 30 minutes:
+```
 interact -p GPU --gres=gpu:8 -N 1 -t 30:00
-How to run a batch job on Bridges2?¶
-* Save the following script in a file, such as, jobname.
-* #!/bin/bash
-* #SBATCH -N 1
-* #SBATCH -p GPU
-* #SBATCH -t 5:00:00
-* #SBATCH --gpus=8
-* 
-* #type 'man sbatch' for more information and options
-* #this job will ask for 1 full GPU node(8 V100 GPUs) for 5 hours
-* 
-* #echo commands to stdout
-* set -x
-* 
-* # move to working directory
-* # this job assumes:
-* # - all input data is stored in this directory
-* # - all output should be stored in this directory
-* # - please note that GRANT_ID should be replaced by your GRANT_ID
-* # - PSC_USERNAME should be replaced by your PSC_USERNAME
-* # - path-to-directory should be replaced by the path to your directory where the executable is
+```
+
+#### How to run a batch job on Bridges2
+Save the following script in a file.
+```
+ #!/bin/bash
+ #SBATCH -N 1
+ #SBATCH -p GPU
+ #SBATCH -t 5:00:00
+ #SBATCH --gpus=8
+ 
+ #type 'man sbatch' for more information and options
+ #this job will ask for 1 full GPU node(8 V100 GPUs) for 5 hours
+ 
+ #echo commands to stdout
+ set -x
+ 
+ # move to working directory
+ # this job assumes:
+ # - all input data is stored in this directory
+ # - all output should be stored in this directory
+ # - please note that GRANT_ID should be replaced by your GRANT_ID
+ # - PSC_USERNAME should be replaced by your PSC_USERNAME
+ # - path-to-directory should be replaced by the path to your directory where the executable is
+```
 Then change to the directory from which you will be running the code.
+```
 cd /ocean/projects/GRANT_ID/PSC_USERNAME/path-to-directory
 
 #run pre-compiled program which is already in your project space
@@ -234,5 +241,7 @@ cd /ocean/projects/GRANT_ID/PSC_USERNAME/path-to-directory
 ./gpua.out
 * Run the following command for starting the batch job using 8 GPUs on a single node for 5 hours:
 * sbatch -p GPU -N 1 --gpus=8 -t 5:00:00 jobname
-To find out more, please check out the instructions here: https://www.psc.edu/resources/bridges-2/user-guide-2/#running-jobs
+```
+
+To find out more, please check out the instructions in the [Running jobs section of the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#running-jobs).
 
