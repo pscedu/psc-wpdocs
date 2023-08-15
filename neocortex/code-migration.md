@@ -26,7 +26,7 @@ In more detail, the steps needed for porting an existing TensorFlow codebase to 
    
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
 
-![code migration workflow](code_migration_workflow.svg)
+![code migration workflow](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/code_migration_workflow.svg)
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from left to right and from top to bottom.
 
