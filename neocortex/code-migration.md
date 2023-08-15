@@ -30,7 +30,7 @@ The following diagram shows the suggested order in which the modifications shoul
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from left to right and from top to bottom.
 
-<img src="neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments when running code" width=60% />
+<img src="https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/neocortex_code_conversion.svg" alt="diagram showing flow of information and arguments when running code" width=60% />
 
 #### Structure of the code
 Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
@@ -144,11 +144,11 @@ This is an overview of the steps needed for porting an existing PyTorch codebase
 4. Modify `run.py` to validate and compile your code.
    
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
-![Suggested order for modifications to port PyTorch code](neocortex_code_migration_pytorch_suggested_order.svg)
+![Suggested order for modifications to port PyTorch code](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/neocortex_code_migration_pytorch_suggested_order.svg)
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from top to bottom.
 
-<img alt="diagram showing flow of information and arguments when running PyTorch code" src="neocortex_code_migration_pytorch.svg" width=60% />
+<img alt="diagram showing flow of information and arguments when running PyTorch code" src="https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/neocortex_code_migration_pytorch.svg" width=60% />
 
 #### Structure of the code
 Examples can be found in the [cerebras_reference_implementation repository](https://github.com/Cerebras/cerebras_reference_implementations), which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
