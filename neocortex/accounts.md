@@ -3,7 +3,7 @@ Researchers will interact with the Neocortex (preferred) and perhaps the Bridges
 ### Account creation
 All Neocortex users need a PSC account. 
 * If you already have a PSC username (from Bridges-2 or other PSC systems), share your username information via email to <a href="mailto:neocortex@psc.edu">neocortex@psc.edu</a>.
-* If you do not already have a PSC username, please create an account using the "Request a PSC Account" form.
+* If you do not already have a PSC username, please create one using the [Request a PSC Account](https://allocations.psc.edu/users/new) form.
 
 When you have your PSC username and account, please make sure that you can reach Neocortex with your PSC credentials by trying to connect with this command:
 
