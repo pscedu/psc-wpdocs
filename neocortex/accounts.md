@@ -11,7 +11,8 @@ When you have your PSC username and account, please make sure that you can reach
 
 If you need to reset your PSC password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
 
-  
-> **Note**
->
-> Please complete the "Getting ready to use the Neocortex system" training and submit the "Key Compilation Metrics Needed" form to get access to the total Neocortex allocation SU (Superdome Flex and CS-2s systems).
+<blockquote style="background-color: #f0f8ff;">  
+ <strong>Note</strong>
+
+Please complete the "Getting ready to use the Neocortex system" training and submit the "Key Compilation Metrics Needed" form to get access to the total Neocortex allocation SU (Superdome Flex and CS-2s systems).
+</blockquote>
