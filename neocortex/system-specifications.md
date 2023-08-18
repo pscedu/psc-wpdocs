@@ -32,7 +32,7 @@ Each CS-2 features a Cerebras WSE2 (Wafer Scale Engine2), the largest chip ever 
   <tbody>
     <tr>
       <td  style="vertical-align:top;"><strong>Processors</strong></td>
-      <td>32 x Intel Xeon Platinum 8280L, 28 cores, 56 threads each, 2.70-4.0 GHz, 38.5 MB cache  <br /><br />
+      <td>32 x Intel Xeon Platinum 8280L, 28 cores, 56 threads each, 2.70-4.0 GHz, 38.5 MB cache  <br />
         <a href="https://ark.intel.com/content/www/us/en/ark/products/192472/intel-xeon-platinum-8280l-processor-38-5m-cache-2-70-ghz.html" target="_blank">More info</a>
       </td>
     </tr>
