@@ -24,7 +24,8 @@ Examples can be found in the [cerebras_reference_implementation repository](htt
 
 Suggested order of files to use: `model.py -> data.py -> utils.py -> configs/params.yaml -> run.py`
 
-##### model.py
+**model.py**
+
 The model definition for the model. Contains the model definition and model implementation.
 
 The goal is to define a `torch.nn.Module` class and use it as input for a `PyTorchBaseModel` class, that will later be used as input for the `run()`` method inrun.py` ` (more details down below in this same document).
@@ -51,7 +52,8 @@ class BaseModel(PyTorchBaseModel):
         return loss
 ```
 
-##### data.py
+**data.py**
+
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
 
 ```
@@ -88,7 +90,8 @@ These methods should have the input function and run any preprocessing that migh
 
 * `torch.utils.data.DataLoader`: This object takes a torch.utils.data.TensorDataset object with the images and labels to use, as well as the batch_size, shuffle, and any other arguments defined in the params file.
 
-##### utils.py
+**utils.py**
+
 It contains the helper scripts, including get_params which parses the params dictionary from the YAML file. You can also include the user-defined helper functions here or elsewhere.
 
 **configs/**
@@ -114,7 +117,8 @@ A few examples of contents in the params.yaml:
    * `max_steps`: 100000
    * `checkpoints_steps`: 2000
      
-##### run.py
+**run.py**
+
 It contains the training script, performs train and eval. This file contains the general framework to build the estimator and most of the time it should not be modified.
 An example invocation looks like this:
 ```
