@@ -12,3 +12,4 @@ The following diagram uses arrows to represent the logical flow of information a
 
 <img alt="diagram showing flow of information and arguments when running PyTorch code" src="https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/neocortex_code_migration_pytorch.svg" width=60% />
 
+
