@@ -1,6 +1,16 @@
 ## Data Management and Storage 
 This section talks about the various storage spaces on Neocortex and how to use them.
-### Common Storage Spaces
+
+### In this section
+* **Common storage spaces**
+   * [$HOME](https://www.psc.edu/resources/neocortex/docs/data-management)
+   * $PROJECT
+   * /local
+* Reference resources
+* Transferring data
+
+  
+### Common storage spaces
 #### $HOME
 Your $HOME directory is <code>/jet/home/<i>username</i></code>, where *username* is your PSC username. This is your personal storage space and has a cap of 25 GB. This should be used for personal files only, such as system configurations or maybe private files like experimental Conda environments.
 
