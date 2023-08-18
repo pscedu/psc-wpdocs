@@ -1,12 +1,12 @@
 ## Code Migration to the Cerebras Architecture
-In this section:
+In this page:
 * [Tensorflow](#tensorflow)
-   * Structure of the code
-      * model.py
-      * data.py
-      * utils.py
-      * configs/
-      * run.py
+   * [Structure of the code](#TF-code-structure)
+      * [model.py](#TF-model.py)
+      * [data.py](#TF-data.py)
+      * [utils.py](#TF-utils.py)
+      * [configs/](#TF-configs)
+      * [run.py](#TF-run.py)
      
 
 As described in the Cerebras documentation [How Cerebras Works](https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html), the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
@@ -23,7 +23,7 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 
  * An estimation of the required effort to get the code ready is one to four weeks for a single person performing all of the edits.
 
- * **For track one users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
+ * **For track 1 users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
 
 <h3 id="tensorflow">TensorFlow</h3>
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
