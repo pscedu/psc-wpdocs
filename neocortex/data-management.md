@@ -3,11 +3,11 @@ This section talks about the various storage spaces on Neocortex and how to us
 
 ### In this section
 * **Common storage spaces**
-   * [$HOME](https://www.psc.edu/resources/neocortex/docs/data-management)
-   * $PROJECT
-   * /local
-* Reference resources
-* Transferring data
+   * [$HOME](#$home)
+   * [$PROJECT](#$project)
+   * [/local](#local)
+* [Reference resources](#reference-resources)
+* [Transferring data](#transferring-data)
 
   
 ### Common storage spaces
