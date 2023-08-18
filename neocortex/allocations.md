@@ -14,9 +14,15 @@ The grants include the following resources:
 * Bridges-2 Ocean - 1000 GB
   
 ### How to check your allocation's SLURM charge id
+
 You can use the `projects` or `groups` command to find the SLURM charge id for your allocation from Neocortex (or Bridges-2).
-```$ projects```
-```$ groups```
+```
+$ projects
+```
+
+```
+$ groups
+```
 Please keep your charge id handy as you will need it for accessing your project folder.
 
 ### Getting a grant extension
@@ -25,17 +31,22 @@ If you need more than the initial resources awarded, you are encouraged to apply
 Please send a request to [neocortex@psc.edu](mailto:neocortex.edu) including a detailed summary of how the resources were used and the plan for the additional resources requested.
 
 ### Managing multiple grants
-**Changing your Neocortex allocation group**
+**Changing your SLURM charge id**
 
 If you are part of multiple grants, then make sure your SLURM charge id is correctly set before beginning work. To find your default charge id, use the `projects` command. To see all of your groups:
-`change_primary_group -l`
+
+```
+change_primary_group -l
+```
 
 To **temporarily** change your charge id for the current login session, please run the following command:
-<pre>newgrp <i>charge-id</i></pre>
+<pre>
+newgrp <em>charge-id</em>
+</pre>
 The effects of this command take place immediately. Your charge id will revert to your default charge id upon logout.
 
 
-To **permanently** make the Neocortex grant your default charge id, please run the following command:
+To **permanently** make a charge id your default charge id, please run the following command:
 <pre>change_primary_group <i>charge-id</i></pre>
 
 It may take up to an hour for the default charge id change to propagate. The change will last across login sessions.
