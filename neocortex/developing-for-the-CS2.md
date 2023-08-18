@@ -1,13 +1,10 @@
 ## Developing for the CS-2
 
 ### In this section
-* **ML Workflows**
-   * [TensorFlow or PyTorch](#tensorflow-or-pytorch)
+* ML Workflows: [TensorFlow or PyTorch](#tensorflow-or-pytorch)
 * [Compatibility with the CS-2](#compatibility-with-the-cs-2)
 * [Cerebras Kernal Library Support Q1 2023](#cerebras-kernel-library-support-q123)
-* **Supported Core Compute Kernels**
-   * [Cerebras TensorFlow Layer API](#cerebras-tensorflow-layer-api)
-   * [Cerebras PyTorch Layer API](#cerebras-pytorch-layer-api)
+* Supported Core Compute Kernels:  [Cerebras TensorFlow Layer API](#cerebras-tensorflow-layer-api) and [Cerebras PyTorch Layer API](#cerebras-pytorch-layer-api)
 * [Execution modes](#execution-modes)
 
   <br />          
