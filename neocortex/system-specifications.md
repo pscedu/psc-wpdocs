@@ -8,7 +8,7 @@ Neocortex features two Cerebras CS-2 systems and an HPE Superdome Flex HPC serve
 The configuration of each specialized system is described below.
 ### CS-2
 Each CS-2 features a Cerebras WSE2 (Wafer Scale Engine2), the largest chip ever built.
-<table>
+<table style="borders:none;">
   <tbody>
     <tr>
       <td style="vertical-align:top;"><strong>AI Processor</strong></td>
