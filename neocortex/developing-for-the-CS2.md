@@ -10,10 +10,11 @@
    * [Cerebras PyTorch Layer API](#cerebras-pytorch-layer-api)
 * [Execution modes](#execution-modes)
 
-            
+  <br />          
 There are two different ways in which you can  make use of the CS-2:  
-* Using the main available frameworks, such as TensorFlow and Pytorch, while leveraging the Cerebras container and libraries. Please see TensorFlow or Pytorch.
-* Running an HPC workflow. Please see HPC Workflow - Cerebras SDK.
+* Using the main available frameworks, such as TensorFlow and Pytorch, while leveraging the Cerebras container and libraries. 
+* Running an HPC workflow.
+  
 ### ML Workflows
 #### TensorFlow or Pytorch
 There are different modes in which you could run jobs with the Cerebras container on Neocortex:
@@ -22,11 +23,13 @@ There are different modes in which you could run jobs with the Cerebras containe
 * **Training:** this process requires multiple tasks to be running. A single task will be elected as coordinator, and all of the other tasks will stream the dataset into the CS-2 as workers. This is where the actual model training takes place.
 * **Evaluation:** this will make use of the trained model and evaluate the trained model.
 
-Now, validation and compilation jobs with CPUs can be done on both Neocortex (preferred) and Bridges-2, but training jobs with CS-2s have to be run from Neocortex because Bridges-2 does not have a way to start jobs on the CS-2 boxes. It is possible to run training and model inference jobs with CPUs/GPUs with Bridges-2. Please refer to Cerebras documentations for details (e.g., for [Tensorflow](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/running-a-model/train-eval-predict.html) and [general software requirements and dependencies](https://docs.cerebras.net/en/1.6.0/getting-started/software-dependencies.html)).
+Now, validation and compilation jobs with CPUs can be done on both Neocortex (preferred) and Bridges-2, but training jobs with CS-2s have to be run from Neocortex because Bridges-2 does not have a way to start jobs on the CS-2 boxes. It is possible to run training and model inference jobs with CPUs/GPUs with Bridges-2. Please refer to Cerebras documentation for details (e.g., for [Tensorflow](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/running-a-model/train-eval-predict.html) and [general software requirements and dependencies](https://docs.cerebras.net/en/1.6.0/getting-started/software-dependencies.html)).
 
-Then, for running any of these different modes, you will need to first connect to the Neocortex (preferred) or Bridges-2 login nodes. The specific steps for those two computing environments are shown below:
+Then, for running any of these different modes, you will need to first connect to the Neocortex (preferred) or Bridges-2 login nodes. 
+
+The steps are:
 1. Connect via SSH.
-2. Set the Neocortex grant id to be used as your primary group.
+2. Set the Neocortex grant id to be used as your primary SLURM charge id.
 3. Switch to the directory with your code.
 4. Customize the config parameters and example scripts according to your code.
 5. Start a job via SLURM.
@@ -36,7 +39,7 @@ Then, for running any of these different modes, you will need to first connect t
 Regarding those additional scripts, you can validate and compile interactively, but you should run trainings and evaluations using the batch mode.
 
 ### Compatibility with the CS-2
-To execute the code on the Neocortex system, you need to convert your codebase and make it compatible with the TensorFlow CerebrasEstimator API or PyTorch API. CerebrasEstimator inherits from TensorFlow’s Estimator and is the interface to train models on the CS-2. It can also train/validate/predict on the CPU/GPU.
+To execute code on the Neocortex system, you need to convert your codebase and make it compatible with the TensorFlow CerebrasEstimator API or PyTorch API. CerebrasEstimator inherits from TensorFlow’s Estimator and is the interface to train models on the CS-2. It can also train/validate/predict on the CPU/GPU.
 #### How to make your code compatible with the CS-2
 ##### TensorFlow
 Construct CerebrasEstimator with 4 main pieces of information:
@@ -47,11 +50,11 @@ Construct CerebrasEstimator with 4 main pieces of information:
 
 Please go through the [Port TensorFlow to Cerebras](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/porting-tf-to-cs/index.html) section of the Cerebras Documentation for detailed steps.
 ##### PyTorch
-The user can either modify reference models in Cerebras modelzoo GitHub repository or leverage the common backbone in Cerebras Model Zoo Repository, the run function.
+You can either modify reference models in Cerebras modelzoo GitHub repository or leverage the common backbone in Cerebras Model Zoo Repository, the run function.
 
 Please go through the [Port PyTorch to Cerebras](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html) section of the Cerebras Documentation for detailed steps.
 
-### Cerebras Kernel Library Support Q1‘23
+### Cerebras Kernel Library Support Q1 ‘23
 Supported Network Types (Supported Models)
 * MLP models (TensorFlow and PyTorch)
 * 2D Unet (experimental) (TensorFlow)
@@ -75,7 +78,7 @@ Please check the list of [supported Tensorflow layers here](https://docs.cerebr
 ### Execution modes
 On the Cerebras Wafer Scale Engine 2 (WSE2) you can run neural networks of different model sizes. Cerebras Software supports different execution modes to efficiently run such variety of models.
 
-The execution mode refers to how the Cerebras runtime loads your neural network model onto the Cerebras Wafer Scale Engine 2 (WSE2). Two execution modes are supported:
+The execution mode refers to how the Cerebras runtime loads your neural network model onto the WSE2. Two execution modes are supported:
 * Layer pipelined: In this mode all the layers of the network are loaded altogether onto the Cerebras WSE2. This mode is selected for neural network models of small to medium sized models (with less than a billion parameters).
 * Weight streaming: In this mode one layer of the neural network model is loaded at a time. This layer-by-layer mode is used to run extremely large models (with billions to trillions of parameters).
 
