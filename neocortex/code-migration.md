@@ -7,6 +7,13 @@ In this page:
       * [utils.py](#TF-utils.py)
       * [configs/](#TF-configs)
       * [run.py](#TF-run.py)
+* [PyTorch](#pytorch)
+   * [Structure of the code](#PT-code-structure)
+      * [model.py](#PT-model.py)
+      * [data.py](#PT-data.py)
+      * [utils.py](#PT-utils.py)
+      * [configs/](#PT-configs)
+      * [run.py](#PT-run.py)
      
 
 As described in the Cerebras documentation [How Cerebras Works](https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html), the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
