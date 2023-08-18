@@ -4,9 +4,9 @@ Field equations, includes ML inference.
 **Good Match Criteria:** You would be a good match for this track if your research can integrate and make use of the WFA library.
 
 WFA: API recently used for advancing CFP simulations at unprecedented resolution and speed ([see the press release](https://www.psc.edu/national-energy-technology-laboratory-and-pittsburgh-supercomputing-center-pioneer-first-ever-computational-fluid-dynamics-simulation-on-cerebras-wafer-scale-engine/)).
-* Pioneering work - Beta testing of the WFA library.
-* Only a few groups would be welcomed.
-* Close collaboration with Dr. Dirk Van Essendelft's team, PSC, and Cerebras.
+* Pioneering work - Beta testing of the WFA library
+* Only a few groups will be welcomed
+* Close collaboration with Dr. Dirk Van Essendelft's team, PSC, and Cerebras
 * Field equations, includes ML inference
 ### Project Guidelines
 #### Problem Requirements
