@@ -1,4 +1,5 @@
 
+
 **model.py**
 
 The model definition for the model. Contains the model definition and model implementation.
@@ -26,4 +27,5 @@ class BaseModel(PyTorchBaseModel):
         loss = self.loss_fn(outputs, targets)
         return loss
 ```
+
 
