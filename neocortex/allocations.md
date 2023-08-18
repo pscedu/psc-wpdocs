@@ -13,11 +13,11 @@ The grants include the following resources:
 * Bridges-2 GPU-AI - 2500 GPU-hours
 * Bridges-2 Ocean - 1000 GB
   
-### How to check your allocation's charge id
-You can use the `projects` or `groups` command to find the charge id for your allocation from Neocortex (or Bridges-2).
-<pre>$ projects</pre>
-<pre>$ groups</pre>
-Please keep your charge id handy as you will need it for accessing your project folder.
+### How to check your allocation's SLURM charge id
+You can use the `projects` or `groups` command to find the SLURM charge id for your allocation from Neocortex (or Bridges-2).
+```$ projects```
+```$ groups```
+Please keep your charge id handy as you will need it for accessing your project folder.
 
 ### Getting a grant extension
 If you need more than the initial resources awarded, you are encouraged to apply for an extension.
@@ -27,7 +27,7 @@ Please send a request to [neocortex@psc.edu](mailto:neocortex.edu) including a
 ### Managing multiple grants
 **Changing your Neocortex allocation group**
 
-If you are part of multiple grants, then make sure your charge id is correctly set. To find your default charge id, use the `projects` command. To see all of your groups:
+If you are part of multiple grants, then make sure your SLURM charge id is correctly set before beginning work. To find your default charge id, use the `projects` command. To see all of your groups:
 `change_primary_group -l`
 
 To **temporarily** change your charge id for the current login session, please run the following command:
