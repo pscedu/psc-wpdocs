@@ -1,3 +1,4 @@
+
 #### Structure of the code
 Examples can be found in the cerebras_reference_implementation repository, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
 * `model.py`: contains the model function definition. For information about the layers supported, please visit the Cerebras Documentation.
