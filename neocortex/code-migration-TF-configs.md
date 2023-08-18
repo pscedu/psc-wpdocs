@@ -1,3 +1,4 @@
+
 **configs/**
 
 Directory of YAML files containing model configurations and training hyperparameters (params.yaml).
@@ -19,4 +20,5 @@ A few examples of content in the `params.yaml` file:
    * `model_dir`: 'model_dir'
      
 For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras Documentation page.
+
 
