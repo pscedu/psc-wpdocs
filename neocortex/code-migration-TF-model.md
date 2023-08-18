@@ -1,4 +1,4 @@
-##### model.py
+**model.py**
 
 The model function that defines your neural network model. Contains the model function definition and model implementation. 
 
