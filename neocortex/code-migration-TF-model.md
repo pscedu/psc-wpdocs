@@ -1,3 +1,4 @@
+
 **model.py**
 
 The model function that defines your neural network model. Contains the model function definition and model implementation. 
@@ -34,3 +35,4 @@ The EstimatorSpec takes:
 * `host_call (dict)`:
 ``` { "accuracy": tf.compat.v1.metrics.accuracy() } ```
  
+
