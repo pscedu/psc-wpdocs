@@ -5,5 +5,5 @@ The models available are listed in the Modelzoo ["Models in this repository" se
 
 If you have any issues running any piece of code on the repository, please create a Github issue with appropriate steps to reproduce the bug along with the software stack you are using and logs generated.
 
-The location of the Modelzoo Github repository: https://github.com/Cerebras/modelzoo
+The Modelzoo Github repository is at https://github.com/Cerebras/modelzoo.
 
