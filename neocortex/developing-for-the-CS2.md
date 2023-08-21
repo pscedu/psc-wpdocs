@@ -15,7 +15,7 @@
 <li>[Execution modes](#execution-modes)</li>
 </ul>
 </div>
-  <br />          
+        
 There are two different ways in which you can  make use of the CS-2:  
 * Using the main available frameworks, such as TensorFlow and Pytorch, while leveraging the Cerebras container and libraries. 
 * Running an HPC workflow.
