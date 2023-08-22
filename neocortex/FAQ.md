@@ -1,6 +1,6 @@
 ## FAQ (general)
 
-1. **Is it possible to use Keras functions inside the TF estimator?**<br />
+1. <strong>Is it possible to use Keras functions inside the TF estimator?</strong><br />
 Yes, we support the TensorFlow Keras Layers API in our model function.
 
 2. **What are the resource limits for Neocortex? I can see that under this project, I only have 5TB storage and 1000 large regular mem CPU hours.**<br />
