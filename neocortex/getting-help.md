@@ -20,5 +20,5 @@ You have multiple options. You can:
      * [ML/AI Office hours](https://calendly.com/neocortex-system/neocortex-office-hours)
      * [SDK Office hours](https://calendly.com/neocortex-system/neocortex-office-hours)
    
-  When scheduling the session, please describe the problem and include the information listed in the preceeding section to reproduce the issue.
+  When scheduling the session, if you need help with a specific issue, please describe the problem and include the information listed in the preceding section to reproduce the issue.
 
