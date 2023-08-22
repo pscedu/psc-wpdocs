@@ -4,7 +4,7 @@
 Yes, we support the TensorFlow Keras Layers API in our model function.
 
 2. **What are the resource limits for Neocortex? I can see that under this project, I only have 5TB storage and 1000 large regular mem CPU hours.**<br />
-   Please refer to the Allocations section for more information.
+   Please refer to the [Allocations section of this document](https://www.psc.edu/resources/neocortex/doc/allocations) for more information.
 
 3. **I see ogbg_molchembl. How do we get the other ogb datasets to the machine? Should we store them in our allocations or will you put the entire ogb collection in that location?**<br />
    On the Ocean shared-filesystem, the path of some modelzoo datasets is `/ocean/neocortex/cerebras/data/`.<br /><br />
@@ -17,13 +17,13 @@ Yes, we support the TensorFlow Keras Layers API in our model function.
    If you have multiple projects on PSC systems, you need to use the `newgrp` command to switch between them and assign your usage to your Neocortex project. You will not be able to get an interact session until you are on the right project. It's best to run it on the login node, but you can also run it on the interact node if you specify the group allocation account id (--account) to use in the interact command.
 
 6. **Do we have an option to run using a batch job?**<br />
-   Yes, you can also run a batch job. Please review the section “Running jobs” for more details.
+   Yes, you can also run a batch job. Please review the [Running jobs section](https://www.psc.edu/resources/neocortex/running-jobs) section in this documentation for more details.
 
 7. **What does it mean when the `interact` command hangs?**<br />
 This could mean that the queue is busy and not ready for any more jobs at that time. Another possibility is that you are not in the right project allocation. If you have multiple projects on PCS systems, please use `newgrp` to switch to the appropiate Neocortex project. Please contact us if you come across any specific error or it hangs for a long time.
 
 8. **Which queue should I use to submit batch jobs?**<br />
-Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the Allocations section for more details.
+Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the [Allocations section](https://www.psc.edu/resources/neocortex/doc/allocations) of this documentation for more details.
 
 9. **Do you expect us to compile our model?**<br />
    You are expected to compile and run your model.
@@ -50,5 +50,5 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
     Tanh activation function is supported.
 
 17. **Is there a list of supported operations?**<br />
-    Yes, please refer to the “Developing for the CS-2 section” in this document.
+    Yes, please refer to the [Developing for the CS-2](https://www.psc.edu/resources/neocortex/doc/developing-for-cs) section in this document.
 
