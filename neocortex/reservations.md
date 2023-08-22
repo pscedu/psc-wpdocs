@@ -71,7 +71,7 @@ Maximum: 48 hours</td>
 <code>$ srun --pty bash -i</code><br />
 Wait times depend on how busy the queue is.</td>
       <td>Create a batch (or job) script which contains the commands to be run, then submit the job to be run. It will be in the queue until the resources become available.</td>
-      <td>Send an email to neocortex@psc.edu with details (see *How can I create a resevation* above). Both interactive and batch jobs can be run under reservation mode (for the confirmed duration).</td>
+      <td>Send an email to neocortex@psc.edu with details (see <strong>How can I create a reservation</strong> above). Both interactive and batch jobs can be run under reservation mode (for the confirmed duration).</td>
     </tr>
   </tbody>
 </table>
