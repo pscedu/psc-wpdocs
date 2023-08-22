@@ -1,5 +1,18 @@
 ## Compilation Key Metrics to Share
-### Commands for Compilation (cheat sheet)¶
+
+### In this section
+* Commands for compilation (cheat sheet)
+*    * [Getting started](#commands-for-compilation-cheat-sheet)
+     * [Tensorflow](#tensorflow)
+     * [Pytorch](*pytorch)
+* [Additional notes for generating the key metrics](#additional-notes-for-generating-the-key-metrics)
+* [GitHub repostory URLS](github-repository-urls)
+* [Common Errors](#common-errors)
+
+
+### Commands for compilation (cheat sheet)
+#### Getting started
+
 This training manual (cheat sheet) will make use of Neocortex resources. If you forgot your Neocortex authentication credentials, please visit the [PSC Password Change Utility webpage](https://apr.psc.edu).
 
 Please connect to Neocortex by SSH-ing into the system using the following command:
@@ -134,11 +147,11 @@ You need to be located in the same directory in which you compile **your code**
   
 **Note:** Please, use the [Neocortex Project Key Metrics file](https://portal.neocortex.psc.edu/home) and submit it to the [Key-compilation-metrics Submit Box link](https://cmu.app.box.com/f/2e34313bdacf410a96b28e34b7d8f4b3).
 
-#### GitHub Repository URLs
+### GitHub Repository URLs
 * [https://github.com/Cerebras/modelzoo](https://github.com/Cerebras/modelzoo)
 * [https://github.com/drivendata/cookiecutter-data-science](https://github.com/drivendata/cookiecutter-data-science)
   
-#### Common Errors
+### Common Errors
 * FATAL: could not open image /path/to/cbcore-latest.sif
    * Make sure you are pointing to the correct container location. The full path is “`/ocean/neocortex/cerebras/cbcore-latest.sif`"
 * srun: error: Unable to allocate resources: Invalid qos specification
