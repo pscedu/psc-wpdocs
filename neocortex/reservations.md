@@ -38,7 +38,7 @@ If your reservation is not assigned to your default SLURM charge id, then you wi
 Please note that using the `--reservation` flag does not automatically override the default interact or batch parameters, such as job run time. Please, explicitly specify the wall-time, SDF node (if one is preferred), etc, to override the defaults.
 
 ### Comparison table for various modes in which jobs can be run
-Please note that comparison is between jobs in different modes asking for the same number, type of resources, duration, etc.
+Please note that this comparison is between jobs asking for the same number and type of resources, duration, etc.
 <table>
   <thead>
     <tr>
