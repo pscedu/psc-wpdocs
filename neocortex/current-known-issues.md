@@ -1,6 +1,6 @@
 ## Current Known Issues (technical)
 These are some technical issues our team is working on right now. We will update this guide as soon as they are resolved, adding a "SOLVED" to the title every time the changes are reflecting on Neocortex.
-<h3>Error 1 (<span class="green-success">SOLVED 2021-02-14</span>): /usr/bin/id: cannot find name for group ID</h3>
+<h3 style="color:green;">Error 1 (<span class="green-success">SOLVED 2021-02-14</span>): /usr/bin/id: cannot find name for group ID</h3>
 
   **Error message:** 
   ```
