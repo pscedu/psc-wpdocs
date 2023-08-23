@@ -1,8 +1,6 @@
 ## Current Known Issues (technical)
 These are some technical issues our team is working on right now. We will update this guide as soon as they are resolved, adding a "SOLVED" to the title every time the changes are reflecting on Neocortex.
 
-{$$\color{red}Welcome \space \color{lightblue}To \space \color{lightgreen}Github$$}
-
 <h3>Error 1 (<code style="color:green">SOLVED 2021-02-14</code>): /usr/bin/id: cannot find name for group ID</h3>
 
   **Error message:** 
