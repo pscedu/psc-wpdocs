@@ -11,7 +11,7 @@ You have multiple options. You can:
   * Pre-scheduled sessions are half an hour (30 mins) per group/project. You may request as many of these 30 minute sessions as you need.
   * When scheduling the session, if you need help with a specific issue, please describe the problem and include the [information needed to reproduce the issue](#information-for-reproducing-the-issue).
   * To request a session, follow the appropriate link based on your project type:
-     * [ML/AI Office hours](https://calendly.com/neocortex-system/neocortex-office-hours)
-     * [SDK Office hours](https://calendly.com/neocortex-system/neocortex-office-hours)
+     * <a href="https://calendly.com/neocortex-system/neocortex-office-hours" target="_blank">ML/AI Office hours</a>
+     * <a href="https://calendly.com/neocortex-system/neocortex-sdk-office-hours" target="_blank">SDK Office hours</a>
    
   
