@@ -31,6 +31,19 @@ The effect of raising the SSH buffer sizes can be seen in the following chart. T
 
 All patches should be applied to the [OpenSSH source files](https://www.openssh.com/) using the 'patch' utility from the command line. Building SSH from source is actually quite easy and the recommended method. Binary packages are available for CentOS, Fedora, and Ubuntu. 
 
+### HPN-18
+This series introduces a parallelized version of the ChaCha20 cipher. This moves the task of generating the keystream onto independent threads allowing the main thread to process data more effectively. In comparison to HPN-SSH 17v14 this has resulted in an 12% improvement in throughput. In comparison to OpenSSH 9.4 we are seeing a 59% improvement. We have also changed the version scheme. Instead of 18v1 we are now using a Major.Minor.Fix system so the first release of this series is 18.1.0. 
+
+We have also changed the github repo name from 'openssh-portable' to 'hpn-ssh'. All existing urls using the old name shoudl be automatically forwared to the new name. 
+
+### HPN-17
+The 17th series saw mutliple changes to the nomenclature of the compiled binaries. In order to allow for side by side usage with installed versions of OpenSSH we renamed all of the binaries to include an 'hpn' prefix. So ssh became hpnssh, sshd became hpnsshd, sftp became hpnsftp, and so forth. We also moved the configurations files to /etc/hpnssh and the default port to 2222. HPN-SSH clients will, by default, use port 2222 but, if it fails to connect, it will fall back to port 22. 
+
+We also introduced some major changes to the way the ssh receive buffer was being calculated and used. The upshot being that we resolved a problem with a long period of poor performance while the buffer was being malloced (in 32KB chunks) to the correct size. We also fixed a number of memory problems that were leading to wildly excessive memory usage. 
+
+### HPN-16
+This series was never released to the public.
+
 ### HPN-15
 The 15th revision series of HPNSSH introduces a number of changes. First, the prior versions of the AES-CTR multithreading cipher did not make use of AES-NI. This is a set of on cpu hardware instructions that accelerate the computation of the AES cipher. As such, on some systems the multithreaded cipher was slower than the single threaded version. This has been changed to make use of OpenSSL's AES instructions which will automatically use AES-NI if it is available. 
 
