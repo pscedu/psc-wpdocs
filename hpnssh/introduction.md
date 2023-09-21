@@ -34,7 +34,7 @@ All patches should be applied to the [OpenSSH source files](https://www.openssh.
 ### HPN-18
 This series introduces a parallelized version of the ChaCha20 cipher. This moves the task of generating the keystream onto independent threads allowing the main thread to process data more effectively. In comparison to HPN-SSH 17v14 this has resulted in an 12% improvement in throughput. In comparison to OpenSSH 9.4 we are seeing a 59% improvement. We have also changed the version scheme. Instead of 18v1 we are now using a Major.Minor.Fix system so the first release of this series is 18.1.0. 
 
-We have also changed the github repo name from 'openssh-portable' to 'hpn-ssh'. All existing urls using the old name shoudl be automatically forwared to the new name. 
+We have also changed the github repo name from 'openssh-portable' to 'hpn-ssh'. All existing URLs using the old name should be automatically forwarded to the new name. 
 
 ### HPN-17
 The 17th series saw mutliple changes to the nomenclature of the compiled binaries. In order to allow for side by side usage with installed versions of OpenSSH we renamed all of the binaries to include an 'hpn' prefix. So ssh became hpnssh, sshd became hpnsshd, sftp became hpnsftp, and so forth. We also moved the configurations files to /etc/hpnssh and the default port to 2222. HPN-SSH clients will, by default, use port 2222 but, if it fails to connect, it will fall back to port 22. 
