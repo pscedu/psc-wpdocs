@@ -27,7 +27,7 @@ This is available as of HPN-SSH 15v4 for OpenSSH 8.7.
 
 This is available as of HPN-SSH 18.1.0 for OpenSSH 9.4. 
 
-**Inline Network Telemetry:** Sometimes figuring out why a ssh connection is underperforming is a difficult task. To help with diagnostics HPN-SSH will deploy network telemetry. In this diagnostic mode both the client and server will periodically query network statistics (such as retransmits, out of order packets, time spent buffer limited, and so forth) and store this data for analysis. This data may also be periodically displayed to the user. Initially this will be limited to unix variants that have the TCP_INFO struct (Linux and *BSD).
+**Inline Network Telemetry:** Sometimes figuring out why a ssh connection is underperforming is a difficult task. To help with diagnostics HPN-SSH will deploy network telemetry. In this diagnostic mode both the client and server will periodically query network statistics (such as retransmits, out of order packets, time spent buffer limited, and so forth) and store this data for analysis. This data may also be periodically displayed to the user. Initially this will be limited to Unix variants that have the TCP_INFO struct (Linux and *BSD).
 
 This is available as of HPN-SSH 15v5 for OpenSSH 8.8.
 
