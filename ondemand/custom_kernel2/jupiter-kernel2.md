@@ -1,4 +1,4 @@
-<h3 name="custom-env">Custom Conda Environments with OnDemand</h3>
+<h3 name="custom-env">Custom conda environments with OnDemand</h3>
 
 You can  use the Python “ipykernel” package to create a definition file for  Jupyter Notebook which
 uses a custom Python installation rather than the default one. After creating that file and launching Jupyter Notebooks via
@@ -13,7 +13,7 @@ The steps to do this are:
 
 <h4>Install “ipykernel”</h4>
 
-This process can be performed with a custom Conda environment, with the Python installation in the Bridges-2 nodes, or
+This process can be performed with a custom conda environment, with the Python installation in the Bridges-2 nodes, or
 with any other Python installation available; the important thing is to run it from the Python environment that will 
 be used with OnDemand.
 
@@ -50,12 +50,12 @@ conda activate ENVIRONMENT_NAME
 
 Use a command like one below, depending on your specific case:
 
-If you are using Conda:
+If you are using conda:
 ```
 conda install ipykernel
 ```
 
-If you are NOT using Conda, but in a Python environment in which you have write permission
+If you are NOT using conda, but in a Python environment in which you have write permission
 ```
 python3 -m pip install ipykernel
 ```
@@ -111,7 +111,7 @@ Click the blue Launch button. You may have to wait for resources to be allocated
 
 At this point, you can start a new notebook or open an existing one.
 
-<h5>Start a new notebook</h5>
+<h5>Start a new Notebook</h5>
 
 
 Under the **New** dropdown in the upper right, choose the name of the new environment that you created.
@@ -121,7 +121,7 @@ Under the **New** dropdown in the upper right, choose the name of the new enviro
 Your new Notebook will open.
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
-as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
+as it will try to use the base different conda binaries and not the ones you set in the new custom environment kernel.
 
 
 
@@ -137,7 +137,7 @@ Change the Python environment to use by navigating to **Kernel > Change kernel**
 
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself
-as it will try to use the base different Conda binaries and not the ones you set in the new custom environment kernel.
+as it will try to use the base different conda binaries and not the ones you set in the new custom environment kernel.
 
 
 <h4>Additional content: using Python from Singularity containers</h4>
@@ -162,6 +162,7 @@ vim $HOME/.local/share/jupyter/kernels/tensorflow_latest/kernel.json
     "argv": [
         "/usr/bin/singularity",
         "exec",
+        "--nv",
         "--bind",
         "/ocean,{connection_file}:/connection-spec",
         "/ocean/containers/ngc/tensorflow/tensorflow_latest.sif",
