@@ -64,7 +64,7 @@ There are many containers for AI/BD applications already installed on Bridges-2 
 You can pull a Docker container into Bridges-2 and convert it to
 Singularity format with the <code>Singularity pull</code> command. 
 
-**Note** This should be done in an interactive session on Bridges-2.  See the [Interactive sessions section in the Bruidges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions) for more information.
+**Note** This should be done in an interactive session on Bridges-2.  See the [Interactive sessions section in the Bruidges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#interactive-sessions) for more information.
 
 To pull a container from [DockerHub](https://hub.docker.com/) and convert it to Singularity:
 ```shell
@@ -93,7 +93,7 @@ valid container origin points to pull containers from:
 
 Once you have a Singularity container, start an interactive session on
 Bridges-2 and start your container. See the section on [interactive
-sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions)
+sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#interactive-sessions)
  for details on the interact command.
 
 ```shell
@@ -127,7 +127,7 @@ singularity exec --nv ${CONTAINER} pip freeze | grep tensorflow
 When the container you need is not present on Bridges-2 already, you
 can pull one from a given URI. Run the following commands in an interactive session to pull a
 container to Bridges-2. See the section on [interactive
-sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide#interactive-sessions)
+sessions in the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#interactive-sessions)
  for details on the interact command.
 
 This example pulls a container from Docker
@@ -159,7 +159,7 @@ packages, selected to work together well.
 
 These environments are built for the GPU nodes on Bridges-2. Be sure
 to use one of the GPU partitions. See the [Bridges-2 User
-Guide](https://www.psc.edu/resources/bridges-2/user-guide#partitions)
+Guide](https://www.psc.edu/resources/bridges-2/user-guide/#partitions)
 for information on Bridges-2 partitions and how to choose one to use.
 
 To use an already existing environment from
