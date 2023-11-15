@@ -1,4 +1,4 @@
-# Data Submission Guide
+<h1 id="data-submission-guide"># Data Submission Guide</h1>
 
 This resource documents the key steps for TMCs, Assay teams, and others who need to upload data to the HuBMAP Data Ingest portal (HuBMAP Consortium) or SenNet Data Sharing Portal (SenNet Consortium).
 Additional information about each each step (or section) of the process and additional resources can be found here:
@@ -11,7 +11,7 @@ Use this tool to track your team's progress in the data submission/data ingest p
 • Use the Table of Contents below to jump to a section of interest.
 • Use the key combination Ctrl + F  to search for a term or topic within this page.
 
-## Section 1 - Prerequisites
+<h2 id="section-1">Section 1 - Prerequisites</h2>
 Complete the prerequisites listed below prior to registering donors and samples or uploading any data.
 Click the provided links in this section to go to related portals or websites, or to access additional relevant information.
 
