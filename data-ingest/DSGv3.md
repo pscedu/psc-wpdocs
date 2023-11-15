@@ -32,7 +32,7 @@ Click the provided links in this section to go to related portals or websites, o
 |&nbsp; &nbsp; i. Publish a new protocol | • Use a template <br>• Include HuBMAP (or SenNet) and team name as keywords <br> • Publish the protocol <br> • For additional examples, see also:<br> &nbsp; • [HuBMAP Method Development Community](https://www.protocols.io/workspaces/human-biomolecular-atlas-program-hubmap-method-development) OR <br> &nbsp; • [SenNet Method Development Community](https://www.protocols.io/workspaces/cellular-senescence-network-sennet-method-develo)|
 |&nbsp; &nbsp; ii. Modify an existing protocol | • Open an existing protocol <br> • Use _Edit New Version_ or _Edit New Fork_ <br> • Follow steps to create and publish a new protocol. <br> • For detailed directions... |
 
-[Back to top](#data-submission-guide)
+<a href="#data-submission-guide">[Back to top]</a>
 
 ## Different ways to create a new protocol [protocols.io](http://protocols.io/)
 
