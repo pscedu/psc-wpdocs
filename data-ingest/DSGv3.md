@@ -8,8 +8,14 @@ Links to additional related portals, sites, and other resources are also provide
 Download a "tracker" version of this list: [HuBMAP Data Upload Checklist](https://docs.google.com/document/d/1NL-YxyxMAP4Oa0X7ksh0bfOIG_U3nq0-nBtARsas1SE/edit)  
 Use this tool to track your team's progress in the data submission/data ingest process.
 
-• Use the Table of Contents below to jump to a section of interest.
-• Use the key combination Ctrl + F  to search for a term or topic within this page.
++ Use the Table of Contents below to jump to a section of interest.
++ Use the key combination Ctrl + F  to search for a term or topic within this page.
+
+###Table of Contents
++ [Introduction](#data-submission-guide)
++ [Section 1 - Prerequisites](#section-1---prerequisites)
++ [Section 2 - More stuff](#section-2---more-stuff)
++ [Section 3 - And so on](#section-3---and-so-on)
 
 <h2 id="section-1">Section 1 - Prerequisites</h2>
 Complete the prerequisites listed below prior to registering donors and samples or uploading any data.
