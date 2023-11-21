@@ -7,7 +7,7 @@
 These statuses display in the ingestion portal as a data set is processed.
 
 #### Data Upload Flow Diagram 
-![flow diagram](https://github.com/hubmapconsortium/data_submission_guide/tree/main/DataUploadFLow.png)
+![flow diagram](https://github.com/hubmapconsortium/data_submission_guide/blob/main/DataUploadFlow.png)
 
 | Status | Explanation / Comments |
 |:---------------------|:----------------------------------------------------|
