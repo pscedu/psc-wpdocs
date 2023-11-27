@@ -49,7 +49,7 @@ These statuses display in the ingestion portal as a data set is processed.
 </tr>
 <tr>
 <td>&nbsp; 2. The HIVE (or CODCC) extracts </td><td> Each data upload, corresponding data, and registers them as individual datasets. </td></tr>
-<tr><td>&nbsp; 3. The HIVE (or CODCC) processes </td><td> The data and metadata that you have uploaded for ingestion. If ingestion fails, or if additional information is needed, the data provider will be contacted using the ticketing system.<br /><br /><span class="highlight-blue"> **NOTE:** For Clinical assay data, the Pitt team will de-identify this data and submit the scrubbed data to the HIVE / CODCC. The provider of the data will need to review and approve the release of the de-identified data in the <a href="#publication">publish step</a>.</span>
+<tr><td>&nbsp; 3. The HIVE (or CODCC) processes </td><td> The data and metadata that you have uploaded for ingestion. If ingestion fails, or if additional information is needed, the data provider will be contacted using the ticketing system.<br /><br /><span class="highlight-blue" style="background-color:aquamarine;"> **NOTE:** For Clinical assay data, the Pitt team will de-identify this data and submit the scrubbed data to the HIVE / CODCC. The provider of the data will need to review and approve the release of the de-identified data in the <a href="#publication">publish step</a>.</span>
 </td></tr>
 <tr>
 <td>&nbsp; 4. Pipeline processing </td><td> The HIVE processes certain assays by standardized pipelines (where applicable). </td></tr>
