@@ -36,7 +36,7 @@ These statuses display in the ingestion portal as a data set is processed.
 |&nbsp; &nbsp; • Each dataset has a directory | Each dataset has a corresponding directory and row in an associated metadata template file.|
 |&nbsp; &nbsp; • Each row in a template = one dataset | Multiple metadata template files can be included, but at least one is _required_. |
 
-<p>**NOTE:** Multiple sets of data can be uploaded and the same data set could_ be uploaded more than once. Each data upload is assigned a UUID (universally unique identifier), but not a version number, until it has completed the entire data ingest, validation, and approval process and is published.</p>
+<p><b>NOTE:</b>b> Multiple sets of data can be uploaded and the same data set could_ be uploaded more than once. Each data upload is assigned a UUID (universally unique identifier), but not a version number, until it has completed the entire data ingest, validation, and approval process and is published.</p>
 
 <table>
 <thead>
