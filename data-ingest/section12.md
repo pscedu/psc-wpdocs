@@ -26,9 +26,9 @@ These statuses display in the ingestion portal as a data set is processed.
 <p><b>NOTE:</b> Multiple sets of data can be uploaded and the same data set <i>could be</i> uploaded more than once. <span style="background-color:green;">Each data upload</span> is assigned a UUID (universally unique identifier), but not a version number, until it has completed the entire data ingest, validation, and approval process and is published.</p>
 
 
-**THe next sentence should be green**
+**THe next sentence should be blue**
 
- <div style="background-color:green;">
+ <div style="background-color:blue;">
 Additional pipelines will be added over time, as needed. Pipelines are available for download use by others, including TMCs. <br> **NOTE:** Generally, TMCs are not involved with pipelines, but may be contacted if an error occurs.
 
 
