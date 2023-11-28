@@ -1,7 +1,7 @@
 
 ## Section 12 - Test
 
-<span>Data uploads go through several statuses during the ingest process.</span>
+<span class="blue">Data uploads go through several statuses during the ingest process.</span>
 
 
 
