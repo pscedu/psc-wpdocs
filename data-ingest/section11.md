@@ -3,10 +3,10 @@
 
 Data uploads go through several statuses during the ingest process.
 
-**Everything below this should be orange.**
+<p style="background-color:orange;">Everything below this should be orange.</p>
 
   
-<div style="background-color:orange;">
+
   
 ### Ingestion Statuses 
 These statuses display in the ingestion portal as a data set is processed.
@@ -29,4 +29,4 @@ These statuses display in the ingestion portal as a data set is processed.
 Additional pipelines will be added over time, as needed. Pipelines are available for download use by others, including TMCs. <br> **NOTE:** Generally, TMCs are not involved with pipelines, but may be contacted if an error occurs.
 
 
-</div>
+
