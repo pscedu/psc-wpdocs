@@ -1,18 +1,10 @@
 
-## Section 10 - Data Processing
+## Section 11 - Test
 
 Data uploads go through several statuses during the ingest process.
 
-<details>
-<summary>See a Flow Diagram of the Data Ingest process </summary>
-  
-#### Data Upload Flow Diagram 
-![flow diagram](DataUploadFlow.png)
+Everything below this should be green.
 
-</details>
-  
-<details>
-<summary>See details about Ingestion Statuses </summary>
   
 <div style="background-color:green;">
 ### Ingestion Statuses 
