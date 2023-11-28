@@ -1,4 +1,4 @@
-<div style="background-color:green;">
+
 ## Section 10 - Data Processing
 
 Data uploads go through several statuses during the ingest process.
@@ -13,7 +13,8 @@ Data uploads go through several statuses during the ingest process.
   
 <details>
 <summary>See details about Ingestion Statuses </summary>
-
+  
+<div style="background-color:green;">
 ### Ingestion Statuses 
 These statuses display in the ingestion portal as a data set is processed.
 
