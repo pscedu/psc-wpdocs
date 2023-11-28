@@ -28,8 +28,8 @@ These statuses display in the ingestion portal as a data set is processed.
 
 **THe next sentence should be blue**
 
- <div style="background-color:blue;">
+ <span style="background-color:blue;">
 Additional pipelines will be added over time, as needed. Pipelines are available for download use by others, including TMCs. <br> **NOTE:** Generally, TMCs are not involved with pipelines, but may be contacted if an error occurs.
 
 
-</div>
+</span>
