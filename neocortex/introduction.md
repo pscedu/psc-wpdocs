@@ -5,7 +5,7 @@ There are four types of applications currently supported on the Neocortex system
 * Track 3: [General purpose SDK](https://psc.edu/resources/neocortex/docs/track3)
 * Track 4: [WFA, WSE Field-equation API](https://psc.edu/resources/neocortex/docs/track4)
   
-This document is expected to serve as the guiding technical guide for Neocortex users. It is under continuous development. If you have any recommendations for this document, please make sure to share them with the team (see Feedback section).
+This document is expected to serve as the guiding technical guide for Neocortex users. It is under continuous development. If you have any recommendations for this document, please make sure to share them with the team \( [see the Feedback section](https://www.psc.edu/resources/neocortex/docs/providing-feedback)\).
 
 Neocortex, a system that captures groundbreaking new hardware technologies, is designed to accelerate Artificial Intelligence (AI) research in pursuit of science, discovery, and societal good. Neocortex is a highly innovative resource that will accelerate AI- powered scientific discovery by vastly shortening the time required for deep learning training, foster greater integration of artificial deep learning with scientific workflows, and provide revolutionary new hardware for the development of more efficient algorithms for artificial intelligence and graph analytics.
 
