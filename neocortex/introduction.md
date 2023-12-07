@@ -19,7 +19,7 @@ The list below presents the different stages we hope every project will go throu
 1. Researcher on-boarding (you will get different emails from neocortex@psc.edu and access to the Neocortex system)
 2. Accessing the Neocortex portal and user documentation (this webpage)
 3. Accessing the Neocortex system (over SSH)
-4. Running a job in the Neocortex system (using scripts or Slurm commands like srun/sbatch to outlined )
+4. Running a job in the Neocortex system (see the [Getting Started Tutorial section](https://www.psc.edu/resources/neocortex/neocortex-user-guide-getting-started-tutorial) )
 5. Executing Cerebras reference/sample code (i.e. modelzoo networks, SDK examples, ...)
 6. Transferring your data into the Neocortex environment
 7. Executing your code base in the Neocortex environment
