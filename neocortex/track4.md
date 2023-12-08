@@ -27,7 +27,7 @@ WFA: API recently used for advancing CFP simulations at unprecedented resolution
 #### What to expect
 * Development at the high-level Python interface that is similar to Numpy
 * A container (provided by Cerebras) to compile and generate binaries and run on the WSE
-* An unpolished product (Beta level) that will require some hand holding from our team on slack
+* An unpolished product (Beta level) that will require some hand holding from our team on Slack
    * Be prepared for bugs and unpolished documentation
 * Exceptional speed if successful, strong scaling that can’t be matched elsewhere
   
