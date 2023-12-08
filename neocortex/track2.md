@@ -7,6 +7,7 @@ Track 2 is for ML models that are a **combination of the building blocks** use
 Please check the [list of supported Tensorflow layers here](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html).
 #### Cerebras PyTorch Layer API
 * PyTorch Layer API: custom wrapper of several commonly used PyTorch APIs
-* Supported PyTorch Operations
+
+Supported PyTorch Operations
    * Please check the [list of supported PyTorch layers and operations here](https://docs.cerebras.net/en/1.6.0/pytorch-docs/pytorch-ops.html).
 
