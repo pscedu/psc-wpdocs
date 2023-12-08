@@ -5,7 +5,13 @@ Neocortex features two Cerebras CS-2 systems and an HPE Superdome Flex HPC serve
 * General-purpose computing for complementary data wrangling and preprocessing
 * High-bandwidth connectivity to other sites, campus, labs, and clouds 
 
-The configuration of each specialized system is described below.
+The configuration of each specialized system is described below.<br /><br />
+
+---
+
+
+<br />
+
 ### CS-2
 Each CS-2 features a Cerebras WSE2 (Wafer Scale Engine2), the largest chip ever built.
 <table>
@@ -25,6 +31,8 @@ Each CS-2 features a Cerebras WSE2 (Wafer Scale Engine2), the largest chip ever 
     </tr>
   </tbody>
 </table>
+
+<br /><br /><br />
 
 
 ### HPE Superdome Flex
