@@ -37,6 +37,7 @@ The steps to have new team members added to your Neocortex project are:
 </ol>
 <br />
 <li><strong>Approval and Processing:</strong> Once the email is received, the request will be reviewed by the appropriate personnel. If the request is approved, the new Neocortex accounts will be created accordingly.</li></ol>
+
 #### Example:
 ```
 Project Details:
