@@ -13,8 +13,9 @@ ssh <i>psc_username</i>@neocortex.psc.edu
 
 If you need to reset your PSC password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
 
-<blockquote style="background-color: #f0f8ff;">  
+<blockquote>  
  <strong>Note</strong>
+</blockquote>
 
 <p>Please complete the "Getting ready to use the Neocortex system" training and submit the "Key Compilation Metrics Needed" form to get access to the total Neocortex allocation SU (Superdome Flex and CS-2s systems).</p>
-</blockquote>
+
