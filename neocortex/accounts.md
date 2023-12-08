@@ -30,14 +30,13 @@ The steps to have new team members added to your Neocortex project are:
 
   <ol style="list-style-type:lower-alpha;">
 <li>Project Title: The title of the project for which the accounts are being requested.</li>
-<br />
+
 <li>Rationale: Explain why the accounts are being created at this point in the project, rather than at the beginning. This could include any specific tasks, collaborations, or requirements that have arisen.</li>
-<br />
+
 <li>Account Duration: Specify the duration for which the accounts should be active. This could be the project's anticipated lifetime or a specific number of months, depending on the project's needs.</li>
 </ol>
 <br />
 <li><strong>Approval and Processing:</strong> Once the email is received, the request will be reviewed by the appropriate personnel. If the request is approved, the new Neocortex accounts will be created accordingly.</li></ol>
-
 #### Example:
 ```
 Project Details:
@@ -45,6 +44,7 @@ Project Details:
 - Rationale: [Explain why accounts are needed at this stage]
 - Account Duration: [Specify duration, e.g., project lifetime or X months]
 ```
+
 
 ### Off-boarding Team Members
 When a researcher is no longer part of a project and their access needs to be revoked, please request that they be off-boarded as soon as possible.
