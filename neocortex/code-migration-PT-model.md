@@ -4,7 +4,7 @@
 
 The model definition for the model. Contains the model definition and model implementation.
 
-The goal is to define a `torch.nn.Module` class and use it as input for a `PyTorchBaseModel` class, that will later be used as input for the `run()`` method inrun.py` ` (more details down below in this same document).
+The goal is to define a `torch.nn.Module` class and use it as input for a `PyTorchBaseModel` class, that will later be used as input for the `run()` method in `run.py`  (more details below in this same document).
 ```
 class Model(torch.nn.Module):
     def __init__(self, params):
