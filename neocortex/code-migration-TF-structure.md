@@ -8,6 +8,6 @@ Examples can be found in the [cerebras_reference_implementation repository](htt
 * `run.py`: contains the training/compilation/evaluation script.
 
 <blockquote class="info">
- <strong>Info</strong>
+<p><strong>Info</strong></p>
 <p>Suggested order of files to use: <code>model.py -> data.py -> utils.py -> configs/params.yaml -> run.py</code></p>
 </blockquote>
