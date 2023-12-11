@@ -22,7 +22,7 @@ Neocortex users have been granted Neocortex resources for their projects. Plea
 
 #### How to connect to Neocortex over ssh
 
-Connect to Neocortex using your PSC credentials, where *psc_username* is your PSC username.
+Connect to `neocortex.psc.edu` using your PSC credentials, where *psc_username* is your PSC username.
 
 <pre> ssh <i>psc_username</i>@neocortex.psc.edu</pre>
 
@@ -32,7 +32,8 @@ Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc
 
 ### Connecting to Bridges-2
 
-<blockquote><strong>Info</strong>
+<blockquote>
+  <strong>Info</strong>
 <p>If you forget your Neocortex authentication credentials, please visit the [PSC password change utility webpage](https://apr.psc.edu/).</p>
 </blockquote>
 
@@ -42,7 +43,7 @@ You can compile and validate code using this resource, and you also have access 
 
 #### How to connect to Bridges-2 over ssh
 
-Connect to `bridges-2.ps.edu` using your PSC credentials. 
+Connect to `bridges-2.ps.edu` using your PSC credentials, where *psc_username* is your PSC username. 
 <pre> ssh <i>psc_username</i>@bridges2.psc.edu</pre>
 
 If you need to reset your password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
