@@ -14,8 +14,11 @@ This section talks about the various storage spaces on Neocortex and how to us
 #### $HOME
 Your $HOME directory is <code>/jet/home/<i>username</i></code>, where *username* is your PSC username. This is your personal storage space and has a cap of 25 GB. This should be used for personal files only, such as system configurations or maybe private files like experimental Conda environments.
 
-**Note:** The $HOME and $PROJECTS spaces are persistent, but the /local{1,2,3,4} spaces (/local1/, /local2/, /local3/, /local4/) are more ephemeral.
+<div class="danger">
+  <blockquote>
+    <strong>Danger</strong> 
+<p>Maxing out your $HOME quota (storing >25GB under $HOME) will lock you out of the system, as you might not be able to login anymore.
+  </blockquote>
+</div>
 
-**Danger:** 
-Maxing out your $HOME quota (storing 25GB+ under $HOME) will lock you out of the system, and you might not be able to login anymore.
 
