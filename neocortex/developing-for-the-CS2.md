@@ -5,17 +5,17 @@
 <ul style="list=style-type:none;">
   <li>ML Workflows: 
     <ul  style="list=style-type:none;">
-      <li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/#tensorflow-or-pytorch">TensorFlow or PyTorch</a></li>
+      <li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/#tensorflow-or-pytorch">TensorFlow or PyTorch</a></li>
     </ul>
-<li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/(#compatibility-with-the-cs-2">Compatibility with the CS-2</a></li>
-<li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/#cerebras-kernel-library-support-q123">Cerebras Kernal Library Support Q1 2023</a></li>
+<li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/(#compatibility-with-the-cs-2">Compatibility with the CS-2</a></li>
+<li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/#cerebras-kernel-library-support-q123">Cerebras Kernal Library Support Q1 2023</a></li>
 <li>Supported Core Compute Kernels:
   <ul>
-   <li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/#cerebras-tensorflow-layer-api">Cerebras TensorFlow Layer API</a></li>
-   <li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/#cerebras-pytorch-layer-api">Cerebras PyTorch Layer API</a></li>
+   <li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/#cerebras-tensorflow-layer-api">Cerebras TensorFlow Layer API</a></li>
+   <li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/#cerebras-pytorch-layer-api">Cerebras PyTorch Layer API</a></li>
   </ul>
   </li>
-<li><a href="https://www.psc.edu/resources/neocortex/doc/developing-for-cs/#execution-modes">Execution modes</a></li>
+<li><a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs/#execution-modes">Execution modes</a></li>
 </ul>
 </div>
         
