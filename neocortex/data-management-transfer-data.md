@@ -14,8 +14,8 @@ where *groupname* is your grant id and *username* is your PSC username.
 
 Note that by default, rsync will not copy older files with the same name in place of newer files in the target directory.
 
-You can find the grant id by running the `projects` command. Please refer to [https://www.psc.edu/resources/bridges-2/user-guide/#account-administration](https://www.psc.edu/resources/bridges-2/user-guide/#account-administration) for more information.
+You can find the grant id by running the `projects` command. Please refer to the [Account administration section of the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#account-administration) for more information.
 
 **sftp**
 
-sftp file transfer is also supported. For more details, please visit https://www.psc.edu/resources/bridges-2/user-guide/#transferring-files.
+sftp file transfer is also supported. For more details, please visit the [Transferring files section of the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#transferring-files).
