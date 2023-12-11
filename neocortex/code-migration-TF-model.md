@@ -35,10 +35,10 @@ The EstimatorSpec takes:
  <li><code>mode</code>: passed automatically from the parent model_fn function.</li>
  <li><code>loss</code>: model loss</li>
  <li><code>train_op</code>: optimizer</li>
- <li><code>host_call (dict)</code>:
-  <ul style="list-style-type:none;">
-   <li><code>{ "accuracy": tf.compat.v1.metrics.accuracy() }</code></li>
-  </ul>
+ <li><code>host_call (dict)</code>:<br />
+  <span style="padding-left:15px;">
+   <code>{ "accuracy": tf.compat.v1.metrics.accuracy() }</code>
+  </span>
  </li>
 </ul> 
 
