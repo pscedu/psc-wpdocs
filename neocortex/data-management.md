@@ -16,7 +16,7 @@ This section talks about the various storage spaces on Neocortex and how to us
 <div class="warning">
   <blockquote>
     <strong>Warning</strong>
-    <p>This storage space is subject to the <a href="https://www.psc.edu/resources/bridges-2/userguide#inode-quota">Bridges-2 inode quota</a></p>
+    <p>This storage space is subject to the <a href="https://www.psc.edu/resources/bridges-2/user-guide#inode-quota">Bridges-2 inode quota</a></p>
   </blockquote>
 Your $HOME directory is <code>/jet/home/<i>username</i></code>, where *username* is your PSC username. This is your personal storage space and has a cap of 25 GB. This should be used for personal files only, such as system configurations or maybe private files like experimental Conda environments.
 
