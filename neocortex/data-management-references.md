@@ -15,7 +15,7 @@ Since the main reference resources (`/ocean/neocortex/cerebras`) have to be acce
 
 This is a Singularity container created by Cerebras that contains all of the different resources required for running your code on the CS-2 boxes. The container is updated regularly and the latest version is always available in the reference folder as `/ocean/neocortex/cerebras/cbcore_latest.sif`.
 
-Please see the [Software Stack section](https://www.psc.edu/resources/neocortex/software-stack) for more details.
+Please see the [Software Stack section](https://www.psc.edu/resources/neocortex/docs/software-stack) for more details.
 
 **Cerebras Datasets**
 
@@ -29,5 +29,5 @@ Additionally to the datasets provided by Cerebras, there are other datasets that
 
 It is advisable to store datasets under the $PROJECT/../shared folder in the Ocean shared file system, and then to copy those that are required to the /local{1,2,3,4} spaces in the SDFlex when training on the CS-2. Please remember you can access the /local/{1..4} spaces via the $LOCAL variable.
 
-For more details regarding how to run various jobs on the system, refer to the [Running jobs section](https://www.psc.edu/resources/neocortex/running-jobs) of the User Guide.
+For more details regarding how to run various jobs on the system, refer to the [Running jobs section](https://www.psc.edu/resources/neocortex/docs/running-jobs) of the User Guide.
 
