@@ -20,7 +20,8 @@ These are some technical issues our team is working on right now. We will update
   ```
   **Cause:** this was a network communication issue for reaching the LDAP server.
 
-<h3>Error 2 <span>(SOLVED 2021-02-14)</span>: More processors requested than permitted</h3>
+### Error 2 <span>(SOLVED 2021-02-14)</span>: More processors requested than permitted
+
 **Error message:**
 ```
 More processors requested than permitted
@@ -29,7 +30,7 @@ More processors requested than permitted
 ```
 srun --pty --nodelist sdf-1 --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv -B /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,/jet/home/PSC_USERNAME/modelzoo /local1/cerebras/cbcore_latest.sif
 ```
-<h3>Error 3 (<span>SOLVED 2021-02-14</span>): Could not lookup the current user's information</h3>
+### Error 3 (<span>SOLVED 2021-02-14</span>): Could not lookup the current user's information
 **Error message:**
 ```
 WARNING: Could not lookup the current user's information: user: unknown userid 73858
@@ -43,12 +44,12 @@ srun --pty --nodelist sdf-1 --cpus-per-task=1 --kill-on-bad-exit singularity she
 ```
 **Cause:** this was a network communication issue for reaching the LDAP server.
 
-<h3>Error 4 (<span>SOLVED 2021-02-15</span>): Slowness when using files on Jet or Ocean</h3>
+### Error 4 (<span>SOLVED 2021-02-15</span>): Slowness when using files on Jet or Ocean</h3>
 **Error message:** No error messages are shown, but it will take a long time for any operations to start or finish.
 
 **Cause:** this was a network communication issue for reaching the Jet and Ocean filesystem servers across multiple InfiniBand interfaces as opposed to using a single interface.
 
-<h3>Error 5: Failure to login into https://portal.neocortex.psc.edu/home</h3>
+### Error 5: Failure to login into https://portal.neocortex.psc.edu/home</h3>
 **Error message:** the page takes a minute to load and an error page from the webserver is shown.
 
 **Cause:** it seems the authentication is timing out. Probably something changed when the migration from Bridges to Bridges2 started.
