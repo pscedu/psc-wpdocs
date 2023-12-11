@@ -4,8 +4,8 @@
 
 Connect to the login node.
 ```
-ssh juran@bridges2.psc.edu
-juran@bridges2.psc.edu's password: ****************
+ssh joeuser@bridges2.psc.edu
+joeuser@bridges2.psc.edu's password: ****************
 ********************************* W A R N I N G ********************************
 You have connected to br012.ib.bridges2.psc.edu, a login node of Bridges 2.
 LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this warning
@@ -25,14 +25,18 @@ Project: cis210015p PI: Paola Buitrago
   Regular Memory            50,000 SU remain of 50,000 SU       active: Yes
   Ocean /ocean/projects/cis210015p 26.97G used of 1000G
 
-[juran@bridges2-login012 ~]$
+[joeuser@bridges2-login012 ~]$
 ```
+<div class="note">
+  <blockquote>
+    <strong>Note</strong>
+<p>Please keep in mind that your Neocortex allocation/account has access to more than one partition, RM for Regular Memory and EM for Extreme Memory. The default one to use should be the RM one, since there are more SUs available there, and you should only switch to the EM one if needed after testing everything on RM so your SUs don't run out prematurely. Additionally, the EM partition does not allow you to run commands interactively via the `interact` command, thus you will be required to either submit in batch mode, or to run the `srun` command shown below.</p>
+  </blockquote>
+</div>
 
-**Note:** Please have in mind that your Neocortex allocation/account has access to more than one partition, RM for Regular Memory and EM for Extreme Memory. The default one to use should be the RM one, since there are more SUs available there, and you should only switch to the EM one if needed after testing everything on RM so your SUs don't run out prematurely. Additionally, the EM partition does not allow you to run commands interactively via the `interact` command, thus you will be required to either submit in batch mode, or to run the `srun` command shown below.
-
-Take a look at the project grants available. There seem to be 2 different grants available. One for a different research project, and then the one for Neocortex. Since the latter is the one that has the SU, we should specify it for the different commands.
+Take a look at the project grants available. Joeuser has two different grants available, one for a different research project, and one for Neocortex. We want to use the Neocortex grant for the following work, so we will specify it.
 ```
-[juran@bridges2-login012 ~]$ projects | grep "Project\|Title"
+[joeuser@bridges2-login012 ~]$ projects | grep "Project\|Title"
     Project: CIS210012P
       Title: A Very Important Project
 
@@ -42,18 +46,18 @@ Take a look at the project grants available. There seem to be 2 different grants
 
 Let's take a look at the output of the `groups` command, since the groups are usually all lowercase but the `projects` command output isn't.
 ```
-[juran@bridges2-login012 ~]$ groups
+[joeuser@bridges2-login012 ~]$ groups
     cis210012p hum180001p ast190019p cis200012p cis210015p
 ```
 
 "cis210012p" is showing as the first in that line (leftmost). That means that it's the primary group. What we want is to have the P## group to be the primary for all of the following commands, so let's run the `newgrp` command specifying it so that happens.
 ```
-[juran@bridges2-login012 ~]$ newgrp cis210015p
+[joeuser@bridges2-login012 ~]$ newgrp cis210015p
 ```
 
 Now, by running the `groups` command one more time we see that the "cis210015p" group is showing as primary, just like we need.
 ```
-[juran@bridges2-login012 ~]$ groups
+[joeuser@bridges2-login012 ~]$ groups
     cis210015p hum180001p ast190019p cis200012p cis210012p
 ```
 
@@ -61,8 +65,8 @@ Since we have the correct group showing as primary, we can now proceed to start 
 
 We should start by running a simple interact job while specifying the allocation to use, like this:
 ```
-[juran@bridges2-login012 ~]$ CEREBRAS_DIR=/ocean/neocortex/cerebras/
-[juran@bridges2-login012 ~]$ interact -A cis210015p -p RM
+[joeuser@bridges2-login012 ~]$ CEREBRAS_DIR=/ocean/neocortex/cerebras/
+[joeuser@bridges2-login012 ~]$ interact -A cis210015p -p RM
 
     A command prompt will appear when your session begins
     
@@ -77,48 +81,55 @@ We should start by running a simple interact job while specifying the allocation
     salloc: Waiting for resource configuration
     salloc: Nodes r051 are ready for job
 
-[juran@r051 ~]$
+[joeuser@r051 ~]$
 ```
 
-**Note:** Please remember that the interactive mode can only be used for RM nodes. For EM nodes, the batch mode has to be used.
+<div class="note">
+  <blockquote>
+    <strong>Note</strong>
+    <p>lease remember that the interactive mode can only be used for RM nodes. For EM nodes, the batch mode has to be used.</p>
+  </blockquote>
+</div>
 
 As seen from the previous output, the prompt changed from saying that we were in a the "bridges2-login012" node to "r051" on the RM partition. It's now time to set some variables for copying the data.
 ```
-[juran@r051 ~]$ CEREBRAS_DIR=/ocean/neocortex/cerebras/
-[juran@r051 ~]$ echo $PROJECT
-    /ocean/projects/cis210015p/juran
+[joeuser@r051 ~]$ CEREBRAS_DIR=/ocean/neocortex/cerebras/
+[joeuser@r051 ~]$ echo $PROJECT
+    /ocean/projects/cis210015p/joeuser
 ```
 
-In this case, we are copying the files by using `rsync`, since this command will update the target directory with any changes/updates from the origin path. That will not be the case with `cp`, as that command will complain if the target directory already exists. Also, if there are no new files under the `$CEREBRAS_DIR/modelzoo` directory, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
+
+In this case, we are copying the files by using rsync. The rsync command will update the target directory with any changes/updates from the origin path. That is not the case with cp. The cp command will complain if the target directory already exists. Also, if there are no new files under the `$CEREBRAS_DIR/modelzoo` directory, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please bear in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, to "cis210015p" and not to "cis210012p".
 ```
-[juran@r051 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
+[joeuser@r051 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
     sending incremental file list
     modelzoo/
     modelzoo/LICENSE
 
     [--- OUTPUT SNIPPED FOR KEEPING THIS EXAMPLE SHORT ---]
 
-[juran@r051 ~]$ ls $PROJECT/
+[joeuser@r051 ~]$ ls $PROJECT/
     modelzoo
 ```
 
+
 Since the information is already in place, we should exit that simple interactive mode and start the actual compilation with more resources. We can exit that interactive mode by typing `exit` or pressing `Ctrl+D`.
 ```
-[juran@r051 ~]$ exit
+[joeuser@r051 ~]$ exit
     exit
     salloc: Relinquishing job allocation 319526
 
-[juran@bridges2-login012 ~]$
+[joeuser@bridges2-login012 ~]$
+```
+<br />
+Move into the modelzoo folder of the model we want to evaluate/compile/train:
+```
+[joeuser@bridges2-login012 ~]$ cd $PROJECT/modelzoo/fc_mnist/tf
 ```
 
-Then change into the modelzoo folder of the model we want to evaluate/compile/train:
+This command will start a shell using the latest Cerebras container. Please bear in mind that it might take a while for the job to start:
 ```
-[juran@bridges2-login012 ~]$ cd $PROJECT/modelzoo/fc_mnist/tf
-```
-
-This command will start a shell using the latest Cerebras container. Please have in mind that it might take a while for the job to start:
-```
-[juran@bridges2-login012 tf]$ srun --pty --cpus-per-task=28 --account=cis210015p --partition=RM --kill-on-bad-exit singularity shell --cleanenv --bind $CEREBRAS_DIR/data,$PROJECT $CEREBRAS_DIR/cbcore_latest.sif
+[joeuser@bridges2-login012 tf]$ srun --pty --cpus-per-task=28 --account=cis210015p --partition=RM --kill-on-bad-exit singularity shell --cleanenv --bind $CEREBRAS_DIR/data,$PROJECT $CEREBRAS_DIR/cbcore_latest.sif
     srun: job 319618 queued and waiting for resources
     srun: job 319618 has been allocated resources
 
@@ -172,8 +183,8 @@ Singularity> python run.py --mode train --compile_only --model_dir compile
 
 Singularity>
 ```
-
-Now, the different parameter files used for the validation/compilation/training processes can be specified. Let's say that you dont want to use the default "configs/params.yaml" file but one in a different (custom) directory (`--params custom_configs/params.yaml`). This can be done by using the original "params.yaml" file and setting the values there, and then the contents of the output can also be written into a different path (`--model_dir custom_output_dir`):
+<br /><br />
+Now, the different parameter files used for the validation/compilation/training processes can be specified. Let's say that you dont want to use the default "configs/params.yaml" file but one in a different (custom) directory (`--params custom_configs/params.yaml`). This can be done by copying the original "params.yaml" file and editing the values in your copy. The contents of the output can also be written into a different path (`--model_dir custom_output_dir`):
 ```
 Singularity> cp -r configs custom_configs
 
@@ -196,26 +207,27 @@ Singularity>
 The contents of the `custom_configs` and `custom_output_dir` have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
 ```
 Singularity> ls -lash | grep custom
-    4.0K drwxr-sr-x  2 juran cis210015p 4.0K Mar  1 17:57 custom_configs
-    4.0K drwxr-sr-x  3 juran cis210015p 4.0K Mar  1 17:58 custom_output_dir
+    4.0K drwxr-sr-x  2 joeuser cis210015p 4.0K Mar  1 17:57 custom_configs
+    4.0K drwxr-sr-x  3 joeuser cis210015p 4.0K Mar  1 17:58 custom_output_dir
 
 Singularity> ls -lsh custom*
     custom_configs:
     total 4.0K
-    4.0K -rw-r--r-- 1 juran cis210015p 1.3K Mar  1 17:57 params.yaml
+    4.0K -rw-r--r-- 1 joeuser cis210015p 1.3K Mar  1 17:57 params.yaml
 
     custom_output_dir:
     total 16K
-     12K drwxr-sr-x 4 juran cis210015p 12K Mar  1 17:58 cs_518e82fcc3928d8e9da4ffc039506e6f0019b41b46bc53085af34c080de4054e
-    4.0K -rw-r--r-- 1 juran cis210015p 534 Mar  1 17:58 params.txt
+     12K drwxr-sr-x 4 joeuser cis210015p 12K Mar  1 17:58 cs_518e82fcc3928d8e9da4ffc039506e6f0019b41b46bc53085af34c080de4054e
+    4.0K -rw-r--r-- 1 joeuser cis210015p 534 Mar  1 17:58 params.txt
 ```
 
-Now, regarding training the model (since it's compiling without issues), this training cannot be done using Bridges-2. You will have to connect to Neocortex and follow the steps shown for training in the "Reference Compilation Example: Using Neocortex" section.
+<br />
+Now you are ready to the model (since it's compiling without issues). However, **this training cannot be done using Bridges-2**. You will have to connect to Neocortex and follow the steps shown for training in the [Reference Compilation Example: Using Neocortex](https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands/#neocortex) section.
 
 Finally, if you want to perform these steps in batch mode instead of interactively via `srun`, you can ran all of them from a single sbatch file. This will allow us to use the Extreme Memory nodes in the EM partition, like this:
 ```
  git clone git@github.com:Cerebras/modelzoo.git
-[juran@neocortex-login023 tf]$ vim mnist.sbatch
+[joeuser@neocortex-login023 tf]$ vim mnist.sbatch
     #!/usr/bin/bash
     #SBATCH --cpus-per-task=28
     #SBATCH --account=cis210015p
@@ -239,4 +251,9 @@ Finally, if you want to perform these steps in batch mode instead of interactive
     srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --compile_only --model_dir compile
 ```
 
-**Note:** If you run into problems when running jobs on Bridges-2, please remember to also take a look at the [Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide).
+<div class="note">
+  <blockquote>
+    <strong>Note</strong>
+    <p>If you run into problems when running jobs on Bridges-2, please remember to also take a look at the <a href="https://www.psc.edu/resources/bridges-2/user-guide">Bridges-2 User Guide</a>.</p>
+  </blockquote>
+</div>
