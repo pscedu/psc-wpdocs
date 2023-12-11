@@ -14,7 +14,8 @@ Please read below for specific instructions and connect to each system as needed
 
 ### Connecting to Neocortex (preferred)
 
-<blockquote><strong>Info</strong>
+<blockquote class="info">
+  <strong>Info</strong>
 <p>If you forget your Neocortex authentication credentials, please visit the <a href="https://apr.psc.edu/" target="_blank">PSC password change utility webpage</a>.</p>
 </blockquote>
 
@@ -32,7 +33,7 @@ Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc
 
 ### Connecting to Bridges-2
 
-<blockquote>
+<blockquote class="info">
   <strong>Info</strong>
 <p>If you forget your Neocortex authentication credentials, please visit the <a href="https://apr.psc.edu/" target="_blank">PSC password change utility webpage</a>.</p>
 </blockquote>
