@@ -1,4 +1,4 @@
-
+## Neocortex-specific storage spaces
 
 #### /local{1,2,3,4}
 This storage is visible only from the SDFlex compute nodes. Using this space benefits from an extremely fast data transfer speed.
@@ -17,9 +17,14 @@ echo $LOCAL
 
 These storage spaces are referred to as /local{1..4}, /local[1..4], or /local{1,2,3,4}; and /localX or $LOCAL. The difference between them is that when using /local and a number from 1 through 4, all of the 4 different disk spaces are being referred to; and when using /localX or $LOCAL, only one of the spaces is being addressed.
 
-**Note:** The $HOME and $PROJECTS spaces are persistent, but the /local{1,2,3,4} spaces (/local1/, /local2/, /local3/, /local4/) are more ephemeral.
+<div class="note">
+ <blockquote>
+  <strong>Note</strong>
+  <p>The $HOME and $PROJECTS spaces are persistent, but the /local{1,2,3,4} spaces (/local1/, /local2/, /local3/, /local4/) are more ephemeral.</p>
+ </blockquote>
+</div>
 
-It is recommended that you move your dataset from Bridges-2 (ocean or jet) to one of the locals (/local[1-4]) on the SDF node to avoid data I/O bottleneck from Bridges-2. The `mcp` command should be run from inside the SDF as anywhere else it will not have access to the /local disks. In order to do that, ssh into Neocortex and start an interact session like this:
+It is recommended that you move your dataset from Bridges-2 (ocean or jet) to one of the locals (/local[1-4]) on the SDF node to avoid data I/O bottleneck from Bridges-2. The `mcp` command should be run from inside the SDF as anywhere else it will not have access to the /local disks. In order to do that, ssh into Neocortex and start an interact session with a command like this:
 
 <pre>ssh <em>username</em>@neocortex.psc.edu
  srun --pty bash -i
@@ -28,8 +33,10 @@ It is recommended that you move your dataset from Bridges-2 (ocean or jet) to on
 Exit the interactive session when the data transfer is finished.
 
 You can use any of the /locals for this step. 
-
-> **Important**
->
->  Transfer your dataset to both SDFs (sdf-1 and sdf-2) as when you run a SLURM job to train your model, it will pick up any of the available partitions (sdf-1 or sdf-2).
-
+<div class="Note">
+ <blockquote>
+  <strong>Important</strong>
+  <p>Transfer your dataset to both SDFs (sdf-1 and sdf-2) as when you run a SLURM job to train your model, it will pick up any of the available partitions (sdf-1 or sdf-2).
+</p>
+ </blockquote>
+</div>
