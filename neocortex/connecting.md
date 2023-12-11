@@ -14,6 +14,9 @@ Please read below for specific instructions and connect to each system as needed
 
 ### Connecting to Neocortex (preferred)
 
+<blockquote>Info</blockquote>
+<p>If you forget your Neocortex authentication credentials, please visit the [PSC password change utility webpage](https://apr.psc.edu/).</p>
+
 Neocortex users have been granted Neocortex resources for their projects. Please refer to the [Allocations section](https://www.psc.edu/resources/neocortex/docs/allocations) for more information. You can compile code, validate code, and run training jobs on the CS machines using this system.
 
 #### How to connect to Neocortex over ssh
@@ -27,6 +30,9 @@ Connect to Neocortex using your PSC credentials, where *psc_username* is your P
 Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc.edu/) at https://ondemand.neocortex.psc.edu/ and login using your PSC credentials.
 
 ### Connecting to Bridges-2
+
+<blockquote>Info</blockquote>
+<p>If you forget your Neocortex authentication credentials, please visit the [PSC password change utility webpage](https://apr.psc.edu/).</p>
 
 Neocortex users are granted access to Bridges-2 resources for their projects. Please refer to the [Allocations section](https://www.psc.edu/resources/neocortex/docs/allocations) for more information.
 
