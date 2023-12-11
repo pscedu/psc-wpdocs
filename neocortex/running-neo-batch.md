@@ -38,7 +38,7 @@ srun --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CON
 
 You can save the above piece of code in a file, such as `neocortex_model.sbatch`. 
 
-From your project code directory(same directory that has the `run.py` file), run the following command:
+From your project code directory (the same directory that has the `run.py` file), run the following command:
 ```
 sbatch neocortex_model.sbatch
 ```
