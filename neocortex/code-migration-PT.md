@@ -6,7 +6,11 @@ This is an overview of the steps needed for porting an existing PyTorch codebase
 4. Modify `run.py` to validate and compile your code.
    
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
+
+
 ![Suggested order for modifications to port PyTorch code](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/neocortex_code_migration_pytorch_suggested_order.svg)
+
+
 
 The following diagram uses arrows to represent the logical flow of information and arguments passed when running the code. This diagram should be read from top to bottom.
 
