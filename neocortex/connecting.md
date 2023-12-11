@@ -15,7 +15,7 @@ Please read below for specific instructions and connect to each system as needed
 ### Connecting to Neocortex (preferred)
 
 <blockquote><strong>Info</strong>
-<p>If you forget your Neocortex authentication credentials, please visit the [PSC password change utility webpage](https://apr.psc.edu/).</p>
+<p>If you forget your Neocortex authentication credentials, please visit the <a href="https://apr.psc.edu/" target="_blank">PSC password change utility webpage</a>.</p>
 </blockquote>
 
 Neocortex users have been granted Neocortex resources for their projects. Please refer to the [Allocations section](https://www.psc.edu/resources/neocortex/docs/allocations) for more information. You can compile code, validate code, and run training jobs on the CS machines using this system.
@@ -34,7 +34,7 @@ Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc
 
 <blockquote>
   <strong>Info</strong>
-<p>If you forget your Neocortex authentication credentials, please visit the [PSC password change utility webpage](https://apr.psc.edu/).</p>
+<p>If you forget your Neocortex authentication credentials, please visit the <a href="https://apr.psc.edu/" target="_blank">PSC password change utility webpage</a>.</p>
 </blockquote>
 
 Neocortex users are granted access to Bridges-2 resources for their projects. Please refer to the [Allocations section](https://www.psc.edu/resources/neocortex/docs/allocations) for more information.
