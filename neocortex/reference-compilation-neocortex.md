@@ -2,8 +2,8 @@
 ### Neocortex
 Connect to the login node.
 ```
-ssh juran@neocortex.psc.edu
-juran@neocortex.psc.edu's password: ****************
+ssh joeuser@neocortex.psc.edu
+joeuser@neocortex.psc.edu's password: ****************
 
 ********************************* W A R N I N G ********************************
 You have connected to one of the Neocortex login nodes.
@@ -12,12 +12,14 @@ LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this warning
 For documentation on Neocortex, please see https://portal.neocortex.psc.edu/docs/
 Please contact neocortex@psc.edu with any comments/concerns.
 
-[juran@neocortex-login023 ~]$
+[joeuser@neocortex-login023 ~]$
 ```
 
-Take a look at the project grants available. There seem to be 2 different grants available. One for a different research project, and then the one for Neocortex. Since the latter is the one that has the SU, we should specify it for the different commands.
+
+Take a look at the project grants available. Joeuser has two different grants available, one for a different research project, and one for Neocortex. We want to use the Neocortex grant for the following work, so we will specify it.
+
 ```
-[juran@neocortex-login023 ~]$ projects | grep "Project\|Title"
+[joeuser@neocortex-login023 ~]$ projects | grep "Project\|Title"
 
     Project: CIS210012P 
       Title: A Very Important Project
@@ -28,19 +30,19 @@ Take a look at the project grants available. There seem to be 2 different grants
 
 Let's take a look at the output of the `groups` command, since the groups are usually all lowercase but the `projects` output isn't.
 ```
-[juran@neocortex-login023 ~]$ groups
+[joeuser@neocortex-login023 ~]$ groups
 
     cis210012p cis210015p
 ```
 
-"cis210012p" is showing as the first in that line (leftmost). That means that it's the primary group. What we want is to have the P## group to be the primary for all of the following commands, so let's run the `newgrp` command specifying it so that happens.
+"cis210012p" is showing as the first in that line (leftmost). That means that it's the primary group. We want the P## group to be used for all of the following commands, so let's run the `newgrp` command specifying it so that happens.
 ```
-[juran@neocortex-login023 ~]$ newgrp cis210015p
+[joeuser@neocortex-login023 ~]$ newgrp cis210015p
 ```
 
 Now, by running the `groups` command one more time we see that the "cis210015p" group is showing as primary, just like we need.
 ```
-[juran@neocortex-login023 ~]$ groups
+[joeuser@neocortex-login023 ~]$ groups
     cis210015p cis210012p
 ```
 
@@ -48,32 +50,32 @@ Since we have the correct group showing as primary, we can now proceed to start 
 
 We should start by setting some variables for copying the data.
 ```
-[juran@neocortex-login023 ~]$ export CEREBRAS_DIR=/ocean/neocortex/cerebras/
-[juran@neocortex-login023 ~]$ echo $PROJECT
-    /ocean/projects/cis210015p/juran
+[joeuser@neocortex-login023 ~]$ export CEREBRAS_DIR=/ocean/neocortex/cerebras/
+[joeuser@neocortex-login023 ~]$ echo $PROJECT
+    /ocean/projects/cis210015p/joeuser
 ```
 
-In this case, we are copying the files by using `rsync`, since this command will update the target directory with any changes/updates from the origin path. That will not be the case with `cp`, as that command will complain if the target directory already exists. Also, if there are no new files under the `$CEREBRAS_DIR/modelzoo` directory, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files would already be in place. Additionally, please have in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, the modelzoo folder will belong to "cis210015p" and not to "cis210012p".
+In this case, we are copying the files by using `rsync`. The `rsync` command will update the target directory with any changes/updates from the origin path. That is not the case with `cp`. The `cp` command will complain if the target directory already exists. Also, if there are no new files under the `$CEREBRAS_DIR/modelzoo` directory, the output will only have "sending incremental file list" and nothing else will be transferred since the updated files are already in place. Additionally, please bear in mind that the "modelzoo" folder being copied should belong to the correct group after running the following commands. For this specific case, the modelzoo folder will belong to "cis210015p" and not to "cis210012p".
 ```
-[juran@sdf-1 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
+[joeuser@sdf-1 ~]$ rsync -PaL --chmod u+w $CEREBRAS_DIR/modelzoo $PROJECT/
     sending incremental file list
     modelzoo/
     modelzoo/LICENSE
 
     [--- OUTPUT SNIPPED FOR KEEPING THIS EXAMPLE SHORT ---]
 
-[juran@sdf-1 ~]$ ls $PROJECT/
+[joeuser@sdf-1 ~]$ ls $PROJECT/
     modelzoo
 ```
 
-Then change into the modelzoo folder of the model we want to evaluate/compile/train:
+Move into the modelzoo folder of the model we want to evaluate/compile/train:
 ```
-[juran@neocortex-login023 ~]$ cd $PROJECT/modelzoo/fc_mnist/tf
+[joeuser@neocortex-login023 ~]$ cd $PROJECT/modelzoo/fc_mnist/tf
 ```
 
 This command will start a shell using the latest Cerebras container.
 ```
-[juran@neocortex-login023 tf]$ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT /local1/cerebras/cbcore_latest.sif
+[joeuser@neocortex-login023 tf]$ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT /local1/cerebras/cbcore_latest.sif
 
 Singularity>
 ```
@@ -117,7 +119,9 @@ Singularity> python run.py --mode train --compile_only --model_dir compile
 Singularity>
 ```
 
-Now, the different parameter files used for the validation/compilation/training processes can be specified. Let's say that you don't want to use the default "configs/params.yaml" file but instead one in a different (custom) directory (`--params custom_configs/params.yaml`). This can be done by using the original "params.yaml" file and setting the values there, and then the contents of the output can also be written into a different path (`--model_dir custom_output_dir`):
+
+Now the different parameter files used for the validation/compilation/training processes can be specified. Let's say that you don't want to use the default "configs/params.yaml" file but instead one in a different (custom) directory (`--params custom_configs/params.yaml`). This can be done by copying the original "params.yaml" file and editing the values in your copy. The contents of the output can also be written into a different path (`--model_dir custom_output_dir`):
+
 ```
 Singularity> cp -r configs custom_configs
 
@@ -140,35 +144,37 @@ Singularity>
 The contents of the `custom_configs` and `custom_output_dir` have the parameters used and the output for this example compilation process. Please note that the group ownership is still pointing to the correct group ("cis210015p" for this example), since the account information to use was automatically passed to SLURM.
 ```
 Singularity> ls -lash | grep custom
-    4.0K drwxr-sr-x 2 juran cis210015p 4.0K Feb 17 17:07 custom_configs
-    4.0K drwxr-sr-x 3 juran cis210015p 4.0K Feb 17 17:07 custom_output_dir
+    4.0K drwxr-sr-x 2 joeuser cis210015p 4.0K Feb 17 17:07 custom_configs
+    4.0K drwxr-sr-x 3 joeuser cis210015p 4.0K Feb 17 17:07 custom_output_dir
 
 Singularity> ls -lsh custom*
     custom_configs:
     total 4.0K
-    4.0K -rw-r--r-- 1 juran cis210015p 1.3K Feb 17 17:07 params.yaml
+    4.0K -rw-r--r-- 1 joeuser cis210015p 1.3K Feb 17 17:07 params.yaml
 
     custom_output_dir:
     total 16K
-     12K drwxr-sr-x 4 juran cis210015p 12K Feb 17 17:08 cs_518e82fcc3928d8e9da4ffc039506e6f0019b41b46bc53085af34c080de4054e
-    4.0K -rw-r--r-- 1 juran cis210015p 534 Feb 17 17:07 params.txt
+     12K drwxr-sr-x 4 joeuser cis210015p 12K Feb 17 17:08 cs_518e82fcc3928d8e9da4ffc039506e6f0019b41b46bc53085af34c080de4054e
+    4.0K -rw-r--r-- 1 joeuser cis210015p 534 Feb 17 17:07 params.txt
 ```
 
-Now, for training the model (since it's compiling without issues), we can create the wrapper scripts that save time and also make sure the right syntax is used for SLURM, Singularity, and the Python command for training inside the container.
+
+Now to train the model (since it's compiling without issues), we can create the wrapper scripts that save time and also make sure the right syntax is used for SLURM, Singularity, and the Python command for training inside the container.
 
 This wrapper is tailored for the setup of Neocortex:
+
 ```
-[juran@neocortex-login023 tf]$ vim srun_train
+[joeuser@neocortex-login023 tf]$ vim srun_train
     #!/usr/bin/bash
     srun --account=cis210015p --gres=cs:cerebras:1 --ntasks=7 --cpus-per-task=14 --kill-on-bad-exit singularity exec --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT /local1/cerebras/cbcore_latest.sif ./run_train "$@"
 
-[juran@neocortex-login023 tf]$ vim run_train
+[joeuser@neocortex-login023 tf]$ vim run_train
     #!/usr/bin/bash
     python run.py --cs_ip ${CS_IP_ADDR} --mode train "$@"
 
-[juran@neocortex-login023 tf]$ chmod +x srun_train run_train
+[joeuser@neocortex-login023 tf]$ chmod +x srun_train run_train
 
-[juran@neocortex-login023 tf]$ ./srun_train --model_dir training_example
+[joeuser@neocortex-login023 tf]$ ./srun_train --model_dir training_example
     INFO:tensorflow:TF_CONFIG environment variable: {'cluster': {'chief': ['sdf-1:23111'], 'worker': ['sdf-1:23112', 'sdf-1:23113', 'sdf-1:23114', 'sdf-1:23115', 'sdf-1:23116', 'sdf-1:23117']}, 'task': {'type': 'chief', 'index': 0}}
     WARNING:tensorflow:From /cb/toolchains/buildroot/monolith-default/202010061651-75-61959232/rootfs-x86_64/usr/lib/python3.7/site-packages/tensorflow/python/ops/resource_variable_ops.py:1666: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
     Instructions for updating:
@@ -233,12 +239,13 @@ This wrapper is tailored for the setup of Neocortex:
     INFO:tensorflow:global step 100000: loss = 0.0823974609375 (471.75 steps/sec)
     INFO:tensorflow:Loss for final step: 0.0824.
     =============== Cerebras Compilation Completed ===============
-    [juran@neocortex-login023 tf]$
+    [joeuser@neocortex-login023 tf]$
 ```
+
 
 Finally, if you want to perform these steps in batch mode instead of interactively, you can run all of them from a single sbatch file, like this:
 ```
-[juran@neocortex-login023 tf]$ vim mnist.sbatch
+[joeuser@neocortex-login023 tf]$ vim mnist.sbatch
     #!/usr/bin/bash
     #SBATCH --gres=cs:cerebras:1
     #SBATCH --ntasks=7
@@ -259,14 +266,14 @@ Finally, if you want to perform these steps in batch mode instead of interactive
     srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --compile_only --model_dir compile
     srun --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --model_dir training_example --cs_ip ${CS_IP_ADDR}
 
-[juran@neocortex-login023 tf]$ sbatch mnist.sbatch 
+[joeuser@neocortex-login023 tf]$ sbatch mnist.sbatch 
     Submitted batch job 633
 
-[juran@neocortex-login023 tf]$ squeue
+[joeuser@neocortex-login023 tf]$ squeue
      JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-       633       sdf mnist.sb    juran  R       0:02      1 sdf-1
+       633       sdf mnist.sb    joeuser  R       0:02      1 sdf-1
 
-[juran@neocortex-login023 tf]$ tail -f slurm-633.out
+[joeuser@neocortex-login023 tf]$ tail -f slurm-633.out
     [--- OUTPUT SNIPPED FOR KEEPING THIS EXAMPLE SHORT ---]
 
     INFO:tensorflow:Cached compilation found for this model configuration
