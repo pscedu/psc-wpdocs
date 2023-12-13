@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 There are four types of applications currently supported on the Neocortex system, divided into the following individual tracks:
 * Track 1: [Cerebras modelzoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
 * Track 2: [Models similar to the Cerebras modelzoo models](https://psc.edu/resources/neocortex/docs/track2)
