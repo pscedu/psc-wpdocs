@@ -1,6 +1,6 @@
 
 
-### Additional notes for generating the key metrics
+## Additional notes for generating the key metrics
 
 You need to be located in the same directory in which you compile **your code** with `python run.py [...]`, as shown in the “Reference Compilation for the CS-2 Commands section”. For the example instructions, that would be `$PROJECT/modelzoo/fc_mnist/tf`.
 1. Get the **ratio of utilized components**, that is, the theoretical peak usage from the total WSE2 in the CS-2.
