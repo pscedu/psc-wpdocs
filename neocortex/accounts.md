@@ -1,6 +1,6 @@
-## Accounts
+# Accounts
 Researchers will interact with the Neocortex (preferred) and perhaps the Bridges-2 systems. On Bridges-2, you can find the resources to precompile your code and estimate requirements that would facilitate the Neocortex execution (see the [Reference compilation example section](/https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands). Bridges-2 resources can also be leveraged for data preprocessing and other parts of the processing workflow.
-### Account creation
+## Account creation
 All Neocortex users need a PSC account. 
  
 * If you already have a PSC username (from Bridges-2 or other PSC systems), share your username information via email to <a href="mailto:neocortex@psc.edu">neocortex@psc.edu</a>.
@@ -18,7 +18,7 @@ If you need to reset your PSC password, please visit the [PSC Password Change U
 <p>Please complete the "Getting ready to use the Neocortex system" training and submit the "Key Compilation Metrics Needed" form to get access to the total Neocortex allocation SU (Superdome Flex and CS-2s systems).</p>
 </blockquote>
 
-### Adding new team members to an exisiting project
+## Adding new team members to an exisiting project
 
 The steps to have new team members added to your Neocortex project are:
 
@@ -37,7 +37,7 @@ The steps to have new team members added to your Neocortex project are:
 <br />
 <li><strong>Approval and Processing:</strong> Once the email is received, the request will be reviewed by the appropriate personnel. If the request is approved, the new Neocortex accounts will be created accordingly.</li></ol>
 
-#### Example:
+### Example:
 ```
 Project Details:
 - Project Title: [Project Name]
@@ -46,7 +46,7 @@ Project Details:
 ```
 
 
-### Off-boarding Team Members
+## Off-boarding Team Members
 When a researcher is no longer part of a project and their access needs to be revoked, please request that they be off-boarded as soon as possible.
 
 **Initiating the Request:** The Principal Investigator (PI) of the project is responsible for promptly initiating the request for off-boarding individuals who are no longer actively contributing to their project. The PI should email neocortex@psc.edu to make the request.  Be sure to include any relevant information about the individual to off-board.
