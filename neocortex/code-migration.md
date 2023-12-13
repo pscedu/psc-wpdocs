@@ -1,4 +1,4 @@
-## Code Migration to the Cerebras Architecture
+# Code Migration to the Cerebras Architecture
 In this page:
 * [Tensorflow](#tensorflow)
    * [Structure of the code](#TF-code-structure)
