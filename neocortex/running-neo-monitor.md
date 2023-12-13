@@ -1,6 +1,6 @@
 
 
-#### Monitoring and interpreting results on CS-2s
+### Monitoring and interpreting results on CS-2s
 
 In order to view performance results, you can refer to the `performance.json` inside the model log directory file. Next, there is a sample entry from this file:
 ```
