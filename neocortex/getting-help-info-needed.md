@@ -1,4 +1,4 @@
-### Information for reproducing the issue
+## Information for reproducing the issue
 
 Plese describe the problem and include the details required to reproduce the issue as if you were explaining it to a new teammate. Include as much of the following information as you can.
    * When is the issue happening?
