@@ -1,4 +1,4 @@
-## Track 4 (WFA): WFA, WSE Field-equation API
+# Track 4 (WFA): WFA, WSE Field-equation API
 Field equations, includes ML inference.
 
 **Good Match Criteria:** You would be a good match for this track if your research can integrate and make use of the WFA library.
@@ -8,23 +8,23 @@ WFA: API recently used for advancing CFP simulations at unprecedented resolution
 * Only a few groups will be welcomed
 * Close collaboration with Dr. Dirk Van Essendelft's team, PSC, and Cerebras
 * Field equations, includes ML inference
-### Project Guidelines
-#### Problem Requirements
+## Project Guidelines
+### Problem Requirements
 * Must lay out on a Hex grid (3d or many 2d parallel)
 * Should involve Spatial Locality
 * Should be Data Intense
 * Single Precision, &lt;40GB
-#### Problem Examples
+### Problem Examples
 * Computational Fluid Dynamics (FVM, FDM, FEM, LBM)
 * Structural Mechanics
 * Geomechanics
 * Weather/Climate
 * Materials – Ising Model, Density Functional Theory
 * CNN/RNN inference
-#### Project Requirements
+### Project Requirements
 * Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem
 * Post on a public GitHub
-#### What to expect
+### What to expect
 * Development at the high-level Python interface that is similar to Numpy
 * A container (provided by Cerebras) to compile and generate binaries and run on the WSE
 * An unpolished product (Beta level) that will require some hand holding from our team on Slack
