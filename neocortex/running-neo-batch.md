@@ -1,6 +1,6 @@
 
 
-#### Running batch jobs
+### Running batch jobs
 In order to validate, compile, train, or evaluate your model using a batch script, please use the following sample piece of code that you can modify accordingly:
 
 **neocortex_model.sbatch**
