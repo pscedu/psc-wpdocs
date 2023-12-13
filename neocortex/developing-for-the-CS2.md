@@ -1,6 +1,6 @@
-## Developing for the CS-2
+# Developing for the CS-2
 
-### In this section
+## In this section
 <div style="background-color:#eaedf5; border:thin solid gray; margin:7 px;">
 <ul style="list=style-type:none;">
   <li>ML Workflows: 
