@@ -1,6 +1,6 @@
 
   
-#### TensorFlow
+### TensorFlow
 Change dirs into the modelzoo directory containing the MNIST TF code. The contents of this folder should be “`configs/`, `data.py`, `model.py`, `README.md`, `run.py`, and  `utils.py`”.
 ```
 cd $PROJECT/modelzoo/fc_mnist/tf
