@@ -7,8 +7,6 @@ Neocortex features two Cerebras CS-2 systems and an HPE Superdome Flex HPC serve
 
 The configuration of each specialized system is described below.<br /><br />
 
----
-
 
 <br />
 
