@@ -1,6 +1,7 @@
 
   
-### Common Errors
+## Common Errors
+
 * **FATAL: could not open image /path/to/cbcore-latest.sif**
    * Make sure you are pointing to the correct container location. The full path is “`/ocean/neocortex/cerebras/cbcore-latest.sif`".
 * **srun: error: Unable to allocate resources: Invalid qos specification**
