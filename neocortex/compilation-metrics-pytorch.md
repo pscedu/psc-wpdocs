@@ -1,6 +1,6 @@
 
 
-#### PyTorch
+### PyTorch
 Navigate into the modelzoo directory where the MNIST PyTorch codes are located.
 ```
 cd $PROJECT/modelzoo/fc_mnist/pytorch
