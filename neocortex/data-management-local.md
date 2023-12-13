@@ -1,6 +1,6 @@
 ## Neocortex-specific storage spaces
 
-#### /local{1,2,3,4}
+### /local{1,2,3,4}
 This storage is visible only from the SDFlex compute nodes. Using this space benefits from an extremely fast data transfer speed.
 
 There are four local folders on each SDFlex node: /local1, /local2, /local3, and /local4, on each of the two SDF socket partitions. This space can be accessed via the $LOCAL environment variable.
