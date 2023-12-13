@@ -1,6 +1,6 @@
 
 
-### Reference resources
+## Reference resources
 **/ocean/neocortex/cerebras/**
 
 This space is the location in the shared filesystem in which the different reference resources will be placed. It contains the “modelzoo” directory from Cerebras, the datasets required for running those models, the Cerebras container, example scripts, and other helpful resources.
