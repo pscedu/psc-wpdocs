@@ -1,4 +1,4 @@
-## Glossary
+# Glossary
 *	**PSC**: the Pittsburgh Supercomputing Center, home of the Neocortex system 
 and team.
 *	**Allocation**: a group of resources you are allotted on PSC systems, such as Neocortex and 
