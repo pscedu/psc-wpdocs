@@ -1,4 +1,4 @@
-<h3 id="tensorflow">TensorFlow</h3>
+## TensorFlow
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
 
 1. Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object
