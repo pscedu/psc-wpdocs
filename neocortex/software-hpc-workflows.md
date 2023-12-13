@@ -1,6 +1,6 @@
 
 
-### HPC Workflows - Cerebras SDK
+## HPC Workflows - Cerebras SDK
 The required variables should be already present in the system if you started a Slurm job. If not, you can set them like this:
 ```
 SDK_INSTALL_LOCATION=/ocean/neocortex/cerebras
