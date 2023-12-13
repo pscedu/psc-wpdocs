@@ -1,6 +1,6 @@
 
 
-#### Checkpointing jobs and viewing results
+### Checkpointing jobs and viewing results
 
 You can specify a directory for logs and training artifacts in the config `params.yaml` or via a command line argument (i.e. `-o` or `--model_dir`) passed to `run.py`. The default location is `model_dir` directory. This `model_dir` directory will be created in the directory that contains the `run.py` script.
 ```
