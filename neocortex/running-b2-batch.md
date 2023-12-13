@@ -1,6 +1,6 @@
 
 
-#### How to run a batch job on Bridges2
+### How to run a batch job on Bridges2
 
 1. Save the following script in a file.
 ```
