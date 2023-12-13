@@ -1,7 +1,7 @@
-## Data Management and Storage 
+# Data Management and Storage 
 This section talks about the various storage spaces on Neocortex and how to use them.
 
-### In this section
+## In this section
 * **Common storage spaces**
    * [$HOME](#$home)
    * [$PROJECT](#$project)
@@ -10,8 +10,8 @@ This section talks about the various storage spaces on Neocortex and how to us
 * [Transferring data](#transferring-data)
 
   
-### Common storage spaces
-#### $HOME
+## Common storage spaces
+### $HOME
 
 <div class="warning">
   <blockquote>
