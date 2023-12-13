@@ -1,4 +1,4 @@
-### PyTorch
+## PyTorch
 This is an overview of the steps needed for porting an existing PyTorch codebase to run on Neocortex:
 1. Modify the data loaders for training (`get_train_dataloader`) and evaluation (`get_eval_dataloader`) in `data.py`, return a `torch.utils.data.DataLoader` object
 2. Modify `model.py` to define the model using a `PyTorchBaseModel` class.
