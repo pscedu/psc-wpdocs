@@ -1,5 +1,5 @@
-## Getting Help
-### How to request technical support
+# Getting Help
+## How to request technical support
 You have multiple options. You can:
 * Check if your problem has been documented already. There is a [list of known technical issues](https://www.psc.edu/resourcves/neocortex/docs/current-known-issues.html) available.
 * Ask using Slack. If you haven't, please join the [Neocortex Slack Organization](https://join.slack.com/t/neocortex-system/shared_invite/zt-19e7499up-bZeT870l71Od7XqwxixFmw). After you get into the Neocortex Slack, use any of the channels available to you:
