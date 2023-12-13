@@ -1,6 +1,6 @@
-## Compilation Key Metrics to Share
+# Compilation Key Metrics to Share
 
-### In this section
+## In this section
 * Commands for compilation (cheat sheet)
 *    * [Getting started](#commands-for-compilation-cheat-sheet)
      * [Tensorflow](#tensorflow)

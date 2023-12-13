@@ -7,10 +7,10 @@ If you would like to utilize the models in the examples directly but just change
 
 A few examples of content in the `params.yaml` file:
 * train_input:
-   * `data_dir`: './tfds' # Place to store data
+   * `data_dir`: './tfds'  &nbsp;&nbsp;&nbsp;&nbsp;   # Place to store data
    * `batch_size`: 256
 * model:
-   * `activation_fn`: 'relu' # Other options: relu, tanh, elu, selu, linear (identity)
+   * `activation_fn`: 'relu'    &nbsp;&nbsp;&nbsp;&nbsp; # Other options: relu, tanh, elu, selu, linear (identity)
 * optimizer:
    * `learning_rate`: 0.001
 * runconfig:
@@ -19,6 +19,6 @@ A few examples of content in the `params.yaml` file:
    * `keep_checkpoint_max`: 2
    * `model_dir`: 'model_dir'
      
-For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras Documentation page.
+For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras documentation page.
 
 

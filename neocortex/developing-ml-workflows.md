@@ -1,6 +1,6 @@
  
-### ML Workflows
-#### TensorFlow or Pytorch
+## ML Workflows
+### TensorFlow or Pytorch
 There are different modes in which you could run jobs with the Cerebras container on Neocortex:
 * **Validation:** this process requires a single task to be running. It will check if the different things needed for compiling the code are in order, such as the YAML file with the configurations, the dataset location to use, the paths for accessing the code, etc.
 * **Compilation:** this process also requires a single task to be running. It will compile the code based on the configs file, so the executable can be used for training on the CS-2 boxes. Kernel matching takes place here.

@@ -1,6 +1,6 @@
 
 
-### Additional notes for generating the key metrics
+## Additional notes for generating the key metrics
 
 You need to be located in the same directory in which you compile **your code** with `python run.py [...]`, as shown in the “Reference Compilation for the CS-2 Commands section”. For the example instructions, that would be `$PROJECT/modelzoo/fc_mnist/tf`.
 1. Get the **ratio of utilized components**, that is, the theoretical peak usage from the total WSE2 in the CS-2.
@@ -12,6 +12,9 @@ You need to be located in the same directory in which you compile **your code**
 5. What is the **maximum expected batch size to use**?
    * This value depends on the dataset you are using.
 
-  
-**Note:** Please, use the [Neocortex Project Key Metrics file](https://portal.neocortex.psc.edu/home) and submit it to the [Key-compilation-metrics Submit Box link](https://cmu.app.box.com/f/2e34313bdacf410a96b28e34b7d8f4b3).
-
+  <div class="note">
+    <blockquote>
+      <strong>Note</strong>
+      <p>Please, use the <a href="https://portal.neocortex.psc.edu/home">Neocortex Project Key Metrics file</a> and submit it to the <a href="https://cmu.app.box.com/f/2e34313bdacf410a96b28e34b7d8f4b3">Key-compilation-metrics Submit Box link</a></p>
+    </blockquote>
+  </div>

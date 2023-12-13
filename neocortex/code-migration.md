@@ -1,4 +1,4 @@
-## Code Migration to the Cerebras Architecture
+# Code Migration to the Cerebras Architecture
 In this page:
 * [Tensorflow](#tensorflow)
    * [Structure of the code](#TF-code-structure)
@@ -26,9 +26,8 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 3. Compile on CPU
 4. Run on Cerebras
 
-**Note**
-
- * An estimation of the required effort to get the code ready is one to four weeks for a single person performing all of the edits.
-
- * **For track 1 users:** For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.
-
+<blockquote class="note">
+  <strong>Note</strong>
+ <p>An estimation of the required effort to get the code ready is one to four weeks for a single person performing all of the edits.</p>
+<p>For track 1 users: For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.</p>
+</blockquote>

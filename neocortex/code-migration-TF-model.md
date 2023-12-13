@@ -7,11 +7,13 @@ It supports the usage of the Tensorflow Keras Layers API, but the Tensorflow Met
 
 These files get things ready for the Estimator API. The code is divided between what is run in the host (I/O functions, support server, SDF), and what will run in the wafer.
 
-**Note**
+<blockquote class="note">
+ <strong>Note</strong>
 
-Please have in mind that your code will not call "train" or "fit" as the Estimator does that (takes care of that responsibility).
+<p>Please have in mind that your code will not call "train" or "fit" as the Estimator does that (takes care of that responsibility).</p>
 
-For information about the layers supported, please visit the [Cerebras Documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).
+<p>For information about the layers supported, please visit the [Cerebras Documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).</p>
+</blockquote>
 
 `def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:`
 
@@ -29,10 +31,20 @@ These input arguments (features, labels) are taken automatically from the values
 * `tf.estimator.EstimatorSpec`: it fully defines the model to be run by an estimator.
 
 The EstimatorSpec takes:
-* `mode`: passed automatically from the parent model_fn function.
-* `loss`: model loss
-* `train_op`: optimizer
-* `host_call (dict)`:
-``` { "accuracy": tf.compat.v1.metrics.accuracy() } ```
+<ul>
+ <li><code>mode</code>: passed automatically from the parent model_fn function.</li>
+ <li><code>loss</code>: model loss</li>
+ <li><code>train_op</code>: optimizer</li>
+ <li><code>host_call (dict)</code>:<br />
+  <span style="padding-left:15px;">
+   <code>{ "accuracy": tf.compat.v1.metrics.accuracy() }</code>
+  </span>
+ </li>
+</ul> 
+
+
+
+  
+
  
 

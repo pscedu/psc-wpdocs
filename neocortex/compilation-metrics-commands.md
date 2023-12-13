@@ -1,7 +1,7 @@
 
 
-### Commands for compilation (cheat sheet)
-#### Getting started
+## Commands for compilation (cheat sheet)
+### Getting started
 
 This training manual (cheat sheet) will make use of Neocortex resources. If you forgot your Neocortex authentication credentials, please visit the [PSC Password Change Utility webpage](https://apr.psc.edu).
 

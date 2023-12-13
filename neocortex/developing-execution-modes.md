@@ -1,6 +1,6 @@
 
 
-### Execution modes
+## Execution modes
 On the Cerebras Wafer Scale Engine 2 (WSE2) you can run neural networks of different model sizes. Cerebras Software supports different execution modes to efficiently run such variety of models.
 
 The execution mode refers to how the Cerebras runtime loads your neural network model onto the WSE2. Two execution modes are supported:

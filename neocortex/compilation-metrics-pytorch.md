@@ -1,7 +1,7 @@
 
 
-#### PyTorch
-Navigate into the modelzoo directory to where the MNIST PyTorch codes are located.
+### PyTorch
+Navigate into the modelzoo directory where the MNIST PyTorch codes are located.
 ```
 cd $PROJECT/modelzoo/fc_mnist/pytorch
 python-pt run.py --mode train --validate_only --params configs/params.yaml

@@ -1,4 +1,4 @@
-## FAQ (general)
+# FAQ (general)
 <ol>
  <li><strong>Is it possible to use Keras functions inside the TF estimator?</strong><br />
 Yes, we support the TensorFlow Keras Layers API in our model function.
@@ -6,7 +6,7 @@ Yes, we support the TensorFlow Keras Layers API in our model function.
  </li>
 
 <li><strong>What are the resource limits for Neocortex? I can see that under this project, I only have 5TB storage and 1000 large regular mem CPU hours.</strong><br />
-   Please refer to the [Allocations section of this document](https://www.psc.edu/resources/neocortex/doc/allocations) for more information.
+   Please refer to the <a href="https://www.psc.edu/resources/neocortex/docs/allocations">Allocations section of this document</a> for more information.
 <br /><br />
 </li>
 
@@ -22,16 +22,16 @@ Yes, we support the TensorFlow Keras Layers API in our model function.
    </li>
 
 <li><strong>Is `newgrp` to be run on the login node or the interact node? or either?</strong><br />
-   If you have multiple projects on PSC systems, you need to use the `newgrp` command to switch between them and assign your usage to your Neocortex project. You will not be able to get an interact session until you are on the right project. It's best to run it on the login node, but you can also run it on the interact node if you specify the group allocation account id (--account) to use in the interact command.
+   If you have multiple projects on PSC systems, you need to use the <code>newgrp</code> command to switch between them and assign your usage to your Neocortex project. You will not be able to get an interact session until you are on the right project. It's best to run it on the login node, but you can also run it on the interact node if you specify the group allocation account id (<code>--account</code>) to use in the interact command.
 <br /><br />
 </li>
 
 <li><strong>Do we have an option to run using a batch job?</strong><br />
-   Yes, you can also run a batch job. Please review the [Running jobs section](https://www.psc.edu/resources/neocortex/running-jobs) section in this documentation for more details.
+   Yes, you can also run a batch job. Please review the <a href="https://www.psc.edu/resources/neocortex/docs/running-jobs">Running jobs section</a> section in this documentation for more details.
 <br /><br />
 </li>
 
-<li><strong>What does it mean when the `interact` command hangs?</strong><br />
+<li><strong>What does it mean when the interact command hangs?</strong><br />
 This could mean that the queue is busy and not ready for any more jobs at that time. Another possibility is that you are not in the right project allocation. If you have multiple projects on PCS systems, please use `newgrp` to switch to the appropiate Neocortex project. Please contact us if you come across any specific error or it hangs for a long time.
 <br /><br />
 </li>
@@ -52,7 +52,7 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
 </li>
 
 <li><strong>How can I verify correctness before access to Neocortex?</strong><br />
-    compile() will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your model is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
+    <code>compile()</code> will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your model is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
     <br /><br />
 </li>
 
@@ -77,7 +77,7 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
 <br /><br />
 </li>
 <li><strong>Is there a list of supported operations?</strong><br />
-    Yes, please refer to the [Developing for the CS-2](https://www.psc.edu/resources/neocortex/doc/developing-for-cs) section in this document.
+    Yes, please refer to the <a href="https://www.psc.edu/resources/neocortex/docs/developing-for-cs">Developing for the CS-2</a> section in this document.
 </li>
 </ol>
 

@@ -1,7 +1,7 @@
 
   
 
-#### How to train your model
+### How to train your model
 
 In order to train your model, use the following wrapper scripts with predefined worker and singularity settings. The first script is an `srun` command that takes care of setting up all of the different parameters for the container to be successfully started, while the second script has the static parts of the python command used for the training to start.
 

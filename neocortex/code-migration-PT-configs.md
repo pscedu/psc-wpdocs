@@ -12,7 +12,7 @@ The main information to be defined in the config files is:
    
 A few examples of contents in the params.yaml:
 * train_input:
-   * `data_dir:` './tfds' # Place to store data
+   * `data_dir:` './tfds' &nbsp;&nbsp;&nbsp;&nbsp; # Place to store data
    * `batch_size`: 256
 * model:
    * `mixed_precision`: bool

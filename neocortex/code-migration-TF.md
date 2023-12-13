@@ -1,12 +1,11 @@
-<h3 id="tensorflow">TensorFlow</h3>
+## TensorFlow
 In more detail, the steps needed for porting an existing TensorFlow codebase to run on Neocortex are:
-<ol>
-<li>Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object</li>
-<li>Modify `input_fn()` in `data.py`, return a `tf.data.Dataset` object</li>
-<li>Implement custom helper logic in `utils.py`, as needed</li>
-<li>Set dataset path and model parameters in `configs/params.yaml`</li>
-<li>Run `run.py` to validate and compile your code</li>
-</ol>
+
+1. Modify `model_fn()` in `model.py` to build the layers of your model function, return a `tf.estimator.EstimatorSpec` object
+1. Modify `input_fn()` in `data.py`, return a `tf.data.Dataset` object
+1. Implement custom helper logic in `utils.py`, as needed
+1. Set dataset path and model parameters in `configs/params.yaml`
+1. Run `run.py` to validate and compile your code
 
 The following diagram shows the suggested order in which the modifications should be performed for porting the code. The arrows represent the suggested order for the modification process to perform. This diagram should be read from left to right.
 
