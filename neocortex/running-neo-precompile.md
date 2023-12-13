@@ -1,6 +1,6 @@
 
      
-### Neocortex
+## Neocortex
 This section provides a brief description about how you can run and monitor your jobs on the Neocortex system. 
 
 First, you need to login to the system via ssh. Use your PSC credentials.
@@ -8,7 +8,7 @@ First, you need to login to the system via ssh. Use your PSC credentials.
 ssh PSC_USERNAME@neocortex.psc.edu
 ```
 
-#### How to pre-compile your model
+### How to pre-compile your model
 You can pre-compile your model on the CPU while CS-2 is busy with another job. Navigate to your model directory and follow these instructions:
 
 * Reserve a CPU node and run Cerebras singularity container in interactive mode:
