@@ -1,14 +1,5 @@
 # Data Management and Storage 
 This section talks about the various storage spaces on Neocortex and how to use them.
-
-## In this section
-* **Common storage spaces**
-   * [$HOME](#$home)
-   * [$PROJECT](#$project)
-   * [/local](#local)
-* [Reference resources](#reference-resources)
-* [Transferring data](#transferring-data)
-
   
 ## Common storage spaces
 ### $HOME
