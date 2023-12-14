@@ -1,11 +1,6 @@
 # Software Stack
 This section describes how to load/create the packages required for specific computing environments for performing your runs. Researchers are expected to work with a particular singularity container for their code runs.
 
-**In this section:**
-* [HPC Workflows - Cerebras SDK](#hpc-workflows-cerebras-sdk)
-   * [Compile](#compile)
-   * [Run](#run)
-
 ## What are these Singularity containers?
 These are stand-alone packages holding the software needed to create a very specific computing environment.
 
