@@ -1,10 +1,10 @@
 ## HPN-SSH Installation
 
-The process of installing HPN-SSH from source is a relatively painless process
+<p>The process of installing HPN-SSH from source is a relatively painless process
 but does have some nuances. This document will go through the process step by 
 step to help you get the most from your installation. If you find any errors 
 please contact us at hpnssh@psc.edu.
-
+</p>
 
 ### Step 1: Get the source code
 
