@@ -7,12 +7,16 @@ It supports the usage of the Tensorflow Keras Layers API, but the Tensorflow Met
 
 These files get things ready for the Estimator API. The code is divided between what is run in the host (I/O functions, support server, SDF), and what will run in the wafer.
 
-<blockquote class="note">
+<blockquote>
  <strong>Note</strong>
 
 <p>Please have in mind that your code will not call "train" or "fit" as the Estimator does that (takes care of that responsibility).</p>
+</blockquote>
 
-<p>For information about the layers supported, please visit the [Cerebras Documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).</p>
+<blockquote>
+ <strong>Note</strong> 
+ 
+<p>For information about the layers supported, please visit the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules">Cerebras Documentation</a>.</p>
 </blockquote>
 
 `def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:`
