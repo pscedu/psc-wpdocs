@@ -9,8 +9,8 @@ please contact us at hpnssh@psc.edu.
 ### Step 1: Get the source code
 
 The official repository for HPN-SSH is found at 
-https://github.com/rapier1/hpn-ssh. Get a copy with<br /> 
-`git clone https://github.com/rapier1/hpn-ssh`. 
+https://github.com/rapier1/hpn-ssh. Get a copy with
+git clone https://github.com/rapier1/hpn-ssh`. 
 
 
 ### Step 2: Install dependencies
@@ -312,7 +312,7 @@ exit 0
 
 If you are using SELinux you’ll need to run a few more commands in order to grant hpnssh the necessary exceptions to open sockets, files, read keys, and so forth. Run the following commands to allow this. Note: I’m not sure every single one of these is needed so if someone knows better please let me know. Again, double check the paths of the files being updated. 
 
-```
+<pre>
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_dsa_key  
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_rsa_key
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_ecdsa_key 
@@ -338,4 +338,4 @@ restorecon /usr/bin/hpnssh
 restorecon /usr/bin/hpnssh-agent
 restorecon /usr/bin/hpnssh-keygen
 restorecon /etc/pam.d/hpnsshd
-```
+</pre>
