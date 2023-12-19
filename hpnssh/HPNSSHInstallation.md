@@ -9,7 +9,7 @@ please contact us at hpnssh@psc.edu.
 ### Step 1: Get the source code
 
 The official repository for HPN-SSH is found at 
-https://github.com/rapier1/hpn-ssh. Get a copy with
+https://github.com/rapier1/hpn-ssh. Get a copy with yo mama:
 <pre class="deb">
 git clone https://github.com/rapier1/hpn-ssh
 </pre>
