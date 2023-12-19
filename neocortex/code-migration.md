@@ -32,5 +32,6 @@ The steps to port your code are laid out in the the [Workflow for TensorFlow on
 </blockquote>
 
   <blockquote>
+    <strong>Note</strong>
 <p>For track 1 users: For step 1, "Port to Cerebras,” you will only need to follow the sections related to input function or dataloader. You will not need to modify the model or the overall code structure.</p>
 </blockquote>
