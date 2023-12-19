@@ -1,15 +1,18 @@
 ## HPN-SSH Installation
 
-The process of installing HPN-SSH from source is a relatively painless process
+<p>The process of installing HPN-SSH from source is a relatively painless process
 but does have some nuances. This document will go through the process step by 
 step to help you get the most from your installation. If you find any errors 
 please contact us at hpnssh@psc.edu.
+</p>
 
 ### Step 1: Get the source code
 
 The official repository for HPN-SSH is found at 
-https://github.com/rapier1/hpn-ssh. Get a copy with<br /> `git clone https://github.com/rapier1/hpn-ssh`. 
-
+https://github.com/rapier1/hpn-ssh. Get a copy with
+<pre>
+git clone https://github.com/rapier1/hpn-ssh
+</pre>
 
 ### Step 2: Install dependencies
 
@@ -26,6 +29,7 @@ https://github.com/rapier1/hpn-ssh. Get a copy with<br /> `git clone https://git
 * Autoconf
 * Automake
 
+
 ### Step 3: Install optional dependencies
 
 This optional libraries will extend the functionality of HPN-SSH to allow the use of PAM 
@@ -35,9 +39,11 @@ authentication, Kerberos, graphical password tools, etc.
 * Kerberos
 * GTK
 
+
 ### Step 4: Build the configure file
 
 > `generate ./configure with “autoreconf -f -i"`
+
 
 
 ### Step 5: Configuration
@@ -47,10 +53,12 @@ issuing `./configure --help`. However, commonly you will want to change the defa
 incorporate pam, kerberos, alternative SSL libraries, and so forth. However, for most users 
 either no additional configuration options or modifying the prefix will suffice. 
 
+
 ### Step 6: Make
 
 Make the application with `make -j[<em>num cores</em>]`. So if you have an 8 core system 
 you’d use `make -j8`
+
 
 ### Step 7: Installation
 
@@ -62,6 +70,7 @@ NoneCipher and NoneMac options. For more information use `man hpnsshd_config` an
 fallback to 22 if it’s not found there. So if you do change the default port, you’ll need to 
 make sure the clients point at the correct port. 
 
+
 ### Step 8: Set up the hpnsshd user
 
 This user is part of the privilege separation routines used in the 
@@ -71,9 +80,11 @@ pre-authentication sandbox. I suggest using the following command: <br />
 </span><br />
 Alternatively, you can use `vipw` to add the user manually. 
 
+
 ### Step 9: Finishing up
 
 At this point you can start hpnsshd manually by running `sudo /usr/sbin/hpnsshd` or whatever the full path to the hpnsshd binary might be. However, this won’t restart automatically on reboot. To do this you’ll need to install an appropriate systemd configuration file. If that seems like a good idea to you then following steps may be of help. Otherwise, you are done. Enjoy!
+
 
 ### Step 10: Installing a systemd startup file
 
@@ -297,11 +308,12 @@ esac
 exit 0
 ```
 
+
 ### Step 10: Working with SELinux
 
 If you are using SELinux you’ll need to run a few more commands in order to grant hpnssh the necessary exceptions to open sockets, files, read keys, and so forth. Run the following commands to allow this. Note: I’m not sure every single one of these is needed so if someone knows better please let me know. Again, double check the paths of the files being updated. 
 
-```
+<pre>
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_dsa_key  
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_rsa_key
 semanage fcontext -a -f f -t sshd_key_t  /etc/hpnssh/ssh_host_ecdsa_key 
@@ -327,4 +339,4 @@ restorecon /usr/bin/hpnssh
 restorecon /usr/bin/hpnssh-agent
 restorecon /usr/bin/hpnssh-keygen
 restorecon /etc/pam.d/hpnsshd
-```
+</pre>
