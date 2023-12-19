@@ -19,10 +19,9 @@ This is a space inside the project that is writable by everyone in your specific
 
 This directory can also be referred to as <code>/ocean/projects/<em>groupname</em>/shared</code>, where *groupname* is the Unix group id associated with your allocation.
 
-<div class="note">
   <blockquote>
     <strong>Note</strong>
     <p>The $HOME and $PROJECTS spaces are persistent, but the /local{1,2,3,4} spaces (/local1/, /local2/, /local3/, /local4/) are more ephemeral.</p>
   </blockquote>
-</div>
+
 
