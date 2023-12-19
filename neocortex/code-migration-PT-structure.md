@@ -8,7 +8,7 @@ Examples can be found in the [cerebras_reference_implementation repository](htt
 * `configs/params.yaml`: YAML file containing the model configuration and the training hyperparameter settings.
 * `run.py`: contains the training/compilation/evaluation script.
 
-<blockquote class="info">
+<blockquote>
   <strong>Info</strong>
   <p>Suggested order of files to use: <code>model.py -> data.py -> utils.py -> configs/params.yaml -> run.py</code></p>
 </blockquote>
