@@ -1,4 +1,5 @@
-## ##
+
+
 ##### $PROJECT/../shared
 This is a space inside the project that is writable by everyone in your specific group. This location is created by default, and it is the same type of space that was available on Phase 0 with the P## folders (also referred to as team_folder).
 
