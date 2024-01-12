@@ -2,7 +2,7 @@
 The Neocortex team compiled the "Hands-on FC-MNIST" example tutorial for you to get started using the Neocortex system. Please read the instructions below 
 to download it and run it in the system. Make sure that you have an account on Neocortex first.
 ## Neocortex Open OnDemand
-Go to [OnDemand](ondemand.neocortex.psc.edu), then navigate to Jupyter Notebook and start a job.
+Go to [OnDemand](https://ondemand.neocortex.psc.edu), then navigate to Jupyter Notebook and start a job.
 ## Getting the Jupyter Notebook file
 Download the Jupyter Notebook file from GitHub and install it in Neocortex.
 <ol>
