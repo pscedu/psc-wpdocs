@@ -44,7 +44,7 @@ You can compile and validate code using this resource, and you also have access 
 
 ### How to connect to Bridges-2 over ssh
 
-Connect to `bridges-2.ps.edu` using your PSC credentials, where *psc_username* is your PSC username. 
+Connect to `bridges2.psc.edu` using your PSC credentials, where *psc_username* is your PSC username. 
 <pre> ssh <i>psc_username</i>@bridges2.psc.edu</pre>
 
 If you need to reset your password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
