@@ -37,7 +37,7 @@ This could mean that the queue is busy and not ready for any more jobs at that t
 </li>
 
 <li><strong>Which queue should I use to submit batch jobs?</strong><br />
-Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the <a href="https://www.psc.edu/resources/neocortex/doc/allocations">Allocations section</a> of this documentation for more details.
+Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the <a href="https://www.psc.edu/resources/neocortex/docs/allocations">Allocations section</a> of this documentation for more details.
 <br /><br />
 </li>
 
