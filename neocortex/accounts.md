@@ -1,5 +1,5 @@
 # Accounts
-Researchers will interact with the Neocortex (preferred) and perhaps the Bridges-2 systems. On Bridges-2, you can find the resources to precompile your code and estimate requirements that would facilitate the Neocortex execution (see the [Reference compilation example section](/https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands). Bridges-2 resources can also be leveraged for data preprocessing and other parts of the processing workflow.
+Researchers will interact with the Neocortex (preferred) and perhaps the Bridges-2 systems. On Bridges-2, you can find the resources to precompile your code and estimate requirements that would facilitate the Neocortex execution (see the [Reference compilation example section](https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands). Bridges-2 resources can also be leveraged for data preprocessing and other parts of the processing workflow.
 ## Account creation
 All Neocortex users need a PSC account. 
  
