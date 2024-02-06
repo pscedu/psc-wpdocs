@@ -15,7 +15,7 @@ There are many containers for AI/BD applications already installed on Bridges-2 
 </thead>
 <tbody>
 <tr>
-<td style="vertical-align:top;">
+<td style="vertical-align:top; border-right: 1px solid;">
 <ul>
 <li>When a pre-configured Docker container already exists
 <li>When superuser privileges are needed or setting up the environment, like installing an OS library
