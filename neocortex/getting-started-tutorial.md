@@ -11,6 +11,8 @@ Download the Jupyter Notebook file from GitHub and install it in Neocortex.
 <li>Make sure you are logged in to Neocortex using the OnDemand link above. </li>
 <li>Use the <code>wget</code> command to download the Jupyter Notebook. Make sure to run the <code>wget</code> command on the Neocortex system as that is where you need the file to be. For example:
    
-   ```wget https://raw.githubusercontent.com/pscedu/neocortex-public/main/tutorial/getting_started.ipynb```
+   <pre>
+      wget https://raw.githubusercontent.com/pscedu/neocortex-public/main/tutorial/getting_started.ipynb
+   </pre>
 </li>
 </ol>
