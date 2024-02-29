@@ -16,13 +16,11 @@ The grants include the following resources:
 ## How to check your allocation's SLURM charge id
 
 You can use the `projects` or `groups` command to find the SLURM charge id for your allocation from Neocortex (or Bridges-2).
-```
-$ projects
-```
 
-```
-$ groups
-```
+`$ projects`
+
+`$ groups`
+
 Please keep your charge id handy as you will need it for accessing your project folder.
 
 ## Getting a grant extension
@@ -35,14 +33,12 @@ Please send a request to [neocortex@psc.edu](mailto:neocortex.edu) including a
 
 If you are part of multiple grants, then make sure your SLURM charge id is correctly set before beginning work. To find your default charge id, use the `projects` command. To see all of your groups:
 
-```
-change_primary_group -l
-```
+`change_primary_group -l`
 
 To **temporarily** change your charge id for the current login session, please run the following command:
-<pre>
-newgrp <em>charge-id</em>
-</pre>
+
+`newgrp *charge-id*`
+
 The effects of this command take place immediately. Your charge id will revert to your default charge id upon logout.
 
 
