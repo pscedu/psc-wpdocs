@@ -7,9 +7,9 @@ All Neocortex users need a PSC account.
 * If you do not already have a PSC username, please create one using the [Request a PSC Account](https://allocations.psc.edu/users/new) form.
 
 When you have your PSC username and account, please make sure that you can reach Neocortex with your PSC credentials by trying to connect with this command:
-```
+<pre>
 ssh <i>psc_username</i>@neocortex.psc.edu
-```
+</pre>
 
 If you need to reset your PSC password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
 
