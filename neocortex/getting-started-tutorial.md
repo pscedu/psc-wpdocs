@@ -13,6 +13,6 @@ Download the Jupyter Notebook file from GitHub and install it in Neocortex.
    </li>
 </ol>
 <pre>
-wget https://raw.githubusercontent.com/pscedu/neocortex-public/main/tutorial/getting_started.ipynb
+wget https://raw.githubusercontent.com/pscedu/neocortex-public/main/tutorial/getting_started.ipynb&nbsp;&nbsp;&nbsp;&nbsp;
 </pre>
 
