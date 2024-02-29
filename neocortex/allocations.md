@@ -33,11 +33,11 @@ Please send a request to [neocortex@psc.edu](mailto:neocortex.edu) including a
 
 If you are part of multiple grants, then make sure your SLURM charge id is correctly set before beginning work. To find your default charge id, use the `projects` command. To see all of your groups:
 
-`change_primary_group -l`
+<pre>change_primary_group -l</pre>
 
 To **temporarily** change your charge id for the current login session, please run the following command:
 
-`newgrp *charge-id*`
+<pre>newgrp <em>charge-id</em></pre>
 
 The effects of this command take place immediately. Your charge id will revert to your default charge id upon logout.
 
