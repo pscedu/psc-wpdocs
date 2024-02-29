@@ -10,7 +10,7 @@ Examples can be found in the [cerebras_reference_implementation repository](htt
 
 <blockquote>
   <strong>Info</strong>
-  <p>Suggested order of files to use: <code>model.py -> data.py -> utils.py -> configs/params.yaml -> run.py</code></p>
+  <p sstyle="white-space:nowrap;">Suggested order of files to use:<br /><code>model.py -> data.py -> utils.py -> configs/params.yaml -> run.py</code></p>
 </blockquote>
 
 
