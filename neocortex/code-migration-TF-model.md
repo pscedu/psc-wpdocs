@@ -20,7 +20,9 @@ These files get things ready for the Estimator API. The code is divided between 
 <p>For information about the layers supported, please visit the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules">Cerebras Documentation</a>.</p>
 </blockquote>
 
-<pre>def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:</pre>
+<pre>
+ def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:
+</pre>
 
 This method should have the logic to build the layers of the model function.
 
