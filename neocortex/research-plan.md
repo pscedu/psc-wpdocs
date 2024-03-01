@@ -26,12 +26,12 @@ Describe how you intend to share the project's findings, such as through publica
 Please use the following citation when acknowledging the use of computational time on Neocortex:
 
 
-```
+<pre>
 Buitrago P.A., Nystrom N.A. (2021) Neocortex and Bridges-2: A High Performance AI+HPC
 Ecosystem for Science, Discovery, and Societal Good. In: Nesmachnow S., Castro H., Tchernykh A.
 (eds) High Performance Computing. CARLA 2020. Communications in Computer and Information
 Science, vol 1327. Springer, Cham. https://doi.org/10.1007/978-3-030-68035-0_15
-```
+</pre>
 
 ### (SDK Only) Work plan
 If you are intending to use the Cerebras SDK, please, address the following questions.
