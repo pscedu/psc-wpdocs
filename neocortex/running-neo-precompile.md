@@ -3,7 +3,7 @@
 You can pre-compile your model on the CPU while CS-2 is busy with another job. Navigate to your model directory and follow these instructions:
 
 * Reserve a CPU node and run Cerebras singularity container in interactive mode:
-* <pre>
+ <pre>
 srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT ocean/neocortex/cerebras/cbcore_latest.sif
 </pre>
 
