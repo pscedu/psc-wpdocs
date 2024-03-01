@@ -9,7 +9,9 @@ Every grant folder <code>/ocean/projects/<em>groupname</em>/</code> has a shar
 There are three ways to transfer files to/from Neocortex: rsync (preferred), sftp or scp (not recommended). Below are some sample commands you can refer to.
 
 **rsync**
-<pre>rsync -PaL --chmod u+w /local-path/to/dataset <em>username</em>@data.neocortex.psc.edu:/ocean/projects/<em>groupname</em>/shared/</pre>
+<pre>
+  rsync -PaL --chmod u+w /local-path/to/dataset <em>username</em>@data.neocortex.psc.edu:/ocean/projects/<em>groupname</em>/shared/
+</pre>
 where *groupname* is your grant id and *username* is your PSC username.
 
 Note that by default, rsync will not copy older files with the same name in place of newer files in the target directory.
