@@ -5,9 +5,10 @@ In addition to the interactive and batch modes for running jobs on Neocortex, yo
 
 ## When do I need a reservation?
 You can use reservations when you want to actively debug the code and do not want to wait for the resource every time you start an interactive or a batch job. Without a reservation, the wait time depends on the number and the duration of jobs in the queue. You can use the following command to check the pending jobs in the queue:
-```
+
+<pre>
 $ squeue
-```
+</pre>
 
 ## How is a reservation different from normal interactive or batch mode jobs?
 Interactive mode jobs can fail if there is a network connection issue. They also have a wall-time restriction (default is 4 hours, maximum is 48 hours). If your interactive session is ending because the time is up, you can’t extend it and hence you would have to start another interactive session. There could be other pending jobs in the queue delaying your job execution, whereas a reservation guarantees that the resource is explicitly assigned for your usage regardless of the job queue.
@@ -21,14 +22,16 @@ To create a reservation, please send an email to neocortex@psc.edu with the foll
 * Explain why you need a reservation (why the job can’t be executed with batch or interactive mode).
   
 You can use the `scontrol` command to check booked slots to ensure that you are not asking for an already reserved time slot:
-```
+
+<pre>
 $ scontrol show reservations
-```
+</pre>
 
 Please note that asking for a reservation does not guarantee you the reserved time slot. We will try our best to grant it.
 
 ## How do I run a job with a reservation?
 Once your reservation is confirmed, you will receive a confirmation with details including the *reservation-name* (we will provide you *reservation-name* upon confirmation). In order to start a job, use the parameter `--reservation` with `srun` or `sbatch`.
+
 <pre>
 $ sbatch --reservation <em>reservation-name</em> --account <em>SLURM-charge-id</em> mnist.batch
 </pre>
