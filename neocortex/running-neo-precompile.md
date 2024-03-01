@@ -3,9 +3,9 @@
 You can pre-compile your model on the CPU while CS-2 is busy with another job. Navigate to your model directory and follow these instructions:
 
 * Reserve a CPU node and run Cerebras singularity container in interactive mode:
-```
+* <pre>
 srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --bind /local1/cerebras/data,/local2/cerebras/data,/local3/cerebras/data,/local4/cerebras/data,$PROJECT ocean/neocortex/cerebras/cbcore_latest.sif
-```
+</pre>
 
    To avoid typing this long command every time on the terminal, you can save it in a file, such as `salloc_node` and run that. This command starts the shell with:<br /> <br />
            &bullet; 1 sdf node: 28 cores, 2 threads per core<br />
@@ -13,17 +13,17 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
          &bullet; The .sif container here is the symlink to the latest version of the container provided by the Cerebras team. Please use `ll` for more details about this container.
 
 * From inside the singularity shell, for validation only mode:
-    ```
+    <pre>
     python run.py --mode train --validate_only --model_dir validate
-    ```
+    </pre>
     where <br />
       &bullet; -o is the output directory<br />
       &bullet; --mode is the mode i.e., `compile_only`, `validate_only`, `train`, `eval`
 
 * From inside the singularity shell, for compile only mode:
-    ```
+    <pre>
      python run.py --mode train --compile_only --model_dir compile
-    ```
+    </pre>
 
 <div class="note">
      <blockquote>
