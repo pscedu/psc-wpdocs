@@ -17,6 +17,8 @@ In order to view performance results, you can refer to the `performance.json` 
 </pre>
 
 where you are expected to replace the following elements in the left column with those in the right one:
+
+
 <table>
   <thead>
     <tr>
