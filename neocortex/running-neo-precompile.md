@@ -13,16 +13,13 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
          &bullet; The .sif container here is the symlink to the latest version of the container provided by the Cerebras team. Please use `ll` for more details about this container.
 
 * From inside the singularity shell, for validation only mode:
-    <pre>
-python run.py --mode train --validate_only --model_dir validate
-    </pre>
+    <pre>python run.py --mode train --validate_only --model_dir validate    </pre>
     where <br />
       &bullet; -o is the output directory<br />
       &bullet; --mode is the mode i.e., `compile_only`, `validate_only`, `train`, `eval`
 
 * From inside the singularity shell, for compile only mode:
-    <pre>
-python run.py --mode train --compile_only --model_dir compile
+    <pre>python run.py --mode train --compile_only --model_dir compile
     </pre>
 
 <div class="note">
