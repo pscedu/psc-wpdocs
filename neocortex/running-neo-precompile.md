@@ -27,7 +27,7 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
           <p>You can also start an interactive session on the SDF nodes with the following command:</p>
     <pre>interact</pre>
 
- <p><code>interact</code> will start an interactive job on one of the available SDF nodes (sdf-1 or sdf-2). You can also specify which node to log into with the <code>srun</code> command and <code>--nodelist</code> parameter:</p>
+ <p>The <code>interact</code> command will start an interactive job on one of the available SDF nodes (sdf-1 or sdf-2). You can also specify which node to log into with the <code>srun</code> command and <code>--nodelist</code> parameter:</p>
     <pre>srun --nodelist=sdf-1 --pty bash -i</pre>
      </blockquote>
 </div> 
