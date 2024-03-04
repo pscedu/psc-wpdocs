@@ -19,8 +19,7 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
       &bullet; --mode is the mode i.e., `compile_only`, `validate_only`, `train`, `eval`
 
 * From inside the singularity shell, for compile only mode:
-    <pre>python run.py --mode train --compile_only --model_dir compile
-    </pre>
+    <pre>python run.py --mode train --compile_only --model_dir compile  </pre>
 
 <div class="note">
      <blockquote>
