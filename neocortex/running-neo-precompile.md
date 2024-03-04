@@ -14,7 +14,7 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
 
 * From inside the singularity shell, for validation only mode:
     <pre>
-    python run.py --mode train --validate_only --model_dir validate
+python run.py --mode train --validate_only --model_dir validate
     </pre>
     where <br />
       &bullet; -o is the output directory<br />
@@ -22,7 +22,7 @@ srun --pty --cpus-per-task=28 --kill-on-bad-exit singularity shell --cleanenv --
 
 * From inside the singularity shell, for compile only mode:
     <pre>
-     python run.py --mode train --compile_only --model_dir compile
+python run.py --mode train --compile_only --model_dir compile
     </pre>
 
 <div class="note">
