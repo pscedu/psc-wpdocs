@@ -46,9 +46,9 @@ Project Details:
 ```
 
 
-## Off-boarding Team Members
+## Off-boarding team members
 When a researcher is no longer part of a project and their access needs to be revoked, please request that they be off-boarded as soon as possible.
 
-**Initiating the Request:** The Principal Investigator (PI) of the project is responsible for promptly initiating the request for off-boarding individuals who are no longer actively contributing to their project. The PI should email neocortex@psc.edu to make the request.  Be sure to include any relevant information about the individual to off-board.
+**Initiating the request:** The Principal Investigator (PI) of the project is responsible for promptly initiating the request for off-boarding individuals who are no longer actively contributing to their project. The PI should email neocortex@psc.edu to make the request.  Be sure to include any relevant information about the individual to off-board.
 
-**Confirmation of Off-boarding:** The Neocortex team will review the request and proceed with the off-boarding process. The PI will receive confirmation once the researcher's access has been successfully deactivated.
+**Confirmation of off-boarding:** The Neocortex team will review the request and proceed with the off-boarding process. The PI will receive confirmation once the researcher's access has been successfully deactivated.
