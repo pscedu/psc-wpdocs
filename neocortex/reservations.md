@@ -42,6 +42,7 @@ Please note that using the `--reservation` flag does not automatically override 
 
 ## Comparison table for various modes in which jobs can be run
 Please note that this comparison is between jobs asking for the same number and type of resources, duration, etc.
+<p>&nbsp;</p>
 <table>
   <thead>
     <tr>

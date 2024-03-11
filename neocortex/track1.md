@@ -133,6 +133,6 @@ Corresponds to models already present in version R1.6.0 of the Cerebras modelzoo
 </tbody>
 </table>
 
-
+<br />
 <p>Based on the [Cerebras modelzoo R1.6.0 GitHub page](https://github.com/cerebras/modelzoo/tree/R_1.6.0#models-in-this-repository).</p>
 
