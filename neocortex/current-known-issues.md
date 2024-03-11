@@ -49,7 +49,7 @@ srun --pty --nodelist sdf-1 --cpus-per-task=1 --kill-on-bad-exit singularity she
 
 **Cause:** this was a network communication issue for reaching the Jet and Ocean filesystem servers across multiple InfiniBand interfaces as opposed to using a single interface.
 
-## Error 5: Failure to login into https://portal.neocortex.psc.edu/home</h3>
+## Error 5: Failure to login into https://portal.neocortex.psc.edu/home
 **Error message:** the page takes a minute to load and an error page from the webserver is shown.
 
 **Cause:** it seems the authentication is timing out. Probably something changed when the migration from Bridges to Bridges2 started.
