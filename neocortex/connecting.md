@@ -29,7 +29,7 @@ Connect to `neocortex.psc.edu` using your PSC credentials, where *psc_username*Â
 
 ### How to connect to Neocortex using Open OnDemand
 
-Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc.edu/) at https://ondemand.neocortex.psc.edu/ and login using your PSC credentials.
+Navigate to the <a href="https://ondemand.neocortex.psc.edu/" target="_blank">Neocortex Open OnDemand webpage</a> at https://ondemand.neocortex.psc.edu/ and login using your PSC credentials.
 
 ## Connecting to Bridges-2
 
@@ -51,4 +51,4 @@ If you need to reset your password, please visit theÂ [PSC Password Change Utili
 
 ### How to connect to Bridges-2 using Open OnDemand
 
-Navigate to the [Bridges-2 Open OnDemand webpage](https://ondemand.bridges2.psc.edu/) at https://ondemand.bridges2.psc.edu/ and login using your PSC credentials.
+Navigate to the <a href="https://ondemand.bridges2.psc.edu/" target="_blank">Bridges-2 Open OnDemand webpage</a> at https://ondemand.bridges2.psc.edu/ and login using your PSC credentials.
