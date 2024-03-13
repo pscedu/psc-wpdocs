@@ -1,4 +1,6 @@
 # FAQ (general)
+
+
 <ol>
  <li><strong>Is it possible to use Keras functions inside the TF estimator?</strong><br />
 Yes, we support the TensorFlow Keras Layers API in our model function.
