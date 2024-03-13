@@ -13,7 +13,7 @@ Neocortex aims to democratize access to game-changing compute power otherwise on
 
 With Neocortex, users are expected to be able to apply more accurate models and larger training data, scale model parallelism to unprecedented levels and avoid the need for expensive and time-consuming hyperparameter optimization. The development of new algorithms in machine learning and graph analytics will be enabled through this innovative AI platform.
 
-The [Neocortex System Slack Organization](https://join.slack.com/t/neocortex-system/shared_invite/zt-15jryz5s1-g2a4MPTgAjxa109EehbJSw) is now available. Please feel free to join if you want to communicate with other project team members through Slack.
+The <a href="https://join.slack.com/t/neocortex-system/shared_invite/zt-15jryz5s1-g2a4MPTgAjxa109EehbJSw" target="_blank">Neocortex System Slack Organization</a> is now available. Please feel free to join if you want to communicate with other project team members through Slack.
 
 The list below presents the different stages we hope every project will go through:
 1. Researcher on-boarding (you will get different emails from neocortex@psc.edu and access to the Neocortex system)
