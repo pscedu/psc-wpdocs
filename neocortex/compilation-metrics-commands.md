@@ -46,7 +46,7 @@ This CEREBRAS_DIR folder contains two main directories of interest:
 * modelzoo: contains the code for the models
 * data: contains the input data for the models
   
-Copy the model zoo dir to your folder inside the Cerebras scratch space. Please make sure to have changed to the correct group by using the `newgrp` command, else it will be copied somewhere else or you might get a permission error.
+Copy the modelzoo directory to your folder inside the Cerebras scratch space. Please make sure to change to the correct group by using the `newgrp` command, else it will be copied somewhere else or you might get a permission error.
 
 For the latest version:
 <pre>
