@@ -1,5 +1,5 @@
-# Track 2 (ML): Models similar to the Cerebras modelzoo models
-Track 2 is for ML models that are a **combination of the building blocks** used by modelzoo models and/or the layers supported by Cerebras as listed in their documentation.
+# Track 2 (ML): Models similar to the Cerebras Model Zoo models
+Track 2 is for ML models that are a **combination of the building blocks** used by Model Zoo models and/or the layers supported by Cerebras as listed in their documentation.
 
 **Good Match Criteria:** You would be a good match for this track if your research already uses, or could potentially use, the specific TensorFlow or PyTorch layers listed below for implementing the models.
 ## Supported Core Compute Kernels

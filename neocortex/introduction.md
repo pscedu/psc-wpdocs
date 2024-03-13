@@ -1,7 +1,7 @@
 # Introduction
 There are four types of applications currently supported on the Neocortex system, divided into the following individual tracks:
-* Track 1: [Cerebras modelzoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
-* Track 2: [Models similar to the Cerebras modelzoo models](https://psc.edu/resources/neocortex/docs/track2)
+* Track 1: [Cerebras Model Zoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
+* Track 2: [Models similar to the Cerebras Model Zoo models](https://psc.edu/resources/neocortex/docs/track2)
 * Track 3: [General purpose SDK](https://psc.edu/resources/neocortex/docs/track3)
 * Track 4: [WFA, WSE Field-equation API](https://psc.edu/resources/neocortex/docs/track4)
   
@@ -20,7 +20,7 @@ The list below presents the different stages we hope every project will go throu
 2. Accessing the Neocortex portal and user documentation (this webpage)
 3. Accessing the Neocortex system (over SSH)
 4. Running a job in the Neocortex system (see the [Getting Started Tutorial section](https://www.psc.edu/resources/neocortex/docs/getting-started-tutorial/) )
-5. Executing Cerebras reference/sample code (i.e. modelzoo networks, SDK examples, ...)
+5. Executing Cerebras reference/sample code (i.e. Model Zoo networks, SDK examples, ...)
 6. Transferring your data into the Neocortex environment
 7. Executing your code base in the Neocortex environment
 8. Producing ML key metrics / SDK Detailed project plan

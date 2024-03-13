@@ -1,4 +1,6 @@
 # FAQ (general)
+
+
 <ol>
  <li><strong>Is it possible to use Keras functions inside the TF estimator?</strong><br />
 Yes, we support the TensorFlow Keras Layers API in our model function.
@@ -11,7 +13,7 @@ Yes, we support the TensorFlow Keras Layers API in our model function.
 </li>
 
 <li><strong>I see ogbg_molchembl. How do we get the other ogb datasets to the machine? Should we store them in our allocations or will you put the entire ogb collection in that location?</strong><br />
-   On the Ocean shared-filesystem, the path of some modelzoo datasets is `/ocean/neocortex/cerebras/data/`.<br /><br />
+   On the Ocean shared-filesystem, the path of some Model Zoo datasets is `/ocean/neocortex/cerebras/data/`.<br /><br />
  On the SDF, these datasets are available under $LOCAL at `$LOCAL/cerebras/data/`.
 <br /><br />
 </li>
@@ -41,18 +43,18 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
 <br /><br />
 </li>
 
-<li><strong>Do you expect us to compile our model?</strong><br />
-   You are expected to compile and run your model.
+<li><strong>Do you expect us to compile our ?</strong><br />
+   You are expected to compile and run your .
    <br /><br />
 </li>
 
-<li><strong>Is it mandatory to use Keras API for defining the Network Architecture? Can we use Keras model APIs? Or it should be only Keras layers?</strong><br />
- Currently, we support Tensorflow Keras Layers API in our model function.
+<li><strong>Is it mandatory to use Keras API for defining the Network Architecture? Can we use Keras  APIs? Or it should be only Keras layers?</strong><br />
+ Currently, we support Tensorflow Keras Layers API in our  function.
  <br /><br />
 </li>
 
 <li><strong>How can I verify correctness before access to Neocortex?</strong><br />
-    <code>compile()</code> will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your model is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
+    <code>compile()</code> will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your  is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
     <br /><br />
 </li>
 
