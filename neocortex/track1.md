@@ -13,7 +13,7 @@ Corresponds to models already present in version R1.6.0 of the Cerebras Model Zo
   <td>BERT</td>
   <td>     
 
-[TensorFlow code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert)  <br />
+<a href="https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/tf/bert" target="_blank">TensorFlow code</a>  <br />
 [PyTorch code](https://github.com/cerebras/modelzoo/blob/R_1.6.0/modelzoo/transformers/pytorch/bert)
 </td>
   <td>-</td>
