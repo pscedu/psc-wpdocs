@@ -1,7 +1,7 @@
 # Introduction
 There are four types of applications currently supported on the Neocortex system, divided into the following individual tracks:
-* Track 1: [Cerebras modelzoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
-* Track 2: [Models similar to the Cerebras modelzoo models](https://psc.edu/resources/neocortex/docs/track2)
+* Track 1: [Cerebras Model Zoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
+* Track 2: [Models similar to the Cerebras Model Zoo models](https://psc.edu/resources/neocortex/docs/track2)
 * Track 3: [General purpose SDK](https://psc.edu/resources/neocortex/docs/track3)
 * Track 4: [WFA, WSE Field-equation API](https://psc.edu/resources/neocortex/docs/track4)
   
