@@ -20,7 +20,7 @@ The list below presents the different stages we hope every project will go throu
 2. Accessing the Neocortex portal and user documentation (this webpage)
 3. Accessing the Neocortex system (over SSH)
 4. Running a job in the Neocortex system (see the [Getting Started Tutorial section](https://www.psc.edu/resources/neocortex/docs/getting-started-tutorial/) )
-5. Executing Cerebras reference/sample code (i.e. modelzoo networks, SDK examples, ...)
+5. Executing Cerebras reference/sample code (i.e. Model Zoo networks, SDK examples, ...)
 6. Transferring your data into the Neocortex environment
 7. Executing your code base in the Neocortex environment
 8. Producing ML key metrics / SDK Detailed project plan
