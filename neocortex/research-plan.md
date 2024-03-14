@@ -1,5 +1,5 @@
 # Research Plan
-For the research plan. Please use the template below to generate a report and [submit it via BOX](https://cmu.app.box.com/f/eb5600f0d1834073893831ab0412da9d).
+For the research plan. Please use the template below to generate a report and <a href="https://cmu.app.box.com/f/eb5600f0d1834073893831ab0412da9d" target="_blank">submit it via BOX</a>.
 
 ## Research Plan Template/Guidelines for Neocortex Projects
 ### Project Title
