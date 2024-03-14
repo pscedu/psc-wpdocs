@@ -1,6 +1,6 @@
 # Code Migration to the Cerebras Architecture
 
-As described in the Cerebras documentation [How Cerebras Works](https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html), the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
+As described in the Cerebras documentation <a href="https://docs.cerebras.net/en/1.6.0/cerebras-basics/how-cerebras-works.html" target="_blank">"How Cerebras Works"</a>, the first step to using the Cerebras machines is to port your code from regular TensorFlow or PyTorch to use the Cerebras libraries instead.
 
 ![flowchart showing steps to run on a CS system](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/how_cerebras_works_workflow.jpg)
 
