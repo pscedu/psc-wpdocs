@@ -1,7 +1,7 @@
 
 ### Structure of the code
-Examples can be found in the [cerebras_reference_implementation repository](https://github.com/Cerebras/cerebras_reference_implementations), which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
-* `model.py`: contains the model function definition. For information about the layers supported, please visit the [Cerebras documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).
+Examples can be found in the <a href="https://github.com/Cerebras/cerebras_reference_implementations" target="_blank">Cerebras reference implementation repository</a>, which contains examples of standard deep learning models that can be trained on Cerebras hardware and demonstrate the best practices for coding.
+* `model.py`: contains the model function definition. For information about the layers supported, please visit the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules" target="_blank">Cerebras documentation</a>.
 * `data.py`: calls the input data pipeline. Additional data processor modules may be defined elsewhere (e.g., in the `input` folder) for data pipeline implementation.
 * `utils.py`: contains the helper scripts.
 * `configs/params.yaml`: YAML file containing the model configuration and the training hyperparameter settings.
