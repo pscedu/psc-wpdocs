@@ -19,5 +19,5 @@ Input:
 * `eval_data_fn`: Required during evaluation run.
 * `default_params_fn`: Optional. A callable that takes in a dictionary of parameters. Sets default parameters.
 
-For more information please visit the [Porting PyTorch Model to CS](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html) Cerebras documentation page.
+For more information please visit the <a href="https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html" target="_blank">"Porting PyTorch Model to CS Cerebras"</a> documentation page.
 
