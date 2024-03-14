@@ -43,8 +43,8 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
 <br /><br />
 </li>
 
-<li><strong>Do you expect us to compile our ?</strong><br />
-   You are expected to compile and run your .
+<li><strong>Do you expect us to compile our model?</strong><br />
+   You are expected to compile and run your model.
    <br /><br />
 </li>
 
