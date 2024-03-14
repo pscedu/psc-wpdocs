@@ -4,7 +4,7 @@ As described in the Cerebras documentation <a href="https://docs.cerebras.net/e
 
 ![flowchart showing steps to run on a CS system](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/how_cerebras_works_workflow.jpg)
 
-The steps to port your code are laid out in the the [Workflow for TensorFlow on CS](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/cs-tf-workflow.html) documentation. This documentation also goes over the process needed for performing such code migration. This is a good starting point for understanding the process. 
+The steps to port your code are laid out in the the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/cs-tf-workflow.html" target="_blank">"Workflow for TensorFlow on CS"</a> documentation. This documentation also goes over the process needed for performing such code migration. This is a good starting point for understanding the process. 
 1. Port to Cerebras
 2. Prepare input
 3. Compile on CPU
