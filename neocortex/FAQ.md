@@ -43,18 +43,18 @@ Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, 
 <br /><br />
 </li>
 
-<li><strong>Do you expect us to compile our ?</strong><br />
-   You are expected to compile and run your .
+<li><strong>Do you expect us to compile our model?</strong><br />
+   You are expected to compile and run your model.
    <br /><br />
 </li>
 
-<li><strong>Is it mandatory to use Keras API for defining the Network Architecture? Can we use Keras  APIs? Or it should be only Keras layers?</strong><br />
- Currently, we support Tensorflow Keras Layers API in our  function.
+<li><strong>Is it mandatory to use Keras API for defining the Network Architecture? Can we use Keras model APIs? Or it should be only Keras layers?</strong><br />
+ Currently, we support Tensorflow Keras Layers API in our model function.
  <br /><br />
 </li>
 
 <li><strong>How can I verify correctness before access to Neocortex?</strong><br />
-    <code>compile()</code> will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your  is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
+    <code>compile()</code> will perform full compilation through all stages of the Cerebras Software Stack and generate a CS-2 executable. If this is successful, your model is guaranteed to run on CS-2. Refer to ‘_Cerebras-ML-User-Guide’ _ for more information.
     <br /><br />
 </li>
 

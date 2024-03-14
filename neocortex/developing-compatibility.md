@@ -11,9 +11,9 @@ Construct CerebrasEstimator with 4 main pieces of information:
 * Config - a set of configuration options that is an extension of TF’s Config (config)
 * params dictionary (params) which contains other configuration information for model_fn and input_fn
 
-Please go through the [Port TensorFlow to Cerebras](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/porting-tf-to-cs/index.html) section of the Cerebras Documentation for detailed steps.
+Please go through the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/porting-tf-to-cs/index.html" target="_blank">Port TensorFlow to Cerebras</a> section of the Cerebras Documentation for detailed steps.
 #### PyTorch
 You can either modify reference models in Cerebras modelzoo GitHub repository or leverage the common backbone in Cerebras Model Zoo Repository, the run function.
 
-Please go through the [Port PyTorch to Cerebras](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html) section of the Cerebras Documentation for detailed steps.
+Please go through the <a href="https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html" target="_blank">Port PyTorch to Cerebras</a> section of the Cerebras Documentation for detailed steps.
 
