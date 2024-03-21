@@ -36,13 +36,13 @@ Please visit the [official WFA documentation](https://dirk-netl.github.io/WSE_F
 ## Track Specific Questions
 
 If your project falls under this track, make sure to address the following questions in your application document:
-
-1. Can your problem lay out on a Hex grid (3d or many 2d parallel)?
-2. Does your problem involve Spatial Locality?
-3. Is your project Data Intense? Please, elaborate.
-4. Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?
-5. Which of the following applies to your problem/project?
-6. <ol style="list-style-type:lower-alpha";>
+<ol>
+<li>Can your problem lay out on a Hex grid (3d or many 2d parallel)?</li>
+<li>Does your problem involve Spatial Locality?</li>
+<li>Is your project Data Intense? Please, elaborate.</li>
+<li>Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?</li>
+<li>Which of the following applies to your problem/project?
+<ol style="list-style-type:lower-alpha";>
     <li>Computational Fluid Dynamics (FVM, FDM, FEM, LBM)</li>
     <li>Structural Mechanics</li>
   </ol>
@@ -50,6 +50,9 @@ If your project falls under this track, make sure to address the following quest
     d. Weather/Climate
     e. Materials – Ising Model, Density Functional Theory
     f. CNN/RNN inference
-7. Are you willing to commit to the following as you advance your project?
+</li>
+<li>Are you willing to commit to the following as you advance your project?
     a. Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem
     b. Post on a public GitHub
+</li>
+</ol>
