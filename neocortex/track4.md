@@ -42,12 +42,14 @@ If your project falls under this track, make sure to address the following quest
 3. Is your project Data Intense? Please, elaborate.
 4. Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?
 5. Which of the following applies to your problem/project?
-    a. Computational Fluid Dynamics (FVM, FDM, FEM, LBM)
-    b. Structural Mechanics
+6. <ol style="list-style-type:lower-alpha";>
+    <li>Computational Fluid Dynamics (FVM, FDM, FEM, LBM)</li>
+    <li>Structural Mechanics</li>
+  </ol>
     c. Geomechanics
     d. Weather/Climate
     e. Materials – Ising Model, Density Functional Theory
     f. CNN/RNN inference
-6. Are you willing to commit to the following as you advance your project?
+7. Are you willing to commit to the following as you advance your project?
     a. Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem
     b. Post on a public GitHub
