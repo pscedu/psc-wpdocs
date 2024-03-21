@@ -32,7 +32,7 @@ The following examples are available in the Neocortex system at `/ocean/neocort
 * GEMV
 * FFT
 
-# Track Specific Questions
+## Track Specific Questions
 
 If your project falls under this category, make sure to address the following questions in your application document:
 
@@ -41,7 +41,7 @@ If your project falls under this category, make sure to address the following qu
    OpenMP, CUDA, OpenCL, etc.?
 2. What are the underlying computational algorithms you’re interested in exploring? What existing software packages or
    libraries use these algorithms?
-3. How is this problem bottlenecked on current hardware? Is the problem more bottlenecked by memory bandwidth, or
+3. How is this problem bottlenecked on current hardware? Is the problem more bottlenecked by memory bandwidth or
    communication costs associated with scaling up across distributed compute nodes?
 4. What range of problem sizes are you interested in addressing? For example, how much memory does your problem use? How
    does memory usage or program run-time scale with problem size?
