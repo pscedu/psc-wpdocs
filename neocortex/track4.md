@@ -33,7 +33,7 @@ WFA: API recently used for advancing CFP simulations at unprecedented resolution
   
 Please visit the [official WFA documentation](https://dirk-netl.github.io/WSE_FE/) for more information.
 
-# Track Specific Questions
+## Track Specific Questions
 
 If your project falls under this track, make sure to address the following questions in your application document:
 
@@ -49,5 +49,5 @@ If your project falls under this track, make sure to address the following quest
     e. Materials – Ising Model, Density Functional Theory
     f. CNN/RNN inference
 6. Are you willing to commit to the following as you advance your project?
-    a. Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem.
-    b. Post on a public GitHub.
+    a. Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem
+    b. Post on a public GitHub
