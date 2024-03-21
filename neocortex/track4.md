@@ -42,7 +42,7 @@ If your project falls under this track, make sure to address the following quest
 <li>Is your project Data Intense? Please, elaborate.</li>
 <li>Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?</li>
 <li>Which of the following applies to your problem/project?
-<ol style="list-style-type:loweralpha";>
+<ol type="a">
     <li>Computational Fluid Dynamics (FVM, FDM, FEM, LBM)</li>
     <li>Structural Mechanics</li>
     <li>Geomechanics</li>
