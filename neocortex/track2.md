@@ -20,7 +20,7 @@ If your project falls under this category, make sure to address the following qu
    propose to use.
 2. Please attach a diagram that describes your proposed model, along the lines illustrated in this example:
    ![Figure: The Transformer, model architecture (Vaswani A. et. al. 2017).](https://github.com/pscedu/psc-wpdocs/blob/dev/neocortex/img/track_2_example.png)
-3. How big is the model you intend to train on Neocortex? Please, describe in terms of the number of layers or kernels
+3. How big is the model you intend to train on Neocortex? Please describe in terms of the number of layers or kernels
    that comprise it. Include size in terms of MB as well.
 4. How big is the dataset (number of samples, MB per sample) you intend to use?
 5. Please specify the shapes of the input and output tensors for your model/s.
