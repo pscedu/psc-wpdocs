@@ -39,7 +39,7 @@ If your project falls under this track, make sure to address the following quest
 <ol>
 <li>Can your problem lay out on a Hex grid (3d or many 2d parallel)?</li>
 <li>Does your problem involve Spatial Locality?</li>
-<li>Is your project Data Intense? Please, elaborate.</li>
+<li>Is your project Data Intense? Please elaborate.</li>
 <li>Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?</li>
 <li>Which of the following applies to your problem/project?
 <ol>
