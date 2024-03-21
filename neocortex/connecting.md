@@ -12,7 +12,7 @@ There are also two different ways to connect to both systems:
 
 Please read below for specific instructions and connect to each system as needed. The resource usage will be tracked for each project.
 
-## Connecting to Neocortex (preferred)
+<h2>Connecting to Neocortex (preferred)</h2>
 
 <blockquote class="info">
   <strong>Info</strong>

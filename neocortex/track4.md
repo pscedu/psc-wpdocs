@@ -33,3 +33,28 @@ WFA: API recently used for advancing CFP simulations at unprecedented resolution
   
 Please visit the [official WFA documentation](https://dirk-netl.github.io/WSE_FE/) for more information.
 
+## Track Specific Questions
+
+If your project falls under this track, make sure to address the following questions in your application document:
+<ol>
+<li>Can your problem lay out on a Hex grid (3d or many 2d parallel)?</li>
+<li>Does your problem involve Spatial Locality?</li>
+<li>Is your project Data Intense? Please elaborate.</li>
+<li>Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?</li>
+<li>Which of the following applies to your problem/project?
+<ol>
+    <li>Computational Fluid Dynamics (FVM, FDM, FEM, LBM)</li>
+    <li>Structural Mechanics</li>
+    <li>Geomechanics</li>
+    <li>Weather/Climate</li>
+    <li>Materials – Ising Model, Density Functional Theory</li>
+    <li>CNN/RNN inference</li>
+</ol>
+</li>
+<li>Are you willing to commit to the following as you advance your project?
+  <ol>
+    <li>Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem</li>
+    <li>Post on a public GitHub</li>
+</li>
+  </ol>
+</ol>
