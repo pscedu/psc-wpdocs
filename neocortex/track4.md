@@ -42,14 +42,14 @@ If your project falls under this track, make sure to address the following quest
 <li>Is your project Data Intense? Please, elaborate.</li>
 <li>Is your problem compatible with single precision and with a total data volume not exceeding 40 GB?</li>
 <li>Which of the following applies to your problem/project?
-<ol style="list-style-type:lower-alpha";>
+<ol style="list-style-type:loweralpha";>
     <li>Computational Fluid Dynamics (FVM, FDM, FEM, LBM)</li>
     <li>Structural Mechanics</li>
-  </ol>
-    c. Geomechanics
-    d. Weather/Climate
-    e. Materials – Ising Model, Density Functional Theory
-    f. CNN/RNN inference
+    <li>Geomechanics</li>
+    <li>Weather/Climate</li>
+    <li>Materials – Ising Model, Density Functional Theory</li>
+    <li>CNN/RNN inference</li>
+</ol>
 </li>
 <li>Are you willing to commit to the following as you advance your project?
     a. Build a Python class that imports the WFA and contains a “Library” to solve your scientific problem
