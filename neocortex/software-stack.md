@@ -1,4 +1,8 @@
-# Software Stack
+<!-- # Software Stack
+
+This title is commented out in this doc so that it will appear above the in-page table of contents instead of beside it.
+-->
+
 This section describes how to load/create the packages required for specific computing environments for performing your runs. Researchers are expected to work with a particular singularity container for their code runs.
 
 ## What are these Singularity containers?
