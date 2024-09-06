@@ -1,6 +1,6 @@
 ***Q: What is HPN-SSH?***
 
-A: HPN-SSH is a patch set designed to remove a networking bottleneck in the base OpenSSH code. Removing this bottleneck can improve performance drastically.
+A: HPN-SSH is a patch set designed to remove a networking bottleneck in the base OpenSSH code. Removing this bottleneck can improve performance drastically. HPN-SSH is also a series of improvement to the usability and performance of SSH in general. This includes inline network telemetry, parallelized ciphers, and other perofrmance improvements. 
 
 ***Q: What is this bottleneck?***
 
@@ -34,7 +34,7 @@ A: You must use both '-oNoneSwitch=yes and '-oNoneEnabled=yes' on the client com
 
 ***Q: I want the speed but I can't use the NONE cipher. Do I have any options?***
 
-A: Yes. As of HPN13v1 we've introduced a multi-threaded AES-CTR (MT-AES-CTR) patch that will allow SSH to make use of multiple cores. This can significantly improve throughput performance. In our test environments we commonly see near GigE line rate speeds - more than a 100% improvement over the default AES-CTR mode cipher.
+A: Yes. As of HPN13v1 we've introduced a multi-threaded AES-CTR (MT-AES-CTR) patch that will allow SSH to make use of multiple cores. This can significantly improve throughput performance. In our test environments we commonly see near GigE line rate speeds - more than a 100% improvement over the default AES-CTR mode cipher. As of Version 18.2.0 we've also introduced a parallel version of the default ChaCha20Poly1305 cipher. This has been shown to be 30 to 40% faster in our tests. 
 
 ***Q: How do I use MT-AES-CTR?***
 
@@ -46,7 +46,7 @@ A: Yes, the resulting cipher stream is indistinguishable from the single threade
 
 ***Q: I'm having a lot of problems using HPN-SSH. Can you help me?***
 
-A: We will certainly do our best but please try see PSC's TCP Tuning page first. If you are still having problems then contact us at hpn-ssh@psc.edu and include the following information:
+A: We will certainly do our best but please try see PSC's TCP Tuning page first. If you are still having problems then contact us at hpn-ssh@psc.edu or on our [github issues tracker](https://github.com/rapier1/hpn-ssh/issues) and include the following information:
 
 - The version of the operating system on both sides of the connection
 - The version of HPN-SSH you are using
@@ -59,8 +59,8 @@ We can't help everyone but we will do our best.
 
 ***Q: If this HPN-SSH is so great why isn't it in the OpenSSH code base?***
 
-A: The HPN-SSH patch has been made available to the OpenSSH development team. However, the team has other priorities and I'm perfectly able to maintain this implementation. Quite a number of organizations are using HPN-SSH though, including NASA, Sun Microsystems, HP, financial companies, research organizations, supercomputing centers, security concerns, and software developers.
+A: The HPN-SSH patch has been made available to the OpenSSH development team. However, the team has other priorities and I'm perfectly able to maintain this implementation. Quite a number of organizations are using HPN-SSH though, including NASA, financial companies, research organizations, supercomputing centers, security concerns, and software developers.
 
 ***Q: I have a suggestion for HPN-SSH or this FAQ, a comment, want to send thanks, or ask some other question. Who should I contact?***
 
-A: Please contact us at hpn-ssh@psc.edu with any suggestions, questions, comments, or criticisms. 
+A: Please contact us at hpn-ssh@psc.edu or the [guthub discussion page](https://github.com/rapier1/hpn-ssh/discussion) with any suggestions, questions, comments, or criticisms. 
