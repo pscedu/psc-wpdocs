@@ -95,7 +95,7 @@ will, after authentication disable encryption while transferring `hugefile` from
 will, after authentication disable both encryption *and* the MAC while transferring `hugefile` from the local host to the remote host. All 3 options must be set to yes on the client to disabled the MAC. The remote host must have both `NoneEnabled=yes` and `NoneMacEnabled=yes` set the in the sshd\_config file. 
 
 
-##MULTI-THREADED AES CIPHER:
+## MULTI-THREADED AES CIPHER:
 The AES cipher in CTR mode has been multithreaded (MTR-AES-CTR). This will allow ssh installations
 on hosts with multiple cores to use more than one processing core during encryption.
 Tests have show significant throughput performance increases when using MTR-AES-CTR up
@@ -110,7 +110,7 @@ Usage examples:
 >                `ssh -caes128-ctr you@host.com`
 >                `scp -oCipher=aes256-ctr file you@host.com:~/file`
 
-##MULTI-THREADED ChaCha20-Poly1305 CIPHER:
+## MULTI-THREADED ChaCha20-Poly1305 CIPHER:
 The default cipher used by HPN-SSH is now a threaded implementation of the
 ChaCha20-Poly1305 cipher. In tests this cipher results in an approximately 90% gain in
 throughput performance in comparison to the serial implementation found in OpenSSH.
