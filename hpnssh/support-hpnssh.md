@@ -4,14 +4,15 @@ If you benefit from HPN-SSH, please show your support. An important way to show 
 
 To support HPN-SSH, go to the PSC giving page at [https://www.psc.edu/giving/](https://www.psc.edu/giving/) and click the “Give online” button.  In the next window, choose “Add a designation” and note that it is to support HPN-SSH. Thank you!
 
- 
-
 ## Let us know that you are using it
 
 It's important to track the adoption of HPN-SSH by the community to gather suggestions and for future funding opportunities.  Email us at [hpn-ssh@psc.edu](mailto:hpn-ssh@psc.edu) and let us know that you are using it.
 
- 
-
 ## Join the mailing list
 
 Stay on top of developments in HPN-SSH by [joining the hpnssh-community mailing list](https://lists.psc.edu/mailman/listinfo/hpnssh-community), a group for both developers and users to discuss HPN-SSH. This includes development goals, suggestions, user support, bugs, and more as they relate the HPN-SSH in particular.
+
+You can also join our discussion on our [github discussion page](https://github.com/rapier1/hpn-ssh/discussion). 
+
+## Let us know what you think
+Hearing form our users is always worthwhile. If you have a bug to report, a suggestion to make, or just want to tell us how much your appreicate HPN-SSH we want to hear it. Use any of the above method to reach us but we do ask that bug reports be made on our [github bug tracker](https://github.com/rapier/hpn-ssh/issues)
