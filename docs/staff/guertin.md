@@ -1,0 +1,1 @@
+Tim Guertin is a cyber infrastructure engineer at the Pittsburgh Supercomputing Center, where he focuses on configuration management and automation of infrastructure systems at the center. Previously, he worked on the storage team at the Target Corporation, where he wrote and maintained systems that managed the configuration and provided API access to storage infrastructure.
