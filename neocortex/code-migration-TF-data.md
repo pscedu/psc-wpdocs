@@ -1,4 +1,6 @@
 
+
+
 **data.py**
 
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
@@ -7,13 +9,13 @@ The input function builds the input pipeline and yields the batched data in the 
 * `features` can be a tensor or dictionary of tensors, and
 * `labels` can be a tensor, a dictionary of tensors, or None.
 
-``` def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset: ```
+<pre> def input_fn(params: dict, mode=tf.estimator.ModeKeys.TRAIN) -> tf.data.Dataset: </pre>
 
 This method should have the input function and run any preprocessing that might be needed before returning a TF dataset object.
 
 **Input**
 * params (`dict`):
-```
+<pre>
 {
     train_input: dict = {
         data_dir: str,
@@ -22,7 +24,7 @@ This method should have the input function and run any preprocessing that might 
         shuffle: bool
     }
 }
-```
+</pre>
 
 * `mode` (str): One of the `tf.estimator.ModeKeys.*` strings. The available options are: `TRAIN`, `EVAL`, `TRAIN_AND_EVAL`, and `INFERENCE`.
   

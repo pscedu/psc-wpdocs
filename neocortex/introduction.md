@@ -1,7 +1,7 @@
-## Introduction
+# Introduction
 There are four types of applications currently supported on the Neocortex system, divided into the following individual tracks:
-* Track 1: [Cerebras modelzoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
-* Track 2: [Models similar to the Cerebras modelzoo models](https://psc.edu/resources/neocortex/docs/track2)
+* Track 1: [Cerebras Model Zoo ML models](https://psc.edu/resources/neocortex/docs/track1) 
+* Track 2: [Models similar to the Cerebras Model Zoo models](https://psc.edu/resources/neocortex/docs/track2)
 * Track 3: [General purpose SDK](https://psc.edu/resources/neocortex/docs/track3)
 * Track 4: [WFA, WSE Field-equation API](https://psc.edu/resources/neocortex/docs/track4)
   
@@ -13,14 +13,14 @@ Neocortex aims to democratize access to game-changing compute power otherwise on
 
 With Neocortex, users are expected to be able to apply more accurate models and larger training data, scale model parallelism to unprecedented levels and avoid the need for expensive and time-consuming hyperparameter optimization. The development of new algorithms in machine learning and graph analytics will be enabled through this innovative AI platform.
 
-The [Neocortex System Slack Organization](https://join.slack.com/t/neocortex-system/shared_invite/zt-15jryz5s1-g2a4MPTgAjxa109EehbJSw) is now available. Please feel free to join if you want to communicate with other project team members through Slack.
+The <a href="https://join.slack.com/t/neocortex-system/shared_invite/zt-15jryz5s1-g2a4MPTgAjxa109EehbJSw" target="_blank">Neocortex System Slack Organization</a> is now available. Please feel free to join if you want to communicate with other project team members through Slack.
 
 The list below presents the different stages we hope every project will go through:
 1. Researcher on-boarding (you will get different emails from neocortex@psc.edu and access to the Neocortex system)
 2. Accessing the Neocortex portal and user documentation (this webpage)
 3. Accessing the Neocortex system (over SSH)
-4. Running a job in the Neocortex system (see the [Getting Started Tutorial section](https://www.psc.edu/resources/neocortex/neocortex-user-guide-getting-started-tutorial) )
-5. Executing Cerebras reference/sample code (i.e. modelzoo networks, SDK examples, ...)
+4. Running a job in the Neocortex system (see the [Getting Started Tutorial section](https://www.psc.edu/resources/neocortex/docs/getting-started-tutorial/) )
+5. Executing Cerebras reference/sample code (i.e. Model Zoo networks, SDK examples, ...)
 6. Transferring your data into the Neocortex environment
 7. Executing your code base in the Neocortex environment
 8. Producing ML key metrics / SDK Detailed project plan

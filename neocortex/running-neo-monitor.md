@@ -1,9 +1,9 @@
 
 
-#### Monitoring and interpreting results on CS-2s
+### Monitoring and interpreting results on CS-2s
 
-In order to view performance results, you can refer to the `performance.json` inside the model log directory file. Next, there is a sample entry from this file:
-```
+In order to view performance results, you can refer to the `performance.json` inside the model log directory file. Here is a sample entry from this file:
+<pre>
 {
      "total_time": 261.82,
      "samples_per_sec": 146665.4,
@@ -14,9 +14,11 @@ In order to view performance results, you can refer to the `performance.json` 
      "delta_t": 464,
      "Frequency": 850000000.0
  }
-```
+</pre>
 
 where you are expected to replace the following elements in the left column with those in the right one:
+
+
 <table>
   <thead>
     <tr>

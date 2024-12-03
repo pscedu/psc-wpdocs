@@ -1,10 +1,10 @@
 
 
-#### Running batch jobs
+### Running batch jobs
 In order to validate, compile, train, or evaluate your model using a batch script, please use the following sample piece of code that you can modify accordingly:
 
 **neocortex_model.sbatch**
-```
+<pre>
 #!/usr/bin/bash
 #SBATCH --gres=cs:cerebras:1
 #SBATCH --ntasks=7
@@ -34,19 +34,19 @@ srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${C
 srun --ntasks=1 --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --compile_only --model_dir compile
 # This command will use the default guidance used at the top of this file. In this case, 7 tasks.
 srun --kill-on-bad-exit singularity exec --bind ${BIND_LOCATIONS} ${CEREBRAS_CONTAINER} python run.py --mode train --model_dir train --cs_ip ${CS_IP_ADDR}
-```
+</pre>
 
 You can save the above piece of code in a file, such as `neocortex_model.sbatch`. 
 
 From your project code directory (the same directory that has the `run.py` file), run the following command:
-```
+<pre>
 sbatch neocortex_model.sbatch
-```
+</pre>
 
 You can check the status of your submitted job via the `squeue` command:
-```
+<pre>
 squeue -u PSC_USERNAME
-```
+</pre>
 
 For more information, please refer to the [Batch jobs section of the Bridges-2 User Guide](https://www.psc.edu/resources/bridges-2/user-guide/#batch-jobs).
 

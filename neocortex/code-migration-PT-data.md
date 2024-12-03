@@ -1,10 +1,11 @@
 
 
+
 **data.py**
 
 Input data pipeline implementation: the input pipeline must be very fast, you must ensure you preprocess the input data by sharding, shuffling, prefetching, interleaving, repeating, batching, etc., in proper order.
 
-```
+<pre>
 def get_train_dataloader(params):
     ...
     loader = torch.utils.data.DataLoader(...)
@@ -14,13 +15,13 @@ def get_eval_dataloader(params):
     ...
     loader = torch.utils.data.DataLoader(...)
     return loader
-```
+</pre>
 These methods should have the input function and run any preprocessing that might be needed before returning a dataloader object.
 
 **Inputs**
 * params: (dict)
 
-  ```
+  <pre>
   {
       train_input: dict = {
           data_dir: str,
@@ -32,7 +33,7 @@ These methods should have the input function and run any preprocessing that migh
           …
       }
   }
-  ```
+  </pre>
 
   
 **Output**

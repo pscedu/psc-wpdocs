@@ -1,7 +1,7 @@
 Julian is a research engineer in the [HPC AI and Big
-Data](http://cmu.edu/psc/aibd) group. He supports the user community
+Data](https://www.psc.edu/research/aibd) group. He supports the user community
 for PSC's [Bridges-2](https://www.psc.edu/bridges-2) and
-[Neocortex](https://www.cmu.edu/psc/aibd/neocortex/), while also
+[Neocortex](https://www.psc.edu/resources/neocortex/), while also
 leading the development of
 [COSMO](https://www.cmu.edu/cosmology/news/articles/2020-05-15_seed-grant-recipients.html),
 a REST API for exploring the [BlueTides simulation

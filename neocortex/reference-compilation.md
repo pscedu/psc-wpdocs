@@ -1,6 +1,4 @@
-## Reference Compilation example
+<!-- # Reference Compilation example
 
-**In this section**
-* [Neocortex](#neocortex)
-* [Bridges-2](#bridges-2)
-
+This title is commented out in this doc so that it will appear above the in-page table of contents instead of beside it.
+-->

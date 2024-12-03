@@ -1,4 +1,5 @@
 
+
 **model.py**
 
 The model function that defines your neural network model. Contains the model function definition and model implementation. 
@@ -7,15 +8,21 @@ It supports the usage of the Tensorflow Keras Layers API, but the Tensorflow Met
 
 These files get things ready for the Estimator API. The code is divided between what is run in the host (I/O functions, support server, SDF), and what will run in the wafer.
 
-<blockquote class="note">
+<blockquote>
  <strong>Note</strong>
 
 <p>Please have in mind that your code will not call "train" or "fit" as the Estimator does that (takes care of that responsibility).</p>
-
-<p>For information about the layers supported, please visit the [Cerebras Documentation](https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules).</p>
 </blockquote>
 
-`def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:`
+<blockquote>
+ <strong>Note</strong> 
+ 
+<p>For information about the layers supported, please visit the <a href="https://docs.cerebras.net/en/1.6.0/tensorflow-docs/api-rst/tf.html#submodules">Cerebras Documentation</a>.</p>
+</blockquote>
+
+<pre>
+ def model_fn(features, labels, mode, params) -> tf.estimator.EstimatorSpec/common.tf.estimator.cs_estimator_spec.CSEstimatorSpec:
+</pre>
 
 This method should have the logic to build the layers of the model function.
 
@@ -37,7 +44,7 @@ The EstimatorSpec takes:
  <li><code>train_op</code>: optimizer</li>
  <li><code>host_call (dict)</code>:<br />
   <span style="padding-left:15px;">
-   <code>{ "accuracy": tf.compat.v1.metrics.accuracy() }</code>
+   <pre>{ "accuracy": tf.compat.v1.metrics.accuracy() }</pre>
   </span>
  </li>
 </ul> 

@@ -1,18 +1,19 @@
-## Running Jobs via Reservations
+# Running Jobs via Reservations
 
-### What is a reservation?
+## What is a reservation?
 In addition to the interactive and batch modes for running jobs on Neocortex, you can run jobs via a reservation. The reservation created with your grant id will make sure that the resource is explicitly reserved for you during the specified time period. You can use the reserved resource for your jobs without any waiting.
 
-### When do I need a reservation?
+## When do I need a reservation?
 You can use reservations when you want to actively debug the code and do not want to wait for the resource every time you start an interactive or a batch job. Without a reservation, the wait time depends on the number and the duration of jobs in the queue. You can use the following command to check the pending jobs in the queue:
-```
-$ squeue
-```
 
-### How is a reservation different from normal interactive or batch mode jobs?
+<pre>
+$ squeue
+</pre>
+
+## How is a reservation different from normal interactive or batch mode jobs?
 Interactive mode jobs can fail if there is a network connection issue. They also have a wall-time restriction (default is 4 hours, maximum is 48 hours). If your interactive session is ending because the time is up, you can’t extend it and hence you would have to start another interactive session. There could be other pending jobs in the queue delaying your job execution, whereas a reservation guarantees that the resource is explicitly assigned for your usage regardless of the job queue.
 
-### How can I create a reservation?
+## How can I create a reservation?
 To create a reservation, please send an email to neocortex@psc.edu with the following details:
 * Username
 * Grant ID
@@ -21,14 +22,16 @@ To create a reservation, please send an email to neocortex@psc.edu with the foll
 * Explain why you need a reservation (why the job can’t be executed with batch or interactive mode).
   
 You can use the `scontrol` command to check booked slots to ensure that you are not asking for an already reserved time slot:
-```
+
+<pre>
 $ scontrol show reservations
-```
+</pre>
 
 Please note that asking for a reservation does not guarantee you the reserved time slot. We will try our best to grant it.
 
-### How do I run a job with a reservation?
+## How do I run a job with a reservation?
 Once your reservation is confirmed, you will receive a confirmation with details including the *reservation-name* (we will provide you *reservation-name* upon confirmation). In order to start a job, use the parameter `--reservation` with `srun` or `sbatch`.
+
 <pre>
 $ sbatch --reservation <em>reservation-name</em> --account <em>SLURM-charge-id</em> mnist.batch
 </pre>
@@ -37,8 +40,9 @@ If your reservation is not assigned to your default SLURM charge id, then you wi
 
 Please note that using the `--reservation` flag does not automatically override the default interact or batch parameters, such as job run time. Please explicitly specify the wall-time, SDF node (if one is preferred), etc, to override the defaults.
 
-### Comparison table for various modes in which jobs can be run
+## Comparison table for various modes in which jobs can be run
 Please note that this comparison is between jobs asking for the same number and type of resources, duration, etc.
+<p>&nbsp;</p>
 <table>
   <thead>
     <tr>

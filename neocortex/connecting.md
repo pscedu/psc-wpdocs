@@ -12,7 +12,7 @@ There are also two different ways to connect to both systems:
 
 Please read below for specific instructions and connect to each system as needed. The resource usage will be tracked for each project.
 
-## Connecting to Neocortex (preferred)
+<h2>Connecting to Neocortex (preferred)</h2>
 
 <blockquote class="info">
   <strong>Info</strong>
@@ -29,7 +29,7 @@ Connect to `neocortex.psc.edu` using your PSC credentials, where *psc_username*�
 
 ### How to connect to Neocortex using Open OnDemand
 
-Navigate to the [Neocortex Open OnDemand webpage](https://ondemand.neocortex.psc.edu/) at https://ondemand.neocortex.psc.edu/ and login using your PSC credentials.
+Navigate to the <a href="https://ondemand.neocortex.psc.edu/" target="_blank">Neocortex Open OnDemand webpage</a> at https://ondemand.neocortex.psc.edu/ and login using your PSC credentials.
 
 ## Connecting to Bridges-2
 
@@ -44,11 +44,11 @@ You can compile and validate code using this resource, and you also have access 
 
 ### How to connect to Bridges-2 over ssh
 
-Connect to `bridges-2.ps.edu` using your PSC credentials, where *psc_username* is your PSC username. 
+Connect to `bridges2.psc.edu` using your PSC credentials, where *psc_username* is your PSC username. 
 <pre> ssh <i>psc_username</i>@bridges2.psc.edu</pre>
 
 If you need to reset your password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
 
 ### How to connect to Bridges-2 using Open OnDemand
 
-Navigate to the [Bridges-2 Open OnDemand webpage](https://ondemand.bridges2.psc.edu/) at https://ondemand.bridges2.psc.edu/ and login using your PSC credentials.
+Navigate to the <a href="https://ondemand.bridges2.psc.edu/" target="_blank">Bridges-2 Open OnDemand webpage</a> at https://ondemand.bridges2.psc.edu/ and login using your PSC credentials.

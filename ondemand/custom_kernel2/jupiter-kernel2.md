@@ -1,4 +1,3 @@
-<h3 name="custom-env">Custom conda environments with OnDemand</h3>
 
 You can  use the Python “ipykernel” package to create a definition file for  Jupyter Notebook which
 uses a custom Python installation rather than the default one. After creating that file and launching Jupyter Notebooks via
@@ -133,7 +132,8 @@ If you already have a notebook, find it in the file list and click on it to open
 Change the Python environment to use by navigating to **Kernel > Change kernel**.  Choose the new Python environment to use.
 
 
-![change-kernel](https://user-images.githubusercontent.com/30911386/161283360-69c822bf-f438-46e4-b58b-411df42ce794.jpeg)
+<!-- ![change-kernel](https://user-images.githubusercontent.com/30911386/161283360-69c822bf-f438-46e4-b58b-411df42ce794.jpeg) -->
+![change-kernel](https://github.com/pscedu/psc-wpdocs/blob/dev/aibd/images/new-kernel.jpg)
 
 
 **Note:** For installing new packages, you will have to do it from the terminal in the interactive session and NOT from the Jupyter notebook itself

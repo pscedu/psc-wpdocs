@@ -1,4 +1,6 @@
-# FAQ (general)
+# FAQ (General)
+
+
 <ol>
  <li><strong>Is it possible to use Keras functions inside the TF estimator?</strong><br />
 Yes, we support the TensorFlow Keras Layers API in our model function.
@@ -11,7 +13,7 @@ Yes, we support the TensorFlow Keras Layers API in our model function.
 </li>
 
 <li><strong>I see ogbg_molchembl. How do we get the other ogb datasets to the machine? Should we store them in our allocations or will you put the entire ogb collection in that location?</strong><br />
-   On the Ocean shared-filesystem, the path of some modelzoo datasets is `/ocean/neocortex/cerebras/data/`.<br /><br />
+   On the Ocean shared-filesystem, the path of some Model Zoo datasets is `/ocean/neocortex/cerebras/data/`.<br /><br />
  On the SDF, these datasets are available under $LOCAL at `$LOCAL/cerebras/data/`.
 <br /><br />
 </li>
@@ -37,7 +39,7 @@ This could mean that the queue is busy and not ready for any more jobs at that t
 </li>
 
 <li><strong>Which queue should I use to submit batch jobs?</strong><br />
-Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the <a href="https://www.psc.edu/resources/neocortex/doc/allocations">Allocations section</a> of this documentation for more details.
+Feel free to use the Neocortex (preferred) default queue, as well Bridges-2 RM, EM, and GPU partitions as needed. Refer to the <a href="https://www.psc.edu/resources/neocortex/docs/allocations">Allocations section</a> of this documentation for more details.
 <br /><br />
 </li>
 

@@ -19,6 +19,6 @@ A few examples of content in the `params.yaml` file:
    * `keep_checkpoint_max`: 2
    * `model_dir`: 'model_dir'
      
-For more details regarding the parameter files and arguments that can be specified, please refer to the [Pytorch Create Params YAML](https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file) file Cerebras documentation page.
+For more details regarding the parameter files and arguments that can be specified, please refer to the <a href="https://docs.cerebras.net/en/1.6.0/pytorch-docs/adapting-pytorch-to-cs.html#step-4-create-params-yaml-file" target="_blank">Pytorch Create Params YAML</a> file Cerebras documentation page.
 
 

@@ -1,5 +1,5 @@
 # Accounts
-Researchers will interact with the Neocortex (preferred) and perhaps the Bridges-2 systems. On Bridges-2, you can find the resources to precompile your code and estimate requirements that would facilitate the Neocortex execution (see the [Reference compilation example section](/https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands). Bridges-2 resources can also be leveraged for data preprocessing and other parts of the processing workflow.
+Researchers will interact with the Neocortex (preferred) and perhaps the Bridges-2 systems. On Bridges-2, you can find the resources to precompile your code and estimate requirements that would facilitate the Neocortex execution (see the [Reference compilation example section](https://www.psc.edu/resources/neocortex/docs/reference-compilation-commands). Bridges-2 resources can also be leveraged for data preprocessing and other parts of the processing workflow.
 ## Account creation
 All Neocortex users need a PSC account. 
  
@@ -7,9 +7,9 @@ All Neocortex users need a PSC account.
 * If you do not already have a PSC username, please create one using the [Request a PSC Account](https://allocations.psc.edu/users/new) form.
 
 When you have your PSC username and account, please make sure that you can reach Neocortex with your PSC credentials by trying to connect with this command:
-```
+<pre>
 ssh <i>psc_username</i>@neocortex.psc.edu
-```
+</pre>
 
 If you need to reset your PSC password, please visit the [PSC Password Change Utility](https://apr.psc.edu) webpage.
 
@@ -46,9 +46,9 @@ Project Details:
 ```
 
 
-## Off-boarding Team Members
+## Off-boarding team members
 When a researcher is no longer part of a project and their access needs to be revoked, please request that they be off-boarded as soon as possible.
 
-**Initiating the Request:** The Principal Investigator (PI) of the project is responsible for promptly initiating the request for off-boarding individuals who are no longer actively contributing to their project. The PI should email neocortex@psc.edu to make the request.  Be sure to include any relevant information about the individual to off-board.
+**Initiating the request:** The Principal Investigator (PI) of the project is responsible for promptly initiating the request for off-boarding individuals who are no longer actively contributing to their project. The PI should email neocortex@psc.edu to make the request.  Be sure to include any relevant information about the individual to off-board.
 
-**Confirmation of Off-boarding:** The Neocortex team will review the request and proceed with the off-boarding process. The PI will receive confirmation once the researcher's access has been successfully deactivated.
+**Confirmation of off-boarding:** The Neocortex team will review the request and proceed with the off-boarding process. The PI will receive confirmation once the researcher's access has been successfully deactivated.

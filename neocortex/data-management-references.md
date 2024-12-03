@@ -19,7 +19,7 @@ Please see the [Software Stack section](https://www.psc.edu/resources/neocortex/
 
 **Cerebras Datasets**
 
-There are some common datasets available that are used by the sample models in the Cerebras modelzoo. To find those datasets, please refer to the locations `/ocean/neocortex/cerebras/` and `$LOCAL/cerebras/data`.
+There are some common datasets available that are used by the sample models in the Cerebras Model Zoo. To find those datasets, please refer to the locations `/ocean/neocortex/cerebras/` and `$LOCAL/cerebras/data`.
 
 **Community datasets**
 
