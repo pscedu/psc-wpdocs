@@ -1,3 +1,4 @@
+<h3 name="custom-env">Custom conda environments with OnDemand</h3>
 
 You can  use the Python “ipykernel” package to create a definition file for  Jupyter Notebook which
 uses a custom Python installation rather than the default one. After creating that file and launching Jupyter Notebooks via
