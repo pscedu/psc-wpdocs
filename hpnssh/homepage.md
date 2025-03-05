@@ -3,33 +3,49 @@
 HPN-SSH is a series of modifications to OpenSSH, the predominant implementation of the ssh protocol. It was originally developed to address performance issues when using ssh on high speed long distance networks (also known as Long Fat Networks: LFNs). By taking advantage of automatically optimized receive buffers HPN-SSH could improve performance dramatically on these paths. Later advances include; disabling encryption after authentication to transport non-sensitive bulk data, modifying the AES-CTR cipher to use multiple CPU cores, more detailed connection logging, and peak throughput values in the scp progress bar. More information can be found on HPN-SSH page on the PSC website.
 
 ## Our Latest Release
-The latest release of HPN-SSH is 18.1.0 built against OpenSSH 9.4. This version includes a much improved ChaCha20-Poly1305 cipher, which is the default for both HPN-SSH and OpenSSH. The implemtation of the cipher is parallized to move the hard work of computing the keystream to independent threads. It also uses an optimized version of the Poly1305 methods found in OpenSSL. In comparison to OpenSSH 9.4 this version is 59% faster. 
+The latest release of HPN-SSH is 18.6.2 built against OpenSSH 9.9p2. This version includes a much improved ChaCha20-Poly1305 cipher, which is the default for both HPN-SSH and OpenSSH. The implemtation of the cipher is parallized to move the hard work of computing the keystream to independent threads. It also uses an optimized version of the Poly1305 methods found in OpenSSL. In comparison to OpenSSH 9.4 this version is 59% faster. 
 
-Get the latest source code release from [https://github.com/rapier1/hpn-ssh ](). Packages for Ubuntu and Fedora will be availble from the PPAs listed below. 
+Get the latest source code release from [https://github.com/rapier1/hpn-ssh ](). 
+
+Packages for Ubuntu, Debian, and Fedora are available!  
+
+Ubuntu:
+
+>`sudo add-apt-repository ppa:rapier1/hpnssh`
+
+Fedora RPMs can be added with:
+>`sudo dnf copr enable rapier1/hpnssh`
+
+Debian packages:
+
+[https://download.opensuse.org/repositories/home:/rapier1/]()
+
+## Do you use HPN-SSH?
+Let us know by sending a quick note to [hpn-ssh@psc.edu](mailto:hpn-ssh@psc.edu). Knowing that you are using hpn-ssh and how you are using it lets us figure out where future development should go. 
 
 ## Developing the next version of HPN-SSH
 
-The developers of HPN-SSH at the Pittsburgh Supercomputing Center (PSC) have recently received a grant from the National Science Foundation to develop and incorporate new features and optimizations. This grant will provide direct support to developers at PSC for two years. The goal of this grant (NSF Award#: 2004012) is to provide HPN-SSH with the level of performance required in modern high performance computing.
+The developers of HPN-SSH at the Pittsburgh Supercomputing Center (PSC) were awarded a grant in 2020 from the National Science Foundation to develop and incorporate new features and optimizations. This grant provided direct support to developers at PSC for four years. The goal of this grant (NSF Award#: 2004012) was to provide HPN-SSH with the level of performance required in modern high performance computing. We are currently competing for a new grant and we'll let you know if and when we get it. We have some exciting ideas in store.
 
-## What are you working on?
+## What did you work on?
 
-We’ve identified six different areas where we would like to focus our efforts. This is not meant to be an exhaustive list but is more of a starting point for our deliverables. Depending on community input this list may change to develop advances of highest interest. The six initial proposed areas of work are:
+We identified six different areas where we focused our efforts. This wass not meant to be an exhaustive list but is more of a starting point for our deliverables. The six initial proposed areas of work were:
 
 **Automatically resume failed transfers:** There is nothing quite as frustrating as having scp or sftp fail in the middle of a large transfer. Currently ssh does not have a mechanism to allow for failed transfers to restart from the point of failure. HPN-SSH is proposing to develop a mechanism to reliably resume failed transfers. We expect to do this by computing a hash of the partial file and compare it to a corresponding byte range of the original file. If these match then HPN-SSH will append the missing information to the partial file. If they do not match then the entire file will be transferred.
 
-This is available as of HPN-SSH 15v4 for OpenSSH 8.7.
+*This is available as of HPN-SSH 15v4 for OpenSSH 8.7.*
 
 **Incorporate AES-NI into the AES-CTR cipher:** The AES-NI instruction set is a set of on die instructions that use hardware acceleration to increase the performance of common AES functions. The result is that on CPUs that support AES-NI the default AES-CTR cipher is faster than HPN-SSH’s multithreaded cipher. We will work on incorporating AES-NI into the multithreaded cipher. We expect that this will allow for faster transfers when ssh is CPU bound.
 
-This is available as of HPN-SSH 15v4 for OpenSSH 8.7.
+*This is available as of HPN-SSH 15v4 for OpenSSH 8.7.*
 
 **Parallelization of CHACHA20 cipher:** CHACHA20 is a fast secure cipher that is the current default for OpenSSH. Initial investigation indicates that CHACHA20 can be transformed into a multithreaded cipher. This will allow the workload to be distributed across more CPU cores and should allow for faster transfers. We believe this will be important in situations where multiple users are simultaneously transferring files to the same host.
 
-This is available as of HPN-SSH 18.1.0 for OpenSSH 9.4. 
+*This is available as of HPN-SSH 18.1.0 for OpenSSH 9.4. *
 
 **Inline Network Telemetry:** Sometimes figuring out why a ssh connection is underperforming is a difficult task. To help with diagnostics HPN-SSH will deploy network telemetry. In this diagnostic mode both the client and server will periodically query network statistics (such as retransmits, out of order packets, time spent buffer limited, and so forth) and store this data for analysis. This data may also be periodically displayed to the user. Initially this will be limited to Unix variants that have the TCP_INFO struct (Linux and *BSD).
 
-This is available as of HPN-SSH 15v5 for OpenSSH 8.8.
+*This is available as of HPN-SSH 15v5 for OpenSSH 8.8.*
 
 **Pipelining HMAC generation:** The Hash-based Message Authentication Code (HMAC) is a one way cryptographic hash used by ssh to ensure that a datagram has not been modified en-route between the hosts. This ensures that the data has not been subjected to a man in the middle attack. In OpenSSH this is a step in a very linear process. No other work can be conducted (such as encrypting other data) while the HMAC is being computed. In many cases this can act a bottleneck on throughput. HPN-SSH is proposing to pipeline this process in order to mitigate this bottleneck as much as possible.
 
@@ -37,18 +53,16 @@ Update: The primary method of computing the MAC now happens after encryption whi
 
 **Packaging and Distribution:** HPN-SSH was, for a very long time, only available as a series of patches. Later it became a GitHub repo. This turned out to be a non-optimal method of distributing HPN-SSH to the public. With this in mind we will be working to provide precompiled packages for a variety of operating systems and Linux distributions and the creation of canonical package repositories (such as PPAs). We will also be reaching out to distribution maintainers to make HPN-SSH an option for all of their users.
 
-Our first online repo is now available for Ubuntu. Add it with:
-
->`sudo add-apt-repository ppa:rapier1/hpnssh`
-
-Fedora RPMs can be added with:
->`sudo dnf copr enable rapier1/hpnssh`
+*This is an ongoing process.*
 
 ## What can I do to help? 
 
 ### Join our HPN-SSH community mailing list 
 
 Stay up-to-date on progress and improvements to HPN-SSH by [joining this list, intended for both developers and users](https://lists.psc.edu/mailman/listinfo/hpnssh-community).
+
+### Submit big reports, code improvements, ideas, and problems
+You can email use directly at [hpn-ssh@psc.edu](mailto: hpn-ssh@psc.edu), join our mailing list, or reach out to us through our [GitHub repository](https://github.com/rapier1/hpn-ssh). GitHub is a great place to let us know about bugs, issues, or just to start a discussion. 
 
 ### Make a donation
 
