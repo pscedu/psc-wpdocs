@@ -29,7 +29,7 @@ The developers of HPN-SSH at the Pittsburgh Supercomputing Center (PSC) were awa
 
 ## What did you work on?
 
-We identified six different areas where we focused our efforts. This wass not meant to be an exhaustive list but is more of a starting point for our deliverables. The six initial proposed areas of work were:
+We identified six different areas where we focused our efforts. This was not meant to be an exhaustive list but is more of a starting point for our deliverables. The six initial proposed areas of work were:
 
 **Automatically resume failed transfers:** There is nothing quite as frustrating as having scp or sftp fail in the middle of a large transfer. Currently ssh does not have a mechanism to allow for failed transfers to restart from the point of failure. HPN-SSH is proposing to develop a mechanism to reliably resume failed transfers. We expect to do this by computing a hash of the partial file and compare it to a corresponding byte range of the original file. If these match then HPN-SSH will append the missing information to the partial file. If they do not match then the entire file will be transferred.
 
