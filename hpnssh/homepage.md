@@ -5,7 +5,7 @@ HPN-SSH is a series of modifications to OpenSSH, the predominant implementation 
 ## Our Latest Release
 The latest release of HPN-SSH is 18.6.2 built against OpenSSH 9.9p2. This version includes a much improved ChaCha20-Poly1305 cipher, which is the default for both HPN-SSH and OpenSSH. The implemtation of the cipher is parallized to move the hard work of computing the keystream to independent threads. It also uses an optimized version of the Poly1305 methods found in OpenSSL. In comparison to OpenSSH 9.4 this version is 59% faster. 
 
-Get the latest source code release from [https://github.com/rapier1/hpn-ssh ](). 
+Get the latest source code release from [https://github.com/rapier1/hpn-ssh ](https://github.com/rapier1/hpn-ssh). 
 
 Packages for Ubuntu, Debian, and Fedora are available!  
 
@@ -18,7 +18,7 @@ Fedora RPMs can be added with:
 
 Debian packages:
 
-[https://download.opensuse.org/repositories/home:/rapier1/]()
+[https://download.opensuse.org/repositories/home:/rapier1/](https://download.opensuse.org/repositories/home:/rapier1/)
 
 ## Do you use HPN-SSH?
 Let us know by sending a quick note to [hpn-ssh@psc.edu](mailto:hpn-ssh@psc.edu). Knowing that you are using hpn-ssh and how you are using it lets us figure out where future development should go. 
