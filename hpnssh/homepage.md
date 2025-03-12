@@ -6,6 +6,13 @@ HPN-SSH is a series of modifications to OpenSSH, the predominant implementation 
 
 The developers of HPN-SSH at the Pittsburgh Supercomputing Center (PSC) have recently received a grant from the National Science Foundation to develop and incorporate new features and optimizations. This grant will provide direct support to developers at PSC for two years. The goal of this grant (NSF Award#: 2004012) is to provide HPN-SSH with the level of performance required in modern high performance computing.
 
+## 2025 Dev Survey
+
+Click the link below to take our survey:
+Your responses will help the HPN-SSH team develop a more successful open-source community.
+
+[Survey Link](https://cmu.ca1.qualtrics.com/jfe/form/SV_d6yCbFdXAmCvjBc)
+
 ## What are you working on?
 
 We’ve identified six different areas where we would like to focus our efforts. This is not meant to be an exhaustive list but is more of a starting point for our deliverables. Depending on community input this list may change to develop advances of highest interest. The six initial proposed areas of work are:
