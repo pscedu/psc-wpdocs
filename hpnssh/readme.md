@@ -5,7 +5,7 @@ These options can be used on the command line in the typical '-o Option ' forma
 ## LibreSSL Support
 Changes in LibreSSL version 3.5 and 3.6 prevent the use of the threaded AES CTR cipher. 
 In those cases HPNSSH will fallback to the serial versionof the AES CTR cipher. A warning
-is printed to stderr. This shoudl be resolved in LibreSSL 3.7.
+is printed to stderr. This was resolved in LibreSSL 3.7.
 
 ## Automatic Port Fallback
 Starting with version 17v3 the hpnssh client now uses TCP port 2222 to connect automatically as this is the default hpnsshd port. However, we understand that many users will be end up connecting standard SSH servers on port 22. To make the easier for users the client will fall back to port 22 in the event that there is no hpnssh server running on port 2222. The behaviour can be modifed as follows:
@@ -93,7 +93,6 @@ will, after authentication disable both encryption *and* the MAC while transferr
 
 
 ## HPN specific options
- 
 <dl>
 <dt>TcpRcvBuf=[int]KB client </dt> 
 <dd>Set the TCP socket receive buffer to <em>int</em> Kilobytes. It can be set up to the maximum socket size allowed by the system. This is useful in situations where the TCP receive window is set low but the maximum buffer size is set higher (as is typical). This works on a per TCP connection basis. You can also use this to artificially limit the transfer rate of the connection. In these cases the throughput will be no more than n/RTT. The minimum buffer size is 1KB . Default is the current system wide TCP receive buffer size.
@@ -132,6 +131,6 @@ the multithreaded MT-AES-CTR cipher. Set to no by default.
 This patch was conceived, designed, and led by Chris Rapier (rapier@psc.edu) The majority of the actual coding for versions up to HPN12v1 was performed by Michael Stevens (mstevens@andrew.cmu.edu). The MT-AES-CTR cipher was implemented by Ben Bennet (ben@psc.edu) and improved by Mike Tasota (tasota@gmail.com) an NSF REU grant recipient for 2013. Mitchell Dorrell (mwd@psc.edu) has provided invaluable assistance on improving the performance of ChaCha20 and Poly1305 along with other critical work. Allan Jude provided the code for the NoneMac and buffer normalization. This work was financed, in part, by Cisco System, Inc., the National Library of Medicine, and the National Science Foundation.
 
 ### Sponsors: 
-Thanks to Niklas Hambuchen for being the first sponsor of HPN-SSH via github's sponsor program! Join our sponsors at <a href="https://github.com/sponsors/rapier1">our github</a>, view our <a href="https://www.psc.edu/hpn-ssh-home/support/">funding page</a>, or contact at hpnssh@psc.edu. 
+Thanks to Niklas Hambuchen for being the first sponsor of HPN-SSH via github's sponsor program! Join our sponsors at <a href="https://github.com/sponsors/rapier1">our github</a>, view our <a href="https://www.psc.edu/hpn-ssh-home/support/">funding page</a>, or contact at [hpn-ssh@psc.edu](mailto: hpn-ssh@psc.edu). 
 
 
