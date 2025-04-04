@@ -6,7 +6,7 @@ David joined the Pittsburgh Supercomputing Center in mid 2022 after working as S
 and Senior Systems/Networking Engineer for different major companies, and is currently involved
 with the [HuBMAP](https://hubmapconsortium.org) and [SenNet](https://sennetconsortium.org) projects.
 
-So far, his contributions to the PSC include:
+So far, his contributions to PSC include:
 
 * Redesign of the HuBMAP's infrastructure layer to integrate with HIVE's SLURM clusters.
 * Redesign SenNet's architecture to accommodate the new infrastructure under the Moonshot project.
