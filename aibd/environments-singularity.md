@@ -44,7 +44,7 @@ There are many containers for AI/BD applications already installed on Bridges-2 
    </tbody>
    </table>
 
-#### Pulling and converting Docker containers to Singularity
+<h4 id="convert-dock-to-sing">Pulling and converting Docker containers to Singularity</h4>
 
 You can pull a Docker container into Bridges-2 and convert it to
 Singularity format with the <code>Singularity pull</code> command. 
