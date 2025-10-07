@@ -16,9 +16,7 @@ Ubuntu:
 Fedora RPMs can be added with:
 >`sudo dnf copr enable rapier1/hpnssh`
 
-Debian packages:
-
-[https://download.opensuse.org/repositories/home:/rapier1/](https://download.opensuse.org/repositories/home:/rapier1/)
+For Debian installation please refer to our [Debian Installation](https://www.psc.edu/hpn-ssh-home/hpn-ssh-debian-installation/) document.
 
 ## Do you use HPN-SSH?
 Let us know by sending a quick note to [hpn-ssh@psc.edu](mailto:hpn-ssh@psc.edu). Knowing that you are using hpn-ssh and how you are using it lets us figure out where future development should go. 
