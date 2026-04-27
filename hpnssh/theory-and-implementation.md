@@ -1,20 +1,17 @@
-<h2 id="abstract">Abstract</h2>
+##Abstract
+*Note: This page is about 20 years old and describes tests that we performed with some of the very first versions of HPN-SSH. We hope to update this page sometime in mid 2025 with new graphs, a discussion of parallel cipher methods, and more current performance comparisons*
 
 SCP and the underlying SSH protocol is network performance limited by statically defined internal flow control buffers. These buffers often end up acting as a brake on the network throughput of SCP especially on long and wide paths. Modifying the SSH code to allow the flow control buffers to be defined at run time eliminates this bottleneck.
 
- 
-
-<h2 id="problem">Problem</h2>
-
+##Problem
 High Bandwidth and High Latency links are becoming more prevalent in corporate and academic institutions. Applications that use windowing thus need to ensure that the window size is at least equal to the Bandwidth Delay Product, or BDP, are to obtain maximum utilization of the link. The BDP is the product of the narrowest portion of the network path and the round trip delay time and represents the total data carrying capacity of the path. For TCP it is already possible to tune the tcp window size manually or use an autotuning mechanism, such as the Web100 linux kernel patch to ensure maximum throughput with TCP. However, when applications above the TCP layer implement windowing, the limitation on throughput then becomes the less of either TCP or the application. In OpenSSH the limitation appears in the static window sizes that appear in channels.h as defined values.
 
-<h2 id="solution">Solution</h2>
-
+##Solution
 Modifying the static size to be a larger value would only serve to waste space in the event that it is larger than the underlying protocol’s window size. Asking the user to specify the size also presents the problem of requiring users to be knowledgable in network performance tuning. Adjusting the size of window to be large enough so that it is no longer the limitation on throughput, but not much larger than it needs to be in order to obtain the desired performance would be the ideal solution.
 
 There were only two changes needed to adjust the SSH window based on the TCP window. One was to enable the buffer code to allocate larger sizes. This was done using a variable that replaced the constant that was the maximum size allowed by the buffer code, and a function to modify the variable’s default value to something larger. The second change was to get the TCP window size from getsockopt and adjust the window size to match, but only if the new size was larger than the old one. The returned value from getsockopt is also doubled because OpenSSH only sends a WINDOW_ADJUST message when the window is half full in order to save on the number of WINDOW_ADJUST messages sent with a cost of doubling the buffer size.
 
-<h2 id="tests">Tests</h2>
+##Tests
 
 The following hosts were used in the performance tests. kirana was running a 2.6 linux kernel with the Web100 patch. tg-login was running a 2.6 kernel without autotuning, but a tcp window size of 10,000,000 bytes. The link BDP of a 1Gbps with a 0.04 second delay is 40,000,000 bits or 5,000,000 bytes. The 300MB file was copied from /dev/shm on one machine to /dev/null on the other.
 
@@ -131,9 +128,8 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </tr>
 </tbody>
 </table>
-&nbsp;
 
-<h2 id="scp">Unmodified SCP Performance</h2>
+##Unmodified SCP Performance
 <table class="table-striped">
 <tbody>
 <tr>
@@ -178,11 +174,7 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </tr>
 </tbody>
 </table>
- 
-
-
-## Modified SCP Performance
-<img class=" size-full wp-image-261" src="/wp-content/uploads/2012/05/scp-mod.png" style="width: 100%;" alt="Graph of Modified SCP" width="640" height="480" />
+## HPN-SSH SCP Performance
 <table class="table-striped">
 <tbody>
 <tr>
@@ -227,15 +219,11 @@ The following hosts were used in the performance tests. kirana was running a 2.6
 </tr>
 </tbody>
 </table>
- 
-
-<h2 id="analysis">Analysis</h2>
-
+##Analysis
 The tests showed that throughput was increased dramatically, and the limitation was no longer the TCP or SSH window size, but the ability of the host to encrypt at a rate fast enough to send out over the Gigabit Ethernet. This is clearly demonstrated by the vast performance difference between 3des-cbc, the slowest cipher, and arcfour, the fastest cipher.
 
-<h2 id="security">Security implications</h2>
-
-There are no implications that we know of with the following caveats: The use of the None cipher will transfer bulk data in the clean and you must use it at your own risk. The authentication process, however, is fully encrypted. This should, naturally, be seen as riskier than transferring data with full encryption. None encryption is only available in non-interactive sessions. This means scp, batch sftp, and pipes. 
+##Security implications
+There are no implications that we know of with the following caveats: The use of the None cipher will transfer bulk data in the clear and you must use it at your own risk. The authentication process, however, is fully encrypted. This should, naturally, be seen as riskier than transferring data with full encryption. None encryption is only available in non-interactive sessions. This means scp, batch sftp, and pipes. 
 
 Likewise, disabling the use of the Message Authentication Cipher (MAC) has security implications. Specifically, that the data is no longer protected against Man In the Middle (MITM) attacks. As with the None cipher this mode should not be used with sensitive data. The user will need to determine how to properly balance risk versus performance. Disabling the MAC is only available when used with the None ciphers. 
 
