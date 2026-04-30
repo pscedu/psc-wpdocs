@@ -4,10 +4,11 @@ Cao-Berg earned a B.S. in Mathematics and an M.S. in Computational Biology from 
 
 As a member of the HuBMAP Consortium, Cao-Berg has contributed to landmark publications in the Nature family of journals, including:
 
-Advances and prospects for the Human BioMolecular Atlas Program (HuBMAP) — Nature Cell Biology, 2023
-Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage — Nature Methods, 2025
-The Brain Image Library: A Community-Contributed Microscopy Resource for Neuroscientists — Scientific Data, 2024
-The human body at cellular resolution: the NIH Human Biomolecular Atlas Program — Nature, 2019
+- Advances and prospects for the Human BioMolecular Atlas Program (HuBMAP) — Nature Cell Biology, 2023 <br />
+- Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage — Nature Methods, 2025 <br />
+- The Brain Image Library: A Community-Contributed Microscopy Resource for Neuroscientists — Scientific Data, 2024 <br />
+- The human body at cellular resolution: the NIH Human Biomolecular Atlas Program — Nature, 2019 <br />
+
 Beyond his research role, Cao-Berg formerly served as an undergraduate program manager for the Mellon College of Science and serves as a high-performance computing consultant for the Ray and Stephanie Lane Center for Computational Biology in CMU’s School of Computer Science. He is actively involved in establishing student chapters and building bridges between students and the administration to support underrepresented groups in the sciences.
 
 An avid open-source contributor with an active GitHub profile, Cao-Berg is committed to building reproducible, scalable computational workflows — including on PSC’s Bridges-2 supercomputer — and to democratizing access to high-performance computing in the life sciences.
