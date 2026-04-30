@@ -1,12 +1,20 @@
-Ivan is a research software specialist in the Biomedical Applications Group tinkering with technology in scientific related projects. At the moment, Ivan is involved in several projects [HuBMAP](https://commonfund.nih.gov/hubmap), [The Brain Image Library](https://www.brainimagelibrary.org/), [SenNet](https://sennetconsortium.org/) and on occasion, with the [National Center for Multiscale Modeling of Biological Systems](https://mmbios.pitt.edu/).
+Iván Cao-Berg is a Biomedical Research Software Engineer in the Biomedical Applications Group at the Pittsburgh Supercomputing Center (PSC), Carnegie Mellon University. His work sits at the intersection of high-performance computing and biomedical research, with contributions to large-scale national initiatives including the Human BioMolecular Atlas Program (HuBMAP), the Brain Image Library (BIL), SenNet, and the National Center for Multiscale Modeling of Biological Systems (MMBioS). His research interests encompass computational biology, bioinformatics, pattern recognition, machine learning, and location proteomics.
 
-Before joining PSC, he was a member of the [Murphy Lab](http://murphylab.web.cmu.edu) at the [Computational Biology Department](http://www.cbd.cmu.edu) in the School of Computer Science and worked in other departments at [Carnegie Mellon University](http://www.cmu.edu) such as [Biomedical Engineering](https://www.cmu.edu/bme/) and [Biological Sciences](https://www.cmu.edu/bio/).
+Cao-Berg earned a B.S. in Mathematics and an M.S. in Computational Biology from Carnegie Mellon University, supported by funding from the National Institutes of Health. Prior to joining PSC, he was a member of the Murphy Lab in CMU’s Computational Biology Department and collaborated across the Departments of Biomedical Engineering, Biological Sciences, and the Center for Learning and Discovery (Machine Learning).
 
-* [Ivan's GitHub page](https://github.com/icaoberg/)
-* [The United States Research Software Engineer Association](https://us-rse.org/)
+As a member of the HuBMAP Consortium, Cao-Berg has contributed to landmark publications in the Nature family of journals, including:
 
-Ivan enjoys writing or contributing to open source projects, reusing
-old tech, breaking and fixing workflows, playing with new tech,
-cooking, and playing good music in Spanish on [WRCT
-88.3FM](http://www.wrct.org). He has been featured in CMU publications for his radio show and for his involvement in relief efforts following Hurricane Mar&iacute;a, including [Mr. Cao-Berg's Neighborhood](https://www.cmu.edu/mcs/news-events/2021/1013_barrio-latino-radio.html) and [Cao-Berg Helped Bring Aid to Puerto Rico](https://www.cmu.edu/piper/news/archives/2018/february/ivan-cao-berg.html).
+Advances and prospects for the Human BioMolecular Atlas Program (HuBMAP) — Nature Cell Biology, 2023
+Human BioMolecular Atlas Program (HuBMAP): 3D Human Reference Atlas construction and usage — Nature Methods, 2025
+The Brain Image Library: A Community-Contributed Microscopy Resource for Neuroscientists — Scientific Data, 2024
+The human body at cellular resolution: the NIH Human Biomolecular Atlas Program — Nature, 2019
+Beyond his research role, Cao-Berg formerly served as an undergraduate program manager for the Mellon College of Science and serves as a high-performance computing consultant for the Ray and Stephanie Lane Center for Computational Biology in CMU’s School of Computer Science. He is actively involved in establishing student chapters and building bridges between students and the administration to support underrepresented groups in the sciences.
+
+An avid open-source contributor with an active GitHub profile, Cao-Berg is committed to building reproducible, scalable computational workflows — including on PSC’s Bridges-2 supercomputer — and to democratizing access to high-performance computing in the life sciences.
+
+Cao-Berg was the host of Barrio Latino, Pittsburgh’s longest-running Spanish-language radio program on WRCT 88.3 FM. Under his stewardship, the program expanded into a multimedia platform that documents the cultural life and voices of Pittsburgh’s Latino community, as featured in Mister Cao-Berg’s Neighborhood by CMU News.
+
+Following Hurricane María in 2017, Cao-Berg co-founded the Together We Rise relief initiative, personally participating in many emergency supply flights to Puerto Rico. The collective effort delivered 76,500 pounds of humanitarian supplies and facilitated the evacuation of nearly 300 individuals — many requiring urgent medical care — to the U.S. mainland. His leadership during this crisis was recognized in CMU’s The Piper.
+
+Today, Cao-Berg channels his energy into mentoring the next generation of scientists and engineers, finding fulfillment in watching students grow and thrive. Outside of work, he is devoted to living a full and happy life — pursuing the passions, people, and experiences that bring him joy.
 
