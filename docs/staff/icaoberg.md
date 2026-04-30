@@ -13,9 +13,9 @@ Beyond his research role, Cao-Berg formerly served as an undergraduate program m
 
 An avid open-source contributor with an active GitHub profile, Cao-Berg is committed to building reproducible, scalable computational workflows — including on PSC’s Bridges-2 supercomputer — and to democratizing access to high-performance computing in the life sciences.
 
-Cao-Berg was the host of Barrio Latino, Pittsburgh’s longest-running Spanish-language radio program on WRCT 88.3 FM. Under his stewardship, the program expanded into a multimedia platform that documents the cultural life and voices of Pittsburgh’s Latino community, as featured in Mister Cao-Berg’s Neighborhood by CMU News.
+Cao-Berg was the host of _Barrio Latino_, Pittsburgh’s longest-running Spanish-language radio program on WRCT 88.3 FM. Under his stewardship, the program expanded into a multimedia platform that documents the cultural life and voices of Pittsburgh’s Latino community, as featured in _Mister Cao-Berg’s Neighborhood_ by _CMU News_.
 
-Following Hurricane María in 2017, Cao-Berg co-founded the Together We Rise relief initiative, personally participating in many emergency supply flights to Puerto Rico. The collective effort delivered 76,500 pounds of humanitarian supplies and facilitated the evacuation of nearly 300 individuals — many requiring urgent medical care — to the U.S. mainland. His leadership during this crisis was recognized in CMU’s The Piper.
+Following Hurricane María in 2017, Cao-Berg co-founded the Together We Rise relief initiative, personally participating in many emergency supply flights to Puerto Rico. The collective effort delivered 76,500 pounds of humanitarian supplies and facilitated the evacuation of nearly 300 individuals — many requiring urgent medical care — to the U.S. mainland. His leadership during this crisis was recognized in CMU’s _The Piper_.
 
 Today, Cao-Berg channels his energy into mentoring the next generation of scientists and engineers, finding fulfillment in watching students grow and thrive. Outside of work, he is devoted to living a full and happy life — pursuing the passions, people, and experiences that bring him joy.
 
